@@ -1,0 +1,39 @@
+* {
+  margin: 15;
+  padding: 15;
+  box-sizing: border-box;
+}
+
+body {
+  height: 1200px;
+  background-image: url("img.jpg");
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+table#table {
+	
+    width:300%; 
+	margin:20%;
+	
+  }
+th {
+    background-color: #fffdd0;
+    color: black;
+}
+td {
+   background-color: #fffdd0;
+}
+input[type=text] {
+    background-color: #fffdd0;
+    color: black;
+}
+input[type=number] {
+    background-color: #fffdd0;
+    color: black;
+}
+.button {
+    background-color: black;
+}

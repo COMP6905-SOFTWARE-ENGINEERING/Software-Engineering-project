@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <center><h1 style="color:white">Graduate Recruitment system</h1></center>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+             
+         <style>
+            * {
+  margin: 15;
+  padding: 15;
+  box-sizing: border-box;
+}
+
+body {
+  height: 1200px;
+  background-image: url("img.jpg");
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+table#table {
+	
+    width:300%; 
+	margin:20%;
+	
+  }
+th {
+    background-color: #fffdd0;
+    color: black;
+}
+td {
+   background-color: #fffdd0;
+}
+input[type=text] {
+    background-color: #fffdd0;
+    color: black;
+}
+input[type=number] {
+    background-color: #fffdd0;
+    color: black;
+}
+.button {
+    background-color: black;
+}
+</style>
+    </head>
+    <body>
+        
+        <div class="container">
+            <div class="tab tab-1">
+                <center><table align="center" id="table">
+                    <tr>
+						 <th>Project.No</th>
+                        <th style="width:20%">Department</th>
+                        <th style="width:70%">Projectname</th>
+                       
+                    </tr>
+                    
+                </table></center>
+            </div>
+            <div class="tab tab-2">
+				<center>
+                Department :<input type="text" name="Deptname" id="Deptname">
+                Project :<input type="text" name="Project" id="Project">
+                
+                
+                <button onclick="addHtmlTableRow();" color="brown">Submit</button></center>
+               
+			   
+            </div>
+        </div>
+        
+        <script>
+            
+            var rIndex,
+                table = document.getElementById("table");
+            var count=0;
+            // check the empty input
+            function checkEmptyInput()
+            {
+                var isEmpty = false,
+                    Deptname = document.getElementById("Deptname").value,
+                    Project = document.getElementById("Project").value,
+                    No = count;
+            
+                if(Deptname === ""){
+                    alert("Enter Depthname");
+                    isEmpty = true;
+                }
+                else if(Project === ""){
+                    alert("Enter projectname");
+                    isEmpty = true;
+                }
+                else if(No === ""){
+                    alert("Enter projectno");
+                    isEmpty = true;
+                }
+                return isEmpty;
+            }
+            
+            // add Row
+            function addHtmlTableRow()
+            {
+                // get the table by id
+                // create a new row and cells
+                // get value from input text
+                // set the values into row cell's
+                if(!checkEmptyInput()){
+                var newRow = table.insertRow(table.length),
+                    cell1 = newRow.insertCell(0),
+                    cell2 = newRow.insertCell(1),
+                    cell3 = newRow.insertCell(2),
+                    Deptname = document.getElementById("Deptname").value,
+                    Project = document.getElementById("Project").value,
+                    No = count;
+					count++;
+					
+				cell1.innerHTML = No;
+				cell2.innerHTML = Deptname;
+                cell3.innerHTML = Project;
+                
+                // call the function to set the event to the new row
+                selectedRowToInput();
+            }
+            }
+            
+            // display selected row data into input text
+            function selectedRowToInput()
+            {
+                
+                for(var i = 1; i < table.rows.length; i++)
+                {
+                    table.rows[i].onclick = function()
+                    {
+                      // get the seected row index
+                      rIndex = this.rowIndex;
+					  document.getElementById("No").value = count;
+                      document.getElementById("Deptname").value = this.cells[1].innerHTML;
+                      document.getElementById("Project").value = this.cells[2].innerHTML;
+                      
+                    };
+                }
+            }
+            selectedRowToInput();
+            
+            
+        </script>
+        
+    </body>
+</html>

@@ -1,0 +1,9 @@
+body{
+	margin:0;
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	min-width: 1000px;
+}
+div LoginForm{
+	width: 50%;
+
+}
