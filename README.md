@@ -10,3 +10,12 @@ With both the project definition and the prospective students’ information, th
 
 Once the student receives the offer, he can accept or decline it on the system. If the user accepts the offer, he will be able to track his performance in the program within the system, this is his grades and the project’s progress.
 
+#  Usage
+We already change our start service command from
+```
+ $ node server.js &
+ ```
+ to
+ ```
+ $ nodemon www/bin
+ ```
