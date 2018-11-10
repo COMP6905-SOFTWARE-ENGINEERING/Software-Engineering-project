@@ -2,7 +2,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
-var personSchema = new Schema({
+var studentSchema = new Schema({
 	username:{
 		type:String,
 		unique:true,
@@ -43,11 +43,11 @@ var personSchema = new Schema({
 	},
 });
 
-personSchema.index({username:1});
-var personModel = mongoose.model('persons', personSchema);
+studentSchema.index({username:1});
+var studentModel = mongoose.model('students', studentSchema);
 
-exports.personLogin = function(reqData, callback){
-	personModel.findOne({username:reqData.username}, function(err, data){
+exports.studentLogin = function(reqData, callback){
+	studentModel.findOne({username:reqData.username}, function(err, data){
 		if (err){
 			callback(err);
 		}else if (data != null){
@@ -62,13 +62,12 @@ exports.personLogin = function(reqData, callback){
 	});
 };
 
-exports.personRegister = function(reqData, callback){
-	personModel.create({
-		username:reqData.username,
+exports.studentRegister = function(reqData, callback){
+	studentModel.create({
+		firstname:reqData.firstname,
+        lastname: reqData.lastname,
 		password:reqData.password,
 		email: reqData.email,
-		realname: reqData.realname,
-		IDnumber: reqData.IDnumber,
 	}, function(err, data){
 		if(err){
 			callback(err);
@@ -78,8 +77,8 @@ exports.personRegister = function(reqData, callback){
 	});
 }
 
-exports.personCfmEmail = function(reqData, callback){
-	personModel.findOne({username:reqData.username}, function(err, data){
+exports.studentCfmEmail = function(reqData, callback){
+	studentModel.findOne({username:reqData.username}, function(err, data){
 		if (err){
 			callback(err);
 		}else if (data != null){
@@ -94,8 +93,8 @@ exports.personCfmEmail = function(reqData, callback){
 	});
 };
 
-exports.personChgPwd = function(reqData, callback){
-	personModel.update({username:reqData.username}, {$set: {password: reqData.password}}, {runValidators: true}, function(err, data){
+exports.studentChgPwd = function(reqData, callback){
+	studentModel.update({username:reqData.username}, {$set: {password: reqData.password}}, {runValidators: true}, function(err, data){
 		if (err){
 			callback(err);
 		}else {
@@ -104,8 +103,8 @@ exports.personChgPwd = function(reqData, callback){
 	});
 };
 
-exports.personModInfo = function(reqData, callback){
-	personModel.update({username:reqData.username}, {$set: reqData}, {runValidators: true}, function(err, data){
+exports.studentModInfo = function(reqData, callback){
+	studentModel.update({username:reqData.username}, {$set: reqData}, {runValidators: true}, function(err, data){
 		if (err){
 			callback(err);
 		}else {
@@ -114,8 +113,8 @@ exports.personModInfo = function(reqData, callback){
 	});
 };
 
-exports.personAccInfo = function(reqData, callback){
-	personModel.findOne({username:reqData.username}, function(err, data){
+exports.studentAccInfo = function(reqData, callback){
+	studentModel.findOne({username:reqData.username}, function(err, data){
 		if (err){
 			// err.err = 'err';
 			callback(err, null);

@@ -7,7 +7,7 @@ var mongoose = require('mongoose');
 var session = require('express-session');
 
 
-var signupRouter = require('./routes/signup');
+var registerRouter = require('./routes/register');
 
 var app = express();
 
@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser('mycookie'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/signup', signupRouter);
+app.use('/register', registerRouter);
 
 app.get('/', function(req, res) {
 res.sendFile(path.join(__dirname + '/index.html'));
