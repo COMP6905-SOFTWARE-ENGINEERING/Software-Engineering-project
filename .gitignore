@@ -1,7 +1,10 @@
-# generate files and paths by eclipse
+# generated files and paths by eclipse
 .DS_Store
 .project
 .settings/
+
+# generated files and paths by WebStorm
+.idea/
 
 node_modules/
 
