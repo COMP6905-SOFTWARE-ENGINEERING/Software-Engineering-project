@@ -52,8 +52,8 @@ $(document).ready(function(){
 	$(".big_title").click(function(){
 		window.location.href = '/index';
 	});
-	$(".redirect_resume_button").click(function(){
-		window.location.href = '/person/resumelist';
+	$(".redirect_profile_button").click(function(){
+		window.location.href = '/user/resumelist';
 	});
 	$(".redirect_jobmgmt_button").click(function(){
 		window.location.href = '/company/offerlist';

@@ -2,7 +2,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
-var studentSchema = new Schema({
+var userSchema = new Schema({
 	firstname:{
 		type:String,
 		select:true,
@@ -17,7 +17,7 @@ var studentSchema = new Schema({
 	password:{
 		type:String,
 		required:[true, 'password cannot be empty'],
-		match:[/^(\S)*$/, '密码不能包含空格'],
+		match:[/^(\S)*$/, 'password cannot contain space'],
 	},
 	email:{
 		type:String,
@@ -36,32 +36,34 @@ var studentSchema = new Schema({
 		min:[18, '输入年龄过小'],
 		max:[60, '输入年龄过大'],
 	},
-	address:{
-		type:String,
+	isStudent:{
+		type:Boolean,
+		required:true,
+		default: true,
 	},
 });
 
-studentSchema.index({email:1});
-var studentModel = mongoose.model('students', studentSchema);
+userSchema.index({email:1});
+var userModel = mongoose.model('users', userSchema);
 
-exports.studentLogin = function(reqData, callback){
-	studentModel.findOne({username:reqData.username}, function(err, data){
+exports.userLogin = function(reqData, callback){
+	userModel.findOne({firstname:reqData.username}, function(err, data){
 		if (err){
 			callback(err);
 		}else if (data != null){
 			if (data.password == reqData.password){
 				callback('ok');
 			}else{
-				callback('密码错误');
+				callback('wrong password');
 			}
 		}else{
-			callback('用户不存在');
+			callback('user not exist');
 		}
 	});
 };
 
-exports.studentRegister = function(reqData, callback){
-	studentModel.create({
+exports.userRegister = function(reqData, callback){
+	userModel.create({
 		firstname:reqData.firstname,
         lastname: reqData.lastname,
 		password:reqData.password,
@@ -75,8 +77,8 @@ exports.studentRegister = function(reqData, callback){
 	});
 };
 
-exports.studentCfmEmail = function(reqData, callback){
-	studentModel.findOne({username:reqData.username}, function(err, data){
+exports.userCfmEmail = function(reqData, callback){
+	userModel.findOne({username:reqData.username}, function(err, data){
 		if (err){
 			callback(err);
 		}else if (data != null){
@@ -91,8 +93,8 @@ exports.studentCfmEmail = function(reqData, callback){
 	});
 };
 
-exports.studentChgPwd = function(reqData, callback){
-	studentModel.update({username:reqData.username}, {$set: {password: reqData.password}}, {runValidators: true}, function(err, data){
+exports.userChgPwd = function(reqData, callback){
+	userModel.update({username:reqData.username}, {$set: {password: reqData.password}}, {runValidators: true}, function(err, data){
 		if (err){
 			callback(err);
 		}else {
@@ -101,8 +103,8 @@ exports.studentChgPwd = function(reqData, callback){
 	});
 };
 
-exports.studentModInfo = function(reqData, callback){
-	studentModel.update({username:reqData.username}, {$set: reqData}, {runValidators: true}, function(err, data){
+exports.userModInfo = function(reqData, callback){
+	userModel.update({username:reqData.username}, {$set: reqData}, {runValidators: true}, function(err, data){
 		if (err){
 			callback(err);
 		}else {
@@ -111,8 +113,8 @@ exports.studentModInfo = function(reqData, callback){
 	});
 };
 
-exports.studentAccInfo = function(reqData, callback){
-	studentModel.findOne({username:reqData.username}, function(err, data){
+exports.userAccInfo = function(reqData, callback){
+	userModel.findOne({username:reqData.username}, function(err, data){
 		if (err){
 			// err.err = 'err';
 			callback(err, null);

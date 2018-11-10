@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var staticModel = require('./static_db.js');
 
 var Schema = mongoose.Schema;
-var resumeSchema = new Schema({
+var profileSchema = new Schema({
     owner:{
         type:String,
         index:true,
@@ -14,11 +14,7 @@ var resumeSchema = new Schema({
         type:Boolean,
         required:true,
     },
-    isPublic:{
-        type:Boolean,
-        required:true,
-    },
-    resumename:{
+    profilename:{
         type:String,
         required:[true, '简历名不能为空'],
         trim:true,
@@ -98,21 +94,6 @@ var resumeSchema = new Schema({
         required:[true, '工作经验年数不能为空'],
         min:[0, '工作经验年数不能小于0'],
     },
-    first_forlang:{
-        type:String,
-        required:[true, '请选择外语水平'],
-        match:[/^[0123456][1234]$/, '请确认外语水平无误'],
-    },
-    second_forlang:{
-        type:String,
-        required:[true, '请选择外语水平'],
-        match:[/^[0123456][1234]$/, '请确认外语水平无误'],
-    },
-    third_forlang:{
-        type:String,
-        required:[true, '请选择外语水平'],
-        match:[/^[0123456][1234]$/, '请确认外语水平无误'],
-    },
     education:{
         type:Number,
         required:[true, '请选择学历'],
@@ -124,7 +105,7 @@ var resumeSchema = new Schema({
         required:[true, '请输入学校'],
         trim:true,
     },
-    offername:{
+    research_interest:{
         type:String,
         required:[true, '期望职位不能为空'],
         trim:true,
@@ -137,10 +118,6 @@ var resumeSchema = new Schema({
     pro_ability:{
         type:String,
         required:[true, '请输入专业能力'],
-    },
-    self_evaluation:{
-        type:String,
-        required:[true, '请输入个人评价'],
     },
     rewards_punishments:{
         type:String,
@@ -156,16 +133,16 @@ var resumeSchema = new Schema({
     },
 });
 
-// resumeSchema.pre('save', function (next) {
-// 	this.fullname = this.owner + '.' + this.resumename;
+// profileSchema.pre('save', function (next) {
+// 	this.fullname = this.owner + '.' + this.profilename;
 // 	next();
 // });
 
-var resumeModel = mongoose.model('resumes', resumeSchema);
+var profileModel = mongoose.model('profiles', profileSchema);
 
 
 exports.listByOwner = function(reqData, callback){
-    resumeModel.find(reqData, ['_id', 'isDefault', 'isPublic', 'resumename', 'realname', 'deliverer'], {sort:{_id: 1}}, function(err, data){
+    profileModel.find(reqData, ['_id', 'isDefault', 'isPublic', 'profilename', 'realname', 'deliverer'], {sort:{_id: 1}}, function(err, data){
         if (err){
             callback(err, null);
         }else {
@@ -174,9 +151,9 @@ exports.listByOwner = function(reqData, callback){
     });
 };
 
-exports.createResume = function(reqData, callback){
+exports.createProfile = function(reqData, callback){
     var Data = reqData;
-    Data['fullname'] = Data.owner+'.'+Data.resumename;
+    Data['fullname'] = Data.owner+'.'+Data.profilename;
     if(Data.location){
         staticModel.showCity(Data.location, function(err, data){
             if (err){
@@ -189,7 +166,7 @@ exports.createResume = function(reqData, callback){
                             callback(err);
                         }else {
                             Data['job_str'] = data.name;
-                            resumeModel.create(Data, function(err, data){
+                            profileModel.create(Data, function(err, data){
                                 if (err){
                                     callback(err);
                                 }else {
@@ -199,7 +176,7 @@ exports.createResume = function(reqData, callback){
                         }
                     });
                 }else {
-                    resumeModel.create(Data, function(err, data){
+                    profileModel.create(Data, function(err, data){
                         if (err){
                             callback(err);
                         }else {
@@ -215,7 +192,7 @@ exports.createResume = function(reqData, callback){
                 callback(err);
             }else {
                 Data['job_str'] = data.name;
-                resumeModel.create(Data, function(err, data){
+                profileModel.create(Data, function(err, data){
                     if (err){
                         callback(err);
                     }else {
@@ -225,7 +202,7 @@ exports.createResume = function(reqData, callback){
             }
         });
     }else {
-        resumeModel.create(Data, function(err, data){
+        profileModel.create(Data, function(err, data){
             if (err){
                 callback(err);
             }else {
@@ -236,7 +213,7 @@ exports.createResume = function(reqData, callback){
 };
 
 exports.findById = function(reqData, callback){
-    resumeModel.findById(reqData._id, function(err, data){
+    profileModel.findById(reqData._id, function(err, data){
         if(err){
             callback(err, null);
         }else {
@@ -247,8 +224,8 @@ exports.findById = function(reqData, callback){
 
 exports.modById = function(reqData, callback){
     var Data = reqData.Data;
-    if(Data.owner&&Data.resumename){
-        Data['fullname'] = Data.owner+'.'+Data.resumename;
+    if(Data.owner&&Data.profilename){
+        Data['fullname'] = Data.owner+'.'+Data.profilename;
     }
     if(Data.location){
         staticModel.showCity(Data.location, function(err, data){
@@ -262,7 +239,7 @@ exports.modById = function(reqData, callback){
                             callback(err);
                         }else {
                             Data['job_str'] = data.name;
-                            resumeModel.update({_id: Data._id, owner: reqData.username}, {$set: Data},  {runValidators: true}, function(err, data){
+                            profileModel.update({_id: Data._id, owner: reqData.username}, {$set: Data},  {runValidators: true}, function(err, data){
                                 if (err){
                                     callback(err);
                                 }else {
@@ -276,7 +253,7 @@ exports.modById = function(reqData, callback){
                         }
                     });
                 }else{
-                    resumeModel.update({_id: Data._id, owner: reqData.username}, {$set: Data},  {runValidators: true}, function(err, data){
+                    profileModel.update({_id: Data._id, owner: reqData.username}, {$set: Data},  {runValidators: true}, function(err, data){
                         if (err){
                             callback(err);
                         }else {
@@ -296,7 +273,7 @@ exports.modById = function(reqData, callback){
                 callback(err);
             }else {
                 Data['job_str'] = data.name;
-                resumeModel.update({_id: Data._id, owner: reqData.username}, {$set: Data},  {runValidators: true}, function(err, data){
+                profileModel.update({_id: Data._id, owner: reqData.username}, {$set: Data},  {runValidators: true}, function(err, data){
                     if (err){
                         callback(err);
                     }else {
@@ -310,7 +287,7 @@ exports.modById = function(reqData, callback){
             }
         });
     }else {
-        resumeModel.update({_id: Data._id, owner: reqData.username}, {$set: Data},  {runValidators: true}, function(err, data){
+        profileModel.update({_id: Data._id, owner: reqData.username}, {$set: Data},  {runValidators: true}, function(err, data){
             if (err){
                 callback(err);
             }else {
@@ -324,9 +301,9 @@ exports.modById = function(reqData, callback){
     }
 };
 
-exports.removeResume = function(reqData, callback){
+exports.removeProfile = function(reqData, callback){
     var Data = reqData.Data;
-    resumeModel.remove({_id: Data._id,  owner: reqData.username}, function(err, data){
+    profileModel.remove({_id: Data._id,  owner: reqData.username}, function(err, data){
         if (err){
             callback(err);
         }else {
@@ -341,7 +318,7 @@ exports.removeResume = function(reqData, callback){
 
 exports.deliver = function(reqData, callback){
     var Data = reqData.Data;
-    resumeModel.update({_id: Data._id}, {
+    profileModel.update({_id: Data._id}, {
         $addToSet:{deliverer:{
             _id:Data.deliverer_id,
             deliverer_companyname:Data.deliverer_companyname,
@@ -358,7 +335,7 @@ exports.deliver = function(reqData, callback){
 
 exports.removeDeliver = function(reqData, callback){
     var Data = reqData.Data;
-    resumeModel.update({_id: Data._id}, {
+    profileModel.update({_id: Data._id}, {
         $pull:{deliverer:{
             _id:Data.deliverer_id,
         }}
@@ -373,7 +350,7 @@ exports.removeDeliver = function(reqData, callback){
 
 exports.changeCollect = function(reqData, callback){
     var Data = reqData.Data;
-    resumeModel.update({
+    profileModel.update({
         _id: Data._id,
         'deliverer._id':Data.deliverer_id
     }, {
@@ -389,7 +366,7 @@ exports.changeCollect = function(reqData, callback){
 
 exports.adminPrivatize = function(reqData, callback){
     var Data = reqData.Data;
-    resumeModel.update({
+    profileModel.update({
         _id:Data._id,
     }, {$set:{
         isPublic:false,
@@ -404,7 +381,7 @@ exports.adminPrivatize = function(reqData, callback){
 
 exports.adminDelete = function(reqData, callback){
     var Data = reqData.Data;
-    resumeModel.remove({_id: Data._id}, function(err, data){
+    profileModel.remove({_id: Data._id}, function(err, data){
         if (err){
             callback(err);
         }else {
@@ -447,7 +424,7 @@ exports.search = function(reqData, callback){
     if(reqData.Data.salary_max){
         Data["salary.1"] = {$lte:reqData.Data.salary_max};
     }
-    resumeModel.find(Data,
+    profileModel.find(Data,
         // {
         // 	companyname:{$regex:Data.companyname},
         // 	offername:{$regex:Data.offername},
@@ -476,7 +453,7 @@ exports.search = function(reqData, callback){
 
 exports.findByOfferId = function(reqData, callback){
     var Data = reqData.Data;
-    resumeModel.find({'deliverer._id':Data}, {
+    profileModel.find({'deliverer._id':Data}, {
         '_id':1,
         'realname':1,
         'deliverer.$':1,
@@ -491,7 +468,7 @@ exports.findByOfferId = function(reqData, callback){
 
 exports.findDefaultOne = function(reqData, callback){
     var Data = reqData.Data;
-    resumeModel.findOne({
+    profileModel.findOne({
         owner:Data.owner,
         isDefault:true,
     }, function(err, data){
@@ -505,7 +482,7 @@ exports.findDefaultOne = function(reqData, callback){
 
 exports.findByCondition = function(reqData, callback){
     var Data = reqData.Data;
-    resumeModel.find(Data, {
+    profileModel.find(Data, {
         deliverer:0,
     }, function(err, data){
         if(err){

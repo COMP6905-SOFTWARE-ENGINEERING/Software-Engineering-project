@@ -10,6 +10,7 @@ var session = require('express-session');
 var indexRouter = require('./routes/index');
 var loginRouter = require('./routes/login');
 var registerRouter = require('./routes/register');
+var userRouter = require('./routes/user');
 
 var app = express();
 
@@ -37,6 +38,7 @@ app.use(session({
 app.use('/index', indexRouter);
 app.use('/login', loginRouter);
 app.use('/register', registerRouter);
+app.use('/user', userRouter);
 app.get('/', function(req, res) {
     res.redirect('/index');
  });
