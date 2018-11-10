@@ -19,8 +19,8 @@ router.post('/',function(req, res){
 	accMgmtModel.register(registerData, function(status){
 		if (status == 'ok'){
             req.session.user = {
-                username: registerData.username,
-                usertype: registerData.usertype
+                firstname: registerData.firstname,
+                usertype: 'student'
             };
             res.json({status:status, flag:1});
 		}else if (status.code == 11000){
