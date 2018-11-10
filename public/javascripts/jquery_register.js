@@ -3,8 +3,8 @@ $(document).ready(function(){
 	$(".redirect_login_button").click(function(){
 		window.location.href = "/login";
 	});
-	$("#register_username").blur(function(){
-		var username = this.value;
+	$("#register_firstname").blur(function(){
+		var firstname = this.value;
 
 	});
 	$("#register_password_confirm").blur(function(){
@@ -23,17 +23,17 @@ $(document).ready(function(){
 	});
 	$(".register_button").click(function(){
 		$(".help_block_error").text('');
-		var username = document.getElementById('firstname').value;
-		if (username.length == 0){
-			$(".error_username").text('用户名不能为空');
+		var firstname = document.getElementById('firstname').value;
+		if (firstname.length == 0){
+			$(".error_firstname").text('用户名不能为空');
 			return;
-		}else if (username.search(/\s/g) != -1){
-			$(".error_username").text('用户名不能有空格');
+		}else if (firstname.search(/\s/g) != -1){
+			$(".error_firstname").text('用户名不能有空格');
 			return;
 		}
-        var realname = document.getElementById('lastname').value;
-        if (realname.replace(/(^\s*)|(\s*$)/g, "").length == 0){
-            $(".error_realname").text('姓名不能为空');
+        var lastname = document.getElementById('lastname').value;
+        if (lastname.replace(/(^\s*)|(\s*$)/g, "").length == 0){
+            $(".error_lastname").text('姓名不能为空');
             return;
         }
 		var password = document.getElementById('password').value;
@@ -65,8 +65,8 @@ $(document).ready(function(){
 			return;
 		}
         var postData = {
-            username: username,
-            realname: realname,
+            firstname: firstname,
+            lastname: lastname,
             password: password,
             email: email
         };
@@ -74,8 +74,8 @@ $(document).ready(function(){
 		$.post(postUrl, postData, function(data, status){
 			if (status == 'success'){
 				if (data.flag == 0){
-                    if (data.errKey == 'username'){
-                        $(".error_username").text(data.status);
+                    if (data.errKey == 'firstname'){
+                        $(".error_firstname").text(data.status);
                     }else if (data.errKey == 'email'){
                         $(".error_email").text(data.status);
                     }else if (data.errKey == 'IDnumber'){

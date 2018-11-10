@@ -3,13 +3,19 @@ var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 var studentSchema = new Schema({
-	username:{
+	firstname:{
 		type:String,
 		unique:true,
 		select:true,
 		required:[true, '用户名不能为空'],
 		match:[/^[a-zA-Z](\w)*$/, '用户名须以字母开始，且只能包含字母数字下划线']
 	},
+    lastname:{
+        type:String,
+        unique:true,
+        required:[true,'姓名不能为空'],
+        trim:true,
+    },
 	password:{
 		type:String,
 		required:[true, '密码不能为空'],
@@ -21,12 +27,6 @@ var studentSchema = new Schema({
 		required:[true, '邮箱不能为空'],
 		trim:true,
 		match:[/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(.[a-zA-Z0-9_-]+)+$/, '请输入正确的邮箱']
-	},
-	realname:{
-		type:String,
-		unique:true,
-		required:[true,'姓名不能为空'],
-		trim:true,
 	},
 	sex:{
 		type:String,
@@ -75,7 +75,7 @@ exports.studentRegister = function(reqData, callback){
 			callback('ok');
 		}
 	});
-}
+};
 
 exports.studentCfmEmail = function(reqData, callback){
 	studentModel.findOne({username:reqData.username}, function(err, data){

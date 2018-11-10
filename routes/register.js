@@ -1,10 +1,10 @@
 var express = require('express');
 var crypto = require('crypto');
 var router = express.Router();
-// var accMgmtModel = require('../models/account_db.js');
+var accMgmtModel = require('../models/account_db.js');
 
 router.get('/', function(req, res, next) {
-	res.render('signup', {title: 'register page'});
+	res.render('register', {title: 'register page'});
 });
 
 router.post('/',function(req, res){
@@ -18,15 +18,11 @@ router.post('/',function(req, res){
     };
 	accMgmtModel.register(registerData, function(status){
 		if (status == 'ok'){
-			if (registerData.usertype == 'person'){
-				req.session.user = {
-					username: registerData.username,
-					usertype: registerData.usertype
-				};
-				res.json({status:status, flag:1});
-			}else{
-				res.json({status:status, flag:3});
-			}
+            req.session.user = {
+                username: registerData.username,
+                usertype: registerData.usertype
+            };
+            res.json({status:status, flag:1});
 		}else if (status.code == 11000){
 			if (registerData.usertype == 'student'){
 				if (status.errmsg.indexOf('username') > 0){
