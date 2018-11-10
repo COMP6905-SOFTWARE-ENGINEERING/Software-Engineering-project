@@ -11,7 +11,7 @@ $(document).ready(function(){
 		var password = document.getElementById('register_password').value;
 		var confirmPassword = this.value;
 		if (password != confirmPassword){
-			$(".error_password_confirm").text('两次输入的密码不相同');
+			$(".error_password_confirm").text('Password and Password Confirmation must be the same');
 			$(".help_block_error").not(".error_password_confirm").text('');
 			isPswConfirm = false;
 		}else{
@@ -25,43 +25,43 @@ $(document).ready(function(){
 		$(".help_block_error").text('');
 		var firstname = document.getElementById('firstname').value;
 		if (firstname.length == 0){
-			$(".error_firstname").text('用户名不能为空');
+			$(".error_firstname").text('First Name is a required field');
 			return;
 		}else if (firstname.search(/\s/g) != -1){
-			$(".error_firstname").text('用户名不能有空格');
+			$(".error_firstname").text('Please enter a valid name');
 			return;
 		}
         var lastname = document.getElementById('lastname').value;
         if (lastname.replace(/(^\s*)|(\s*$)/g, "").length == 0){
-            $(".error_lastname").text('姓名不能为空');
+            $(".error_lastname").text('Last Name is a required field');
             return;
         }
 		var password = document.getElementById('password').value;
 		if (password.length == 0){
-			$(".error_password").text('密码不能为空');
+			$(".error_password").text('Password is a required field');
 			return;
 		}else if (password.search(/\s/g) != -1){
-			$(".error_password").text('密码不能有空格');
+			$(".error_password").text('Please enter a valid password');
 			return;
 		}
 		var confirmPassword = document.getElementById('password_confirm').value;
 		if (confirmPassword.length == 0){
-			$(".error_password_confirm").text('确认密码不能为空');
+			$(".error_password_confirm").text('Confirm Password is a required field');
 			return;
 		}else if (confirmPassword.search(/\s/g) != -1){
-			$(".error_password_confirm").text('确认密码不能有空格');
+			$(".error_password_confirm").text('Please enter a valid password');
 			return;
 		}
 		if(password != confirmPassword){
-			$(".error_password_confirm").text('两次输入的密码不相同');
+			$(".error_password_confirm").text('Password and Password Confirmation must be the same');
 			return;
 		}
 		var email = document.getElementById('email').value;
 		if (email.length == 0){
-			$(".error_email").text('邮箱不能为空');
+			$(".error_email").text('Email is a required field');
 			return;
 		}else if (email.search(/\s/g) != -1){
-			$(".error_email").text('邮箱不能有空格');
+			$(".error_email").text('Please enter a valid email address');
 			return;
 		}
         var postData = {
@@ -78,16 +78,12 @@ $(document).ready(function(){
                         $(".error_firstname").text(data.status);
                     }else if (data.errKey == 'email'){
                         $(".error_email").text(data.status);
-                    }else if (data.errKey == 'IDnumber'){
-                        $(".error_IDnumber").text(data.status);
                     }
 				}else if (data.flag == 1){
 					alert('注册成功，即将跳转到主页');
-					window.location.href = "/index";
-				}else if (data.flag == 3){
-					alert('注册成功，请等待管理员审核');
-					window.location.href = "/login";
-				}else{
+					window.location.href = "/main";
+				}
+				else{
 					for (var errPath in data.status.errors){
 						$(".error_"+errPath).text(data.status.errors[errPath].message);
 					}
