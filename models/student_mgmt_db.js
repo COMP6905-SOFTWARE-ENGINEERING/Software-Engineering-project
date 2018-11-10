@@ -5,28 +5,26 @@ var Schema = mongoose.Schema;
 var studentSchema = new Schema({
 	firstname:{
 		type:String,
-		unique:true,
 		select:true,
-		required:[true, '用户名不能为空'],
+		required:[true, 'firstname cannot be empty'],
 		match:[/^[a-zA-Z](\w)*$/, '用户名须以字母开始，且只能包含字母数字下划线']
 	},
     lastname:{
         type:String,
-        unique:true,
-        required:[true,'姓名不能为空'],
+        required:[true,'lastname cannot be empty'],
         trim:true,
     },
 	password:{
 		type:String,
-		required:[true, '密码不能为空'],
+		required:[true, 'password cannot be empty'],
 		match:[/^(\S)*$/, '密码不能包含空格'],
 	},
 	email:{
 		type:String,
 		unique:true,
-		required:[true, '邮箱不能为空'],
+		required:[true, 'email cannot be empty'],
 		trim:true,
-		match:[/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(.[a-zA-Z0-9_-]+)+$/, '请输入正确的邮箱']
+		match:[/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(.[a-zA-Z0-9_-]+)+$/, 'please enter a valid email']
 	},
 	sex:{
 		type:String,
@@ -43,7 +41,7 @@ var studentSchema = new Schema({
 	},
 });
 
-studentSchema.index({username:1});
+studentSchema.index({email:1});
 var studentModel = mongoose.model('students', studentSchema);
 
 exports.studentLogin = function(reqData, callback){

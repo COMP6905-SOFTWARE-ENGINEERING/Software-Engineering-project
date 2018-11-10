@@ -80,8 +80,8 @@ $(document).ready(function(){
                         $(".error_email").text(data.status);
                     }
 				}else if (data.flag == 1){
-					alert('注册成功，即将跳转到主页');
-					window.location.href = "/main";
+					alert('register succeed, go to index page');
+					window.location.href = "/index";
 				}
 				else{
 					for (var errPath in data.status.errors){

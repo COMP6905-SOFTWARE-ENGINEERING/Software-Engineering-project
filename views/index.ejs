@@ -19,25 +19,24 @@
         <input type="hidden" class="hidden_usertype" value="<%= userdata.usertype %>" disabled="disabled">
         <div class="toggle_box" style="display:none;">
             <% if(userdata.usertype != 'admin'){ %>
-            <div class="toggle_block modinfo_area admin_need_hide">修改信息</div>
-            <div class="toggle_block chgpwd_area admin_need_hide">修改密码</div>
+            <div class="toggle_block modinfo_area admin_need_hide">change info</div>
+            <div class="toggle_block chgpwd_area admin_need_hide">change password</div>
             <% } %>
-            <div class="toggle_block logout_area">退出登录</div>
+            <div class="toggle_block logout_area">logout</div>
         </div>
     </div>
 </div>
 <div class="nav_bar">
     <div class="nav_bar_blank"></div>
-    <% if (userdata.usertype == 'person'){ %>
-    <div class="nav_bar_select redirect_resume_button">简历管理</div>
-    <div class="nav_bar_select redirect_jobsearch_button">职位搜索</div>
-    <div class="nav_bar_select redirect_apprecord_button">申请记录</div>
+    <% if (userdata.usertype == 'student'){ %>
+    <div class="nav_bar_select redirect_resume_button">manage profile</div>
+    <div class="nav_bar_select redirect_jobsearch_button">search project</div>
     <div class="nav_bar_slide_box">
         <div class="nav_bar_select nav_bar_slide_select redirect_my_apprecord_button">我的申请</div>
         <div class="nav_bar_select nav_bar_slide_select redirect_rcv_apprecord_button">收到的申请</div>
     </div>
-    <% }else if (userdata.usertype == 'company') { %>
-    <div class="nav_bar_select redirect_jobmgmt_button">职位管理</div>
+    <% }else if (userdata.usertype == 'manager') { %>
+    <div class="nav_bar_select redirect_jobmgmt_button">mange project</div>
     <div class="nav_bar_select redirect_appmgmt_button">应聘管理</div>
     <div class="nav_bar_slide_box">
         <div class="nav_bar_select nav_bar_slide_select redirect_my_appmgmt_button">我的投递</div>
@@ -50,7 +49,7 @@
         <div class="nav_bar_select nav_bar_slide_select redirect_offer_infocheck_button admin_infocheck">职位审核</div>
         <div class="nav_bar_select nav_bar_slide_select redirect_reg_infocheck_button admin_infocheck">注册审核</div>
     </div>
-    <div class="nav_bar_select redirect_search_button">检索</div>
+    <div class="nav_bar_select redirect_search_button">search</div>
     <div class="nav_bar_slide_box">
         <div class="nav_bar_select nav_bar_slide_select redirect_offer_search_button admin_search">职位搜索</div>
         <div class="nav_bar_select nav_bar_slide_select redirect_resume_search_button admin_search">简历搜索</div>
@@ -60,6 +59,6 @@
 <div class="body">
     <div class="body_msg"><%= userdata.username %>，welcome to GradRec system!</div>
 </div>
-<div class="footer">developed by cqh&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<div class="footer">developed by ian&nbsp;&nbsp;&nbsp;&nbsp;</div>
 </body>
 </html>
