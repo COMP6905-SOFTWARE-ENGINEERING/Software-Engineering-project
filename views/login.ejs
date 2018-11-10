@@ -16,37 +16,6 @@
         
     </head>
     <body>
-        <div class="nav_bar">
-            <div class="nav_bar_blank"></div>
-            <% if (userdata.usertype == 'student'){ %>
-            <div class="nav_bar_select redirect_resume_button">manage profile</div>
-            <div class="nav_bar_select redirect_jobsearch_button">search project</div>
-            <div class="nav_bar_select redirect_apprecord_button">????</div>
-            <div class="nav_bar_slide_box">
-                <div class="nav_bar_select nav_bar_slide_select redirect_my_apprecord_button">????</div>
-                <div class="nav_bar_select nav_bar_slide_select redirect_rcv_apprecord_button">?????</div>
-            </div>
-            <% }else if (userdata.usertype == 'manager') { %>
-            <div class="nav_bar_select redirect_jobmgmt_button">manage project</div>
-            <div class="nav_bar_select redirect_appmgmt_button">start match</div>
-            <div class="nav_bar_slide_box">
-                <div class="nav_bar_select nav_bar_slide_select redirect_my_appmgmt_button">????</div>
-                <div class="nav_bar_select nav_bar_slide_select redirect_rcv_appmgmt_button">?????</div>
-            </div>
-            <div class="nav_bar_select redirect_peoplesearch_button">????</div>
-            <% }else { %>
-            <div class="nav_bar_select redirect_infocheck_button">????</div>
-            <div class="nav_bar_slide_box">
-                <div class="nav_bar_select nav_bar_slide_select redirect_offer_infocheck_button admin_infocheck">????</div>
-                <div class="nav_bar_select nav_bar_slide_select redirect_reg_infocheck_button admin_infocheck">????</div>
-            </div>
-            <div class="nav_bar_select redirect_search_button">??</div>
-            <div class="nav_bar_slide_box">
-                <div class="nav_bar_select nav_bar_slide_select redirect_offer_search_button admin_search">????</div>
-                <div class="nav_bar_select nav_bar_slide_select redirect_resume_search_button admin_search">????</div>
-            </div>
-            <% } %>
-        </div>
         <center>
 <img src="munCOA.png" alt="MUN COA" height="150">
 <h1 style="color:white">Graduate Recruitment System</h1></center>

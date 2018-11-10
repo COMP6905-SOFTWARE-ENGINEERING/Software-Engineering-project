@@ -7,6 +7,8 @@ var mongoose = require('mongoose');
 var session = require('express-session');
 
 
+var indexRouter = require('./routes/index');
+var loginRouter = require('./routes/login');
 var registerRouter = require('./routes/register');
 
 var app = express();
@@ -25,10 +27,18 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser('mycookie'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/register', registerRouter);
+// app.use('/', indexRouter);
+app.use(session({
+    secret: 'mycookie',
+    resave: false,
+    saveUninitialized: false
+}));
 
+app.use('/index', indexRouter);
+app.use('/login', loginRouter);
+app.use('/register', registerRouter);
 app.get('/', function(req, res) {
-res.sendFile(path.join(__dirname + '/index.html'));
+    res.redirect('/index');
  });
 //app.get('/signup',function(req,res){
 //  res.sendFile(path.join(__dirname+'/signup.html'));
