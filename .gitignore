@@ -1,2 +1,7 @@
+# generate files and paths by eclipse
+.DS_Store
+.project
+.settings/
 
 node_modules/
+
