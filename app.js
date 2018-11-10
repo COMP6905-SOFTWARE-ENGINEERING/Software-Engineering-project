@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
+var session = require('express-session');
 
 
 var signupRouter = require('./routes/signup');
@@ -35,4 +36,6 @@ res.sendFile(path.join(__dirname + '/index.html'));
  // start the server
  app.listen(3334);
  console.log('3334 is the magic port!');
-console.log(__dirname + '/index.html');
+// console.log(__dirname + '/index.html');
+
+module.exports = app;
