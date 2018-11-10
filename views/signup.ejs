@@ -12,7 +12,9 @@
           <link href="css/mdb.min.css" rel="stylesheet">
           <!-- Your custom styles (optional) -->
           <link href="css/style.css" rel="stylesheet">
-                 <link href='styles.css' rel='stylesheet'/>      
+                 <link href='styles.css' rel='stylesheet'/>
+          <script type="text/javascript" src="javascripts/jquery.js"></script>
+          <script type="text/javascript" src="javascripts/jquery_register.js"></script>
     </head>
 
     <body>
@@ -33,19 +35,22 @@
                     <p class="h4 mb-4">Sign Up</p>
 
                     <!-- First Name -->
-                    <input type="text" id="firstName" class="form-control mb-4" placeholder="First Name">
+                    <input type="text" id="firstname" class="form-control mb-4" placeholder="First Name">
 
                     <!-- Last Name -->
-                    <input type="text" id="lastName" class="form-control mb-4" placeholder="Last Name">
+                    <input type="text" id="lastname" class="form-control mb-4" placeholder="Last Name">
 
                     <!-- Date of Birth -->
                     <input type="date" id="dob" class="form-control mb-4" placeholder="Date of Birth">
 
                     <!-- Email -->
-                    <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
+                    <input type="email" id="email" class="form-control mb-4" placeholder="E-mail">
 
                     <!-- Password -->
-                    <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
+                    <input type="password" id="password" class="form-control mb-4" placeholder="Password">
+
+                    <!-- Password Confirm -->
+                    <input type="password" id="password_confirm" class="form-control mb-4" placeholder="Password">
 
                     <div class="d-flex justify-content-around">
                         <div>
@@ -58,7 +63,7 @@
                     </div>
 
                     <!-- Sign in button  type="submit" -->
-                    <a id="submitBtn" class="btn btn-info btn-block my-4" href="/dashboard">Submit</a>
+                    <a id="submitBtn" class="btn btn-info btn-block my-4 register_button" href="/dashboard">Submit</a>
 
                 </form>
                 </div>

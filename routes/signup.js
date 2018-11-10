@@ -10,27 +10,12 @@ router.get('/', function(req, res, next) {
 router.post('/',function(req, res){
 	var md5 = crypto.createHash('md5');
 	var password = md5.update(req.body.password).digest('hex');
-	if(req.body.usertype == 'person'){
-		var registerData = {
-			username: req.body.username,
-			password: password,
-			email: req.body.email,
-			realname: req.body.realname,
-			IDnumber: req.body.IDnumber,
-			usertype: req.body.usertype
-		};
-	}else{
-		var registerData = {
-			username: req.body.username,
-			password: password,
-			email: req.body.email,
-			companyname: req.body.companyname,
-			companytype: req.body.companytype,
-			address: req.body.address,
-			representative: req.body.representative,
-			usertype: req.body.usertype
-		};
-	}
+    var registerData = {
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        password: password,
+        email: req.body.email
+    };
 	accMgmtModel.register(registerData, function(status){
 		if (status == 'ok'){
 			if (registerData.usertype == 'person'){
@@ -43,7 +28,7 @@ router.post('/',function(req, res){
 				res.json({status:status, flag:3});
 			}
 		}else if (status.code == 11000){
-			if (registerData.usertype == 'person'){
+			if (registerData.usertype == 'student'){
 				if (status.errmsg.indexOf('username') > 0){
 					res.json({status:'用户名已存在', flag:0, errKey: 'username'});
 				}else if (status.errmsg.indexOf('email') > 0){

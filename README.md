@@ -17,5 +17,5 @@ We already change our start service command from
  ```
  to
  ```
- $ nodemon www/bin
+ $ nodemon bin/www
  ```
