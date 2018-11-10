@@ -1,12 +1,17 @@
 // load the express package and create our app
 var express = require('express');
-var app = express();
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mongoose = require('mongoose');
 
 
 var signupRouter = require('./routes/signup');
+
+var app = express();
+
+var url = 'mongodb://127.0.0.1:27017/GradRecDB';
+mongoose.connect(url);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
