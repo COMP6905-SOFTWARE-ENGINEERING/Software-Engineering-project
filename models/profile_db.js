@@ -7,87 +7,17 @@ var profileSchema = new Schema({
     owner:{
         type:String,
         index:true,
-        required:[true, '用户名不能为空'],
+        required:[true, 'owner cannot be empty'],
         trim:true,
     },
     isDefault:{
         type:Boolean,
         required:true,
     },
-    profilename:{
+    address:{
         type:String,
-        required:[true, '简历名不能为空'],
-        trim:true,
-        maxlength:[8, '简历名不能超过八个字'],
-        match:[/^[^.]*$/, '简历名不能包含点'],
-    },
-    fullname:{
-        type:String,
-        unique:true,
-    },
-    realname:{
-        type:String,
-        required:[true,'姓名不能为空'],
-        trim:true,
-    },
-    email:{
-        type:String,
-        required:[true, '邮箱不能为空'],
-        trim:true,
-        match:[/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(.[a-zA-Z0-9_-]+)+$/, '请输入正确的邮箱']
-    },
-    sex:{
-        type:String,
-        enum:['male', 'female'],
-    },
-    age:{
-        type:Number,
-        min:[18, '输入年龄过小'],
-        max:[60, '输入年龄过大'],
-        required:[true, '年龄不能为空'],
-    },
-    location:{
-        type:String,
-        required:[true, '请选择所在地'],
+        required:[true, 'please input your address'],
         match:[/^(0[1-9]|[1-9]\d){2}00$/, '请确认所在地无误'],
-    },
-    location_str:{
-        type:String,
-        required:true,
-    },
-    job:{
-        type:String,
-        required:[true, '请选择岗位'],
-        match:[/^(0[1-9]|[1-9]\d){3}$/, '请确认岗位无误'],
-    },
-    job_str:{
-        type:String,
-        required:true,
-    },
-    salary:{
-        type:[Number],
-        required:[true, '请输入期望薪资'],
-        // default: undefined,
-        validate:{
-            validator:function(v){
-                // console.log(v);
-                if(v.length != 2){
-                    return false;
-                }else {
-                    if ((v[0]<=v[1])&&(v[0]>0)){
-                        return true;
-                    }else {
-                        return false;
-                    }
-                }
-            },
-            message:'未输入期望薪资或期望薪资不合法',
-        },
-    },
-    job_type:{
-        type:String,
-        required:[true, '请选择工作类型'],
-        enum:['fulltime', 'parttime', 'intern', 'fullOrPart'],
     },
     experience:{
         type:Number,
@@ -107,21 +37,22 @@ var profileSchema = new Schema({
     },
     research_interest:{
         type:String,
-        required:[true, '期望职位不能为空'],
+        required:[true, 'research interest cannot be empty'],
         trim:true,
         maxlength:[18, '期望职位不能超过十八个字'],
     },
-    pro_courses:{
-        type:String,
-        required:[true, '请输入专业课程'],
+    intended_start_date:{
+        type:Date,
+        required:[true, 'please input intended start date'],
     },
-    pro_ability:{
+    skill:{
         type:String,
-        required:[true, '请输入专业能力'],
+        required:[true, 'please input skills'],
     },
-    rewards_punishments:{
-        type:String,
-        required:[true, '请输入奖惩情况'],
+    need_financial_support:{
+        type:Boolean,
+        required:[true, 'please select if you want financial support'],
+        default:true,
     },
     deliverer:{
         type:[{

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title><%= title %></title>
+    <link href="/stylesheets/index.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="../javascripts/jquery.js"></script>
+    <script type="text/javascript" src="../javascripts/jquery_index.js"></script>
+    <script type="text/javascript" src="../javascripts/jquery_resumelist.js"></script>
+</head>
+<body>
+<div class="header">
+    <div class="big_title"><%= title %></div>
+    <div class="user_area">
+        <div class="username_area"><%= userdata.username %></div>
+        <input type="hidden" class="hidden_username" value="<%= userdata.username %>" disabled="disabled">
+        <input type="hidden" class="hidden_usertype" value="<%= userdata.usertype %>" disabled="disabled">
+        <div class="toggle_box" style="display:none;">
+            <div class="toggle_block modinfo_area admin_need_hide">修改信息</div>
+            <div class="toggle_block chgpwd_area admin_need_hide">修改密码</div>
+            <div class="toggle_block logout_area">退出登录</div>
+        </div>
+    </div>
+</div>
+<div class="body">
+    <div class="prompt_msg">Do not have a profile yet? Hit the button below!</div>
+    <div class="resumelist_box">
+        <button class="list_btn" id="create_resume_button">create
+        </button>
+    </div>
+</div>
+<div class="footer">developed by ian&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</body>
+</html>

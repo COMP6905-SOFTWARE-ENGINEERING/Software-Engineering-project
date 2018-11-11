@@ -3,44 +3,46 @@ var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 var projectSchema = new Schema({
-    projectname:{
+    project_name:{
         type:String,
         unique:true,
         select:true,
-        required:[true, 'projectname cannot be empty'],
+        required:[true, 'project name cannot be empty'],
         match:[/^[a-zA-Z](\w)*$/, '用户名须以字母开始，且只能包含字母数字下划线']
     },
-    projectdescription:{
+    project_description:{
         type:String,
         unique:true,
-        required:[true,'projectdescription cannot be empty'],
+        required:[true,'project description cannot be empty'],
         trim:true,
     },
-    projecttype:{
+    funding:{
         type:Number,
-        required:[true, '请选择公司类型'],
-        min:[1, '请确认类型无误'],
-        max:[5, '请确认类型无误'],
+        required:[true, 'please input funding'],
+        min:[0, '请确认类型无误'],
+        max:[50000, '请确认类型无误'],
     },
-    representative:{
-        type:String,
-        required:[true,'法人不能为空'],
-        trim:true,
+    start_date:{
+        type:Date,
+        required:[true,'start date cannot be empty'],
     },
-    address:{
-        type:String,
-        required:[true,'公司地址不能为空'],
-        trim:true,
-    },
-    isApproved:{
-        type:Boolean,
-        default:false,
-        required:true,
+    application_deadline:{
+        type:Date,
+        required:[true,'application deadline cannot be empty'],
     },
 });
 
-projectSchema.index({username:1});
 var projectModel = mongoose.model('projects', projectSchema);
+
+exports.listByOwner = function(reqData, callback){
+    projectModel.find(reqData, ['_id', 'project_name', 'project_description', 'funding', 'start_date', 'application_deadline'], {sort:{_id: 1}}, function(err, data){
+        if (err){
+            callback(err, null);
+        }else {
+            callback(null, data);
+        }
+    });
+};
 
 exports.projectLogin = function(reqData, callback){
     projectModel.findOne({username:reqData.username, isApproved:true}, function(err, data){

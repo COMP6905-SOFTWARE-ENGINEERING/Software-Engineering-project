@@ -53,10 +53,10 @@ $(document).ready(function(){
 		window.location.href = '/index';
 	});
 	$(".redirect_profile_button").click(function(){
-		window.location.href = '/user/resumelist';
+		window.location.href = '/user/profileview';
 	});
-	$(".redirect_jobmgmt_button").click(function(){
-		window.location.href = '/company/offerlist';
+	$(".redirect_projectmgmt_button").click(function(){
+		window.location.href = '/project/projectlist';
 	});
 	$(".redirect_jobsearch_button").click(function(){
 		window.location.href = '/common/offer_search';

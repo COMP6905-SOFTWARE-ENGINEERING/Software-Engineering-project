@@ -6,17 +6,32 @@ var profileModel = require('../models/profile_db.js');
 var userModel = require('../models/user_mgmt_db.js');
 
 
+router.get('/profileview', function(req, res){
+    if(req.session.user && req.session.user.usertype == 'student'){
+        profileModel.listByOwner({owner: req.session.user.username}, function(err, data){
+            if (err){
+                res.json(err);
+            }else {
+                res.render('profile_view', {
+                    title: 'manage profile',
+                    userdata: req.session.user,
+                    maxpage: parseInt((data.length-1)/10)+1,
+                });
+            }
+        });
+    }else {
+        res.redirect('/login');
+    }
+});
+
 router.get('/edit_profile', function(req, res){
     if(req.session.user && req.session.user.usertype == 'student'){
-        userModel.personAccInfo({username:req.session.user.username}, function(err, data){
+        userModel.userAccInfo({username:req.session.user.username}, function(err, data){
             if (err == 'ok'){
                 var profileData = {
                     realname: data.realname,
-                    email: data.email,
-                    sex: data.sex,
-                    age: data.age,
-                }
-                res.render('profile', {
+                };
+                res.render('profile_edit', {
                     title:'Edit Profile',
                     userdata: req.session.user,
                     profileData: profileData,

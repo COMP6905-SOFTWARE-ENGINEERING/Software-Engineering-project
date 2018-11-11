@@ -147,6 +147,15 @@ a:hover {
 	margin-right: auto;
 	text-align: center;
 }
+.prompt_msg {
+	width: 80%;
+	font-size: 40px;
+	line-height: 100px;
+	color: grey;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
 .footer {
 	height: 48px;
 	background-color: rgb(69,90,100);
