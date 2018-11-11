@@ -9,7 +9,7 @@
     <link href="/stylesheets/index.css" type="text/css" rel="stylesheet">
     <script type="text/javascript" src="../javascripts/jquery.js"></script>
     <script type="text/javascript" src="../javascripts/jquery_index.js"></script>
-    <script type="text/javascript" src="../javascripts/jquery_resume.js"></script>
+    <script type="text/javascript" src="../javascripts/jquery_profile.js"></script>
 </head>
 <body>
 <div class="header">
@@ -27,7 +27,7 @@
 </div>
 <div class="nav_bar">
     <div class="nav_bar_blank"></div>
-    <div class="nav_bar_select redirect_resume_button" style="border:0; border-bottom:2px solid white; color:white;">简历管理</div>
+    <div class="nav_bar_select redirect_profile_button" style="border:0; border-bottom:2px solid white; color:white;">简历管理</div>
     <div class="nav_bar_select redirect_jobsearch_button">job search</div>
     <div class="nav_bar_select redirect_apprecord_button">apply record</div>
     <div class="nav_bar_slide_box">
@@ -36,36 +36,36 @@
     </div>
 </div>
 <div class="body">
-    <div class="resume_box">
+    <div class="profile_box">
         <div class="input_line">
             <div class="input_box">
                 <div class="input_text"><span style="color: black">name</span><span style="color: red">*</span></div>
-                <input type="text" id="resume_realname" class="resume input" name="realname" value="<%= resumeData.realname %>" disabled="disabled">
+                <input type="text" id="profile_realname" class="profile input" name="realname" value="<%= profileData.realname %>" disabled="disabled">
                 <div class="help_block_error error_realname">&nbsp;</div>
             </div>
             <div class="input_box">
                 <div class="input_text"><span style="color: black">email</span><span style="color: red">*</span></div>
-                <input type="text" id="resume_email" class="resume input" name="email" value="<%= resumeData.email %>">
+                <input type="text" id="profile_email" class="profile input" name="email" value="<%= profileData.email %>">
                 <div class="help_block_error error_email">&nbsp;</div>
             </div>
         </div>
         <div class="input_line">
             <div class="input_box">
                 <div class="input_text"><span style="color: black">sex</span><span style="color: red">*</span></div>
-                <select class="resume select select_sex">
+                <select class="profile select select_sex">
                     <option value="male">男</option>
-                    <option value="female" <% if (resumeData.sex == 'female'){%> selected="selected" <% } %> >女</option>
+                    <option value="female" <% if (profileData.sex == 'female'){%> selected="selected" <% } %> >女</option>
                 </select>
                 <div class="help_block_error error_sex">&nbsp;</div>
             </div>
             <div class="input_box">
                 <div class="input_text"><span style="color: black">age</span><span style="color: red">*</span></div>
-                <input type="text" id="resume_age" class="resume input" name="age" value="<%= resumeData.age %>">
+                <input type="text" id="profile_age" class="profile input" name="age" value="<%= profileData.age %>">
                 <div class="help_block_error error_age">&nbsp;</div>
             </div>
             <div class="input_box">
                 <div class="input_text"><span style="color: black">address</span><span style="color: red">*</span></div>
-                <select class="resume select_half select_province" onchange="provinceChange(this.value)">
+                <select class="profile select_half select_province" onchange="provinceChange(this.value)">
                     <option value=""></option>
                     <option value="110000">北京市</option>
                     <option value="120000">天津市</option>
@@ -102,7 +102,7 @@
                     <option value="810000">香港特别行政区</option>
                     <option value="820000">澳门特别行政区</option>
                 </select>
-                <select class="resume select_half select_city">
+                <select class="profile select_half select_city">
                     <option value selected="selected"></option>
                 </select>
                 <div class="help_block_error error_location">&nbsp;</div>
@@ -111,7 +111,7 @@
         <div class="input_line">
             <div class="input_box">
                 <div class="input_text"><span style="color: black">行业</span><span style="color: red">*</span></div>
-                <select class="resume select select_industry" onchange="industryChange(this.value)">
+                <select class="profile select select_industry" onchange="industryChange(this.value)">
                     <option value selected="selected"></option>
                     <option value="010000">计算机/互联网/通信/电子</option>
                     <option value="020000">销售/客服/技术支持</option>
@@ -131,15 +131,15 @@
         <div class="input_line">
             <div class="input_box">
                 <div class="input_text"><span style="color: black">薪资(k/月)</span><span style="color: red">*</span></div>
-                <input type="text" id="resume_salary_min" class="resume input input_small" name="salary_min"
-                       value="<% if (resumeData.salary){ %> <%= resumeData.salary[0] %> <%}%>" >
+                <input type="text" id="profile_salary_min" class="profile input input_small" name="salary_min"
+                       value="<% if (profileData.salary){ %> <%= profileData.salary[0] %> <%}%>" >
                 <div class="input_text input_text_small"><span style="color: black">~</span></div>
-                <input type="text" id="resume_salary_max" class="resume input input_small" name="salary_max" value="<% if (resumeData.salary){ %> <%= resumeData.salary[1] %> <%}%>">
+                <input type="text" id="profile_salary_max" class="profile input input_small" name="salary_max" value="<% if (profileData.salary){ %> <%= profileData.salary[1] %> <%}%>">
                 <div class="help_block_error error_salary">&nbsp;</div>
             </div>
             <div class="input_box">
                 <div class="input_text"><span style="color: black">工作类型</span><span style="color: red">*</span></div>
-                <select class="resume select select_job_type">
+                <select class="profile select select_job_type">
                     <option value="fulltime">全职</option>
                     <option value="parttime">兼职</option>
                     <option value="intern">实习</option>
@@ -149,14 +149,14 @@
             </div>
             <div class="input_box">
                 <div class="input_text"><span style="color: black">experience(year)</span><span style="color: red">*</span></div>
-                <input type="text" id="resume_experience" class="resume input" name="experience" value="<%= resumeData.experience %>" >
+                <input type="text" id="profile_experience" class="profile input" name="experience" value="<%= profileData.experience %>" >
                 <div class="help_block_error error_experience">&nbsp;</div>
             </div>
         </div>
         <div class="input_line">
             <div class="input_box">
                 <div class="input_text"><span style="color: black">第一外语水平</span><span style="color: red">*</span></div>
-                <select class="resume select_half select_first_forlang">
+                <select class="profile select_half select_first_forlang">
                     <option value="0">无</option>
                     <option value="1">英语</option>
                     <option value="2">日语</option>
@@ -165,7 +165,7 @@
                     <option value="5">朝鲜语</option>
                     <option value="6">其他</option>
                 </select>
-                <select class="resume select_half select_first_proficiency">
+                <select class="profile select_half select_first_proficiency">
                     <option value="1">一般</option>
                     <option value="2">良好</option>
                     <option value="3">熟练</option>
@@ -177,7 +177,7 @@
         <div class="input_line">
             <div class="input_box">
                 <div class="input_text"><span style="color: black">education</span><span style="color: red">*</span></div>
-                <select class="resume select select_education">
+                <select class="profile select select_education">
                     <option value=""></option>
                     <option value="11">博士研究生</option>
                     <option value="12">博士研究生结业</option>
@@ -206,52 +206,52 @@
             </div>
             <div class="input_box">
                 <div class="input_text"><span style="color: black">最高学校</span><span style="color: red">*</span></div>
-                <input type="text" id="resume_school" class="resume input" name="school" value="<%= resumeData.school %>">
+                <input type="text" id="profile_school" class="profile input" name="school" value="<%= profileData.school %>">
                 <div class="help_block_error error_school">&nbsp;</div>
             </div>
             <div class="input_box">
                 <div class="input_text"><span style="color: black">期望职位</span><span style="color: red">*</span></div>
-                <input type="text" id="resume_offername" class="resume input" name="offername" value="<%= resumeData.offername %>">
+                <input type="text" id="profile_offername" class="profile input" name="offername" value="<%= profileData.offername %>">
                 <div class="help_block_error error_offername">&nbsp;</div>
             </div>
         </div>
         <div class="textarea_line">
             <div class="textarea_box">
                 <div class="textarea_text">courses:<a style="color: red; font-size: 14px">*</a><div class="help_block_error error_pro_courses">&nbsp;</div></div>
-                <textarea maxlength="200" id="textarea_pro_courses"><%= resumeData.pro_courses %></textarea>
+                <textarea maxlength="200" id="textarea_pro_courses"><%= profileData.pro_courses %></textarea>
             </div>
             <div class="textarea_box">
                 <div class="textarea_text">skills:<a style="color: red; font-size: 14px">*</a><div class="help_block_error error_pro_ability">&nbsp;</div></div>
-                <textarea maxlength="200" id="textarea_pro_ability"><%= resumeData.pro_ability %></textarea>
+                <textarea maxlength="200" id="textarea_pro_ability"><%= profileData.pro_ability %></textarea>
             </div>
         </div>
         <div class="textarea_line">
             <div class="textarea_box">
                 <div class="textarea_text">summary:<a style="color: red; font-size: 14px">*</a><div class="help_block_error error_self_evaluation">&nbsp;</div></div>
-                <textarea maxlength="200" id="textarea_self_evaluation"><%= resumeData.self_evaluation %></textarea>
+                <textarea maxlength="200" id="textarea_self_evaluation"><%= profileData.self_evaluation %></textarea>
             </div>
             <div class="textarea_box">
                 <div class="textarea_text">Honor and award:<a style="color: red; font-size: 14px">*</a><div class="help_block_error error_jrewards_punishments">&nbsp;</div></div>
-                <textarea maxlength="200" id="textarea_rewards_punishments"><%= resumeData.rewards_punishments %></textarea>
+                <textarea maxlength="200" id="textarea_rewards_punishments"><%= profileData.rewards_punishments %></textarea>
             </div>
         </div>
         <div class="button_line">
-            <div class="index_btn" onclick="resumeModSubmit()">确认</div>
+            <div class="index_btn" onclick="profileModSubmit()">确认</div>
             <div class="index_btn" onclick="backToResumeList()">返回</div>
         </div>
     </div>
 </div>
 <div class="footer">developed by cqh&nbsp;&nbsp;&nbsp;&nbsp;</div>
 <script>
-    $(".select_province").val("<%= resumeData.location %>".slice(0, 2)+"0000");
-    $.post('/index/get_city', {number:"<%= resumeData.location %>".slice(0, 2)+"0000"}, function(data, status){
+    $(".select_province").val("<%= profileData.location %>".slice(0, 2)+"0000");
+    $.post('/index/get_city', {number:"<%= profileData.location %>".slice(0, 2)+"0000"}, function(data, status){
         if (status == 'success'){
             if (data.flag == '1'){
                 var str = '<option value selected="selected"></option>';
                 for (var i in data.status){
                     str += '<option value="' + data.status[i].number + '">' + data.status[i].name + '</option>';
                 }
-                $(".select_city").empty().append(str).val("<%= resumeData.location %>");
+                $(".select_city").empty().append(str).val("<%= profileData.location %>");
             }else {
                 alert(data.status);
             }
@@ -259,23 +259,23 @@
             alert('post failed');
         }
     });
-    $(".select_industry").val("<%= resumeData.job %>".slice(0, 2)+"0000");
-    $.post('/index/get_function', {number:"<%= resumeData.job %>".slice(0, 2)+"0000"}, function(data, status){
+    $(".select_industry").val("<%= profileData.job %>".slice(0, 2)+"0000");
+    $.post('/index/get_function', {number:"<%= profileData.job %>".slice(0, 2)+"0000"}, function(data, status){
         if (status == 'success'){
             if (data.flag == '1'){
                 var str = '<option value selected="selected"></option>';
                 for (var i in data.status){
                     str += '<option value="' + data.status[i].number + '">' + data.status[i].name + '</option>';
                 }
-                $(".select_function").empty().append(str).val("<%= resumeData.job %>".slice(0, 4)+"00");
-                $.post('/index/get_job', {number:"<%= resumeData.job %>".slice(0, 4)+"00"}, function(data, status){
+                $(".select_function").empty().append(str).val("<%= profileData.job %>".slice(0, 4)+"00");
+                $.post('/index/get_job', {number:"<%= profileData.job %>".slice(0, 4)+"00"}, function(data, status){
                     if (status == 'success'){
                         if (data.flag == '1'){
                             var str = '<option value selected="selected"></option>';
                             for (var i in data.status){
                                 str += '<option value="' + data.status[i].number + '">' + data.status[i].name + '</option>';
                             }
-                            $(".select_job").empty().append(str).val("<%= resumeData.job %>");
+                            $(".select_job").empty().append(str).val("<%= profileData.job %>");
                         }else {
                             alert(data.status);
                         }
@@ -290,14 +290,14 @@
             alert('post failed');
         }
     });
-    $(".select_job_type").val("<%= resumeData.job_type %>");
-    $(".select_first_forlang").val(("<%= resumeData.first_forlang %>")?"<%= resumeData.first_forlang %>"[0]:"0");
-    $(".select_first_proficiency").val(("<%= resumeData.first_forlang %>")?"<%= resumeData.first_forlang %>"[1]:"1");
-    $(".select_second_forlang").val(("<%= resumeData.second_forlang %>")?"<%= resumeData.second_forlang %>"[0]:"0");
-    $(".select_second_proficiency").val(("<%= resumeData.second_forlang %>")?"<%= resumeData.second_forlang %>"[1]:"1");
-    $(".select_third_forlang").val(("<%= resumeData.third_forlang %>")?"<%= resumeData.third_forlang %>"[0]:"0");
-    $(".select_third_proficiency").val(("<%= resumeData.third_forlang %>")?"<%= resumeData.third_forlang %>"[1]:"1");
-    $(".select_education").val("<%= resumeData.education %>");
+    $(".select_job_type").val("<%= profileData.job_type %>");
+    $(".select_first_forlang").val(("<%= profileData.first_forlang %>")?"<%= profileData.first_forlang %>"[0]:"0");
+    $(".select_first_proficiency").val(("<%= profileData.first_forlang %>")?"<%= profileData.first_forlang %>"[1]:"1");
+    $(".select_second_forlang").val(("<%= profileData.second_forlang %>")?"<%= profileData.second_forlang %>"[0]:"0");
+    $(".select_second_proficiency").val(("<%= profileData.second_forlang %>")?"<%= profileData.second_forlang %>"[1]:"1");
+    $(".select_third_forlang").val(("<%= profileData.third_forlang %>")?"<%= profileData.third_forlang %>"[0]:"0");
+    $(".select_third_proficiency").val(("<%= profileData.third_forlang %>")?"<%= profileData.third_forlang %>"[1]:"1");
+    $(".select_education").val("<%= profileData.education %>");
 </script>
 </body>
 </html>

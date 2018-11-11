@@ -24,15 +24,15 @@ router.get('/profileview', function(req, res){
     }
 });
 
-router.get('/edit_profile', function(req, res){
+router.get('/create_profile', function(req, res){
     if(req.session.user && req.session.user.usertype == 'student'){
         userModel.userAccInfo({username:req.session.user.username}, function(err, data){
             if (err == 'ok'){
                 var profileData = {
-                    realname: data.realname,
+                    //realname: data.realname,
                 };
                 res.render('profile_edit', {
-                    title:'Edit Profile',
+                    title:'Create Profile',
                     userdata: req.session.user,
                     profileData: profileData,
                 });
@@ -45,8 +45,8 @@ router.get('/edit_profile', function(req, res){
     }
 });
 
-router.post('/edit_profile', function(req, res){
-    if(req.session.user && req.session.user.usertype == 'person'){
+router.post('/create_profile', function(req, res){
+    if(req.session.user && req.session.user.usertype == 'student'){
         profileModel.listByOwner({owner: req.session.user.username}, function(err, data){
             if (err){
                 res.redirect('/404');

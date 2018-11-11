@@ -44,83 +44,24 @@
                 <input type="text" id="project_projectname" class="project input" name="projectname" value="<%= projectData.projectname %>">
                 <div class="help_block_error error_projectname">&nbsp;</div>
             </div>
+        </div>
+
+        <div class="input_line">
             <div class="input_box">
-                <div class="input_text"><span style="color: black">主营行业</span><span style="color: red">*</span></div>
+                <div class="input_text"><span style="color: black">requied skill</span><span style="color: red">*</span></div>
                 <select class="project select select_business">
                     <option value selected="selected"></option>
-                    <option value="010000">计算机/互联网/通信/电子</option>
-                    <option value="020000">销售/客服/技术支持</option>
-                    <option value="030000">会计/金融/银行/保险</option>
-                    <option value="040000">生产/营运/采购/物流</option>
-                    <option value="050000">生物/制药/医疗/护理</option>
-                    <option value="060000">广告/市场/媒体/艺术</option>
-                    <option value="070000">建筑/房地产</option>
-                    <option value="080000">人事/行政/高级管理</option>
-                    <option value="090000">咨询/法律/教育/科研</option>
-                    <option value="100000">服务业</option>
-                    <option value="110000">公务员/翻译/其他</option>
+                    <option value="010000">computer</option>
+                    <option value="020000">accounting</option>
+                    <option value="040000">language</option>
+                    <option value="050000">math</option>
                 </select>
                 <div class="help_block_error error_business">&nbsp;</div>
             </div>
         </div>
         <div class="input_line">
             <div class="input_box">
-                <div class="input_text"><span style="color: black">所在地</span><span style="color: red">*</span></div>
-                <select class="project select_half select_province" onchange="provinceChange(this.value)">
-                    <option value=""></option>
-                    <option value="110000">北京市</option>
-                    <option value="120000">天津市</option>
-                    <option value="130000">河北省</option>
-                    <option value="140000">山西省</option>
-                    <option value="150000">内蒙古自治区</option>
-                    <option value="210000">辽宁省</option>
-                    <option value="220000">吉林省</option>
-                    <option value="230000">黑龙江省</option>
-                    <option value="310000">上海市</option>
-                    <option value="320000">江苏省</option>
-                    <option value="330000">浙江省</option>
-                    <option value="340000">安徽省</option>
-                    <option value="350000">福建省</option>
-                    <option value="360000">江西省</option>
-                    <option value="370000">山东省</option>
-                    <option value="410000">河南省</option>
-                    <option value="420000">湖北省</option>
-                    <option value="430000">湖南省</option>
-                    <option value="440000">广东省</option>
-                    <option value="450000">广西壮族自治区</option>
-                    <option value="460000">海南省</option>
-                    <option value="500000">重庆市</option>
-                    <option value="510000">四川省</option>
-                    <option value="520000">贵州省</option>
-                    <option value="530000">云南省</option>
-                    <option value="540000">西藏自治区</option>
-                    <option value="610000">陕西省</option>
-                    <option value="620000">甘肃省</option>
-                    <option value="630000">青海省</option>
-                    <option value="640000">宁夏回族自治区</option>
-                    <option value="650000">新疆维吾尔自治区</option>
-                    <option value="710000">台湾省</option>
-                    <option value="810000">香港特别行政区</option>
-                    <option value="820000">澳门特别行政区</option>
-                </select>
-                <select class="project select_half select_city">
-                    <option value selected="selected"></option>
-                </select>
-                <div class="help_block_error error_location">&nbsp;</div>
-            </div>
-        </div>
-        <div class="input_line">
-            <div class="input_box">
-                <div class="input_text"><span style="color: black">职能</span><span style="color: red">*</span></div>
-                <select class="project select select_function" onchange="functionChange(this.value)">
-                    <option value selected="selected"></option>
-                </select>
-                <div class="help_block_error error_function">&nbsp;</div>
-            </div>
-        </div>
-        <div class="input_line">
-            <div class="input_box">
-                <div class="input_text"><span style="color: black">薪资(k/月)</span><span style="color: red">*</span></div>
+                <div class="input_text"><span style="color: black">funding</span><span style="color: red">*</span></div>
                 <input type="text" id="project_salary_min" class="project input input_small" name="salary_min"
                        value="<% if (projectData.salary){ %> <%= projectData.salary[0] %> <%}%>" >
                 <div class="input_text input_text_small"><span style="color: black">~</span></div>
@@ -130,24 +71,29 @@
         </div>
         <div class="input_line">
             <div class="input_box">
-                <div class="input_text"><span style="color: black">需求人数</span><span style="color: red">*</span></div>
+                <div class="input_text"><span style="color: black">start date</span><span style="color: red">*</span></div>
                 <input type="text" id="project_need_number" class="project input" name="experience" value="<%= projectData.need_number %>" >
                 <div class="help_block_error error_need_number">&nbsp;</div>
             </div>
         </div>
+        <div class="input_line">
+            <div class="input_box">
+                <div class="input_text"><span style="color: black">application deadline</span><span style="color: red">*</span></div>
+                <select class="project select select_function" onchange="functionChange(this.value)">
+                    <option value selected="selected"></option>
+                </select>
+                <div class="help_block_error error_function">&nbsp;</div>
+            </div>
+        </div>
         <div class="textarea_line">
             <div class="textarea_box">
-                <div class="textarea_text">公司简介(200字内):<a style="color: red;font-size: 14px">*</a><div class="help_block_error error_company_description">&nbsp;</div></div>
+                <div class="textarea_text">project description:<a style="color: red;font-size: 14px">*</a><div class="help_block_error error_company_description">&nbsp;</div></div>
                 <textarea maxlength="200" id="textarea_company_description"><%= projectData.company_description %></textarea>
-            </div>
-            <div class="textarea_box">
-                <div class="textarea_text">职位简介(200字内):<a style="color: red; font-size: 14px">*</a><div class="help_block_error error_job_description">&nbsp;</div></div>
-                <textarea maxlength="200" id="textarea_job_description"><%= projectData.job_description %></textarea>
             </div>
         </div>
         <div class="button_line">
             <div class="index_btn" onclick="projectModSubmit()">确认</div>
-            <div class="index_btn" onclick="backToOfferList()">返回</div>
+            <div class="index_btn" onclick="backToProjectList()">返回</div>
         </div>
     </div>
 </div>

@@ -1,5 +1,5 @@
-function backToOfferList(){
-	window.location.href = "/company/offerlist";
+function backToProjectList(){
+	window.location.href = "/project/projectlist";
 };
 function offerModSubmit(){
 	$(".help_block_error").text(" ").attr("title", '');

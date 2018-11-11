@@ -53,7 +53,7 @@ $(document).ready(function(){
 		window.location.href = "/person/modify_profile?_id="+$(this).parent().siblings(".hidden_profileId").val();
 	});
 	$(".list_btn").click(function(){
-		window.location.href = "/person/create_profile";
+		window.location.href = "/user/create_profile";
 	});
 });
 
