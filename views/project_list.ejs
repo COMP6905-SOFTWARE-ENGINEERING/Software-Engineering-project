@@ -40,18 +40,18 @@
     <% }else if (userdata.usertype == 'admin') {%>
     <div class="nav_bar_select redirect_infocheck_button" style="border:0; border-bottom:2px solid white; color:white;">信息审核</div>
     <div class="nav_bar_slide_box">
-        <div class="nav_bar_select nav_bar_slide_select redirect_offer_infocheck_button admin_infocheck">职位审核</div>
+        <div class="nav_bar_select nav_bar_slide_select redirect_project_infocheck_button admin_infocheck">职位审核</div>
         <div class="nav_bar_select nav_bar_slide_select redirect_reg_infocheck_button admin_infocheck">注册审核</div>
     </div>
     <div class="nav_bar_select redirect_search_button">检索</div>
     <div class="nav_bar_slide_box">
-        <div class="nav_bar_select nav_bar_slide_select redirect_offer_search_button admin_search">职位搜索</div>
+        <div class="nav_bar_select nav_bar_slide_select redirect_project_search_button admin_search">职位搜索</div>
         <div class="nav_bar_select nav_bar_slide_select redirect_resume_search_button admin_search">简历搜索</div>
     </div>
     <% } %>
 </div>
 <div class="body">
-    <div class="offerlist_box">
+    <div class="projectlist_box">
         <% if (userdata.usertype == 'manager') {%>
         <ul class="list_title">
             <li class="list_title_column">职位名称</li>
@@ -59,29 +59,29 @@
             <li class="list_title_column" title="只有通过审核的职位信息才会被应聘者看到">是否通过</li>
             <li class="list_title_column">职位操作</li>
         </ul>
-        <% for (var i in offerList){ %>
+        <% for (var i in projectList){ %>
         <ul class="list_row">
-            <input type="hidden" class="hidden_offerId" value="<%= offerList[i]._id %>" disabled="disabled">
-            <li class="list_column"><a href="/company/offer_browse?_id=<%= offerList[i]._id %>"><%= offerList[i].offername %></a></li>
-            <li class="list_column"><%= offerList[i].editdate.Format("yyyy-MM-dd hh:mm:ss") %></li>
+            <input type="hidden" class="hidden_projectId" value="<%= projectList[i]._id %>" disabled="disabled">
+            <li class="list_column"><a href="/company/project_browse?_id=<%= projectList[i]._id %>"><%= projectList[i].projectname %></a></li>
+            <li class="list_column"><%= projectList[i].editdate.Format("yyyy-MM-dd hh:mm:ss") %></li>
             <li class="list_column">
-                <% if(offerList[i].isApproved){ %>
+                <% if(projectList[i].isApproved){ %>
                 <button class="select_button approve_status" style="background-color:rgb(0,188,212)">是</button>
                 <% }else { %>
-                <button class="select_button approve_status" style="background-color:#BBBBBB" title="<%= offerList[i].rejected_reason %>">否</button>
+                <button class="select_button approve_status" style="background-color:#BBBBBB" title="<%= projectList[i].rejected_reason %>">否</button>
                 <% } %>
             </li>
             <li class="list_column">
-                <% if(!offerList[i].isApproved){ %>
-                <a class="opt_click modify_offer_btn">修改</a>
+                <% if(!projectList[i].isApproved){ %>
+                <a class="opt_click modify_project_btn">修改</a>
                 <a style="color: black">|</a>
                 <% } %>
-                <a class="opt_click refresh_offer_btn">更新</a>
+                <a class="opt_click refresh_project_btn">更新</a>
                 <a style="color: black">|</a>
-                <a class="opt_click remove_offer_btn">删除</a></li>
+                <a class="opt_click remove_project_btn">删除</a></li>
         </ul>
         <% } %>
-        <button class="list_btn" id="create_offer_button">Create
+        <button class="list_btn" id="create_project_button">Create
         </button>
 
         <% }else if (userdata.usertype == 'admin') {%>
@@ -90,12 +90,12 @@
             <li class="list_title_column">公司名</li>
             <li class="list_title_column">申请时间</li>
         </ul>
-        <% for (var i in offerList){ %>
+        <% for (var i in projectList){ %>
         <ul class="list_row">
-            <input type="hidden" class="hidden_offerId" value="<%= offerList[i]._id %>" disabled="disabled">
-            <li class="list_column"><a href="/admin/offer_browse?_id=<%= offerList[i]._id %>"><%= offerList[i].offername %></a></li>
-            <li class="list_column"><a href="/common/offer_search?companyname=<%= offerList[i].companyname %>"><%= offerList[i].companyname %></a></li>
-            <li class="list_column"><%= offerList[i].editdate.Format("yyyy-MM-dd hh:mm:ss") %></li>
+            <input type="hidden" class="hidden_projectId" value="<%= projectList[i]._id %>" disabled="disabled">
+            <li class="list_column"><a href="/admin/project_browse?_id=<%= projectList[i]._id %>"><%= projectList[i].projectname %></a></li>
+            <li class="list_column"><a href="/common/project_search?companyname=<%= projectList[i].companyname %>"><%= projectList[i].companyname %></a></li>
+            <li class="list_column"><%= projectList[i].editdate.Format("yyyy-MM-dd hh:mm:ss") %></li>
         </ul>
         <% } %>
         <% } %>

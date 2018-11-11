@@ -1,8 +1,8 @@
 $(document).ready(function(){
-	$(".remove_offer_btn").click(function(){
-		var _id = $(this).parent().siblings(".hidden_offerId").val();
+	$(".remove_project_btn").click(function(){
+		var _id = $(this).parent().siblings(".hidden_projectId").val();
 		if(confirm("职位删除后将无法恢复，请确认")){
-			$.post('/company/remove_offer', {
+			$.post('/project/remove_project', {
 				_id: _id,
 			}, function(data, status){
 				if (status == 'success'){
@@ -15,9 +15,9 @@ $(document).ready(function(){
 			});
 		}
 	});
-	$(".refresh_offer_btn").click(function(){
-		var _id = $(this).parent().siblings(".hidden_offerId").val();
-		$.post('/company/refresh_offer', {
+	$(".refresh_project_btn").click(function(){
+		var _id = $(this).parent().siblings(".hidden_projectId").val();
+		$.post('/project/refresh_project', {
 			_id: _id,
 		}, function(data, status){
 			if (status == 'success'){
@@ -29,10 +29,10 @@ $(document).ready(function(){
 			}
 		});
 	});
-	$(".modify_offer_btn").click(function(){
-		window.location.href = "/company/modify_offer?_id="+$(this).parent().siblings(".hidden_offerId").val();
+	$(".modify_project_btn").click(function(){
+		window.location.href = "/project/modify_project?_id="+$(this).parent().siblings(".hidden_projectId").val();
 	});
 	$(".list_btn").click(function(){
-		window.location.href = "/company/create_offer";
+		window.location.href = "/project/create_project";
 	});
 });

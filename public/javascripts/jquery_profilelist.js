@@ -1,8 +1,8 @@
 $(document).ready(function(){
-	$(".remove_resume_btn").click(function(){
-		var _id = $(this).parent().siblings(".hidden_resumeId").val();
+	$(".remove_profile_btn").click(function(){
+		var _id = $(this).parent().siblings(".hidden_profileId").val();
 		if(confirm("简历删除后将无法恢复，请确认")){
-			$.post('/person/remove_resume', {
+			$.post('/person/remove_profile', {
 				_id: _id,
 			}, function(data, status){
 				if (status == 'success'){
@@ -17,7 +17,7 @@ $(document).ready(function(){
 	});
 	$(".default_select").click(function(){
 		if($(this).text() == '否'){
-			var _id = $(this).parent().siblings(".hidden_resumeId").val();
+			var _id = $(this).parent().siblings(".hidden_profileId").val();
 			$(this).css("background-color", "rgb(0,188,212)").text('是');
 			$(this).parent().next().children().css("background-color", "rgb(0,188,212)").text('是');
 			$(".default_select").not(this).css("background-color", "#BBBBBB").text('否');
@@ -34,7 +34,7 @@ $(document).ready(function(){
 
 	$(".public_select").click(function(){
 		if ($(this).parent().prev().children().text() == '是'){
-			var _id = $(this).parent().siblings(".hidden_resumeId").val();
+			var _id = $(this).parent().siblings(".hidden_profileId").val();
 			if($(this).text() == '是'){
 				$(this).css("background-color", "#BBBBBB").text('否');
 			}else {
@@ -49,11 +49,11 @@ $(document).ready(function(){
 			});
 		}
 	});
-	$(".modify_resume_btn").click(function(){
-		window.location.href = "/person/modify_resume?_id="+$(this).parent().siblings(".hidden_resumeId").val();
+	$(".modify_profile_btn").click(function(){
+		window.location.href = "/person/modify_profile?_id="+$(this).parent().siblings(".hidden_profileId").val();
 	});
 	$(".list_btn").click(function(){
-		window.location.href = "/person/create_resume";
+		window.location.href = "/person/create_profile";
 	});
 });
 
