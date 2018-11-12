@@ -15,20 +15,11 @@ var educationSchema = new Schema({
     country: String
 });
 
-var educationModel = mongoose.model('education', educationSchema)
+var educationModel = mongoose.model('education', educationSchema);
 
 
-var educationSchema = new Schema({
-    program_name: String,
-    university_name: String,
-    degree_type:{
-        type:String,
-        default: 'bachelor',
-        enum:['bachelor', 'master', 'doctor']
-    },
-    start_date: Date,
-    end_date: Date,
-    country: String
+var skillSchema = new Schema({
+    skill_name: String
 });
 
-var educationModel = mongoose.model('education', educationSchema)
+var skillModel = mongoose.model('skill', skillSchema);

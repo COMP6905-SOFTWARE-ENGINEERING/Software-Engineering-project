@@ -18,25 +18,26 @@ var projectSchema = new Schema({
         type:String,
         unique:true,
         required:[true,'project description cannot be empty'],
-        trim:true,
+        trim:true
     },
     funding:{
         type:Number,
         required:[true, 'please input funding'],
         min:[0, '请确认类型无误'],
-        max:[50000, '请确认类型无误'],
+        max:[50000, '请确认类型无误']
     },
+    required_skills: [{type:Schema.Types.ObjectId, ref: 'skill'}],
     start_date:{
         type:Date,
-        required:[true,'start date cannot be empty'],
+        required:[true,'start date cannot be empty']
     },
     application_deadline:{
         type:Date,
-        required:[true,'application deadline cannot be empty'],
-    },
+        required:[true,'application deadline cannot be empty']
+    }
 });
 
-var projectModel = mongoose.model('projects', projectSchema);
+var projectModel = mongoose.model('project', projectSchema);
 
 exports.listByOwner = function(reqData, callback){
     projectModel.find(reqData, ['_id', 'project_name', 'project_description', 'funding', 'start_date', 'application_deadline'], {sort:{_id: 1}}, function(err, data){

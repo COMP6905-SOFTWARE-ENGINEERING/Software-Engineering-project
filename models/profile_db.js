@@ -8,10 +8,6 @@ var profileSchema = new Schema({
         type:Schema.Types.ObjectId,
         ref: 'users'
     },
-    isDefault:{
-        type:Boolean,
-        required:true,
-    },
     address:{
         type:String,
         required:[true, 'please input your address'],
@@ -21,17 +17,6 @@ var profileSchema = new Schema({
         type:Number,
         required:[true, '工作经验年数不能为空'],
         min:[0, '工作经验年数不能小于0'],
-    },
-    education:{
-        type:Number,
-        required:[true, '请选择学历'],
-        min:[11, '请确认学历无误'],
-        max:[32, '请确认学历无误'],
-    },
-    school:{
-        type:String,
-        required:[true, '请输入学校'],
-        trim:true,
     },
     research_interest:{
         type:String,
@@ -43,23 +28,13 @@ var profileSchema = new Schema({
         type:Date,
         required:[true, 'please input intended start date'],
     },
-    skill:{
-        type:String,
-        required:[true, 'please input skills'],
-    },
+    education: [{type:Schema.Types.ObjectId, ref: 'education'}],
+    skills: [{type:Schema.Types.ObjectId, ref: 'skill'}],
     need_financial_support:{
         type:Boolean,
         required:[true, 'please select if you want financial support'],
-        default:true,
-    },
-    deliverer:{
-        type:[{
-            _id:{type:String},
-            deliverer_companyname:{type:String},
-            deliverer_offername:{type:String},
-            isCollected:{type:Boolean, default:false},
-        }],
-    },
+        default:true
+    }
 });
 
 // profileSchema.pre('save', function (next) {
@@ -67,7 +42,7 @@ var profileSchema = new Schema({
 // 	next();
 // });
 
-var profileModel = mongoose.model('profiles', profileSchema);
+var profileModel = mongoose.model('profile', profileSchema);
 
 
 exports.listByOwner = function(reqData, callback){
