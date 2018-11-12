@@ -4,11 +4,9 @@ var staticModel = require('./static_db.js');
 
 var Schema = mongoose.Schema;
 var profileSchema = new Schema({
-    owner:{
-        type:String,
-        index:true,
-        required:[true, 'owner cannot be empty'],
-        trim:true,
+    student:{
+        type:Schema.Types.ObjectId,
+        ref: 'users'
     },
     isDefault:{
         type:Boolean,

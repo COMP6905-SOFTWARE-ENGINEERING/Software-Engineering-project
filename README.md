@@ -11,6 +11,24 @@ With both the project definition and the prospective students’ information, th
 Once the student receives the offer, he can accept or decline it on the system. If the user accepts the offer, he will be able to track his performance in the program within the system, this is his grades and the project’s progress.
 
 #  Usage
+
+ **Checkout and Run：**
+
+   > First, you need to install [Mongodb](http://www.mongodb.org/)，and [Nodejs](http://nodejs.org/ "Nodejs") on your computer.
+
+ **1，clone code**
+
+  >  `git clone https://github.com/COMP6905-SOFTWARE-ENGINEERING/Software-Engineering-project.git`
+
+
+ **2，install**
+
+ >  `npm install`
+
+
+ **3，Run app**
+
+
 We already change our start service command from
 ```
  $ node server.js &

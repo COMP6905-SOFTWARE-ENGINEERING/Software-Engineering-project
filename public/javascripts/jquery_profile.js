@@ -1,5 +1,5 @@
-function backToResumeList(){
-	window.location.href = "/person/resumelist";
+function backToProfileList(){
+	window.location.href = "/user/profileview";
 };
 
 function resumeModSubmit(){

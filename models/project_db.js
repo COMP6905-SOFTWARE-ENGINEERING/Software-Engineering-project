@@ -3,6 +3,10 @@ var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 var projectSchema = new Schema({
+    project_manager:{
+        type:Schema.Types.ObjectId,
+        ref: 'users'
+    },
     project_name:{
         type:String,
         unique:true,
