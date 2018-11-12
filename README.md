@@ -38,5 +38,8 @@ We already change our start service command from
  $ nodemon bin/www
  ```
 
+**, Run mongo server**
+
 ### hint: you may want to select eclipse or [WebStorm](https://www.jetbrains.com/webstorm/) to boost your developing efficiency.
+
 
