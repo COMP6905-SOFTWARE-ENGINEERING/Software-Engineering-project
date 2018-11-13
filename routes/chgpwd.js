@@ -40,7 +40,7 @@ router.post('/confirm', function(req, res){
                 accMgmtModel.chgPwd(chgpwdData, function(status){
                     if (status == 'ok'){
                         req.session.user = {
-                            username: chgpwdData.username,
+                            firstname: chgpwdData.username,
                             usertype: chgpwdData.usertype
                         };
                         res.json({status:status, flag:1});
@@ -61,7 +61,7 @@ router.post('/confirm', function(req, res){
         accMgmtModel.chgPwd(chgpwdData, function(status){
             if (status == 'ok'){
                 req.session.user = {
-                    username: chgpwdData.username,
+                    firstname: chgpwdData.username,
                     usertype: chgpwdData.usertype
                 };
                 res.json({status:status, flag:1});
