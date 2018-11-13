@@ -46,6 +46,13 @@ app.use('/project', projectRouter);
 app.get('/', function(req, res) {
     res.redirect('/index');
  });
+
+// 404 page
+app.use(function (req, res) {
+    if (!res.headersSent) {
+        res.status(404).render('404')
+    }
+});
 //app.get('/signup',function(req,res){
 //  res.sendFile(path.join(__dirname+'/signup.html'));
 //});
