@@ -1,0 +1,8 @@
+body {
+  background-color: #f2f2f2;
+}
+.header {
+   height:50px;
+   position:fixed;
+   background-color: #2d6a9f;
+ }
