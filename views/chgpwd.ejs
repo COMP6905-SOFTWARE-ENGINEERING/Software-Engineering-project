@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title><%= title %></title>
+    <link href="/stylesheets/acc_mgmt.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="javascripts/jquery.js"></script>
+    <script type="text/javascript" src="javascripts/jquery_chgpwd.js"></script>
+    <script>
+        var username = "<%= username %>";
+        var usertype = "<%= usertype %>";
+        var isResetPwd = "<%= isResetPwd %>";
+    </script>
+</head>
+<body background="images/timg.jpg">
+<div class="title">change password</div>
+<div class="acc_mgmt_box">
+    <div class="box_body">
+    <div class="input_box chgpwd_need_hide">
+        <input type="password" id="chgpwd_oldpassword" class="chgpwd input" name="oldpassword" placeholder="old password"aria-required="true">
+    </div>
+    <div class="help_block_error error_oldpassword chgpwd_need_hide"></div>
+    <!--old password-->
+    <div class="input_box">
+        <input type="password" id="chgpwd_password" class="chgpwd input" name="password" placeholder="new password"aria-required="true">
+    </div>
+    <div class="help_block_error error_password"></div>
+    <!--new password-->
+    <div class="input_box">
+        <input type="password" id="chgpwd_password_confirm" class="chgpwd input" name="password_confirm" placeholder="comfirm password"aria-required="true">
+    </div>
+    <div class="help_block_error error_password_confirm"></div>
+    <!--confirm password-->
+    <div class="box_button">
+        <button type="button" class="btn chgpwd_button">change</button>
+    </div>
+</div>
+<!-- login portal -->
+</div>
+</body>
+</html>

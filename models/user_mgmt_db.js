@@ -36,10 +36,10 @@ var userSchema = new Schema({
 		min:[18, '输入年龄过小'],
 		max:[60, '输入年龄过大'],
 	},
-	isStudent:{
-		type:Boolean,
-		required:true,
-		default: true,
+    usertype:{
+		type:String,
+		default: 'student',
+        enum:['student', 'manager'],
 	},
 });
 
