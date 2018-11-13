@@ -22,18 +22,18 @@ $(document).ready(function(){
 		$(".help_block_error").text('');
 		var password = document.getElementById('chgpwd_password').value;
 		if (password.length == 0){
-			$(".error_password").text('密码不能为空');
+			$(".error_password").text('password cannot be empty');
 			return;
 		}else if (password.search(/\s/g) != -1){
-			$(".error_password").text('密码不能有空格');
+			$(".error_password").text('password cannot contain space');
 			return;
 		}
 		var confirmPassword = document.getElementById('chgpwd_password_confirm').value;
 		if (confirmPassword.length == 0){
-			$(".error_password_confirm").text('确认密码不能为空');
+			$(".error_password_confirm").text('confirm password cannot be empty');
 			return;
 		}else if (confirmPassword.search(/\s/g) != -1){
-			$(".error_password_confirm").text('确认密码不能有空格');
+			$(".error_password_confirm").text('confirm password cannot contain space');
 			return;
 		}
 		if(password != confirmPassword){
@@ -50,10 +50,10 @@ $(document).ready(function(){
 		}else {
 			var oldpassword = document.getElementById('chgpwd_oldpassword').value;
 			if (oldpassword.length == 0){
-				$(".error_oldpassword").text('原密码不能为空');
+				$(".error_oldpassword").text('original password cannot be empty');
 				return;
 			}else if (oldpassword.search(/\s/g) != -1){
-				$(".error_oldpassword").text('原密码不能有空格');
+				$(".error_oldpassword").text('original password cannot contain space');
 				return;
 			}
 			var postData = {

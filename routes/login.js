@@ -40,7 +40,7 @@ router.post('/',function(req,res){
         if (status == 'ok'){
             // console.log('1');
             req.session.user = {
-                username: loginData.username,
+                firstname: loginData.username,
                 usertype: loginData.usertype
             };
             res.json({status:status, flag:1});

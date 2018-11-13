@@ -19,20 +19,18 @@ exports.register = function(reqData, callback){
 };
 
 exports.cfmEmail = function(reqData, callback){
-	if (reqData.usertype == 'user'){
+    var roles = ['student', 'manager'];
+    if (roles.includes(reqData.usertype)){
 		userMgmt.userCfmEmail(reqData, callback);
-	}else if (reqData.usertype == 'company') {
-		companyMgmt.companyCfmEmail(reqData, callback);
 	}else {
 		callback('usertype error');
 	}
 };
 
 exports.chgPwd = function(reqData, callback){
-	if (reqData.usertype == 'user'){
+    var roles = ['student', 'manager'];
+	if (roles.includes(reqData.usertype)){
 		userMgmt.userChgPwd(reqData, callback);
-	}else if (reqData.usertype == 'company') {
-		companyMgmt.companyChgPwd(reqData, callback);
 	}else {
 		callback('usertype error');
 	}
@@ -42,21 +40,19 @@ exports.modInfo = function(reqData, callback){
 	var usertype = reqData.usertype;
 	delete reqData.usertype;
 	// console.log(reqData);
-	if (usertype == 'user'){
+    var roles = ['student', 'manager'];
+    if (roles.includes(reqData.usertype)){
 		// console.log(reqData);
 		userMgmt.userModInfo(reqData, callback);
-	}else if (usertype == 'company') {
-		companyMgmt.companyModInfo(reqData, callback);
 	}else {
 		callback('usertype error');
 	}
 }
 
 exports.accInfo = function(reqData, callback){
-	if (reqData.usertype == 'user'){
+    var roles = ['student', 'manager'];
+    if (roles.includes(reqData.usertype)){
 		userMgmt.userAccInfo(reqData, callback);
-	}else if (reqData.usertype == 'company') {
-		companyMgmt.companyAccInfo(reqData, callback);
 	}else{
 		callback('usertype error', null);
 	}

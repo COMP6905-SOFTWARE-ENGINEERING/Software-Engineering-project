@@ -26,7 +26,11 @@ Once the student receives the offer, he can accept or decline it on the system. 
  >  `npm install`
 
 
- **3，Run app**
+**3, Run mongo server**
+
+ >   mongod
+
+ **4，Run app**
 
 
 We already change our start service command from
@@ -38,7 +42,6 @@ We already change our start service command from
  $ nodemon bin/www
  ```
 
-**, Run mongo server**
 
 ### hint: you may want to select eclipse or [WebStorm](https://www.jetbrains.com/webstorm/) to boost your developing efficiency.
 

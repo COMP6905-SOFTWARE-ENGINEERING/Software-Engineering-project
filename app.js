@@ -10,6 +10,7 @@ var session = require('express-session');
 var indexRouter = require('./routes/index');
 var loginRouter = require('./routes/login');
 var registerRouter = require('./routes/register');
+var chgpwdRouter = require('./routes/chgpwd');
 var userRouter = require('./routes/user');
 var projectRouter = require('./routes/project');
 
@@ -39,11 +40,19 @@ app.use(session({
 app.use('/index', indexRouter);
 app.use('/login', loginRouter);
 app.use('/register', registerRouter);
+app.use('/chgpwd', chgpwdRouter);
 app.use('/user', userRouter);
 app.use('/project', projectRouter);
 app.get('/', function(req, res) {
     res.redirect('/index');
  });
+
+// 404 page
+app.use(function (req, res) {
+    if (!res.headersSent) {
+        res.status(404).render('404')
+    }
+});
 //app.get('/signup',function(req,res){
 //  res.sendFile(path.join(__dirname+'/signup.html'));
 //});
