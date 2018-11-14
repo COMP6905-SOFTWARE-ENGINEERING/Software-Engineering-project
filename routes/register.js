@@ -14,7 +14,8 @@ router.post('/',function(req, res){
         firstname: req.body.firstname,
         lastname: req.body.lastname,
         password: password,
-        email: req.body.email
+        email: req.body.email,
+        dob: req.body.dob
     };
 	accMgmtModel.register(registerData, function(status){
 		if (status == 'ok'){
@@ -24,23 +25,11 @@ router.post('/',function(req, res){
             };
             res.json({status:status, flag:1});
 		}else if (status.code == 11000){
-			if (registerData.usertype == 'student'){
-				if (status.errmsg.indexOf('username') > 0){
-					res.json({status:'用户名已存在', flag:0, errKey: 'username'});
-				}else if (status.errmsg.indexOf('email') > 0){
-					res.json({status:'邮箱已存在', flag:0, errKey: 'email'});
-				}else if (status.errmsg.indexOf('IDnumber') > 0){
-					res.json({status:'身份证号已存在', flag:0, errKey: 'IDnumber'});
-				}
-			}else {
-				if (status.errmsg.indexOf('username') > 0){
-					res.json({status:'用户名已存在', flag:0, errKey: 'username'});
-				}else if (status.errmsg.indexOf('email') > 0){
-					res.json({status:'邮箱已存在', flag:0, errKey: 'email'});
-				}else if (status.errmsg.indexOf('companyname') > 0){
-					res.json({status:'公司名已存在', flag:0, errKey: 'companyname'});
-				}
-			}
+            if (status.errmsg.indexOf('username') > 0){
+                res.json({status:'用户名已存在', flag:0, errKey: 'username'});
+            }else if (status.errmsg.indexOf('email') > 0){
+                res.json({status:'邮箱已存在', flag:0, errKey: 'email'});
+            }
 		}else {
 			res.json({status:status, flag:2});
 		}
