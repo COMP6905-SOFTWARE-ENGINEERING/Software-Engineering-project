@@ -31,7 +31,7 @@ router.get('/create_profile', function(req, res){
                 var profileData = {
                     //realname: data.realname,
                 };
-                res.render('profile_edit', {
+                res.render('studentForm', {
                     title:'Create Profile',
                     userdata: req.session.user,
                     profileData: profileData,

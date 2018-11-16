@@ -10,5 +10,8 @@
     "mongoose": "^5.3.12",
     "morgan": "^1.9.1",
     "nodemon": "^1.18.5"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0"
   }
 }
