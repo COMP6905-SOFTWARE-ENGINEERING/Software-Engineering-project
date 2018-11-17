@@ -11,7 +11,7 @@ var profileSchema = new Schema({
     address:{
         type:String,
         required:[true, 'please input your address'],
-        match:[/^(0[1-9]|[1-9]\d){2}00$/, '请确认所在地无误'],
+        match:[/^(0[1-9]|[1-9]\d){2}00$/, 'please check your address again'],
     },
     experience:{
         type:Number,
@@ -57,63 +57,13 @@ exports.listByOwner = function(reqData, callback){
 
 exports.createProfile = function(reqData, callback){
     var Data = reqData;
-    Data['fullname'] = Data.owner+'.'+Data.profilename;
-    if(Data.location){
-        staticModel.showCity(Data.location, function(err, data){
-            if (err){
-                callback(err);
-            }else {
-                Data['location_str'] = staticModel.showProvince(Data.location)+'-'+data.name;
-                if(Data.job){
-                    staticModel.showJob(Data.job, function(err, data){
-                        if (err){
-                            callback(err);
-                        }else {
-                            Data['job_str'] = data.name;
-                            profileModel.create(Data, function(err, data){
-                                if (err){
-                                    callback(err);
-                                }else {
-                                    callback('ok');
-                                }
-                            });
-                        }
-                    });
-                }else {
-                    profileModel.create(Data, function(err, data){
-                        if (err){
-                            callback(err);
-                        }else {
-                            callback('ok');
-                        }
-                    });
-                }
-            }
-        });
-    }else if(Data.job){
-        staticModel.showJob(Data.job, function(err, data){
-            if (err){
-                callback(err);
-            }else {
-                Data['job_str'] = data.name;
-                profileModel.create(Data, function(err, data){
-                    if (err){
-                        callback(err);
-                    }else {
-                        callback('ok');
-                    }
-                });
-            }
-        });
-    }else {
-        profileModel.create(Data, function(err, data){
-            if (err){
-                callback(err);
-            }else {
-                callback('ok');
-            }
-        });
-    }
+    profileModel.create(Data, function(err, data){
+        if (err){
+            callback(err);
+        }else {
+            callback('ok');
+        }
+    });
 };
 
 exports.findById = function(reqData, callback){
@@ -122,132 +72,6 @@ exports.findById = function(reqData, callback){
             callback(err, null);
         }else {
             callback(null, data);
-        }
-    });
-};
-
-exports.modById = function(reqData, callback){
-    var Data = reqData.Data;
-    if(Data.owner&&Data.profilename){
-        Data['fullname'] = Data.owner+'.'+Data.profilename;
-    }
-    if(Data.location){
-        staticModel.showCity(Data.location, function(err, data){
-            if (err){
-                callback(err);
-            }else {
-                Data['location_str'] = staticModel.showProvince(Data.location)+'-'+data.name;
-                if(Data.job){
-                    staticModel.showJob(Data.job, function(err, data){
-                        if (err){
-                            callback(err);
-                        }else {
-                            Data['job_str'] = data.name;
-                            profileModel.update({_id: Data._id, owner: reqData.username}, {$set: Data},  {runValidators: true}, function(err, data){
-                                if (err){
-                                    callback(err);
-                                }else {
-                                    if(data.n == 0){
-                                        callback('user error');
-                                    }else {
-                                        callback('ok');
-                                    }
-                                }
-                            });
-                        }
-                    });
-                }else{
-                    profileModel.update({_id: Data._id, owner: reqData.username}, {$set: Data},  {runValidators: true}, function(err, data){
-                        if (err){
-                            callback(err);
-                        }else {
-                            if(data.n == 0){
-                                callback('user error');
-                            }else {
-                                callback('ok');
-                            }
-                        }
-                    });
-                }
-            }
-        });
-    }else if(Data.job){
-        staticModel.showJob(Data.job, function(err, data){
-            if (err){
-                callback(err);
-            }else {
-                Data['job_str'] = data.name;
-                profileModel.update({_id: Data._id, owner: reqData.username}, {$set: Data},  {runValidators: true}, function(err, data){
-                    if (err){
-                        callback(err);
-                    }else {
-                        if(data.n == 0){
-                            callback('user error');
-                        }else {
-                            callback('ok');
-                        }
-                    }
-                });
-            }
-        });
-    }else {
-        profileModel.update({_id: Data._id, owner: reqData.username}, {$set: Data},  {runValidators: true}, function(err, data){
-            if (err){
-                callback(err);
-            }else {
-                if(data.n == 0){
-                    callback('user error');
-                }else {
-                    callback('ok');
-                }
-            }
-        });
-    }
-};
-
-exports.removeProfile = function(reqData, callback){
-    var Data = reqData.Data;
-    profileModel.remove({_id: Data._id,  owner: reqData.username}, function(err, data){
-        if (err){
-            callback(err);
-        }else {
-            if(data.n == 0){
-                callback('user error');
-            }else {
-                callback('ok');
-            }
-        }
-    });
-};
-
-exports.deliver = function(reqData, callback){
-    var Data = reqData.Data;
-    profileModel.update({_id: Data._id}, {
-        $addToSet:{deliverer:{
-            _id:Data.deliverer_id,
-            deliverer_companyname:Data.deliverer_companyname,
-            deliverer_offername:Data.deliverer_offername,
-        }}
-    }, function(err, data){
-        if(err){
-            callback(err);
-        }else {
-            callback('ok');
-        }
-    });
-};
-
-exports.removeDeliver = function(reqData, callback){
-    var Data = reqData.Data;
-    profileModel.update({_id: Data._id}, {
-        $pull:{deliverer:{
-            _id:Data.deliverer_id,
-        }}
-    }, function(err, data){
-        if(err){
-            callback(err);
-        }else {
-            callback('ok');
         }
     });
 };
