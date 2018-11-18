@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <head>
+	     
+         <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">		 
+         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+         <link rel="stylesheet" type="text/css" href="MatchedProjects.css">
+		
+   </head>
+   <body>
+     <!--------------Header------------------------->
+      <br><div class="container">
+      <br><div class="jumbotron jumbot">
+         <div class="container">
+            <h1 class="display-3"></h1>
+            <center><p class="lead">Projects matching your profile</p></center>
+         </div>
+      </div>
+      <center>
+	  <!----------------table---------------------------->
+         <div>
+            <table class="table table-striped" id="mytable">
+               <thead class="table-head">
+                  <tr>
+                    <th class ="sortable">SerialNo.</th>
+                     <th class="sortable">ProjectTitle</th>
+                     <th class="sortable">ProjectDetails</th>
+                  </tr>
+               </thead>
+               <tbody class="table table-striped table-dark">
+                <tr>
+                </tr>
+               </tbody>
+            </table>
+      </center>
+      </div><!--container ends-->
+	  <!-------------javascript--------------------------------->
+	  <script>
+	  <!------------------This is trial data please include database data into there arrays------------------------> 
+	  var array =[["1","Google",'<a class="btn btn-primary" href="https://www.google.com/" role="button">View</a>'],
+        ["2","Google",'<a class="btn btn-primary" href="https://www.google.com/" role="button">View</a>'],
+        ["3","Google",'<a class="btn btn-primary" href="https://www.google.com/" role="button">View</a>'],
+        ["4","Google",'<a class="btn btn-primary" href="https://www.google.com/" role="button">View</a>'],
+        ["5","Google",'<a class="btn btn-primary" href="https://www.google.com/" role="button">View</a>'],
+        ["6","Google",'<a class="btn btn-primary" href="https://www.google.com/" role="button">View</a>'],
+        ["7","Google",'<a class="btn btn-primary" href="https://www.google.com/" role="button">View</a>'],
+        ["8","Google",'<a class="btn btn-primary" href="https://www.google.com/" role="button">View</a>']];
+		
+       table = document.getElementById("mytable");
+       for(var i = 0; i < array.length; i++)
+          {
+               // create a new row
+            var newRow = table.insertRow(table.length);
+            for(var j = 0; j < array[i].length; j++)
+            {
+               // create a new cell
+               var cell = newRow.insertCell(j);
+               // add value to the cell
+                cell.innerHTML = array[i][j];
+               }
+           }
+	  </script>
+   </body>
+</html>
