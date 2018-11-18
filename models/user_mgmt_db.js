@@ -7,7 +7,6 @@ var userSchema = new Schema({
 		type:String,
 		select:true,
 		required:[true, 'firstname cannot be empty'],
-		match:[/^[a-zA-Z](\w)*$/, '用户名须以字母开始，且只能包含字母数字下划线']
 	},
     lastname:{
         type:String,
@@ -31,11 +30,7 @@ var userSchema = new Schema({
 		default: 'secret',
 		enum:['male', 'female', 'secret'],
 	},
-	age:{
-		type:Number,
-		min:[18, '输入年龄过小'],
-		max:[60, '输入年龄过大'],
-	},
+	date_of_birth:Date,
     usertype:{
 		type:String,
 		default: 'student',
@@ -47,12 +42,12 @@ userSchema.index({email:1});
 var userModel = mongoose.model('users', userSchema);
 
 exports.userLogin = function(reqData, callback){
-	userModel.findOne({firstname:reqData.username}, function(err, data){
+	userModel.findOne({email:reqData.email}, function(err, data){
 		if (err){
 			callback(err);
 		}else if (data != null){
 			if (data.password == reqData.password){
-				callback('ok');
+				callback('ok', data);
 			}else{
 				callback('wrong password');
 			}
@@ -68,6 +63,7 @@ exports.userRegister = function(reqData, callback){
         lastname: reqData.lastname,
 		password:reqData.password,
 		email: reqData.email,
+        date_of_birth: reqData.dob,
 	}, function(err, data){
 		if(err){
 			callback(err);

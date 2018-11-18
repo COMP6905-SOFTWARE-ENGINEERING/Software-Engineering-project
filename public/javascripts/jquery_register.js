@@ -64,11 +64,13 @@ $(document).ready(function(){
 			$(".error_email").text('Please enter a valid email address');
 			return;
 		}
+        var dob = document.getElementById('dob').value;
         var postData = {
             firstname: firstname,
             lastname: lastname,
             password: password,
-            email: email
+            email: email,
+            dob: dob,
         };
 		var postUrl = '/register';
 		$.post(postUrl, postData, function(data, status){

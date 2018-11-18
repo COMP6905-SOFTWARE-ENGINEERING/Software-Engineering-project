@@ -31,7 +31,7 @@ router.post('/',function(req,res){
     var md5 = crypto.createHash('md5');
     var password = md5.update(req.body.password).digest('hex');
     var loginData = {
-        username: req.body.username,
+        email: req.body.email,
         password: password,
         usertype: req.body.usertype
     };
