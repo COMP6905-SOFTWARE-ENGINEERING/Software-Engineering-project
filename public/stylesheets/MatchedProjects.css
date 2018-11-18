@@ -1,0 +1,22 @@
+body {
+  background-color: #2d6a9f;
+}
+.jumbotron {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    color: inherit;
+    background-color: #f2f2f2;
+}
+.btn-group{
+  background-color:#2d6a9f;
+}
+.table {
+    background-color: #333;
+}
+.table-head{
+  background color:grey;
+}
+.sortable{
+  color: white;
+}
