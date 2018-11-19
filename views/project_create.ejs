@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="ProjectList.js"></script>
+    <script type="text/javascript" src="javascripts/jquery_project.js"></script>
     <link rel="stylesheet" type="text/css" href="ProjectList.css">
     <title>ProjectList</title>
 </head>
@@ -22,7 +22,7 @@
     <br>
     <!-------------------project form-------------------------->
     <br>
-    <form name="Project" method="post">
+    <div class="container">
         <!-------------Field of study---------------------------->
         <div class="row" id="mainRow">
             <div class="col-md-6 col-md-offset-1">
@@ -30,8 +30,14 @@
                     <div class="Fieldofstudy">
                         <h1>Create Project</h1>
                         <br>
+                        <div class="form-group">
+                            <div class="col-sm-7">
+                                <label for="projDate">Project Name:</label>
+                                <input type="text" class="form-control" id="project_name">
+                            </div>
+                        </div>
                         <fieldset>
-                            <legend><span class="number"></span>Level of study</legend>
+                            <legend><span class="number"></span>Level of Study</legend>
                             <div class="form-group">
                                 <div class="col-sm-4">
                                     <select id="Required_Position" name="Student_Position" class="form-control">
@@ -78,6 +84,19 @@
                                 </div>
                                 <br>
                                 <br>
+                    <div class="form-group">
+                        <div class="col-sm-7">
+                            <label for="projDate">Start Date:</label>
+                            <input type="date" class="form-control" id="start_date">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-7">
+                            <label for="projDate">Application Deadline:</label>
+                            <input type="date" class="form-control" id="application_deadline">
+                        </div>
+                    </div>
                                 <!------------Availabilty of financial aid section----------------->
                                 <div class="form-group">
                                     <div class="col-sm-7">
@@ -95,15 +114,17 @@
                                             <div class="form-group">
                                                 <div class="col-sm-4">
                                                     <br>
-                                                    <input type='button' value='Submit' id='subbmitform' class="btn btn-primary">
+                                                    <button type='submit'  id='subbmitform' class="btn btn-primary" onclick="projectCreateSubmit()">Submit</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                 </form>
             </div>
         </div>
+    </div>
 </body>
 
 </html>
