@@ -66,9 +66,9 @@ exports.userRegister = function(reqData, callback){
         date_of_birth: reqData.dob,
 	}, function(err, data){
 		if(err){
-			callback(err);
+			callback(err, data);
 		}else{
-			callback('ok');
+			callback('ok', data);
 		}
 	});
 };

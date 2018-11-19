@@ -5,37 +5,46 @@ function backToProfileList(){
 function profileCreateSubmit(){
 	$(".help_block_error").text(" ").attr("title", '');
 	var postUrl;
+	var address_line1 = $("#address_line1").val();
+    var address_line2 = $("#address_line2").val();
+    var city = $("#city").val();
+    var state = $("#state").val();
+    var post_code = $("#post_code").val();
+    var address = address_line1 + ' ' + address_line2 + ' ' +
+		city + ' ' + state + ' ' + post_code;
+    var company = $("#company").val();
+    var position = $("#position").val();
+    var start_date = $("#start_date").val();
+    var end_date = $("#end_date").val();
+    var work_experience = company + ' ' + position + ' ' +
+		start_date + ' ' + end_date;
+    var education_level = $("#select_education_level").val();
+    var field_of_study = $("#select_field_of_study").val();
+    var institution_name = $("#institution_name").val();
+    var education = education_level + ' ' + field_of_study + ' ' +
+		institution_name;
 	var postData = {
-		owner:$(".hidden_username").val(),
-		address_line1:$("#address_line1").val(),
-        address_line2:$("#address_line2").val(),
-        city:$("#city").val(),
-        state:$("#state").val(),
-        post_code:$("#post_code").val(),
-        select_education_level:$("#select_education_level").val(),
-		select_field_of_study:$("#select_field_of_study").val(),
-		institution_name:$("#institution_name").val(),
-		skill:$(".select_skill"),
-		research_interest:$("#research_interest").val(),
-		company:$("#company").val(),
-		position:$("#position").val(),
-		start_date:$("#start_date").val(),
-        end_date:$("#end_date").val(),
+		owner:$(".hidden_userid").val(),
+        address:address,
+        work_experience:work_experience,
+        research_interest:$("#research_interest").val(),
         intended_start_date:$("#intended_start_date").val(),
-		require_financial_aid:$("input[name='require_financial_aid']:selected").val()
+        education:education,
+		skill:$(".select_skill").val(),
+		need_financial_support:$("input[name='require_financial_aid']:checked").val()
 	};
 	postUrl = '/user/create_profile';
 	// alert(JSON.stringify(postData));
 	$.post(postUrl, postData, function(data, status){
 		if(status == 'success'){
 			if (data.flag == 0){
-                for (var errPath in data.status.errors){
-                    $(".error_"+errPath).text('×').attr("title", data.status.errors[errPath].message);
-				}
-				// alert(JSON.stringify(data.status));
+                //for (var errPath in data.status.errors){
+                //    $(".error_"+errPath).text('×').attr("title", data.status.errors[errPath].message);
+				//}
+				 alert(JSON.stringify(data.status));
 			}else {
 				alert('create successful');
-				window.location.href = "/person/resumelist";
+				window.location.href = "/person/profileview";
 			}
 		}else {
 			alert('post failed');

@@ -17,18 +17,15 @@ router.post('/',function(req, res){
         email: req.body.email,
         dob: req.body.dob
     };
-	accMgmtModel.register(registerData, function(status){
+	accMgmtModel.register(registerData, function(status, data){
 		if (status == 'ok'){
-            req.session.user = {
-                firstname: registerData.firstname,
-                usertype: 'student'
-            };
+            req.session.user = data;
             res.json({status:status, flag:1});
 		}else if (status.code == 11000){
             if (status.errmsg.indexOf('username') > 0){
-                res.json({status:'用户名已存在', flag:0, errKey: 'username'});
+                res.json({status:'username already exists', flag:0, errKey: 'username'});
             }else if (status.errmsg.indexOf('email') > 0){
-                res.json({status:'邮箱已存在', flag:0, errKey: 'email'});
+                res.json({status:'email already exists', flag:0, errKey: 'email'});
             }
 		}else {
 			res.json({status:status, flag:2});

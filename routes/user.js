@@ -59,14 +59,7 @@ router.post('/create_profile', function(req, res){
                     }
                 }
                 var profileData = req.body;
-                if (isNoDefault){
-                    profileData['isDefault'] = true;
-                    profileData['isPublic'] = true;
-                }else {
-                    profileData['isDefault'] = false;
-                    profileData['isPublic'] = false;
-                }
-                profileData['salary'] = JSON.parse(profileData.salary);
+                //profileData['salary'] = JSON.parse(profileData.salary);
                 // console.log(profileData);
                 profileModel.createProfile(profileData, function(status){
                     if (status == 'ok'){
@@ -78,7 +71,7 @@ router.post('/create_profile', function(req, res){
             }
         });
     }else {
-        res.json({status:"未登录", flag:0});
+        res.json({status:"not login", flag:0});
     }
 });
 

@@ -40,8 +40,8 @@ router.post('/confirm', function(req, res){
                 accMgmtModel.chgPwd(chgpwdData, function(status){
                     if (status == 'ok'){
                         req.session.user = {
+                            usertype: chgpwdData.usertype,
                             firstname: chgpwdData.username,
-                            usertype: chgpwdData.usertype
                         };
                         res.json({status:status, flag:1});
                     }else {

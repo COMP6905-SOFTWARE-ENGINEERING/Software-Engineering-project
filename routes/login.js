@@ -39,11 +39,7 @@ router.post('/',function(req,res){
     accMgmtModel.login(loginData, function(status, data){
         if (status == 'ok'){
             // console.log('1');
-            req.session.user = {
-                useremail: data.email,
-                firstname: data.firstname,
-                usertype: loginData.usertype
-            };
+            req.session.user = data;
             res.json({status:status, flag:1});
         }else{
             res.json({status:status, flag:0});

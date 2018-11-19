@@ -41,7 +41,7 @@ var profileModel = mongoose.model('profile', profileSchema);
 
 
 exports.listByOwner = function(reqData, callback){
-    profileModel.find(reqData, ['_id', 'isDefault', 'isPublic', 'profilename', 'realname', 'deliverer'], {sort:{_id: 1}}, function(err, data){
+    profileModel.find(reqData, ['_id'], {sort:{_id: 1}}, function(err, data){
         if (err){
             callback(err, null);
         }else {

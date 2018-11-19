@@ -18,7 +18,7 @@
             <form class="form-horizontal" role="form">
                 <fieldset>
 
-                    <input type="hidden" class="hidden_userid" value="<%= userdata.userid %>" disabled="disabled">
+                    <input type="hidden" class="hidden_userid" value="<%= userdata._id %>" disabled="disabled">
                     <!-- Address Section -->
                     <!-- Form Name -->
                     <legend>Address Details :</legend>
@@ -153,11 +153,11 @@
                     <label for="projDate">Intended Start Date:</label>
                     <input type="date" class="form-control" id="intended_start_date">
                     <label for="fund">Require Financial Aid? :</label>
-                    <input class="form-check-input" type="radio" name="require_financial_aid" id="gridRadios1" value="option1" checked>
+                    <input class="form-check-input" type="radio" name="require_financial_aid" id="gridRadios1" value="1" checked>
                     <label class="form-check-label" for="gridRadios1">
                         Yes
                     </label>
-                    <input class="form-check-input" type="radio" name="require_financial_aid" id="gridRadios2" value="option2">
+                    <input class="form-check-input" type="radio" name="require_financial_aid" id="gridRadios2" value="0">
                     <label class="form-check-label" for="gridRadios2">
                         No
                     </label>
@@ -171,9 +171,8 @@
     </div>
 </div>
 
-<script src="../javascripts/jquery_profile.js"></script>
-<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="../javascripts/jquery.js"></script>
+<script type="text/javascript" src="../javascripts/jquery_profile.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
