@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="javascripts/jquery_project.js"></script>
+    <script type="text/javascript" src="../javascripts/jquery_project.js"></script>
     <link rel="stylesheet" type="text/css" href="ProjectList.css">
     <title>ProjectList</title>
 </head>
@@ -27,6 +27,7 @@
         <div class="row" id="mainRow">
             <div class="col-md-6 col-md-offset-1">
                 <form class="form-horizontal" role="form">
+                    <input type="hidden" class="hidden_userid" value="<%= userdata._id %>" disabled="disabled">
                     <div class="Fieldofstudy">
                         <h1>Create Project</h1>
                         <br>
@@ -40,7 +41,7 @@
                             <legend><span class="number"></span>Level of Study</legend>
                             <div class="form-group">
                                 <div class="col-sm-4">
-                                    <select id="Required_Position" name="Student_Position" class="form-control">
+                                    <select id="level_of_study" name="Student_Position" class="form-control">
                                         <br>
                                         <option value="Bachelors">Bachelors</option>
                                         <option value="Masters">Masters</option>
@@ -54,10 +55,10 @@
                         <br>
                         <div class="project_info">
                             <fieldset>
-                                <legend><span class="number"></span>Project Information</legend>
+                                <legend><span class="number"></span>Project Description</legend>
                                 <div class="form-group">
                                     <div class="col-sm-4">
-                                        <textarea id="projectInfo" name="projectInfo" class="form-control" placeholder="Project description must be greater than 20 words."></textarea>
+                                        <textarea id="project_description" name="projectInfo" class="form-control" placeholder="Project description must be greater than 20 words."></textarea>
                                     </div>
                                 </div>
                             </fieldset>
@@ -66,13 +67,13 @@
                             <br>
                             <div class="skill">
                                 <fieldset>
-                                    <div id='skillgroup'>
+                                    <div id='skillsFieldsWrapper'>
                                         <div id="Addskilldiv1">
                                             <legend><span class="number"></span>Skills</legend>
                                             <div class="form-group">
                                                 <div class="col-sm-7">
                                                     <label> skill 1 :</label>
-                                                    <input type='textbox' id='skilltb' class="form-control" placeholder="Add your skills">
+                                                    <input type='text' id='skilltb' class="form-control select_skill" placeholder="Add your skills">
                                                 </div>
                                             </div>
                                             <div class="button-wrapper">
@@ -109,7 +110,7 @@
                                         <br>
                                         <br>
                                         <label>Avalilabe Funding:</label>
-                                        <input type='textbox' id='Funding' class="form-control" placeholder="Funding Amount(CAD$)">
+                                        <input type='text' id='available_funding' class="form-control" placeholder="Funding Amount(CAD$)">
                                         <div>
                                             <div class="form-group">
                                                 <div class="col-sm-4">
