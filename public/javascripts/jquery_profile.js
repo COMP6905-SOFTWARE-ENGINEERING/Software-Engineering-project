@@ -68,7 +68,7 @@ function profileCreateSubmit(){
 				 alert(JSON.stringify(data.status));
 			}else {
 				alert('create successful');
-				window.location.href = "/person/profileview";
+				window.location.href = "/user/profileview";
 			}
 		}else {
 			alert('post failed');

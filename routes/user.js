@@ -13,7 +13,7 @@ router.get('/profileview', function(req, res){
                 res.json(err);
             }else {
                 res.render('profile_view', {
-                    title: 'manage profile',
+                    title: 'Manage profile',
                     userdata: req.session.user,
                     maxpage: parseInt((data.length-1)/10)+1,
                 });
