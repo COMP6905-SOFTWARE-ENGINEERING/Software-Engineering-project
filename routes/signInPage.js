@@ -23,7 +23,7 @@ router.get('/', function(req, res, next) {
     if (req.session.user){
         res.redirect('/index');
     }else{
-        res.render('login', {title: 'Login Panel'});
+        res.render('signInPage', {title: 'Sign In'});
     }
 });
 

@@ -13,6 +13,8 @@ var registerRouter = require('./routes/register');
 var chgpwdRouter = require('./routes/chgpwd');
 var userRouter = require('./routes/user');
 var projectRouter = require('./routes/project');
+var getStartedPage = require('./routes/getStartedPage');
+var signInPage = require('./routes/signInPage');
 
 var app = express();
 
@@ -44,6 +46,8 @@ app.use('/register', registerRouter);
 app.use('/chgpwd', chgpwdRouter);
 app.use('/user', userRouter);
 app.use('/project', projectRouter);
+app.use('/getStartedPage', getStartedPage);
+app.use('/signInPage', signInPage);
 app.get('/', function(req, res) {
     res.redirect('/index');
  });
