@@ -240,7 +240,7 @@ a:hover {
 	font-size: 14px;
 }
 .opt_click:hover {
-	color: rgb(0,188,212);
+	color: #862633;
 }
 .page_box {
 	width: 100%;
@@ -272,7 +272,7 @@ a:hover {
 }
 .list_btn {
 	background-color: white;
-	color: #BBBBBB;
+	color: #862633;
 	width: 100%;
 	height: 50px;
 	line-height: 40px;
@@ -291,7 +291,7 @@ a:hover {
 }
 .list_btn:hover {
 	background-color: #EEEEEE;
-	color: rgb(0,188,212);
+	color: #862633;
 }
 .resume_box {
 	height: 100%;

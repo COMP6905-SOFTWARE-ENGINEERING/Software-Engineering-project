@@ -29,18 +29,18 @@
 <div class="nav_bar">
     <div class="nav_bar_blank"></div>
     <% if (userdata.usertype == 'student'){ %>
-        <div class="nav_bar_select redirect_profile_button">manage profile</div>
-        <div class="nav_bar_select redirect_jobsearch_button">search project</div>
+        <div class="nav_bar_select redirect_profile_button">Manage Profile</div>
+        <div class="nav_bar_select redirect_jobsearch_button">Project Search</div>
     <% }else if (userdata.usertype == 'manager') { %>
-        <div class="nav_bar_select redirect_projectmgmt_button">mange project</div>
-        <div class="nav_bar_select redirect_peoplesearch_button">search prospective student</div>
+        <div class="nav_bar_select redirect_projectmgmt_button">Manage Projects</div>
+        <div class="nav_bar_select redirect_peoplesearch_button">Prospective Student Search</div>
     <% }else { %>
-        <div class="nav_bar_select redirect_search_button">search</div>
+        <div class="nav_bar_select redirect_search_button">Search</div>
     <% } %>
 </div>
 <div class="body">
-    <div class="body_msg"><%= userdata.firstname %>，welcome to GradRec system!</div>
+    <div class="body_msg"><%= userdata.firstname %>，Welcome to GradRec!</div>
 </div>
-<div class="footer">developed by Group of Four&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<div class="footer">developed by Group Four&nbsp;&nbsp;&nbsp;&nbsp;</div>
 </body>
 </html>
