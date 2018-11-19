@@ -16,21 +16,25 @@ Once the student receives the offer, he can accept or decline it on the system. 
 
    > First, you need to install [Mongodb](http://www.mongodb.org/)，and [Nodejs](http://nodejs.org/ "Nodejs") on your computer.
 
- **1，clone code**
+ **1 Clone code**
 
   >  `git clone https://github.com/COMP6905-SOFTWARE-ENGINEERING/Software-Engineering-project.git`
 
 
- **2，install**
+ **2 Install**
 
  >  `npm install`
 
 
-**3, Run mongo server**
+**3 Run Mongo server**
 
  >   mongod
 
- **4，Run app**
+ **4 Install Catalogs**
+
+>   mongoimport --db GradRecDB --collection universities --file /Commands/universities.json
+
+ **4 Run app**
 
 
 We already change our start service command from
