@@ -51,14 +51,8 @@ router.post('/create_profile', function(req, res){
             if (err){
                 res.redirect('/404');
             }else {
-                var isNoDefault = true;
-                for (var i in data){
-                    if(data[i].isDefault){
-                        isNoDefault = false;
-                        break;
-                    }
-                }
                 var profileData = req.body;
+                profileData['skills'] = req.body.skill.split(",");
                 //profileData['salary'] = JSON.parse(profileData.salary);
                 // console.log(profileData);
                 profileModel.createProfile(profileData, function(status){

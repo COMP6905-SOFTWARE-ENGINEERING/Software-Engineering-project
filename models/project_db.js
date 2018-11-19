@@ -40,7 +40,7 @@ var projectSchema = new Schema({
 var projectModel = mongoose.model('project', projectSchema);
 
 exports.listByOwner = function(reqData, callback){
-    projectModel.find(reqData, ['_id', 'isDefault', 'isPublic', 'profilename', 'realname', 'deliverer'], {sort:{_id: 1}}, function(err, data){
+    projectModel.find(reqData, ['_id'], {sort:{_id: 1}}, function(err, data){
         if (err){
             callback(err, null);
         }else {

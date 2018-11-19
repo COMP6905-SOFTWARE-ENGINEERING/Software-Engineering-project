@@ -4,32 +4,38 @@ var staticModel = require('./static_db.js');
 
 var Schema = mongoose.Schema;
 var profileSchema = new Schema({
-    student:{
+    owner:{
         type:Schema.Types.ObjectId,
         ref: 'users'
     },
-    address:{
-        type:String,
-        required:[true, 'please input your address'],
-        match:[/^(0[1-9]|[1-9]\d){2}00$/, 'please check your address again'],
-    },
-    work_experience: [{type:String}],
-    research_interest:{
-        type:String,
-        required:[true, 'research interest cannot be empty'],
-        trim:true,
-    },
+    address: String,
+    work_experience: String,
+    research_interest: String,
+    education: String,
+    skills: [{type: String}],
+    need_financial_support: String,
+    // address:{
+    //     type:String,
+    //     required:[true, 'please input your address'],
+    //     match:[/^(0[1-9]|[1-9]\d){2}00$/, 'please check your address again'],
+    // },
+    // work_experience: [{type:String}],
+    // research_interest:{
+    //     type:String,
+    //     required:[true, 'research interest cannot be empty'],
+    //     trim:true,
+    // },
     intended_start_date:{
         type:Date,
         required:[true, 'please input intended start date'],
     },
-    education: [{type:Schema.Types.ObjectId, ref: 'education'}],
-    skills: [{type:Schema.Types.ObjectId, ref: 'skill'}],
-    need_financial_support:{
-        type:Boolean,
-        required:[true, 'please select if you want financial support'],
-        default:true
-    }
+    // education: [{type:Schema.Types.ObjectId, ref: 'education'}],
+    // skills: [{type:Schema.Types.ObjectId, ref: 'skill'}],
+    // need_financial_support:{
+    //     type:Boolean,
+    //     required:[true, 'please select if you want financial support'],
+    //     default:true
+    // }
 });
 
 // profileSchema.pre('save', function (next) {

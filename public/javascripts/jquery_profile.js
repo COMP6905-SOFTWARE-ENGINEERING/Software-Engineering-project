@@ -1,3 +1,23 @@
+function education() {
+    var education_input = $(".educationFields").clone().first();
+    education_input.appendTo($("#educationFieldsWrapper "));
+}
+
+function skills() {
+    var skill_input = $(".skillFields").clone().first();
+    skill_input.appendTo($("#skillsFieldsWrapper "));
+}
+
+function research() {
+    var research_input = $(".researchFields").clone().first();
+    research_input.appendTo($("#researchFieldsWrapper "));
+}
+
+function experience() {
+    var experience_input = $(".expFields").clone().first();
+    experience_input.appendTo($("#expFieldsWrapper "));
+}
+
 function backToProfileList(){
 	window.location.href = "/user/profileview";
 };
@@ -23,6 +43,10 @@ function profileCreateSubmit(){
     var institution_name = $("#institution_name").val();
     var education = education_level + ' ' + field_of_study + ' ' +
 		institution_name;
+    var skills = [];
+    $(".select_skill").each(function(){
+        skills.push($(this).val());
+    });
 	var postData = {
 		owner:$(".hidden_userid").val(),
         address:address,
@@ -30,7 +54,7 @@ function profileCreateSubmit(){
         research_interest:$("#research_interest").val(),
         intended_start_date:$("#intended_start_date").val(),
         education:education,
-		skill:$(".select_skill").val(),
+		skill:skills.join(","),
 		need_financial_support:$("input[name='require_financial_aid']:checked").val()
 	};
 	postUrl = '/user/create_profile';
