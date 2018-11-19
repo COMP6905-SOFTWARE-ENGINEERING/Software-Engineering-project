@@ -39,7 +39,7 @@ router.get('/create_project', function(req, res){
                 var projectData = {
                    // managername: data.managername,
                 };
-                res.render('CreateProject', {
+                res.render('project_create', {
                     title:'create project',
                     userdata: req.session.user,
                     projectData: projectData,
