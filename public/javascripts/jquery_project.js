@@ -16,10 +16,9 @@ function projectCreateSubmit(){
 		level_of_study:$("#level_of_study").val(),
 		project_description:$("#project_description").val(),
 		available_funding:$("#available_funding").val(),
-		skill:$(".select_skill").val(),
+		required_skills:$(".select_skill").val(),
 		start_date:$("#start_date").val(),
 		application_deadline:$("#application_deadline").val(),
-		contact_information:$("#textarea_contact_information").val(),
 	};
 	postUrl = '/project/create_project';
 	// if ($(".hidden_offerid").val()){

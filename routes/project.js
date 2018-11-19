@@ -56,9 +56,7 @@ router.get('/create_project', function(req, res){
 router.post('/create_project', function(req, res){
     if(req.session.user && req.session.user.usertype == 'manager'){
         var projectData = req.body;
-        projectData['editdate'] = new Date();
-        projectData['salary'] = JSON.parse(projectData.salary);
-        projectModel.createOffer(projectData, function(status){
+        projectModel.createProject(projectData, function(status){
             if (status == 'ok'){
                 res.json({status:status, flag:1});
             }else {
