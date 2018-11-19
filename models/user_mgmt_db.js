@@ -7,7 +7,6 @@ var userSchema = new Schema({
 		type:String,
 		select:true,
 		required:[true, 'firstname cannot be empty'],
-		match:[/^[a-zA-Z](\w)*$/, '用户名须以字母开始，且只能包含字母数字下划线']
 	},
     lastname:{
         type:String,
@@ -43,12 +42,12 @@ userSchema.index({email:1});
 var userModel = mongoose.model('users', userSchema);
 
 exports.userLogin = function(reqData, callback){
-	userModel.findOne({firstname:reqData.username}, function(err, data){
+	userModel.findOne({email:reqData.email}, function(err, data){
 		if (err){
 			callback(err);
 		}else if (data != null){
 			if (data.password == reqData.password){
-				callback('ok');
+				callback('ok', data);
 			}else{
 				callback('wrong password');
 			}

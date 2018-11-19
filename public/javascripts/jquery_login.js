@@ -14,15 +14,15 @@ $(document).ready(function(){
 	});
 	$(".login_button").click(function(){
 		$(".help_block_error").text('');
-		var username = document.getElementById('login_username').value;
-		if (username.length == 0){
+		var email = document.getElementById('login_email').value;
+		if (email.length == 0){
 			$(".error_username").text('用户名不能为空');
 			return;
-		}else if (username.search(/\s/g) != -1){
-			$(".error_username").text('用户名不能有空格');
+		}else if (email.search(/\s/g) != -1){
+			$(".error_username").text('email cannot contain space');
 			return;
 		}
-		if (username.startsWith("project_manager")) {
+		if (email.startsWith("pm")) {
 			usertype_str = 'manager';
 		}
 		var password = document.getElementById('login_password').value;
@@ -35,7 +35,7 @@ $(document).ready(function(){
 		}
 		var postUrl = '/login';
 		var postData = {
-			username: username,
+			email: email,
 			password: password,
 			usertype: usertype_str,
 		}

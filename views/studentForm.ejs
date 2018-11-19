@@ -3,7 +3,7 @@
 <head>
     <title>registration</title>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../javascripts/studentForm.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/studentForm.css">
 </head>
 <body>
 <!-- Name Section -->
@@ -18,65 +18,31 @@
             <form class="form-horizontal" role="form">
                 <fieldset>
 
-                    <!-- Form Name -->
-                    <legend>Personal Information Details :</legend>
-
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <div class="col-sm-4">
-                            <input type="text" name="fistName" placeholder="First Name" class="form-control">
-                        </div>
-                        <div class="col-sm-2">
-                            <input type="text" name="middleName" placeholder="Middle Name" class="form-control">
-                        </div>
-                        <div class="col-sm-4">
-                            <input type="text" name="lastName" placeholder="Last Name" class="form-control">
-                        </div>
-                    </div>
-
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <div class="col-sm-4">
-                            <input type="date" placeholder="Date Of Birth" class="form-control">
-                        </div>
-                    </div>
-
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <div class="col-sm-4">
-                            <select type="gender" placeholder="Gender" class="form-control">
-                                <option value="female">Male</option>
-                                <option value="male">Female</option>
-                            </select>
-                        </div>
-                    </div>
-
-
                     <!-- Address Section -->
                     <!-- Form Name -->
                     <legend>Address Details :</legend>
                     <!-- Text input-->
                     <div class="form-group">
                         <div class="col-sm-10">
-                            <input type="text" name="addressLine1" placeholder="Address Line 1" class="form-control">
+                            <input type="text" id="address_line1" placeholder="Address Line 1" class="form-control">
                         </div>
                     </div>
                     <!-- Text input-->
                     <div class="form-group">
                         <div class="col-sm-10">
-                            <input type="text" name="addressLine2" placeholder="Address Line 2" class="form-control">
+                            <input type="text" id="address_line2" placeholder="Address Line 2" class="form-control">
                         </div>
                     </div>
                     <!-- Text input-->
                     <div class="form-group">
                         <div class="col-sm-4">
-                            <input type="text" name="city" placeholder="City" class="form-control">
+                            <input type="text" id="city" placeholder="City" class="form-control">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" name="state" placeholder="State" class="form-control">
+                            <input type="text" id="state" placeholder="State" class="form-control">
                         </div>
                         <div class="col-sm-4">
-                            <input type="text" name="postalCode" placeholder="Post Code" class="form-control">
+                            <input type="text" id="post_code" placeholder="Post Code" class="form-control">
                         </div>
                     </div>
                     <!-- Education Section -->
@@ -109,7 +75,7 @@
                             <h4><STRONG>Education :</STRONG></h4>
 
                             <label for="level"><span>Level of Education</span></label>
-                            <select class="form-control form-control-sm">
+                            <select id="select_education_level" class="form-control form-control-sm">
                                 <option value="">Select an option...</option>
                                 <option value="bachelors"  >Bachelors</option>
                                 <option value="masters"  >Masters</option>
@@ -118,7 +84,7 @@
                             <span class="error"></span>
 
                             <label for="field"><span>Field of Study</span></label>
-                            <select class="form-control form-control-sm">
+                            <select id="select_field_of_study" class="form-control form-control-sm">
                                 <option value="">Select an option...</option>
                                 <option value="ece"  >Electronics and Communications</option>
                                 <option value="EEE"  >Electrical</option>
@@ -131,10 +97,10 @@
 
                             <div class="clear"></div>
                             <label for="name">Institution Name</label>
-                            <input type="text" class="form-control" id="name">
+                            <input type="text" id="institution_name" class="form-control">
                         </div>
                     </div>
-                    <button type="button" class="btn btn-primary" onclick="edu()">Add Education</button>
+                    <button type="button" class="btn btn-primary" onclick="education()">Add Education</button>
                     <!-- Skills Section -->
 
                     <legend>Skills :</legend>
@@ -142,18 +108,18 @@
                         <div class="skillFields">
                             <div>
                                 <label for="skill">Skill Name :</label>
-                                <input type="text" class="form-control" id="skill">
+                                <input type="text" class="form-control select_skill" id="skill">
                             </div>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-primary" onclick="skil()">Add Skills</button>
+                    <button type="button" class="btn btn-primary" onclick="skills()">Add Skills</button>
                     <!-- Research Section -->
 
                     <legend>Research Interest :</legend>
                     <div id="researchFieldsWrapper" >
                         <div class="researchFields">
                             <label for="research">Interest Name :</label>
-                            <input type="text" class="form-control" id="research">
+                            <input type="text" id="research_interest" class="form-control">
                         </div>
                     </div>
                     <button type="button" class="btn btn-primary" onclick="research()">Add Interest</button>
@@ -165,24 +131,24 @@
                             <label for="comp">Company Name :</label>
                             <input type="text" class="form-control" id="company">
                             <label for="pos">Position :</label>
-                            <input type="text" class="form-control" id="pos">
+                            <input type="text" class="form-control" id="position">
                             <label for="startDate">Start Date :</label>
-                            <input type="date" class="form-control" id="sdate">
+                            <input type="date" class="form-control" id="start_date">
                             <label for="endDate">End Date :</label>
-                            <input type="date" class="form-control" id="enddate">
+                            <input type="date" class="form-control" id="end_date">
                         </div>
                     </div>
-                    <button type="button" class="btn btn-primary" onclick="exp()">Add Experience</button>
+                    <button type="button" class="btn btn-primary" onclick="experience()">Add Experience</button>
 
                     <legend>Others :</legend>
                     <label for="projDate">Intended Start Date:</label>
-                    <input type="date" class="form-control" id="projDate">
+                    <input type="date" class="form-control" id="intended_start_date">
                     <label for="fund">Require Financial Aid? :</label>
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                    <input class="form-check-input" type="radio" name="require_financial_aid" id="gridRadios1" value="option1" checked>
                     <label class="form-check-label" for="gridRadios1">
                         Yes
                     </label>
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                    <input class="form-check-input" type="radio" name="require_financial_aid" id="gridRadios2" value="option2">
                     <label class="form-check-label" for="gridRadios2">
                         No
                     </label>
@@ -190,7 +156,7 @@
 
                 </fieldset>
             </form>
-            <button type="submit" class="btn btn-primary" onclick="">Submit</button>
+            <button type="submit" class="btn btn-primary" onclick="profileCreateSubmit()">Submit</button>
         </div>
 
     </div>

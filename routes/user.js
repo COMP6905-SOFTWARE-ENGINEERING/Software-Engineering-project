@@ -68,7 +68,7 @@ router.post('/create_profile', function(req, res){
                 }
                 profileData['salary'] = JSON.parse(profileData.salary);
                 // console.log(profileData);
-                profileModel.createResume(profileData, function(status){
+                profileModel.createProfile(profileData, function(status){
                     if (status == 'ok'){
                         res.json({status:status, flag:1});
                     }else {
