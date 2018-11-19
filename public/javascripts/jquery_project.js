@@ -1,6 +1,12 @@
+function skills() {
+    var skill_input = $(".skillFields").clone().first();
+    skill_input.appendTo($("#skillsFieldsWrapper "));
+}
+
 function backToProjectList(){
 	window.location.href = "/project/projectlist";
-};
+}
+
 function projectCreateSubmit(){
 	$(".help_block_error").text(" ").attr("title", '');
 	var postUrl;
@@ -15,7 +21,7 @@ function projectCreateSubmit(){
 		application_deadline:$("#application_deadline").val(),
 		contact_information:$("#textarea_contact_information").val(),
 	};
-	postUrl = 'project/create_project';
+	postUrl = '/project/create_project';
 	// if ($(".hidden_offerid").val()){
 	// 	postUrl = '/company/modify_offer';
 	// 	postData["_id"] = $(".hidden_offerid").val();
