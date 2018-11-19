@@ -64,12 +64,6 @@
         <button class="list_btn" id="create_project_button">Create
         </button>
 
-        <% }else if (userdata.usertype == 'admin') {%>
-        <ul class="list_title">
-            <li class="list_title_column">职位名称</li>
-            <li class="list_title_column">公司名</li>
-            <li class="list_title_column">申请时间</li>
-        </ul>
         <% for (var i in projectList){ %>
         <ul class="list_row">
             <input type="hidden" class="hidden_projectId" value="<%= projectList[i]._id %>" disabled="disabled">
