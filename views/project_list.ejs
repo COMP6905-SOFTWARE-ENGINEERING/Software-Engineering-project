@@ -29,35 +29,19 @@
 </div>
 <div class="nav_bar">
     <div class="nav_bar_blank"></div>
-    <% if (userdata.usertype == 'company') {%>
-    <div class="nav_bar_select redirect_jobmgmt_button" style="border:0; border-bottom:2px solid white; color:white;">职位管理</div>
-    <div class="nav_bar_select redirect_appmgmt_button">应聘管理</div>
-    <div class="nav_bar_slide_box">
-        <div class="nav_bar_select nav_bar_slide_select redirect_my_appmgmt_button">我的投递</div>
-        <div class="nav_bar_select nav_bar_slide_select redirect_rcv_appmgmt_button">收到的应聘</div>
-    </div>
-    <div class="nav_bar_select redirect_peoplesearch_button">人才检索</div>
-    <% }else if (userdata.usertype == 'admin') {%>
-    <div class="nav_bar_select redirect_infocheck_button" style="border:0; border-bottom:2px solid white; color:white;">信息审核</div>
-    <div class="nav_bar_slide_box">
-        <div class="nav_bar_select nav_bar_slide_select redirect_project_infocheck_button admin_infocheck">职位审核</div>
-        <div class="nav_bar_select nav_bar_slide_select redirect_reg_infocheck_button admin_infocheck">注册审核</div>
-    </div>
-    <div class="nav_bar_select redirect_search_button">检索</div>
-    <div class="nav_bar_slide_box">
-        <div class="nav_bar_select nav_bar_slide_select redirect_project_search_button admin_search">职位搜索</div>
-        <div class="nav_bar_select nav_bar_slide_select redirect_resume_search_button admin_search">简历搜索</div>
-    </div>
+    <% if (userdata.usertype == 'manager') {%>
+    <div class="nav_bar_select redirect_jobmgmt_button" style="border:0; border-bottom:2px solid white; color:white;">manage project</div>
+    <div class="nav_bar_select redirect_peoplesearch_button">search student</div>
     <% } %>
 </div>
 <div class="body">
     <div class="projectlist_box">
         <% if (userdata.usertype == 'manager') {%>
         <ul class="list_title">
-            <li class="list_title_column">职位名称</li>
-            <li class="list_title_column">修改时间</li>
-            <li class="list_title_column" title="只有通过审核的职位信息才会被应聘者看到">是否通过</li>
-            <li class="list_title_column">职位操作</li>
+            <li class="list_title_column">project name</li>
+            <li class="list_title_column">level_of_study</li>
+            <li class="list_title_column">start date</li>
+            <li class="list_title_column">application deadline</li>
         </ul>
         <% for (var i in projectList){ %>
         <ul class="list_row">
@@ -66,19 +50,15 @@
             <li class="list_column"><%= projectList[i].editdate.Format("yyyy-MM-dd hh:mm:ss") %></li>
             <li class="list_column">
                 <% if(projectList[i].isApproved){ %>
-                <button class="select_button approve_status" style="background-color:rgb(0,188,212)">是</button>
+                <button class="select_button approve_status" style="background-color:rgb(0,188,212)">yes</button>
                 <% }else { %>
-                <button class="select_button approve_status" style="background-color:#BBBBBB" title="<%= projectList[i].rejected_reason %>">否</button>
+                <button class="select_button approve_status" style="background-color:#BBBBBB" title="<%= projectList[i].rejected_reason %>">no</button>
                 <% } %>
             </li>
             <li class="list_column">
-                <% if(!projectList[i].isApproved){ %>
-                <a class="opt_click modify_project_btn">修改</a>
+                <a class="opt_click refresh_project_btn">modify</a>
                 <a style="color: black">|</a>
-                <% } %>
-                <a class="opt_click refresh_project_btn">更新</a>
-                <a style="color: black">|</a>
-                <a class="opt_click remove_project_btn">删除</a></li>
+                <a class="opt_click remove_project_btn">delete</a></li>
         </ul>
         <% } %>
         <button class="list_btn" id="create_project_button">Create
@@ -104,7 +84,7 @@
         <div class="pre_page_btn">
             &nbsp;
             <% if (page > 1){ %>
-            <a href="?page=<%= parseInt(page)-1 %>">上一页</a>
+            <a href="?page=<%= parseInt(page)-1 %>">last page</a>
             <% } %>
         </div>
         <div class="page_text">
@@ -112,7 +92,7 @@
         </div>
         <div class="next_page_btn">
             <% if (page < maxpage){ %>
-            <a href="?page=<%= parseInt(page)+1 %>">下一页</a>
+            <a href="?page=<%= parseInt(page)+1 %>">next page</a>
             <% } %>
             &nbsp;
         </div>
