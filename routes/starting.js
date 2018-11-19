@@ -4,7 +4,7 @@ var router = express.Router();
 var accMgmtModel = require('../models/account_db.js');
 
 router.get('/', function(req, res, next) {
-        res.render('getStartedPage', {
+        res.render('starting', {
             title: 'Welcome to MUN GradRec'
         });
 });

@@ -13,16 +13,11 @@ var profileSchema = new Schema({
         required:[true, 'please input your address'],
         match:[/^(0[1-9]|[1-9]\d){2}00$/, 'please check your address again'],
     },
-    experience:{
-        type:Number,
-        required:[true, '工作经验年数不能为空'],
-        min:[0, '工作经验年数不能小于0'],
-    },
+    work_experience: [{type:String}],
     research_interest:{
         type:String,
         required:[true, 'research interest cannot be empty'],
         trim:true,
-        maxlength:[18, '期望职位不能超过十八个字'],
     },
     intended_start_date:{
         type:Date,

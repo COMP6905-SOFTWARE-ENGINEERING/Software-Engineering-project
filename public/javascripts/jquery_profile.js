@@ -2,24 +2,27 @@ function backToProfileList(){
 	window.location.href = "/user/profileview";
 };
 
-function resumeModSubmit(){
+function profileCreateSubmit(){
 	$(".help_block_error").text(" ").attr("title", '');
 	var postUrl;
 	var postData = {
 		owner:$(".hidden_username").val(),
-		resumename:$("#resume_resumename").val(),
-		realname:$("#resume_realname").val(),
-		email:$("#resume_email").val(),
-		sex:$(".select_sex option:selected").val(),
-		age:$("#resume_age").val(),
+		address_line1:$("#address_line1").val(),
+        address_line2:$("#address_line2").val(),
+        city:$("#city").val(),
+        state:$("#state").val(),
+        post_code:$("#post_code").val(),
+        select_education_level:$("#select_education_level").val(),
+		select_field_of_study:$("#select_field_of_study").val(),
+		institution_name:$("#institution_name").val(),
+		skill:$(".select_skill"),
+		research_interest:$("#research_interest").val(),
 		location:$(".select_city option:selected").val(),
 		job:$(".select_job option:selected").val(),
 		salary:JSON.stringify([$("#resume_salary_min").val(), $("#resume_salary_max").val()]),
 		job_type:$(".select_job_type option:selected").val(),
 		experience:$("#resume_experience").val(),
 		first_forlang:$(".select_first_forlang option:selected").val()+$(".select_first_proficiency option:selected").val(),
-		second_forlang:$(".select_second_forlang option:selected").val()+$(".select_second_proficiency option:selected").val(),
-		third_forlang:$(".select_third_forlang option:selected").val()+$(".select_third_proficiency option:selected").val(),
 		education:$(".select_education option:selected").val(),
 		school:$("#resume_school").val(),
 		offername:$("#resume_offername").val(),
@@ -28,12 +31,7 @@ function resumeModSubmit(){
 		self_evaluation:$("#textarea_self_evaluation").val(),
 		rewards_punishments:$("#textarea_rewards_punishments").val(),
 	};
-	if ($(".hidden_resumeid").val()){
-		postUrl = '/person/modify_resume';
-		postData["_id"] = $(".hidden_resumeid").val();
-	}else {
-		postUrl = '/person/create_resume';
-	}
+	postUrl = '/user/create_profile';
 	// alert(JSON.stringify(postData));
 	$.post(postUrl, postData, function(data, status){
 		if(status == 'success'){

@@ -3,3 +3,7 @@ body
     background-color: #E9E9E9;
 }
 
+.button-wrapper
+{
+    padding: 1.5rem;
+}

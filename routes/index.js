@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
             // usertype: req.session.user.usertype
         });
     }else{
-        res.redirect('/getStartedPage');
+        res.redirect('/starting');
     }
 });
 
