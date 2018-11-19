@@ -2,7 +2,7 @@ $(document).ready(function(){
 	usertype_str = 'student';
 	$("#login_type_person").css({"font-size":"18px","color":"#0099FF","border-bottom":"1px solid #0099FF"});
 	$("body").keydown(function() {
-		if (event.keyCode == "13") {//keyCode=13是回车键
+		if (event.keyCode == "13") {//keyCode=13 is enter
 			$('.login_button').click();
 		}
 	});
@@ -14,9 +14,9 @@ $(document).ready(function(){
 	});
 	$(".login_button").click(function(){
 		$(".help_block_error").text('');
-		var email = document.getElementById('login_email').value;
+		var email = $('#inputEmail').val();
 		if (email.length == 0){
-			$(".error_username").text('用户名不能为空');
+			$(".error_username").text('email cannot be empty');
 			return;
 		}else if (email.search(/\s/g) != -1){
 			$(".error_username").text('email cannot contain space');
@@ -25,12 +25,12 @@ $(document).ready(function(){
 		if (email.startsWith("pm")) {
 			usertype_str = 'manager';
 		}
-		var password = document.getElementById('login_password').value;
+		var password = $('#inputPassword').val();
 		if (password.length == 0){
-			$(".error_password").text('密码不能为空');
+			$(".error_password").text('password cannot be empty');
 			return;
 		}else if (password.search(/\s/g) != -1){
-			$(".error_password").text('密码不能有空格');
+			$(".error_password").text('password cannot contain space');
 			return;
 		}
 		var postUrl = '/login';

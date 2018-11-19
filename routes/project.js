@@ -66,7 +66,7 @@ router.post('/create_project', function(req, res){
             }
         });
     }else {
-        res.json({status:"未登录", flag:0});
+        res.json({status:"Not log in yet", flag:0});
     }
 });
 
