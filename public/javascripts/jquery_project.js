@@ -1,7 +1,7 @@
 function backToProjectList(){
 	window.location.href = "/project/projectlist";
 };
-function offerModSubmit(){
+function projectCreateSubmit(){
 	$(".help_block_error").text(" ").attr("title", '');
 	var postUrl;
 	var postData = {
