@@ -17,35 +17,24 @@ function profileCreateSubmit(){
 		institution_name:$("#institution_name").val(),
 		skill:$(".select_skill"),
 		research_interest:$("#research_interest").val(),
-		location:$(".select_city option:selected").val(),
-		job:$(".select_job option:selected").val(),
-		salary:JSON.stringify([$("#resume_salary_min").val(), $("#resume_salary_max").val()]),
-		job_type:$(".select_job_type option:selected").val(),
-		experience:$("#resume_experience").val(),
-		first_forlang:$(".select_first_forlang option:selected").val()+$(".select_first_proficiency option:selected").val(),
-		education:$(".select_education option:selected").val(),
-		school:$("#resume_school").val(),
-		offername:$("#resume_offername").val(),
-		pro_courses:$("#textarea_pro_courses").val(),
-		pro_ability:$("#textarea_pro_ability").val(),
-		self_evaluation:$("#textarea_self_evaluation").val(),
-		rewards_punishments:$("#textarea_rewards_punishments").val(),
+		company:$("#company").val(),
+		position:$("#position").val(),
+		start_date:$("#start_date").val(),
+        end_date:$("#end_date").val(),
+        intended_start_date:$("#intended_start_date").val(),
+		require_financial_aid:$("input[name='require_financial_aid']:selected").val()
 	};
 	postUrl = '/user/create_profile';
 	// alert(JSON.stringify(postData));
 	$.post(postUrl, postData, function(data, status){
 		if(status == 'success'){
 			if (data.flag == 0){
-				if(data.status.code == '11000'){
-					$(".error_resumename").text('×').attr("title", '简历名已存在');;
-				}else {
-					for (var errPath in data.status.errors){
-						$(".error_"+errPath).text('×').attr("title", data.status.errors[errPath].message);
-					}
+                for (var errPath in data.status.errors){
+                    $(".error_"+errPath).text('×').attr("title", data.status.errors[errPath].message);
 				}
 				// alert(JSON.stringify(data.status));
 			}else {
-				alert('操作成功，即将返回到简历列表');
+				alert('create successful');
 				window.location.href = "/person/resumelist";
 			}
 		}else {

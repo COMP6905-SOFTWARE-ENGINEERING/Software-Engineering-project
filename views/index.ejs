@@ -31,24 +31,11 @@
     <% if (userdata.usertype == 'student'){ %>
         <div class="nav_bar_select redirect_profile_button">manage profile</div>
         <div class="nav_bar_select redirect_jobsearch_button">search project</div>
-        <div class="nav_bar_slide_box">
-            <div class="nav_bar_select nav_bar_slide_select redirect_my_apprecord_button">我的申请</div>
-            <div class="nav_bar_select nav_bar_slide_select redirect_rcv_apprecord_button">收到的申请</div>
-        </div>
     <% }else if (userdata.usertype == 'manager') { %>
         <div class="nav_bar_select redirect_projectmgmt_button">mange project</div>
         <div class="nav_bar_select redirect_peoplesearch_button">search prospective student</div>
     <% }else { %>
-        <div class="nav_bar_select redirect_infocheck_button">信息审核</div>
-        <div class="nav_bar_slide_box">
-            <div class="nav_bar_select nav_bar_slide_select redirect_offer_infocheck_button admin_infocheck">职位审核</div>
-            <div class="nav_bar_select nav_bar_slide_select redirect_reg_infocheck_button admin_infocheck">注册审核</div>
-        </div>
         <div class="nav_bar_select redirect_search_button">search</div>
-        <div class="nav_bar_slide_box">
-            <div class="nav_bar_select nav_bar_slide_select redirect_offer_search_button admin_search">职位搜索</div>
-            <div class="nav_bar_select nav_bar_slide_select redirect_resume_search_button admin_search">简历搜索</div>
-        </div>
     <% } %>
 </div>
 <div class="body">

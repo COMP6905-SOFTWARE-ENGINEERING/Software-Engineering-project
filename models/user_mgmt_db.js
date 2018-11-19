@@ -46,13 +46,13 @@ exports.userLogin = function(reqData, callback){
 		if (err){
 			callback(err);
 		}else if (data != null){
-			if (data.password == reqData.password){
+			if (data.password === reqData.password){
 				callback('ok', data);
 			}else{
-				callback('wrong password');
+				callback('wrong password', null);
 			}
 		}else{
-			callback('user not exist');
+			callback('user not exist', null);
 		}
 	});
 };

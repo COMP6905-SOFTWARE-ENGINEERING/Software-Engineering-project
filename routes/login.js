@@ -36,11 +36,12 @@ router.post('/',function(req,res){
         usertype: req.body.usertype
     };
     // var usertype = req.body.usertype;
-    accMgmtModel.login(loginData, function(status){
+    accMgmtModel.login(loginData, function(status, data){
         if (status == 'ok'){
             // console.log('1');
             req.session.user = {
-                firstname: loginData.username,
+                useremail: data.email,
+                firstname: data.firstname,
                 usertype: loginData.usertype
             };
             res.json({status:status, flag:1});

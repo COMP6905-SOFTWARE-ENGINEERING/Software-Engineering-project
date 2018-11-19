@@ -79,18 +79,18 @@ a:hover {
 	background-color: white;
 }
 .toggle_block:hover {
-	background-color: rgb(0,188,212);
+	background-color: #862633;
 	color: white;
 }
 .nav_bar {
 	width: 100%;
-	background: rgb(0,188,212);
+	background-color:#862633;
 	height: 48px;
 	-moz-box-shadow:0px 5px 5px #BBBBBB;
 	-webkit-box-shadow:0px 5px 5px #BBBBBB;
 	box-shadow:0px 5px 5px #BBBBBB;
 	margin-bottom: 5px;
-	color: rgb(144,222,222);
+	color: #962633;
 	line-height: 48px;
 	font-size: 14px;
 	text-align: center;

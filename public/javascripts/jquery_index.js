@@ -6,7 +6,7 @@ $(document).ready(function(){
 				if(data.ret_code != 0){
 					alert(data.ret_msg);
 				}else{
-					alert(data.ret_msg + "，即将返回登录界面");
+					alert(data.ret_msg + "，go back to login page");
 					window.location.href = "/index";
 				}
 			}else{
