@@ -7,6 +7,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
 var session = require('express-session');
+var config = require('config-lite')(__dirname);
 
 
 var indexRouter = require('./routes/index');
@@ -32,7 +33,7 @@ var accessLogStream = rfs('access.log', {
 // setup the logger
 app.use(logger('combined', { stream: accessLogStream }));
 
-var url = 'mongodb://127.0.0.1:27017/GradRecDB';
+var url = config.mongodb; //mongodb address
 mongoose.connect(url, { useNewUrlParser: true });
 mongoose.set('useCreateIndex', true);
 
@@ -75,7 +76,7 @@ app.use(function (req, res) {
 //  res.sendFile(path.join(__dirname+'/signup.html'));
 //});
  // start the server
- app.listen(3334);
+ app.listen(config.port);
  console.log('Software Engineering Group 4 Port 3334 is now active');
 // console.log(__dirname + '/index.html');
 
