@@ -36,7 +36,7 @@ Once the student receives the offer, he can accept or decline it on the system. 
 
 >   mongoimport --db GradRecDB --collection countries --file /Commands/countries.json
 
->   mongoimport --db GradRecDB --collection programs --file programs.json
+>   mongoimport --db GradRecDB --collection programs --file /Commands/programs.json
 
  **5 Run app**
 
