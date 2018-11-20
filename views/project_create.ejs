@@ -1,131 +1,128 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="../javascripts/jquery_project.js"></script>
-    <link rel="stylesheet" type="text/css" href="ProjectList.css">
-    <title>ProjectList</title>
+    <link rel="stylesheet" type="text/css" href="CreateProject.css">
+    <title>CreateProject</title>
 </head>
-
 <body>
-    <!-------header---------------------------->
-    <div class="header">
-        <div class="container">
-            <div class="logo">
-            </div>
-        </div>
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-3"></h1>
     </div>
-    <br>
-    <!-------------------project form-------------------------->
-    <br>
+    <!------Form------->
     <div class="container">
-        <!-------------Field of study---------------------------->
         <div class="row" id="mainRow">
             <div class="col-md-6 col-md-offset-1">
                 <form class="form-horizontal" role="form">
                     <input type="hidden" class="hidden_userid" value="<%= userdata._id %>" disabled="disabled">
-                    <div class="Fieldofstudy">
-                        <h1>Create Project</h1>
-                        <br>
+                    <h1>Create Project</h1>                     <br>
+                    <fieldset>
                         <div class="form-group">
-                            <div class="col-sm-7">
-                                <label for="projDate">Project Name:</label>
-                                <input type="text" class="form-control" id="project_name">
+                            <div class="col-sm-12">
+                                <div class="field of study">
+                                    <label>Project Title:</label>
+                                    <hr>
+                                    <ul><input type="text" class="form-control" id="project_name"
+                                               placeholder="Your project name"></ul>
+                                </div>
                             </div>
                         </div>
+                    </fieldset>
+                    <fieldset>
+                        <label><span class="number"></span>Level of Study:</label>
+                        <hr>
+                        <div class="form-group">
+                            <div class="col-sm-4">
+                                <ul>
+                                    <select id="level_of_study" name="Student_Position" class="form-control">
+                                </ul>
+                                <option value="Bachelors">Bachelors</option>
+                                <option value="Masters">Masters</option>
+                                <option value="Phd">Phd</option>
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <!-------------Project  description---------------------------->
+                    <div class="project_info">
                         <fieldset>
-                            <legend><span class="number"></span>Level of Study</legend>
+                            <label><span class="number"></span>Project Description:</label>
+                            <hr>
                             <div class="form-group">
                                 <div class="col-sm-4">
-                                    <select id="level_of_study" name="Student_Position" class="form-control">
-                                        <br>
-                                        <option value="Bachelors">Bachelors</option>
-                                        <option value="Masters">Masters</option>
-                                        <option value="Phd">Phd</option>
-                                    </select>
+                                    <ul><textarea style="width:500px; height:150px;" id="project_description"
+                                                  name="projectInfo" class="form-control"
+                                                  placeholder="Project description must be greater than 20 words."></textarea>
+                                    </ul>
                                 </div>
                             </div>
                         </fieldset>
-                        </div>
-                        <!-------------Project  description---------------------------->
-                        <br>
-                        <div class="project_info">
-                            <fieldset>
-                                <legend><span class="number"></span>Project Description</legend>
-                                <div class="form-group">
-                                    <div class="col-sm-4">
-                                        <textarea id="project_description" name="projectInfo" class="form-control" placeholder="Project description must be greater than 20 words."></textarea>
+                    </div>
+                    <!--------skills section--------------------------------------->
+                    <div class="skill">
+                        <fieldset>
+                            <div id='skillsFieldsWrapper'>
+                                <div id="Addskilldiv1">
+                                    <label><span class="number"></span>Skills Required: </label>
+                                    <hr>
+                                    <div class="form-group">
+                                        <div class="col-sm-7">
+                                            <ul><label> skill 1 :</label>
+                                                <input type='text' id='skilltb' class="form-control select_skill"
+                                                       placeholder="Add your skills">
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="button-wrapper">
+                                        <button type="button" class="btn btn-primary" onclick="skills()">Add Skills
+                                        </button>
                                     </div>
                                 </div>
-                            </fieldset>
                             </div>
-                            <!--------skills section--------------------------------------->
-                            <br>
-                            <div class="skill">
-                                <fieldset>
-                                    <div id='skillsFieldsWrapper'>
-                                        <div id="Addskilldiv1">
-                                            <legend><span class="number"></span>Skills</legend>
-                                            <div class="form-group">
-                                                <div class="col-sm-7">
-                                                    <label> skill 1 :</label>
-                                                    <input type='text' id='skilltb' class="form-control select_skill" placeholder="Add your skills">
-                                                </div>
-                                            </div>
-                                            <div class="button-wrapper">
-                                                <button type="button" class="btn btn-primary" onclick="skills()">Add Skills</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </fieldset>
-                                </div>
-                                <br>
-                                <br>
+                        </fieldset>
+                    </div>
+                    <br><label for="projDate">Start Date:</label>
+                    <hr>
                     <div class="form-group">
                         <div class="col-sm-7">
-                            <label for="projDate">Start Date:</label>
-                            <input type="date" class="form-control" id="start_date">
+                            <ul><input type="date" class="form-control" id="start_date"></ul>
                         </div>
                     </div>
-
+                    <label for="projDate">Application Deadline:</label>
+                    <hr>
                     <div class="form-group">
                         <div class="col-sm-7">
-                            <label for="projDate">Application Deadline:</label>
-                            <input type="date" class="form-control" id="application_deadline">
+                            <ul><input type="date" class="form-control" id="application_deadline"></ul>
                         </div>
                     </div>
-                                <!------------Availabilty of financial aid section----------------->
-                                <div class="form-group">
-                                    <div class="col-sm-7">
-                                        <label>Availabailty of Financial-aid:</label>
-                                        <br>
-                                        <input type="radio" id="Financialaid" value="Financialaid" name="Financialaid">
-                                        <label class="light" for="Financialaid" class="form-control" onclick="toggleTextbox('F')">Yes</label>
-                                        <input type="radio" id="Financialaid" value="Financialaid" name="Financialaid">
-                                        <label class="light" for="Financialaid" class="form-control" onclick="">No</label>
-                                        <br>
-                                        <br>
-                                        <label>Avalilabe Funding:</label>
-                                        <input type='text' id='available_funding' class="form-control" placeholder="Funding Amount(CAD$)">
-                                        <div>
-                                            <div class="form-group">
-                                                <div class="col-sm-4">
-                                                    <br>
-                                                    <button type='submit'  id='subbmitform' class="btn btn-primary" onclick="projectCreateSubmit()">Submit</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
+                    <label>Avalilabe Funding:</label>
+                    <hr>
+                    <ul><input type='text' id='available_funding' class="form-control"
+                               placeholder="Funding Amount(CAD$)"></ul>
+                    <div>
+                        <div class="form-group">
+                            <div class="col-sm-4">
+                                <br>
+                                <button type='submit' id='submitform' class="btn btn-primary"
+                                        onclick="projectCreateSubmit()">Submit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </form>
+                <>
             </div>
         </div>
     </div>
-</body>
+</div>
 
+</form>
+</div>
+</div>
+</body>
 </html>
