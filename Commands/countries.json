@@ -1,0 +1,199 @@
+ {Country:"Afghanistan", Continent:"Asia", Region:"Southern Asia", Sub_Region:"Southern Asia"}
+ {Country:"Albania", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {Country:"Algeria", Continent:"Africa", Region:"Northern Africa", Sub_Region:"Northern Africa"}
+ {Country:"Angola", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Middle Africa"}
+ {Country:"Argentina", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
+ {Country:"Armenia", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {Country:"Aruba", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {Country:"Australia", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
+ {Country:"Austria", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {Country:"Azerbaijan", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {Country:"Bahamas", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {Country:"Bahrain", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {Country:"Bangladesh", Continent:"Asia", Region:"Southern Asia", Sub_Region:"Southern Asia"}
+ {Country:"Barbados", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {Country:"Belarus", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {Country:"Belgium", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {Country:"Belize", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {Country:"Benin", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
+ {Country:"Bhutan", Continent:"Asia", Region:"Southern Asia", Sub_Region:"Southern Asia"}
+ {Country:"Bolivia", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
+ {Country:"Bosnia and Herzegovina", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {Country:"Botswana", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Southern Africa"}
+ {Country:"Brazil", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
+ {Country:"Brunei Darussalam", Continent:"Asia", Region:"South Eastern Asia", Sub_Region:"South Eastern Asia"}
+ {Country:"Bulgaria", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {Country:"Burkina Faso", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
+ {Country:"Burundi", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {Country:"Cambodia", Continent:"Asia", Region:"South Eastern Asia", Sub_Region:"South Eastern Asia"}
+ {Country:"Cameroon", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Middle Africa"}
+ {Country:"Canada", Continent:"America", Region:"North America", Sub_Region:"North America"}
+ {Country:"Cape Verde", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
+ {Country:"Central African Republic", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Middle Africa"}
+ {Country:"Chad", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Middle Africa"}
+ {Country:"Channel Islands", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {Country:"Chile", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
+ {Country:"China", Continent:"Asia", Region:"Eastern Asia", Sub_Region:"Eastern Asia"}
+ {Country:"Colombia", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
+ {Country:"Comoros", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {Country:"Congo", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Middle Africa"}
+ {Country:"Costa Rica", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {Country:"Côte d'Ivoire", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
+ {Country:"Croatia", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {Country:"Cuba", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {Country:"Cyprus", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {Country:"Czech Republic", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {Country:"North Korea", Continent:"Asia", Region:"Eastern Asia", Sub_Region:"Eastern Asia"}
+ {Country:"Congo", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Middle Africa"}
+ {Country:"Denmark", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {Country:"Djibouti", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {Country:"Dominican Republic", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {Country:"Ecuador", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
+ {Country:"Egypt", Continent:"Africa", Region:"Northern Africa", Sub_Region:"Northern Africa"}
+ {Country:"El Salvador", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {Country:"Equatorial Guinea", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Middle Africa"}
+ {Country:"Eritrea", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {Country:"Estonia", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {Country:"Ethiopia", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {Country:"Fiji", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
+ {Country:"Finland", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {Country:"France", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {Country:"French Guiana", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
+ {Country:"French Polynesia", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
+ {Country:"Gabon", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Middle Africa"}
+ {Country:"Gambia", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
+ {Country:"Georgia", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {Country:"Germany", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {Country:"Ghana", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
+ {Country:"Greece", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {Country:"Grenada", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {Country:"Guadeloupe", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {Country:"Guam", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
+ {Country:"Guatemala", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {Country:"Guinea", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
+ {Country:"Guinea Bissau", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
+ {Country:"Guyana", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
+ {Country:"Haiti", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {Country:"Honduras", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {Country:"Hong Kong", Continent:"Asia", Region:"Eastern Asia", Sub_Region:"Eastern Asia"}
+ {Country:"Hungary", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {Country:"Iceland", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {Country:"India", Continent:"Asia", Region:"Southern Asia", Sub_Region:"Southern Asia"}
+ {Country:"Indonesia", Continent:"Asia", Region:"South Eastern Asia", Sub_Region:"South Eastern Asia"}
+ {Country:"Iran", Continent:"Asia", Region:"Southern Asia", Sub_Region:"Southern Asia"}
+ {Country:"Iraq", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {Country:"Ireland", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {Country:"Israel", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {Country:"Italy", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {Country:"Jamaica", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {Country:"Japan", Continent:"Asia", Region:"Eastern Asia", Sub_Region:"Eastern Asia"}
+ {Country:"Jordan", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {Country:"Kazakhstan", Continent:"Asia", Region:"Central Asia", Sub_Region:"Central Asia"}
+ {Country:"Kenya", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {Country:"Kuwait", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {Country:"Kyrgyzstan", Continent:"Asia", Region:"Central Asia", Sub_Region:"Central Asia"}
+ {Country:"Laos", Continent:"Asia", Region:"South Eastern Asia", Sub_Region:"South Eastern Asia"}
+ {Country:"Latvia", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {Country:"Lebanon", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {Country:"Lesotho", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Southern Africa"}
+ {Country:"Liberia", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
+ {Country:"Libya", Continent:"Africa", Region:"Northern Africa", Sub_Region:"Northern Africa"}
+ {Country:"Lithuania", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {Country:"Luxembourg", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {Country:"Macao", Continent:"Asia", Region:"Eastern Asia", Sub_Region:"Eastern Asia"}
+ {Country:"Madagascar", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {Country:"Malawi", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {Country:"Malaysia", Continent:"Asia", Region:"South Eastern Asia", Sub_Region:"South Eastern Asia"}
+ {Country:"Maldives", Continent:"Asia", Region:"Southern Asia", Sub_Region:"Southern Asia"}
+ {Country:"Mali", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
+ {Country:"Malta", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {Country:"Martinique", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {Country:"Mauritania", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
+ {Country:"Mauritius", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {Country:"Mayotte", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {Country:"Mexico", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"North America"}
+ {Country:"Micronesia", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
+ {Country:"Mongolia", Continent:"Asia", Region:"Eastern Asia", Sub_Region:"Eastern Asia"}
+ {Country:"Montenegro", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {Country:"Morocco", Continent:"Africa", Region:"Northern Africa", Sub_Region:"Northern Africa"}
+ {Country:"Mozambique", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {Country:"Myanmar", Continent:"Asia", Region:"South Eastern Asia", Sub_Region:"South Eastern Asia"}
+ {Country:"Namibia", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Southern Africa"}
+ {Country:"Nepal", Continent:"Asia", Region:"Southern Asia", Sub_Region:"Southern Asia"}
+ {Country:"Netherlands", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {Country:"Netherlands Antilles", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {Country:"New Caledonia", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
+ {Country:"New Zealand f", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
+ {Country:"Nicaragua", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {Country:"Niger", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
+ {Country:"Nigeria", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
+ {Country:"Norway", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {Country:"Palestine", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {Country:"Oman", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {Country:"Pakistan", Continent:"Asia", Region:"Southern Asia", Sub_Region:"Southern Asia"}
+ {Country:"Panama", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {Country:"Papua New Guinea", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
+ {Country:"Paraguay", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
+ {Country:"Peru", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
+ {Country:"Philippines", Continent:"Asia", Region:"South Eastern Asia", Sub_Region:"South Eastern Asia"}
+ {Country:"Poland", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {Country:"Portugal", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {Country:"Puerto Rico", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {Country:"Qatar", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {Country:"South Korea", Continent:"Asia", Region:"Eastern Asia", Sub_Region:"Eastern Asia"}
+ {Country:"Republic of Moldova", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {Country:"Réunion", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {Country:"Romania", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {Country:"Russian Federation", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {Country:"Rwanda", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {Country:"Saint Lucia", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {Country:"Saint Vincent and the Grenadines", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {Country:"Samoa", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
+ {Country:"Sao Tome and Principe", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Middle Africa"}
+ {Country:"Saudi Arabia", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {Country:"Senegal", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
+ {Country:"Serbia", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {Country:"Sierra Leone", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
+ {Country:"Singapore", Continent:"Asia", Region:"South Eastern Asia", Sub_Region:"South Eastern Asia"}
+ {Country:"Slovakia", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {Country:"Slovenia", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {Country:"Solomon Islands", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
+ {Country:"Somalia", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {Country:"South Africa", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Southern Africa"}
+ {Country:"Spain", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {Country:"Sri Lanka", Continent:"Asia", Region:"Southern Asia", Sub_Region:"Southern Asia"}
+ {Country:"Sudan", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {Country:"Suriname", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
+ {Country:"Swaziland", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Southern Africa"}
+ {Country:"Sweden", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {Country:"Switzerland", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {Country:"Syria", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {Country:"Tajikistan", Continent:"Asia", Region:"Central Asia", Sub_Region:"Central Asia"}
+ {Country:"Thailand", Continent:"Asia", Region:"South Eastern Asia", Sub_Region:"South Eastern Asia"}
+ {Country:"Macedonoa", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {Country:"Timor Leste", Continent:"Asia", Region:"South Eastern Asia", Sub_Region:"South Eastern Asia"}
+ {Country:"Togo", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
+ {Country:"Tonga", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
+ {Country:"Trinidad and Tobago", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {Country:"Tunisia", Continent:"Africa", Region:"Northern Africa", Sub_Region:"Northern Africa"}
+ {Country:"Turkey", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {Country:"Turkmenistan", Continent:"Asia", Region:"Central Asia", Sub_Region:"Central Asia"}
+ {Country:"Uganda", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {Country:"Ukraine", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {Country:"United Arab Emirates", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {Country:"England", Continent:"Europe", Region:"Western Europe", Sub_Region:"United Kingdom"}
+ {Country:"Scotland", Continent:"Europe", Region:"Western Europe", Sub_Region:"United Kingdom"}
+ {Country:"Northern Ireland", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {Country:"Ireland", Continent:"Europe", Region:"Western Europe", Sub_Region:"United Kingdom"}
+ {Country:"Tanzania", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {Country:"United States of America", Continent:"America", Region:"North America", Sub_Region:"North America"}
+ {Country:"United States Virgin Islands", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {Country:"Uruguay", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
+ {Country:"Uzbekistan", Continent:"Asia", Region:"Central Asia", Sub_Region:"Central Asia"}
+ {Country:"Vanuatu", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
+ {Country:"Venezuela", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
+ {Country:"Vietnam", Continent:"Asia", Region:"South Eastern Asia", Sub_Region:"South Eastern Asia"}
+ {Country:"Western Sahara", Continent:"Africa", Region:"Northern Africa", Sub_Region:"Northern Africa"}
+ {Country:"Yemen", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {Country:"Zambia", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {Country:"Zimbabwe", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
