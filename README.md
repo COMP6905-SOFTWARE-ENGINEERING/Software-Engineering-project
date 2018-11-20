@@ -34,7 +34,7 @@ Once the student receives the offer, he can accept or decline it on the system. 
 
 >   mongoimport --db GradRecDB --collection universities --file /Commands/universities.json
 
- **4 Run app**
+ **5 Run app**
 
 
 We already change our start service command from
