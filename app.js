@@ -1,5 +1,7 @@
 // load the express package and create our app
 var express = require('express');
+var fs = require('fs');
+var rfs = require('rotating-file-stream');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -16,6 +18,19 @@ var projectRouter = require('./routes/project');
 var startingRouter = require('./routes/starting');
 
 var app = express();
+var logDirectory = path.join(__dirname, 'log');
+
+// ensure log directory exists
+fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
+
+// create a rotating write stream
+var accessLogStream = rfs('access.log', {
+    interval: '1d', // rotate daily
+    path: logDirectory
+});
+
+// setup the logger
+app.use(logger('combined', { stream: accessLogStream }));
 
 var url = 'mongodb://127.0.0.1:27017/GradRecDB';
 mongoose.connect(url, { useNewUrlParser: true });
@@ -26,7 +41,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
  // send our index.html file to the user for the home page
-app.use(logger('dev'));
+// app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser('mycookie'));
