@@ -11,3 +11,7 @@ node_modules/
 # generated log files
 log/
 
+# configuration files
+config/*
+!config/default.js
+
