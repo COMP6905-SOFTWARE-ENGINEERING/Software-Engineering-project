@@ -9,5 +9,5 @@
 node_modules/
 
 # generated log files
-# log/
+log/
 
