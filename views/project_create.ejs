@@ -7,12 +7,8 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="../javascripts/jquery_project.js"></script>
-<<<<<<< HEAD
-
-
-=======
     <link rel="stylesheet" href="/css/CreateProject.css">
->>>>>>> 94809e54fd7eb0fbdbe36e18fcd5daf469c4a904
+
     <title>CreateProject</title>
 </head>
 <body>
@@ -27,6 +23,7 @@
                 <form class="form-horizontal" role="form">
                     <input type="hidden" class="hidden_userid" value="<%= userdata._id %>" disabled="disabled">
                     <h1>Create Project</h1><br>
+                    <!--Text-input-->
                     <fieldset>
                         <div class="form-group">
                             <div class="col-sm-12">
@@ -39,6 +36,8 @@
                             </div>
                         </div>
                     </fieldset>
+
+                    <!--Level of study-->
                     <fieldset>
                         <label><span class="number"></span>Level of Study:</label>
                         <hr>
@@ -54,7 +53,7 @@
                             </div>
                         </div>
                     </fieldset>
-                    <!-------------Project  description---------------------------->
+                    <!--Project  description-->
                     <div class="project_info">
                         <fieldset>
                             <label><span class="number"></span>Project Description:</label>
@@ -69,7 +68,7 @@
                             </div>
                         </fieldset>
                     </div>
-                    <!--------skills section--------------------------------------->
+                    <!--skills section-->
                     <div class="skill">
                         <fieldset>
                             <div id='skillsFieldsWrapper'>
@@ -93,6 +92,7 @@
                         </fieldset>
                     </div>
                     <br><label for="projDate">Start Date:</label>
+                    <!--Date section-->
                     <hr>
                     <div class="form-group">
                         <div class="col-sm-7">
@@ -106,6 +106,8 @@
                             <ul><input type="date" class="form-control" id="application_deadline"></ul>
                         </div>
                     </div>
+                    <!--Funding section-->
+                    <!--Text input-->
                     <label>Avalilabe Funding:</label>
                     <hr>
                     <ul><input type='text' id='available_funding' class="form-control"
