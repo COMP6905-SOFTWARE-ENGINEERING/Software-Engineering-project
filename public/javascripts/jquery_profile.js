@@ -27,7 +27,7 @@ function profileCreateSubmit(){
 	var postUrl;
 	var addressLine1= $("#address_line1").val();
     var addressLine2 = $("#address_line2").val();
-    var addressLine3 = $("#address_line2").val();
+    var addressLine3 = $("#address_line3").val();
     var country = $("#country").val();
     var province = $("#province").val();
     var city = $("#city").val();

@@ -8,6 +8,7 @@ var profileSchema = new Schema({
         type:Schema.Types.ObjectId,
         ref: 'users'
     },
+
     addressLine1: String,
     addressLine2: String,
     addressLine3: String,
@@ -17,7 +18,18 @@ var profileSchema = new Schema({
     postalCode: String,
     work_experience: String,
     research_interest: String,
-    education: String,
+    education:[{type: String}],
+    // education: [
+    //     {
+    //         edCountry: String,
+    //         edProvince: String,
+    //         edInstitution: String,
+    //         edProgram: String,
+    //         edProgramLevel: String,
+    //         edStart: Date,
+    //         edEnd: Date
+    //     }
+    // ],
     skills: [{type: String}],
     needFS: String,
     // address:{
