@@ -120,7 +120,7 @@
                                 <!-- <h4><STRONG>Education :</STRONG></h4> -->
                                 <div class="blockDetails">
                                     <label for="level"><span>Level of Education:</span></label>
-                                    <select class="form-control form-control-sm educationSpacing">
+                                    <select class="form-control form-control-sm educationSpacing" id="edProgramLevel">
                                         <option value="">Select an option...</option>
                                         <option value="bachelors">Bachelors</option>
                                         <option value="masters">Masters</option>
@@ -128,8 +128,8 @@
                                     </select>
                                     <span class="error"></span>
 
-                                    <label for="field"><span>Field of Study:</span></label>
-                                    <select class="form-control form-control-sm educationSpacing" >
+                                    <label for="field"><span>Program Name:</span></label>
+                                    <select class="form-control form-control-sm educationSpacing" id="edProgram">
                                         <option value="">Select an option...</option>
                                         <option value="ece">Electronics and Communications</option>
                                         <option value="EEE">Electrical</option>
@@ -142,7 +142,31 @@
 
                                     <div class="clear"></div>
                                     <label for="name">Institution Name:</label>
-                                    <input type="text" class="form-control educationSpacing" id="name" >
+                                    <input type="text" class="form-control educationSpacing" id="edInstitution" >
+                                    <div class="form-group">
+                                        <div class="col-sm-4">
+                                            <label for="eduCountry">Country :</label>
+                                            <input type="text" id="edCountry" class="form-control educationSpacing">
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <label for="eduProvince">Province:</label>
+                                            <input type="text" id="edProvince"  class="form-control educationSpacing">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-4">
+                                            <label for="startDate">Start Date :</label>
+                                            <input type="date" class="form-control educationSpacing" id="edStart">
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <label for="endDate">End Date :</label>
+                                            <input type="date" class="form-control educationSpacing" id="edEnd">
+                                        </div>
+                                    </div>
+
+
                                     <hr>
                                 </div>
                             </div>
