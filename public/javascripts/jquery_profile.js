@@ -24,13 +24,13 @@ function backToProfileList(){
 function profileCreateSubmit(){
 	$(".help_block_error").text(" ").attr("title", '');
 	var postUrl;
-	var address_line1 = $("#address_line1").val();
-    var address_line2 = $("#address_line2").val();
+	var addressLine1= $("#address_line1").val();
+    var addressLine2 = $("#address_line2").val();
+    var addressLine3 = $("#address_line2").val();
+    var country = $("#country").val();
+    var province = $("#province").val();
     var city = $("#city").val();
-    var state = $("#state").val();
-    var post_code = $("#post_code").val();
-    var address = address_line1 + ' ' + address_line2 + ' ' +
-		city + ' ' + state + ' ' + post_code;
+    var postalCode = $("#postalCode").val();
     var company = $("#company").val();
     var position = $("#position").val();
     var start_date = $("#start_date").val();
@@ -48,7 +48,13 @@ function profileCreateSubmit(){
     });
 	var postData = {
 		owner:$(".hidden_userid").val(),
-        address:address,
+        addressLine1:addressLine1,
+        addressLine2:addressLine2,
+        addressLine3:addressLine3,
+        country:country,
+        province:province,
+        city:city,
+        postalCode:postalCode,
         work_experience:work_experience,
         research_interest:$("#research_interest").val(),
         intended_start_date:$("#intended_start_date").val(),
