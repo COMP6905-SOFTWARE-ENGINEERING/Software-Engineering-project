@@ -1,7 +1,8 @@
 body {
     background-color: #f2f2f2;
-    color:#862633;
+    color: #862633;
 }
+
 .jumbotron {
     padding-top: 5px;
     padding-bottom: 30px;
@@ -9,17 +10,21 @@ body {
     color: inherit;
     background-color: #862633;
 }
-.btn-primary{
+
+.btn-primary {
     background-color: #862633;
-    border:#862633;
+    border: #862633;
 }
+
 div.container {
-    line-height:normal;
+    line-height: normal;
 }
+
 .textarea {
     width: 300px;
     height: 150px;
 }
+
 hr {
     display: block;
     margin-top: 0.5em;
