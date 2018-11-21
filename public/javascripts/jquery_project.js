@@ -43,4 +43,29 @@ function projectCreateSubmit(){
 			alert('post failed');
 		}
 	});
+	//***************Validating form***************
+    if (project_name.value == "")
+    {
+        window.alert("Please enter the project name.");
+        project_name.focus();
+        return false;
+    }else
+    if (project_description.value.length <=20)
+    {
+        window.dilog("Please fill the data");
+        project_description.focus();
+        return false;
+    }else
+    if (required_skills.value=="")
+    {
+        window.dilog("Please add minimum one skill");
+        project_name.focus();
+        return false;
+    }else
+    if (available_funding.value=="")
+    {
+        window.dilog("Please give the value of funding available");
+        available_funding.focus();
+        return false;
+    }
 };
