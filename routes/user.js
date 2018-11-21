@@ -3,7 +3,12 @@ var crypto = require('crypto');
 var url = require('url');
 var router = express.Router();
 var profileModel = require('../models/profile_db.js');
+var educationModel = require('../models/education_db');
+var experienceModel = require('../models/experience_db');
 var userModel = require('../models/user_mgmt_db.js');
+var mongo = require('mongodb');
+var assert = require('assert');
+var dbURL = require('../config/default');
 
 
 router.get('/profileview', function(req, res){
@@ -25,6 +30,17 @@ router.get('/profileview', function(req, res){
 });
 
 router.get('/create_profile', function(req, res){
+    var countriesArray=[];
+    mongo.connect('mongodb://127.0.0.1:27017/GradRecDB',function (err,db) {
+        assert.equal(null,err);
+        var countries = db.collection('countries').find();
+        countries.forEach(function (doc,err) {
+            assert.equal(null,err);
+            countriesArray.push(doc);
+        },function () {
+            db.close();
+        });
+    });
     if(req.session.user && req.session.user.usertype == 'student'){
         userModel.userAccInfo({username:req.session.user.username}, function(err, data){
             if (err == 'ok'){
@@ -35,6 +51,7 @@ router.get('/create_profile', function(req, res){
                     title:'Create Profile',
                     userdata: req.session.user,
                     profileData: profileData,
+                    items: countriesArray
                 });
             }else {
                 res.json(err);
@@ -53,9 +70,21 @@ router.post('/create_profile', function(req, res){
             }else {
                 var profileData = req.body;
                 profileData['skills'] = req.body.skill.split(",");
-                //profileData['salary'] = JSON.parse(profileData.salary);
-                // console.log(profileData);
                 profileModel.createProfile(profileData, function(status){
+                    if (status == 'ok'){
+                        res.json({status:status, flag:1});
+                    }else {
+                        res.json({status:status, flag:0});
+                    }
+                });
+                educationModel.createEducation(profileData,function (status) {
+                    if (status == 'ok'){
+                        res.json({status:status, flag:1});
+                    }else {
+                        res.json({status:status, flag:0});
+                    }
+                });
+                experienceModel.createExperience(profileData,function (status) {
                     if (status == 'ok'){
                         res.json({status:status, flag:1});
                     }else {

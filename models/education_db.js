@@ -3,64 +3,27 @@ var mongoose = require('mongoose');
 var staticModel = require('./static_db.js');
 
 var Schema = mongoose.Schema;
-var profileSchema = new Schema({
+var educationSchema = new Schema({
     owner:{
         type:Schema.Types.ObjectId,
         ref: 'users'
     },
 
-    // Personal Information Details
-
-    // Address Details
-    addressLine1: String,
-    addressLine2: String,
-    addressLine3: String,
-    city: String,
-    province: String,
-    country: String,
-    postalCode: String,
-
     // Education Details
-    education: [
-        {
-            edCountry: String,
-            edProvince: String,
-            edInstitution: String,
-            edProgram: String,
-            edProgramLevel: String,
-            edStart: Date,
-            edEnd: Date
-        }
-    ],
-
-    // Skills
-    skills: [{type: String}],
-
-    // Research Interests
-    research_interest: String,
-
-    // Experience
-    weTitle: String,
-    weCompany: String,
-    weCountry: String,
-    weStartDate: Date,
-    weEndDate: Date,
-    weDescription: String,
-
-    // Intended Program of Study
-    psArea: String,
-    psLevel: String,
-    psSpeLevel: String,
-    psProgram:String,
-    psAdTerm: String,
-    needFS: String,
+    edCountry: String,
+    edProvince: String,
+    edInstitution: String,
+    edProgram: String,
+    edProgramLevel: String,
+    edStart: Date,
+    edEnd: Date,
 });
 
-var profileModel = mongoose.model('profile', profileSchema);
+var educationModel = mongoose.model('education', educationSchema);
 
 
 exports.listByOwner = function(reqData, callback){
-    profileModel.find(reqData, ['_id'], {sort:{_id: 1}}, function(err, data){
+    educationModel.find(reqData, ['_id'], {sort:{_id: 1}}, function(err, data){
         if (err){
             callback(err, null);
         }else {
@@ -69,9 +32,9 @@ exports.listByOwner = function(reqData, callback){
     });
 };
 
-exports.createProfile = function(reqData, callback){
+exports.createEducation = function(reqData, callback){
     var Data = reqData;
-    profileModel.create(Data, function(err, data){
+    educationModel.create(Data, function(err, data){
         if (err){
             callback(err);
         }else {
@@ -81,7 +44,7 @@ exports.createProfile = function(reqData, callback){
 };
 
 exports.findById = function(reqData, callback){
-    profileModel.findById(reqData._id, function(err, data){
+    educationModel.findById(reqData._id, function(err, data){
         if(err){
             callback(err, null);
         }else {
@@ -92,7 +55,7 @@ exports.findById = function(reqData, callback){
 
 exports.changeCollect = function(reqData, callback){
     var Data = reqData.Data;
-    profileModel.update({
+    educationModel.update({
         _id: Data._id,
         'deliverer._id':Data.deliverer_id
     }, {
@@ -108,7 +71,7 @@ exports.changeCollect = function(reqData, callback){
 
 exports.adminPrivatize = function(reqData, callback){
     var Data = reqData.Data;
-    profileModel.update({
+    educationModel.update({
         _id:Data._id,
     }, {$set:{
         isPublic:false,
@@ -123,7 +86,7 @@ exports.adminPrivatize = function(reqData, callback){
 
 exports.adminDelete = function(reqData, callback){
     var Data = reqData.Data;
-    profileModel.remove({_id: Data._id}, function(err, data){
+    educationModel.remove({_id: Data._id}, function(err, data){
         if (err){
             callback(err);
         }else {
@@ -166,7 +129,7 @@ exports.search = function(reqData, callback){
     if(reqData.Data.salary_max){
         Data["salary.1"] = {$lte:reqData.Data.salary_max};
     }
-    profileModel.find(Data,
+    educationModel.find(Data,
         // {
         // 	companyname:{$regex:Data.companyname},
         // 	offername:{$regex:Data.offername},
@@ -195,7 +158,7 @@ exports.search = function(reqData, callback){
 
 exports.findByOfferId = function(reqData, callback){
     var Data = reqData.Data;
-    profileModel.find({'deliverer._id':Data}, {
+    educationModel.find({'deliverer._id':Data}, {
         '_id':1,
         'realname':1,
         'deliverer.$':1,
@@ -210,7 +173,7 @@ exports.findByOfferId = function(reqData, callback){
 
 exports.findDefaultOne = function(reqData, callback){
     var Data = reqData.Data;
-    profileModel.findOne({
+    educationModel.findOne({
         owner:Data.owner,
         isDefault:true,
     }, function(err, data){
@@ -224,7 +187,7 @@ exports.findDefaultOne = function(reqData, callback){
 
 exports.findByCondition = function(reqData, callback){
     var Data = reqData.Data;
-    profileModel.find(Data, {
+    educationModel.find(Data, {
         deliverer:0,
     }, function(err, data){
         if(err){

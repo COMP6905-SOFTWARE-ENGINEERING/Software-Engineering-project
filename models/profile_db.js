@@ -9,57 +9,34 @@ var profileSchema = new Schema({
         ref: 'users'
     },
 
+    // Address Details
     addressLine1: String,
     addressLine2: String,
     addressLine3: String,
-    country: String,
-    province: String,
     city: String,
+    province: String,
+    country: String,
     postalCode: String,
-    work_experience: String,
-    research_interest: String,
-    education:[{type: String}],
-    // education: [
-    //     {
-    //         edCountry: String,
-    //         edProvince: String,
-    //         edInstitution: String,
-    //         edProgram: String,
-    //         edProgramLevel: String,
-    //         edStart: Date,
-    //         edEnd: Date
-    //     }
-    // ],
+
+    // Skills
     skills: [{type: String}],
+
+    // Intended Program of Study
+    psArea: String,
+    psLevel: String,
+    psSpeLevel: String,
+    psProgram:String,
+    psAdTerm: String,
     needFS: String,
-    // address:{
-    //     type:String,
-    //     required:[true, 'please input your address'],
-    //     match:[/^(0[1-9]|[1-9]\d){2}00$/, 'please check your address again'],
-    // },
-    // work_experience: [{type:String}],
-    // research_interest:{
-    //     type:String,
-    //     required:[true, 'research interest cannot be empty'],
-    //     trim:true,
-    // },
+
+    // Research Interests
+    research_interest: String,
+
     intended_start_date:{
         type:Date,
         required:[true, 'please input intended start date'],
     },
-    // education: [{type:Schema.Types.ObjectId, ref: 'education'}],
-    // skills: [{type:Schema.Types.ObjectId, ref: 'skill'}],
-    // need_financial_support:{
-    //     type:Boolean,
-    //     required:[true, 'please select if you want financial support'],
-    //     default:true
-    // }
 });
-
-// profileSchema.pre('save', function (next) {
-// 	this.fullname = this.owner + '.' + this.profilename;
-// 	next();
-// });
 
 var profileModel = mongoose.model('profile', profileSchema);
 

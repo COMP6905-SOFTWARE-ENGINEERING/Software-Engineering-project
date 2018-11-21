@@ -3,24 +3,11 @@ var mongoose = require('mongoose');
 var staticModel = require('./static_db.js');
 
 var Schema = mongoose.Schema;
-var profileSchema = new Schema({
+var experienceSchema = new Schema({
     owner:{
         type:Schema.Types.ObjectId,
         ref: 'users'
     },
-
-    // Education Details
-    edCountry: String,
-    edProvince: String,
-    edInstitution: String,
-    edProgram: String,
-    edProgramLevel: String,
-    edStart: Date,
-    edEnd: Date,
-
-    // Research Interests
-    research_interest: String,
-
     // Experience
     weTitle: String,
     weCompany: String,
@@ -30,11 +17,11 @@ var profileSchema = new Schema({
     weDescription: String,
 });
 
-var profileModel = mongoose.model('profile', profileSchema);
+var experienceModel = mongoose.model('experience', experienceSchema);
 
 
 exports.listByOwner = function(reqData, callback){
-    profileModel.find(reqData, ['_id'], {sort:{_id: 1}}, function(err, data){
+    experienceModel.find(reqData, ['_id'], {sort:{_id: 1}}, function(err, data){
         if (err){
             callback(err, null);
         }else {
@@ -43,9 +30,9 @@ exports.listByOwner = function(reqData, callback){
     });
 };
 
-exports.createProfile = function(reqData, callback){
+exports.createExperience = function(reqData, callback){
     var Data = reqData;
-    profileModel.create(Data, function(err, data){
+    experienceModel.create(Data, function(err, data){
         if (err){
             callback(err);
         }else {
@@ -55,7 +42,7 @@ exports.createProfile = function(reqData, callback){
 };
 
 exports.findById = function(reqData, callback){
-    profileModel.findById(reqData._id, function(err, data){
+    experienceModel.findById(reqData._id, function(err, data){
         if(err){
             callback(err, null);
         }else {
@@ -66,7 +53,7 @@ exports.findById = function(reqData, callback){
 
 exports.changeCollect = function(reqData, callback){
     var Data = reqData.Data;
-    profileModel.update({
+    experienceModel.update({
         _id: Data._id,
         'deliverer._id':Data.deliverer_id
     }, {
@@ -82,7 +69,7 @@ exports.changeCollect = function(reqData, callback){
 
 exports.adminPrivatize = function(reqData, callback){
     var Data = reqData.Data;
-    profileModel.update({
+    experienceModel.update({
         _id:Data._id,
     }, {$set:{
         isPublic:false,
@@ -97,7 +84,7 @@ exports.adminPrivatize = function(reqData, callback){
 
 exports.adminDelete = function(reqData, callback){
     var Data = reqData.Data;
-    profileModel.remove({_id: Data._id}, function(err, data){
+    experienceModel.remove({_id: Data._id}, function(err, data){
         if (err){
             callback(err);
         }else {
@@ -140,7 +127,7 @@ exports.search = function(reqData, callback){
     if(reqData.Data.salary_max){
         Data["salary.1"] = {$lte:reqData.Data.salary_max};
     }
-    profileModel.find(Data,
+    experienceModel.find(Data,
         // {
         // 	companyname:{$regex:Data.companyname},
         // 	offername:{$regex:Data.offername},
@@ -169,7 +156,7 @@ exports.search = function(reqData, callback){
 
 exports.findByOfferId = function(reqData, callback){
     var Data = reqData.Data;
-    profileModel.find({'deliverer._id':Data}, {
+    experienceModel.find({'deliverer._id':Data}, {
         '_id':1,
         'realname':1,
         'deliverer.$':1,
@@ -184,7 +171,7 @@ exports.findByOfferId = function(reqData, callback){
 
 exports.findDefaultOne = function(reqData, callback){
     var Data = reqData.Data;
-    profileModel.findOne({
+    experienceModel.findOne({
         owner:Data.owner,
         isDefault:true,
     }, function(err, data){
@@ -198,7 +185,7 @@ exports.findDefaultOne = function(reqData, callback){
 
 exports.findByCondition = function(reqData, callback){
     var Data = reqData.Data;
-    profileModel.find(Data, {
+    experienceModel.find(Data, {
         deliverer:0,
     }, function(err, data){
         if(err){
