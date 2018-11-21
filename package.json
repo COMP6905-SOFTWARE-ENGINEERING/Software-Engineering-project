@@ -1,5 +1,5 @@
 {
-  "name": "http-server",
+  "name": "asas",
   "main": "server.js",
   "dependencies": {
     "config-lite": "^2.1.0",
@@ -16,5 +16,20 @@
   },
   "devDependencies": {
     "cross-env": "^5.2.0"
-  }
+  },
+  "description": "Graduate Recruitment system\r ---",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/COMP6905-SOFTWARE-ENGINEERING/Software-Engineering-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/COMP6905-SOFTWARE-ENGINEERING/Software-Engineering-project/issues"
+  },
+  "homepage": "https://github.com/COMP6905-SOFTWARE-ENGINEERING/Software-Engineering-project#readme"
 }
