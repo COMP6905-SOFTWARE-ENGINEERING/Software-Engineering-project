@@ -1,23 +1,22 @@
-function education() {
-    var education_input = $(".educationFields").clone().first();
-    education_input.appendTo($("#educationFieldsWrapper "));
-}
+function edu() {
+    $("#educationFieldsWrapper .educationFields").append('<div class="blockDetails"><label for="level"><span>Level of Education:</span></label><select class="form-control form-control-sm educationSpacing"><option value="">Select an option...</option> <option value="bachelors">Bachelors</option> <option value="masters"  >Masters</option> <option value="phd"  >Phd</option> </select> <span class="error"></span><label for="field"><span>Field of Study :</span></label> <select class="form-control form-control-sm educationSpacing" ><option value="">Select an option...</option><option value="ece"  >Electronics and Communications</option><option value="EEE"  >Electrical</option> <option value="cse"  >Computer Science</option><option value="me"  >Mechanical</option> <option value="ce"  >Chemical</option><option value="cv"  >Civil</option></select><span class="error"></span><div class="clear"></div><label for="name">Institution Name:</label><input type="text" class="form-control educationSpacing" id="name" >  <hr></div>');
 
-function skills() {
-    var skill_input = $(".skillFields").clone().first();
-    skill_input.appendTo($("#skillsFieldsWrapper "));
 }
+function skil() {
+    $("#skillsFieldsWrapper .skillFields").append('<div><label for="skill">Skill Name :</label><input type="text" class="form-control skill" ></div>');
 
+
+}
 function research() {
-    var research_input = $(".researchFields").clone().first();
-    research_input.appendTo($("#researchFieldsWrapper "));
-}
+    $("#researchFieldsWrapper .researchFields").append('<div><label for="research">Interest Name :</label><input type="text" class="form-control resrch" ></div> ');
 
-function experience() {
-    var experience_input = $(".expFields").clone().first();
-    experience_input.appendTo($("#expFieldsWrapper "));
-}
 
+}
+function exp() {
+    $("#expFieldsWrapper .expFields").append('<div class="blockDetails"><label for="comp">Company Name :</label><input type="text" class="form-control exp company" ><label for="pos">Position :</label><input type="text" class="form-control exp" id="pos"><label for="startDate">Start Date :</label><input type="date" class="form-control exp" id="sdate"><label for="endDate">End Date :</label><input type="date" class="form-control exp" id="enddate"> <hr></div>');
+
+
+}
 function backToProfileList(){
 	window.location.href = "/user/profileview";
 };
