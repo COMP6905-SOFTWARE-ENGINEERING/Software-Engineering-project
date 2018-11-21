@@ -3,7 +3,83 @@ body
     background-color: #E9E9E9;
 }
 
-.button-wrapper
+.heading
 {
-    padding: 1.5rem;
+    color :#862633;
+
 }
+.allButtons
+{
+
+
+    background-color: #862633;
+    border: none;
+
+}
+
+.addButton
+{
+    margin-top:10px;
+    margin-bottom: 20px;
+}
+.skill
+{
+    margin-bottom: 10px;
+}
+.resrch{
+    margin-bottom: 10px;
+}
+
+.educationSpacing{margin-bottom: 10px;}
+
+.exp
+{
+    margin-bottom: 10px;
+}
+.oth
+{
+    margin-bottom: 10px;
+}
+legend  {
+    border-bottom:1px solid #000000;
+    color: #862633
+}
+
+hr
+{
+    border-top: 0.2px;
+}
+.blockDetails
+{
+
+    padding-left: 30px;
+
+}
+.eduButton
+{
+    margin-bottom: 20px;
+}
+.skillBlock
+{
+    padding-left: 30px;
+}
+.researchButton
+{
+    margin-top:10px;
+    margin-bottom: 20px;
+}
+.expButton
+{
+    margin-top:10px;
+    margin-bottom: 20px;
+}
+.profileSubmit
+{
+    margin-top: 30px;
+    margin-left: 50%;
+    margin-bottom: 50px;
+    padding: 5px 40px;
+    font-size: 15px;
+
+}
+

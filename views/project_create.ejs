@@ -3,10 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/CreateProject.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="../javascripts/jquery_project.js"></script>
-    <link rel="stylesheet" type="text/css" href="CreateProject.css">
+    <link rel="stylesheet" href="/css/CreateProject.css">
+
     <title>CreateProject</title>
 </head>
 <body>
@@ -20,12 +22,13 @@
             <div class="col-md-6 col-md-offset-1">
                 <form class="form-horizontal" role="form">
                     <input type="hidden" class="hidden_userid" value="<%= userdata._id %>" disabled="disabled">
-                    <h1>Create Project</h1>                     <br>
+                    <h1>Create Project</h1><br>
+                    <!--Text-input-->
                     <fieldset>
                         <div class="form-group">
                             <div class="col-sm-12">
                                 <div class="field of study">
-                                    <label>Project Title:</label>
+                                    <label>Project Title* </label>
                                     <hr>
                                     <ul><input type="text" class="form-control" id="project_name"
                                                placeholder="Your project name"></ul>
@@ -33,6 +36,8 @@
                             </div>
                         </div>
                     </fieldset>
+
+                    <!--Level of study-->
                     <fieldset>
                         <label><span class="number"></span>Level of Study:</label>
                         <hr>
@@ -48,7 +53,7 @@
                             </div>
                         </div>
                     </fieldset>
-                    <!-------------Project  description---------------------------->
+                    <!--Project  description-->
                     <div class="project_info">
                         <fieldset>
                             <label><span class="number"></span>Project Description:</label>
@@ -63,7 +68,7 @@
                             </div>
                         </fieldset>
                     </div>
-                    <!--------skills section--------------------------------------->
+                    <!--skills section-->
                     <div class="skill">
                         <fieldset>
                             <div id='skillsFieldsWrapper'>
@@ -72,7 +77,7 @@
                                     <hr>
                                     <div class="form-group">
                                         <div class="col-sm-7">
-                                            <ul><label> skill 1 :</label>
+                                            <ul><label> skill:</label>
                                                 <input type='text' id='skilltb' class="form-control select_skill"
                                                        placeholder="Add your skills">
                                             </ul>
@@ -87,6 +92,7 @@
                         </fieldset>
                     </div>
                     <br><label for="projDate">Start Date:</label>
+                    <!--Date section-->
                     <hr>
                     <div class="form-group">
                         <div class="col-sm-7">
@@ -100,6 +106,8 @@
                             <ul><input type="date" class="form-control" id="application_deadline"></ul>
                         </div>
                     </div>
+                    <!--Funding section-->
+                    <!--Text input-->
                     <label>Avalilabe Funding:</label>
                     <hr>
                     <ul><input type='text' id='available_funding' class="form-control"
@@ -115,7 +123,6 @@
                         </div>
                     </div>
                 </form>
-                <>
             </div>
         </div>
     </div>
