@@ -1,5 +1,5 @@
 function edu() {
-    $("#educationFieldsWrapper .educationFields").append('<div class="blockDetails"><label for="level"><span>Level of Education:</span></label><select class="form-control form-control-sm educationSpacing" id="edProgramLevel"><option value="">Select an option...</option></select><span class="error"></span><label for="field"><span>Program Name:</span></label><select class="form-control form-control-sm educationSpacing" id="edProgram"><option value="">Select an option...</option></select><span class="error"></span><div class="clear"></div><label for="name">Institution Name:</label><input type="text" class="form-control educationSpacing" id="edInstitution" ><div class="form-group"><div class="col-sm-4"><label for="eduCountry">Country :</label><input type="text" id="edCountry" class="form-control educationSpacing"></div><div class="col-sm-4"><label for="eduProvince">Province:</label><input type="text" id="edProvince"  class="form-control educationSpacing"></div></div><div class="form-group"><div class="col-sm-4"><label for="startDate">Start Date :</label><input type="date" class="form-control educationSpacing" id="edStart"></div><div class="col-sm-4"><label for="endDate">End Date :</label><input type="date" class="form-control educationSpacing" id="edEnd"></div></div><hr></div>');
+    $("#educationFieldsWrapper .educationFields").append('<div class="blockDetails"><label for="level"><span>Level of Education:</span></label><select class="form-control form-control-sm educationSpacing" id="edProgramLevel"><option value="">Select an option...</option></select><span class="error"></span><label for="field"><span>Program Name:</span></label><select class="form-control form-control-sm educationSpacing" id="edProgram"><option value="">Select an option...</option></select><span class="error"></span><div class="clear"></div><label for="name">Institution Name:</label><input type="text" class="form-control educationSpacing" id="edInstitution" ><div class="form-group"><div class="col-sm-4"><label for="startDate">Start Date :</label><input type="date" class="form-control educationSpacing" id="edStart"></div><div class="col-sm-4"><label for="endDate">End Date :</label><input type="date" class="form-control educationSpacing" id="edEnd"></div></div><hr></div>');
 
 }
 function skil() {
@@ -13,7 +13,7 @@ function research() {
 
 }
 function exp() {
-    $("#expFieldsWrapper .expFields").append('<div class="blockDetails"><label for="comp">Company Name :</label><input type="text" class="form-control exp" id="weCompany"><div class="form-group"><div class="col-sm-4"><label for="title">Title :</label><input type="text" class="form-control exp" id="weTitle"></div><div class="col-sm-4"><label for="country">Country :</label><input type="text" class="form-control exp" id="weCountry"></div></div><label for="startDate">Start Date :</label><input type="date" class="form-control exp" id="weStartDate"> <label for="endDate">End Date :</label><input type="date" class="form-control exp" id="weEndDate"><hr></div>');
+    $("#expFieldsWrapper .expFields").append('<div class="blockDetails"><label for="comp">Company Name :</label><input type="text" class="form-control exp" id="weCompany"><label for="title">Title :</label><input type="text" class="form-control exp" id="weTitle"><label for="startDate">Start Date :</label><input type="date" class="form-control exp" id="weStartDate"> <label for="endDate">End Date :</label><input type="date" class="form-control exp" id="weEndDate"><hr></div>');
 
 
 }
@@ -41,14 +41,29 @@ function profileCreateSubmit(){
     var edStart = $("#edStart").val();
     var edEnd = $("#edEnd").val();
 
-    var education = education_level + '.' + field_of_study + '.' +
-        institution_name+'.'+edCountry+'.'+edProvince+'.'+edStart+'.'+edEnd;
+    // var education = education_level + '.' + field_of_study + '.' +
+    //     institution_name+'.'+edCountry+'.'+edProvince+'.'+edStart+'.'+edEnd;
 
-    var educationArray = [];
-    $(".education").each(function(){
+    var education_level_array = [];
+    $(".education_level").each(function(){
+        education_level_array.push($(this).val());
+    });
+    var field_of_study_array = [];
+    $(".field_of_study").each(function(){
         educationArray.push($(this).val());
     });
-
+    var education_level_array = [];
+    $(".education_level").each(function(){
+        educationArray.push($(this).val());
+    });
+    var education_level_array = [];
+    $(".education_level").each(function(){
+        educationArray.push($(this).val());
+    });
+    var education_level_array = [];
+    $(".education_level").each(function(){
+        educationArray.push($(this).val());
+    });
 
     var company = $("#weCompany").val();
     var position = $("#weTitle").val();
@@ -59,7 +74,7 @@ function profileCreateSubmit(){
         start_date + '.' + end_date;
 
     var expArray = [];
-    $(".work_experience").each(function(){
+    $(".company").each(function(){
         expArray.push($(this).val());
     });
     var skills = [];
