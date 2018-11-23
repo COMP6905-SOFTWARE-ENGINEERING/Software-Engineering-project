@@ -13,7 +13,7 @@ function research() {
 
 }
 function exp() {
-    $("#expFieldsWrapper .expFields").append('<div class="blockDetails"><label for="comp">Company Name :</label><input type="text" class="form-control exp company" ><label for="pos">Position :</label><input type="text" class="form-control exp" id="pos"><label for="startDate">Start Date :</label><input type="date" class="form-control exp" id="sdate"><label for="endDate">End Date :</label><input type="date" class="form-control exp" id="enddate"> <hr></div>');
+    $("#expFieldsWrapper .expFields").append('<div class="blockDetails"><label for="comp">Company Name :</label><input type="text" class="form-control exp" id="weCompany"><div class="form-group"><div class="col-sm-4"><label for="title">Title :</label><input type="text" class="form-control exp" id="weTitle"></div><div class="col-sm-4"><label for="country">Country :</label><input type="text" class="form-control exp" id="weCountry"></div></div><label for="startDate">Start Date :</label><input type="date" class="form-control exp" id="weStartDate"> <label for="endDate">End Date :</label><input type="date" class="form-control exp" id="weEndDate"><hr></div>');
 
 
 }
@@ -24,28 +24,57 @@ function backToProfileList(){
 function profileCreateSubmit(){
     $(".help_block_error").text(" ").attr("title", '');
     var postUrl;
-    var addressLine1= $("#address_line1").val();
-    var addressLine2 = $("#address_line2").val();
-    var addressLine3 = $("#address_line2").val();
-    var country = $("#country").val();
-    var province = $("#province").val();
+
+    var addressLine1= $("#addressLine1").val();
+    var addressLine2 = $("#addressLine2").val();
+    var addressLine3 = $("#addressLine3").val();
     var city = $("#city").val();
+    var province = $("#province").val();
+    var country = $("#country").val();
     var postalCode = $("#postalCode").val();
-    var company = $("#company").val();
-    var position = $("#position").val();
-    var start_date = $("#start_date").val();
-    var end_date = $("#end_date").val();
-    var work_experience = company + ' ' + position + ' ' +
-        start_date + ' ' + end_date;
-    var education_level = $("#select_education_level").val();
-    var field_of_study = $("#select_field_of_study").val();
-    var institution_name = $("#institution_name").val();
-    var education = education_level + ' ' + field_of_study + ' ' +
-        institution_name;
+
+    var education_level = $("#edProgramLevel").val();
+    var field_of_study = $("#edProgram").val();
+    var institution_name = $("#edInstitution").val();
+    var edCountry = $("#edCountry").val();
+    var edProvince = $("#edProvince").val();
+    var edStart = $("#edStart").val();
+    var edEnd = $("#edEnd").val();
+
+    var education = education_level + '.' + field_of_study + '.' +
+        institution_name+'.'+edCountry+'.'+edProvince+'.'+edStart+'.'+edEnd;
+
+    var educationArray = [];
+    $(".education").each(function(){
+        educationArray.push($(this).val());
+    });
+
+
+    var company = $("#weCompany").val();
+    var position = $("#weTitle").val();
+    var weCountry = $("#weCountry").val();
+    var start_date = $("#weStartDate").val();
+    var end_date = $("#weEndDate").val();
+    var work_experience = company + '.' + position + '.' +weCountry+'.'+
+        start_date + '.' + end_date;
+
+    var expArray = [];
+    $(".work_experience").each(function(){
+        expArray.push($(this).val());
+    });
     var skills = [];
     $(".select_skill").each(function(){
         skills.push($(this).val());
     });
+
+    var psArea = $("#psArea").val();
+    var psLevel = $("#psLevel").val();
+    var psSpeLevel = $("#psSpeLevel").val();
+    var psProgram = $("#psProgram").val();
+    var psAdTerm = $("#psAdTerm").val();
+    var projDate = $("#projDate").val();
+
+
     var postData = {
         owner:$(".hidden_userid").val(),
         addressLine1:addressLine1,
@@ -55,11 +84,16 @@ function profileCreateSubmit(){
         province:province,
         city:city,
         postalCode:postalCode,
-        work_experience:work_experience,
-        research_interest:$("#research_interest").val(),
-        intended_start_date:$("#intended_start_date").val(),
-        education:education,
-        skill:skills.join(","),
+        educationArray:educationArray.join(","),
+        expArray:expArray.join(","),
+        psArea:psArea,
+        psLevel:psLevel,
+        psSpeLevel:psSpeLevel,
+        psProgram:psProgram,
+        psAdTerm:psAdTerm,
+        projDate:projDate,
+        research_interest:$("#researchId").val(),
+        skills:skills.join(","),
         need_financial_support:$("input[name='require_financial_aid']:checked").val()
     };
     postUrl = '/user/create_profile';

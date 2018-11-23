@@ -194,21 +194,56 @@
                             <div class="expFields">
                                 <div class="blockDetails">
                                     <label for="comp">Company Name :</label>
-                                    <input type="text" class="form-control exp" id="company">
-                                    <label for="pos">Position :</label>
-                                    <input type="text" class="form-control exp" id="pos">
+                                    <input type="text" class="form-control exp" id="weCompany">
+                                    <div class="form-group">
+                                        <div class="col-sm-4">
+                                            <label for="title">Title :</label>
+                                            <input type="text" class="form-control exp" id="weTitle">
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <label for="country">Country :</label>
+                                            <input type="text" class="form-control exp" id="weCountry">
+                                        </div>
+                                    </div>
                                     <label for="startDate">Start Date :</label>
-                                    <input type="date" class="form-control exp" id="sdate">
+                                    <input type="date" class="form-control exp" id="weStartDate">
                                     <label for="endDate">End Date :</label>
-                                    <input type="date" class="form-control exp" id="enddate">
+                                    <input type="date" class="form-control exp" id="weEndDate">
                                     <hr>
                                 </div>
                             </div>
                         </div>
                         <button type="button" class="btn btn-primary allButtons expButton" onclick="exp()">Add Experience</button>
 
-                        <legend>Others :</legend>
+                        <legend>Intended Program of Study :</legend>
                         <div class="blockDetails">
+                            <label for="area"><span>Area :</span></label>
+                            <select class="form-control form-control-sm oth" id="psArea">
+                                <option value="">Select an option...</option>
+
+                            </select>
+                            <label for="level"><span>Level of Education:</span></label>
+                            <select class="form-control form-control-sm oth" id="psLevel">
+                                <option value="">Select an option...</option>
+
+                            </select>
+                            <label for="specificlevel"><span>Specific Level:</span></label>
+                            <select class="form-control form-control-sm oth" id="psSpeLevel">
+                                <option value="">Select an option...</option>
+
+                            </select>
+                            <label for="program"><span>Program:</span></label>
+                            <select class="form-control form-control-sm oth" id="psProgram">
+                                <option value="">Select an option...</option>
+
+                            </select>
+                            <label for="term"><span>Term:</span></label>
+                            <select class="form-control form-control-sm oth" id="psAdTerm">
+                                <option value="">Select an option...</option>
+
+                            </select>
+
                             <label for="projDate">Intended Start Date:</label>
                             <input type="date" class="form-control oth" id="projDate">
                             <label for="fund">Require Financial Aid? :</label>
