@@ -4,7 +4,7 @@ var router = express.Router();
 
 router.get('/result', function(req, res, next) {
     if (req.session.user){
-        res.render('MatchedProjects', {userdata: req.session.user});
+        res.render('project_match', {userdata: req.session.user});
     }else{
         res.render('login', {title: 'Login Panel'});
     }
