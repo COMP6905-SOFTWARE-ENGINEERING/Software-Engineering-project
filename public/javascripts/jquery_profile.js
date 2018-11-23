@@ -122,7 +122,7 @@ function profileCreateSubmit(){
         projDate:projDate,
         research_interest:$("#researchId").val(),
         skills:skills.join(","),
-        need_financial_support:$("input[name='require_financial_aid']:checked").val()
+        need_financial_support:$("input[name='gridRadios']:checked").val()
     };
     postUrl = '/user/create_profile';
     // alert(JSON.stringify(postData));
