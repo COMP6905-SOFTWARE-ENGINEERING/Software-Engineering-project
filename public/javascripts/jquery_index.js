@@ -58,17 +58,8 @@ $(document).ready(function(){
 	$(".redirect_projectmgmt_button").click(function(){
 		window.location.href = '/project/projectlist';
 	});
-	$(".redirect_jobsearch_button").click(function(){
-		window.location.href = '/common/offer_search';
-	});
-	$(".redirect_peoplesearch_button").click(function(){
-		window.location.href = '/common/resume_search';
-	});
-	$(".redirect_my_apprecord_button").click(function(){
-		window.location.href = '/person/my_offer_apply';
-	});
-	$(".redirect_rcv_apprecord_button").click(function(){
-		window.location.href = '/person/rcv_resume_apply';
+	$(".redirect_match_button").click(function(){
+		window.location.href = '/match/result';
 	});
 	$(".redirect_my_appmgmt_button").click(function(){
 		window.location.href = '/company/my_resume_apply';

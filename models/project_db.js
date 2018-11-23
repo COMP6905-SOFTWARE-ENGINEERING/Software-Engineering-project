@@ -26,7 +26,9 @@ var projectSchema = new Schema({
     // },
     available_funding: String,
     // required_skills: [{type:Schema.Types.ObjectId, ref: 'skill'}],
-    required_skills: String,
+    field_of_study: String,
+    level_of_study: String,
+    required_skills: [{type:String}],
     start_date:{
         type:Date,
         required:[true,'start date cannot be empty']

@@ -30,10 +30,10 @@
     <div class="nav_bar_blank"></div>
     <% if (userdata.usertype == 'student'){ %>
         <div class="nav_bar_select redirect_profile_button">Manage Profile</div>
-        <div class="nav_bar_select redirect_jobsearch_button">Project Search</div>
+        <div class="nav_bar_select redirect_match_button">Matching Result</div>
     <% }else if (userdata.usertype == 'manager') { %>
         <div class="nav_bar_select redirect_projectmgmt_button">Manage Projects</div>
-        <div class="nav_bar_select redirect_peoplesearch_button">Prospective Student Search</div>
+        <div class="nav_bar_select redirect_match_button">Matching Result</div>
     <% }else { %>
         <div class="nav_bar_select redirect_search_button">Search</div>
     <% } %>
