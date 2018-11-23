@@ -91,6 +91,22 @@ router.post('/create_profile', function(req, res){
                         res.json({status:status, flag:0});
                     }
                 });
+                // trigger match process
+                var projects = projectModel.findAll(function (status) {
+                    if (status == 'ok'){
+                        console.log('retrieve all documents in project collection successful')
+                    }else {
+                        console.log('retrieve all documents in project collection failed')
+                    }
+                })
+                var profiles = profileModel.findAll(function (status) {
+                    if (status == 'ok'){
+                        console.log('retrieve all documents in profile collection successful')
+                    }else {
+                        console.log('retrieve all documents in profile collection failed')
+                    }
+                })
+                matching(projects, profiles, 0.6)
             }
         });
     }else {

@@ -21,14 +21,14 @@ var matchSchema = new Schema({
 
 var matchModel = mongoose.model('match', matchSchema);
 
-exports.changeStatus = function(reqData, callback){
-    var Data = reqData.Data;
+exports.changeStatus = function(callback){
     matchModel.update({
-        _id: Data._id,
-        'deliverer._id':Data.deliverer_id
+        status: 'enabled'
     }, {
-        $set:{'deliverer.$.isCollected':Data.isCollected}
-    }, function(err, data){
+        status: 'disabled'
+    }, {
+        multi: true
+    }, function(err){
         if(err){
             callback(err);
         }else {
@@ -41,13 +41,13 @@ exports.createMatch = function(reqData, callback){
     matchModel.create({
         project:reqData.project_id,
         student: reqData.student_id,
-        created_at:reqData.password,
-        status: reqData.email,
-    }, function(err, data){
+        created_at:reqData.created_at,
+        status: reqData.status,
+    }, function(err){
         if(err){
-            callback(err, data);
+            callback(err);
         }else{
-            callback('ok', data);
+            callback('ok');
         }
     });
 };

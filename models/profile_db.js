@@ -175,13 +175,8 @@ exports.search = function(reqData, callback){
     );
 };
 
-exports.findByOfferId = function(reqData, callback){
-    var Data = reqData.Data;
-    profileModel.find({'deliverer._id':Data}, {
-        '_id':1,
-        'realname':1,
-        'deliverer.$':1,
-    }, function(err, data){
+exports.findAll = function(callback){
+    profileModel.find({}, function(err, data){
         if(err){
             callback(err, null);
         }else {

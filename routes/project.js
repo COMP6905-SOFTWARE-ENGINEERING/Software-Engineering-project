@@ -5,6 +5,7 @@ var router = express.Router();
 var projectModel = require('../models/project_db.js');
 var profileModel = require('../models/profile_db.js');
 var userModel = require('../models/user_mgmt_db.js');
+var matching = require('../algorithms/match.js');
 
 
 router.get('/projectlist', function(req, res){
@@ -63,6 +64,22 @@ router.post('/create_project', function(req, res){
                 res.json({status:status, flag:0});
             }
         });
+        // trigger match process
+        var projects = projectModel.findAll(function (status) {
+            if (status == 'ok'){
+                console.log('retrieve all documents in project collection successful')
+            }else {
+                console.log('retrieve all documents in project collection failed')
+            }
+        })
+        var profiles = profileModel.findAll(function (status) {
+            if (status == 'ok'){
+                console.log('retrieve all documents in profile collection successful')
+            }else {
+                console.log('retrieve all documents in profile collection failed')
+            }
+        })
+        matching(projects, profiles, 0.6)
     }else {
         res.json({status:"Not log in yet", flag:0});
     }

@@ -72,3 +72,12 @@ exports.findById = function(reqData, callback){
     });
 };
 
+exports.findAll = function(callback){
+    projectModel.find({}, function(err, data){
+        if(err){
+            callback(err, null);
+        }else {
+            callback(null, data);
+        }
+    });
+};

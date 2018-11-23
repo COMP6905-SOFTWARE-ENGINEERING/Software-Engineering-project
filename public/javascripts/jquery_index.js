@@ -61,12 +61,6 @@ $(document).ready(function(){
 	$(".redirect_match_button").click(function(){
 		window.location.href = '/match/result';
 	});
-	$(".redirect_my_appmgmt_button").click(function(){
-		window.location.href = '/company/my_resume_apply';
-	});
-	$(".redirect_rcv_appmgmt_button").click(function(){
-		window.location.href = '/company/rcv_offer_apply';
-	});
 	$(".redirect_offer_infocheck_button").click(function(){
 		window.location.href = '/admin/offer_verify';
 	});
