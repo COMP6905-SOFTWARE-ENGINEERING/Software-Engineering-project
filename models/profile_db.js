@@ -13,9 +13,9 @@ var profileSchema = new Schema({
     addressLine1: String,
     addressLine2: String,
     addressLine3: String,
-    city: String,
-    province: String,
     country: String,
+    province: String,
+    city: String,
     postalCode: String,
 
     // Skills
