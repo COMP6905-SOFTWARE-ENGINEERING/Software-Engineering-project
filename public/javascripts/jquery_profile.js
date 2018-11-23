@@ -13,7 +13,7 @@ function research() {
 
 }
 function exp() {
-    $("#expFieldsWrapper .expFields").append('<div class="blockDetails"><label for="comp">Company Name :</label><input type="text" class="form-control exp company" ><label for="pos">Position :</label><input type="text" class="form-control exp" id="pos"><label for="startDate">Start Date :</label><input type="date" class="form-control exp" id="sdate"><label for="endDate">End Date :</label><input type="date" class="form-control exp" id="enddate"> <hr></div>');
+    $("#expFieldsWrapper .expFields").append('<div class="blockDetails"><label for="comp">Company Name :</label><input type="text" class="form-control exp" id="weCompany"><div class="form-group"><div class="col-sm-4"><label for="title">Title :</label><input type="text" class="form-control exp" id="weTitle"></div><div class="col-sm-4"><label for="country">Country :</label><input type="text" class="form-control exp" id="weCountry"></div></div><label for="startDate">Start Date :</label><input type="date" class="form-control exp" id="weStartDate"> <label for="endDate">End Date :</label><input type="date" class="form-control exp" id="weEndDate"><hr></div>');
 
 
 }
