@@ -17,6 +17,7 @@ var chgpwdRouter = require('./routes/chgpwd');
 var userRouter = require('./routes/user');
 var projectRouter = require('./routes/project');
 var startingRouter = require('./routes/starting');
+var matchRouter = require('./routes/match');
 
 var app = express();
 var logDirectory = path.join(__dirname, 'log');
@@ -62,6 +63,7 @@ app.use('/chgpwd', chgpwdRouter);
 app.use('/user', userRouter);
 app.use('/project', projectRouter);
 app.use('/starting', startingRouter);
+app.use('/match', matchRouter);
 app.get('/', function(req, res) {
     res.redirect('/index');
  });
