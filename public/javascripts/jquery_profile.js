@@ -1,5 +1,5 @@
 function edu() {
-    $("#educationFieldsWrapper .educationFields").append('<div class="blockDetails"><label for="level"><span>Level of Education:</span></label><select class="form-control form-control-sm educationSpacing" id="edProgramLevel"><option value="">Select an option...</option></select><span class="error"></span><label for="field"><span>Program Name:</span></label><select class="form-control form-control-sm educationSpacing" id="edProgram"><option value="">Select an option...</option></select><span class="error"></span><div class="clear"></div><label for="name">Institution Name:</label><input type="text" class="form-control educationSpacing" id="edInstitution" ><div class="form-group"><div class="col-sm-4"><label for="startDate">Start Date :</label><input type="date" class="form-control educationSpacing" id="edStart"></div><div class="col-sm-4"><label for="endDate">End Date :</label><input type="date" class="form-control educationSpacing" id="edEnd"></div></div><hr></div>');
+    $("#educationFieldsWrapper .educationFields").append('<div class="blockDetails"><label for="level"><span>Level of Education:</span></label><select class="form-control form-control-sm educationSpacing" id="edProgramLevel"><option value="">Select an option...</option></select><span class="error"></span><label for="field"><span>Program Name:</span></label><select class="form-control form-control-sm educationSpacing" id="edProgram"><option value="">Select an option...</option></select><span class="error"></span><div class="clear"></div><label for="name">Institution Name:</label><input type="text" class="form-control educationSpacing" id="edInstitution" ><hr></div>');
 
 }
 function skil() {
@@ -33,60 +33,66 @@ function profileCreateSubmit(){
     var country = $("#country").val();
     var postalCode = $("#postalCode").val();
 
-    var education_level = $("#edProgramLevel").val();
-    var field_of_study = $("#edProgram").val();
-    var institution_name = $("#edInstitution").val();
-    var edCountry = $("#edCountry").val();
-    var edProvince = $("#edProvince").val();
-    var edStart = $("#edStart").val();
-    var edEnd = $("#edEnd").val();
+    var edProgramLevel = $("#edProgramLevel").val();
+    var edProgram = $("#edProgram").val();
+    var edInstitution = $("#edInstitution").val();
+    // var edCountry = $("#edCountry").val();
+    // var edProvince = $("#edProvince").val();
+    // var edStart = $("#edStart").val();
+    // var edEnd = $("#edEnd").val();
 
     // var education = education_level + '.' + field_of_study + '.' +
     //     institution_name+'.'+edCountry+'.'+edProvince+'.'+edStart+'.'+edEnd;
 
     var education_level_array = [];
-    $(".education_level").each(function(){
+    $(".edProgramLevel").each(function(){
         education_level_array.push($(this).val());
     });
     var field_of_study_array = [];
-    $(".field_of_study").each(function(){
-        educationArray.push($(this).val());
+    $(".edProgram").each(function(){
+        field_of_study_array.push($(this).val());
     });
-    var education_level_array = [];
-    $(".education_level").each(function(){
-        educationArray.push($(this).val());
-    });
-    var education_level_array = [];
-    $(".education_level").each(function(){
-        educationArray.push($(this).val());
-    });
-    var education_level_array = [];
-    $(".education_level").each(function(){
-        educationArray.push($(this).val());
+    var institution_name_array = [];
+    $(".edInstitution").each(function(){
+        institution_name_array.push($(this).val());
     });
 
-    var company = $("#weCompany").val();
-    var position = $("#weTitle").val();
-    var weCountry = $("#weCountry").val();
-    var start_date = $("#weStartDate").val();
-    var end_date = $("#weEndDate").val();
-    var work_experience = company + '.' + position + '.' +weCountry+'.'+
-        start_date + '.' + end_date;
+    var weCompany = $("#weCompany").val();
+    var weTitle = $("#weTitle").val();
+    // var weCountry = $("#weCountry").val();
+    var weStartDate = $("#weStartDate").val();
+    var weEndDate = $("#weEndDate").val();
+    // var work_experience = company + '.' + position + '.' +weCountry+'.'+
+    //     start_date + '.' + end_date;
 
-    var expArray = [];
-    $(".company").each(function(){
-        expArray.push($(this).val());
+    var weCompanyArray = [];
+    $(".weCompany").each(function(){
+        weCompanyArray.push($(this).val());
     });
+    var weTitleArray = [];
+    $(".weTitle").each(function(){
+        weTitleArray.push($(this).val());
+    });
+    var weStartDateArray = [];
+    $(".weStartDate").each(function(){
+        weStartDate.push($(this).val());
+    });
+    var weEndDateArray = [];
+    $(".weEndDate").each(function(){
+        weCompanyArray.push($(this).val());
+    });
+
+
     var skills = [];
-    $(".select_skill").each(function(){
+    $(".skills").each(function(){
         skills.push($(this).val());
     });
 
     var psArea = $("#psArea").val();
     var psLevel = $("#psLevel").val();
-    var psSpeLevel = $("#psSpeLevel").val();
-    var psProgram = $("#psProgram").val();
-    var psAdTerm = $("#psAdTerm").val();
+    // var psSpeLevel = $("#psSpeLevel").val();
+    // var psProgram = $("#psProgram").val();
+    // var psAdTerm = $("#psAdTerm").val();
     var projDate = $("#projDate").val();
 
 
@@ -99,13 +105,20 @@ function profileCreateSubmit(){
         province:province,
         city:city,
         postalCode:postalCode,
-        educationArray:educationArray.join(","),
-        expArray:expArray.join(","),
+        education_level_array:education_level_array.join(","),
+        field_of_study_array:field_of_study_array.join(","),
+        institution_name_array:education_level_array.join(","),
+
+        weCompanyArray:weCompanyArray.join(","),
+        weTitleArray:weTitleArray.join(","),
+        weStartDateArray:weStartDateArray.join(","),
+        weEndDateArray:weEndDateArray.join(","),
+
         psArea:psArea,
         psLevel:psLevel,
-        psSpeLevel:psSpeLevel,
-        psProgram:psProgram,
-        psAdTerm:psAdTerm,
+        // psSpeLevel:psSpeLevel,
+        // psProgram:psProgram,
+        // psAdTerm:psAdTerm,
         projDate:projDate,
         research_interest:$("#researchId").val(),
         skills:skills.join(","),
