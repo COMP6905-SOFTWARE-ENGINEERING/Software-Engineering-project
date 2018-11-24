@@ -76,13 +76,6 @@ function profileCreateSubmit(){
 
     // var education = education_level + '.' + field_of_study + '.' +
     //     institution_name+'.'+edCountry+'.'+edProvince+'.'+edStart+'.'+edEnd;
- //testing
-    var taskArray = new Array();
-    $("select[name=levelOfEd]").each(function() {
-        taskArray.push($(this).val());
-    });
-alert(taskArray);
-    //
     var education_level_array = [];
     $(".edProgramLevel").each(function(){
         education_level_array.push($(this).val());
