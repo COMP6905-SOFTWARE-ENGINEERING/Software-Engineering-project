@@ -1,12 +1,13 @@
-function skills() {
-    var skill_input = $(".skillFields").clone().first();
-    skill_input.appendTo($("#skillsFieldsWrapper "));
-}
+
 
 function backToProjectList() {
     window.location.href = "/project/projectlist";
 }
+function skill() {
+    $("#skillsFieldsWrapper .skillFields").append('<div><label for="skill">Skill Name :</label><input type="text" class="form-control skill" id="skills"></div>');
 
+
+}
 function projectCreateSubmit() {
     $(".help_block_error").text(" ").attr("title", '');
     var postUrl;
@@ -43,22 +44,6 @@ function projectCreateSubmit() {
             alert('post failed');
         }
     });
-    //***************Validating form***************
-    if (project_name.value == "") {
-        window.alert("Please enter the project name.");
-        project_name.focus();
-        return false;
-    } else if (project_description.value.length <= 20) {
-        window.dilog("Please fill the data");
-        project_description.focus();
-        return false;
-    } else if (required_skills.value == "") {
-        window.dilog("Please add minimum one skill");
-        project_name.focus();
-        return false;
-    } else if (available_funding.value == "") {
-        window.dilog("Please give the value of funding available");
-        available_funding.focus();
-        return false;
-    }
+
+
 };

@@ -7,6 +7,8 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="../javascripts/jquery_project.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/CreateProject.css">
 
     <title>CreateProject</title>
@@ -31,7 +33,8 @@
                                     <label>Project Title* </label>
                                     <hr>
                                     <ul><input type="text" class="form-control" id="project_name"
-                                               placeholder="Your project name"></ul>
+                                               placeholder="Your project name" required="required"></ul>
+                                    <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                         </div>
@@ -62,7 +65,8 @@
                                 <div class="col-sm-4">
                                     <ul><textarea style="width:500px; height:150px;" id="project_description"
                                                   name="projectInfo" class="form-control"
-                                                  placeholder="Project description must be greater than 20 words."></textarea>
+                                                  placeholder="Project description must be greater than 20 words."
+                                                  required="required"></textarea>
                                     </ul>
                                 </div>
                             </div>
@@ -71,24 +75,36 @@
                     <!--skills section-->
                     <div class="skill">
                         <fieldset>
-                            <div id='skillsFieldsWrapper'>
-                                <div id="Addskilldiv1">
-                                    <label><span class="number"></span>Skills Required: </label>
-                                    <hr>
-                                    <div class="form-group">
-                                        <div class="col-sm-7">
-                                            <ul><label> skill:</label>
-                                                <input type='text' id='skilltb' class="form-control select_skill"
-                                                       placeholder="Add your skills">
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="button-wrapper">
-                                        <button type="button" class="btn btn-primary" onclick="skills()">Add Skills
-                                        </button>
-                                    </div>
+                            <!--<div id='skillsFieldsWrapper'>-->
+                            <!--<div id="Addskilldiv1">-->
+                            <!--<label><span class="number"></span>Skills Required: </label>-->
+                            <!--<hr>-->
+                            <!--<div class="form-group">-->
+                            <!--<div class="col-sm-7">-->
+                            <!--<ul><label> skill:</label>-->
+                            <!--<input type='text' id='skilltb' class="form-control select_skill"-->
+                            <!--placeholder="Add your skills" required="required">-->
+                            <!--</ul>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="button-wrapper">-->
+                            <!--<button type="button" class="btn btn-primary" onclick="skill()">Add Skills-->
+                            <!--</button>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <div id="skillsFieldsWrapper">
+                                <div class="skillFields skillBlock">
+
+                                    <label for="skill">Skill Name :</label>
+                                    <input type="text" class="form-control skill" id="skills" required="required">
+
                                 </div>
                             </div>
+                            <br>
+                            <button type="button" class="btn btn-primary allButtons addButton" onclick="skill()">Add
+                                Skills
+                            </button>
                         </fieldset>
                     </div>
                     <br><label for="projDate">Start Date:</label>
@@ -96,14 +112,15 @@
                     <hr>
                     <div class="form-group">
                         <div class="col-sm-7">
-                            <ul><input type="date" class="form-control" id="start_date"></ul>
+                            <ul><input type="date" class="form-control" id="start_date" required="required"></ul>
                         </div>
                     </div>
                     <label for="projDate">Application Deadline:</label>
                     <hr>
                     <div class="form-group">
                         <div class="col-sm-7">
-                            <ul><input type="date" class="form-control" id="application_deadline"></ul>
+                            <ul><input type="date" class="form-control" id="application_deadline" required="required">
+                            </ul>
                         </div>
                     </div>
                     <!--Funding section-->
@@ -111,7 +128,7 @@
                     <label>Avalilabe Funding:</label>
                     <hr>
                     <ul><input type='text' id='available_funding' class="form-control"
-                               placeholder="Funding Amount(CAD$)"></ul>
+                               placeholder="Funding Amount(CAD$)" required="required"></ul>
                     <div>
                         <div class="form-group">
                             <div class="col-sm-4">
@@ -122,6 +139,7 @@
                             </div>
                         </div>
                     </div>
+
                 </form>
             </div>
         </div>
