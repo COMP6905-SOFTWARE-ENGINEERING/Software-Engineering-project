@@ -1,7 +1,14 @@
 var matchModel = require('../models/match_db.js');
 
 function match(projects, students, threshold){
-    var isContain = false;
+    // disable all the previous match result
+    matchModel.changeStatus(function (status) {
+        if (status == 'ok'){
+            console.log('set status disabled successful')
+        }else {
+            console.log('set status disabled failed')
+        }
+    })
     for(var i = 0; i < projects.length; i++){
         for(var j = 0; j < students.length; j++){
             score = 0;
@@ -13,17 +20,30 @@ function match(projects, students, threshold){
             }
             var a = students[j].skills;
             var b = projects[i].required_skills;
-            var intersection = a.filter(function(v){ return b.indexOf(v) > -1 })
+            var intersection = a.filter(function(v){ return b.indexOf(v) > -1 });
             score += intersection.length * 20;
             if(!(students[j].needFS && projects[i].available_funding == 0)){
                 score += 30;
             }
             var total = 50 + 30 + b.length*20 + 30;
             var similarity = score / total;
-            if(similarity >= threshold)
-
+            if(similarity >= threshold) {
+                matchData = {
+                    project_id: projects[j]._id,
+                    student_id: students[i]._id,
+                    created_at: Date.now(),
+                    status: 'enabled'
+                }
+                matchModel.createMatch(matchData, function(status){
+                    if (status == 'ok'){
+                        console.log('insert match data successful')
+                    }else {
+                        console.log('insert match data failed')
+                    }
+                });
+            }
         }
     }
-    return isContain;
 }
+
 module.exports = match;

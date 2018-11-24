@@ -31,6 +31,7 @@ router.get('/profileview', function(req, res){
 
 router.get('/create_profile', function(req, res){
     var countriesArray=[];
+    var programsArray=[];
     mongo.connect('mongodb://127.0.0.1:27017/GradRecDB',function (err,db) {
         assert.equal(null,err);
         var countries = db.collection('countries').find();
@@ -38,6 +39,13 @@ router.get('/create_profile', function(req, res){
             assert.equal(null,err);
             countriesArray.push(doc);
         },function () {
+            db.close();
+        });
+        var programs = db.collection('programs').find();
+        programs.forEach(function (doc,err) {
+            assert.equal(null,err);
+            programsArray.push(doc);
+        }, function () {
             db.close();
         });
     });
@@ -51,7 +59,8 @@ router.get('/create_profile', function(req, res){
                     title:'Create Profile',
                     userdata: req.session.user,
                     profileData: profileData,
-                    items: countriesArray
+                    countries: countriesArray,
+                    programs: programsArray,
                 });
             }else {
                 res.json(err);
@@ -77,20 +86,38 @@ router.post('/create_profile', function(req, res){
                         res.json({status:status, flag:0});
                     }
                 });
-                educationModel.createEducation(profileData,function (status) {
+                var educationData = req.body;
+                educationModel.createEducation(educationData,function (status) {
                     if (status == 'ok'){
                         res.json({status:status, flag:1});
                     }else {
                         res.json({status:status, flag:0});
                     }
                 });
-                experienceModel.createExperience(profileData,function (status) {
+                var experienceData = req.body;
+                experienceModel.createExperience(experienceData,function (status) {
                     if (status == 'ok'){
                         res.json({status:status, flag:1});
                     }else {
                         res.json({status:status, flag:0});
                     }
                 });
+                // trigger match process
+                var projects = projectModel.findAll(function (status) {
+                    if (status == 'ok'){
+                        console.log('retrieve all documents in project collection successful')
+                    }else {
+                        console.log('retrieve all documents in project collection failed')
+                    }
+                })
+                var profiles = profileModel.findAll(function (status) {
+                    if (status == 'ok'){
+                        console.log('retrieve all documents in profile collection successful')
+                    }else {
+                        console.log('retrieve all documents in profile collection failed')
+                    }
+                })
+                matching(projects, profiles, 0.6)
             }
         });
     }else {
