@@ -6,6 +6,7 @@ var profileModel = require('../models/profile_db.js');
 var educationModel = require('../models/education_db');
 var experienceModel = require('../models/experience_db');
 var userModel = require('../models/user_mgmt_db.js');
+var countryModel = require('../models/country_db.js');
 var mongo = require('mongodb');
 var assert = require('assert');
 var dbURL = require('../config/default');
@@ -30,37 +31,23 @@ router.get('/profileview', function(req, res){
 });
 
 router.get('/create_profile', function(req, res){
-    var countriesArray=[];
-    var programsArray=[];
-    mongo.connect('mongodb://127.0.0.1:27017/GradRecDB',function (err,db) {
-        assert.equal(null,err);
-        var countries = db.collection('countries').find();
-        countries.forEach(function (doc,err) {
-            assert.equal(null,err);
-            countriesArray.push(doc);
-        },function () {
-            db.close();
-        });
-        var programs = db.collection('programs').find();
-        programs.forEach(function (doc,err) {
-            assert.equal(null,err);
-            programsArray.push(doc);
-        }, function () {
-            db.close();
-        });
-    });
     if(req.session.user && req.session.user.usertype == 'student'){
         userModel.userAccInfo({username:req.session.user.username}, function(err, data){
             if (err == 'ok'){
-                var profileData = {
-                    //realname: data.realname,
-                };
+                var countries = [];
+                countryModel.findAll(function (status, data) {
+                    if (status == 'ok') {
+                        countries = data
+                    } else {
+                        console.log('retrieve all documents in project collection failed')
+                    }
+                })
+                var programs=[];
                 res.render('profile_create', {
                     title:'Create Profile',
                     userdata: req.session.user,
-                    profileData: profileData,
-                    countries: countriesArray,
-                    programs: programsArray,
+                    countries: countries,
+                    programs: programs,
                 });
             }else {
                 res.json(err);

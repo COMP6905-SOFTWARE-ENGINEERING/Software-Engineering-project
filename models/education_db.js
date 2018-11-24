@@ -10,13 +10,9 @@ var educationSchema = new Schema({
     },
 
     // Education Details
-    edCountry: String,
-    edProvince: String,
-    edInstitution: String,
-    edProgram: String,
-    edProgramLevel: String,
-    edStart: Date,
-    edEnd: Date,
+    institution: String,
+    program: String,
+    program_level: String,
 });
 
 var educationModel = mongoose.model('education', educationSchema);
