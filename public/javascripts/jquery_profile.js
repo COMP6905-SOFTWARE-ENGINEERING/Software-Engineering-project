@@ -1,5 +1,5 @@
 function edu() {
-    $("#educationFieldsWrapper .educationFields").append('<div class="blockDetails"><label for="level"><span>Level of Education:</span></label><select class="form-control form-control-sm educationSpacing" id="edProgramLevel"><option value="">Select an option...</option></select><span class="error"></span><label for="field"><span>Program Name:</span></label><select class="form-control form-control-sm educationSpacing" id="edProgram"><option value="">Select an option...</option></select><span class="error"></span><div class="clear"></div><label for="name">Institution Name:</label><input type="text" class="form-control educationSpacing" id="edInstitution" ><hr></div>');
+    $("#educationFieldsWrapper .educationFields").append('<div class="blockDetails"><label for="level"><span>Level of Education:</span></label><select class="form-control form-control-sm educationSpacing" name="levelOfEd" id="edProgramLevel"><option value="">Select an option...</option><option value="bachelors">Bachelors</option><option value="masters">Masters</option><option value="phd">Phd</option></select><span class="error"></span> <label for="field"><span>Program Name:</span></label><select class="form-control form-control-sm educationSpacing" id="edProgram"><option value="">Select an option...</option></select><span class="error"></span><div class="clear"></div><label for="name">Institution Name:</label><input type="text" class="form-control educationSpacing" id="edInstitution" ><hr></div>');
 
 }
 function skil() {
@@ -22,10 +22,43 @@ function backToProfileList(){
 };
 
 function profileCreateSubmit(){
+    //testing code
+
+
+    //alert("hello");
+    var addressLine1=$("#addressLine1").val();
+    var isValid=true;
+
+    if(addressLine1=='') {
+        isValid = false;
+        $('#errormsg1').html('<div class="alert alert-danger">Please enter your address</div>');
+    }
+
+    else
+    {
+        $('#errormsg1').html('');
+    }
+
+    if(isValid==true)
+    {
+        var studentData={
+
+            address1:addressLine1
+        };
+
+    }
+    else
+    {
+        return false;
+    }
+
+
+    //end of testing
+
     $(".help_block_error").text(" ").attr("title", '');
     var postUrl;
 
-    var addressLine1= $("#addressLine1").val();
+   // var addressLine1= $("#addressLine1").val();
     var addressLine2 = $("#addressLine2").val();
     var addressLine3 = $("#addressLine3").val();
     var city = $("#city").val();
@@ -43,7 +76,13 @@ function profileCreateSubmit(){
 
     // var education = education_level + '.' + field_of_study + '.' +
     //     institution_name+'.'+edCountry+'.'+edProvince+'.'+edStart+'.'+edEnd;
-
+ //testing
+    var taskArray = new Array();
+    $("select[name=levelOfEd]").each(function() {
+        taskArray.push($(this).val());
+    });
+alert(taskArray);
+    //
     var education_level_array = [];
     $(".edProgramLevel").each(function(){
         education_level_array.push($(this).val());

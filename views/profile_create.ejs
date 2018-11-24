@@ -73,6 +73,7 @@
                         <div class="blockDetails">
                             <div class="form-group">
                                 <div class="col-sm-10">
+                                    <span id="errormsg1"> </span>
                                     <input type="text" id="addressLine1" placeholder="Address Line 1" class="form-control">
                                 </div>
                             </div>
@@ -119,16 +120,23 @@
                                 <!-- <h4><STRONG>Education :</STRONG></h4> -->
                                 <div class="blockDetails">
                                     <label for="level"><span>Level of Education:</span></label>
-                                    <select class="form-control form-control-sm educationSpacing" id="edProgramLevel">
+                                    <select class="form-control form-control-sm educationSpacing" name="levelOfEd" id="edProgramLevel">
                                         <option value="">Select an option...</option>
-
+                                        <option value="bachelors">Bachelors</option>
+                                        <option value="masters">Masters</option>
+                                        <option value="phd">Phd</option>
                                     </select>
                                     <span class="error"></span>
 
                                     <label for="field"><span>Program Name:</span></label>
                                     <select class="form-control form-control-sm educationSpacing" id="edProgram">
                                         <option value="">Select an option...</option>
-
+                                        <option value="ece">Electronics and Communications</option>
+                                        <option value="EEE">Electrical</option>
+                                        <option value="cse">Computer Science</option>
+                                        <option value="me">Mechanical</option>
+                                        <option value="ce">Chemical</option>
+                                        <option value="cv">Civil</option>
                                     </select>
                                     <span class="error"></span>
 
@@ -137,15 +145,15 @@
                                     <input type="text" class="form-control educationSpacing" id="edInstitution" >
 
                                     <!--<div class="form-group">-->
-                                        <!--<div class="col-sm-4">-->
-                                            <!--<label for="startDate">Start Date :</label>-->
-                                            <!--<input type="date" class="form-control educationSpacing" id="edStart">-->
-                                        <!--</div>-->
+                                    <!--<div class="col-sm-4">-->
+                                    <!--<label for="startDate">Start Date :</label>-->
+                                    <!--<input type="date" class="form-control educationSpacing" id="edStart">-->
+                                    <!--</div>-->
 
-                                        <!--<div class="col-sm-4">-->
-                                            <!--<label for="endDate">End Date :</label>-->
-                                            <!--<input type="date" class="form-control educationSpacing" id="edEnd">-->
-                                        <!--</div>-->
+                                    <!--<div class="col-sm-4">-->
+                                    <!--<label for="endDate">End Date :</label>-->
+                                    <!--<input type="date" class="form-control educationSpacing" id="edEnd">-->
+                                    <!--</div>-->
                                     <!--</div>-->
 
 
@@ -212,17 +220,17 @@
                             </select>
                             <!--<label for="specificlevel"><span>Specific Level:</span></label>-->
                             <!--<select class="form-control form-control-sm oth" id="psSpeLevel">-->
-                                <!--<option value="">Select an option...</option>-->
+                            <!--<option value="">Select an option...</option>-->
 
                             <!--</select>-->
                             <!--<label for="program"><span>Program:</span></label>-->
                             <!--<select class="form-control form-control-sm oth" id="psProgram">-->
-                                <!--<option value="">Select an option...</option>-->
+                            <!--<option value="">Select an option...</option>-->
 
                             <!--</select>-->
                             <!--<label for="term"><span>Term:</span></label>-->
                             <!--<select class="form-control form-control-sm oth" id="psAdTerm">-->
-                                <!--<option value="">Select an option...</option>-->
+                            <!--<option value="">Select an option...</option>-->
 
                             <!--</select>-->
 
