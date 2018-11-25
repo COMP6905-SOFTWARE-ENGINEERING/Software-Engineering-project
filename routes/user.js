@@ -6,6 +6,8 @@ var profileModel = require('../models/profile_db.js');
 var educationModel = require('../models/education_db');
 var experienceModel = require('../models/experience_db');
 var userModel = require('../models/user_mgmt_db.js');
+var countryModel = require('../models/country_db.js');
+var areaModel = require('../models/area_db.js');
 var mongo = require('mongodb');
 var assert = require('assert');
 var dbURL = require('../config/default');
@@ -30,40 +32,20 @@ router.get('/profileview', function(req, res){
 });
 
 router.get('/create_profile', function(req, res){
-    var countriesArray=[];
-    var programsArray=[];
-    mongo.connect('mongodb://127.0.0.1:27017/GradRecDB',function (err,db) {
-        assert.equal(null,err);
-        var countries = db.collection('countries').find();
-        countries.forEach(function (doc,err) {
-            assert.equal(null,err);
-            countriesArray.push(doc);
-        },function () {
-            db.close();
-        });
-        var programs = db.collection('programs').find();
-        programs.forEach(function (doc,err) {
-            assert.equal(null,err);
-            programsArray.push(doc);
-        }, function () {
-            db.close();
-        });
-    });
     if(req.session.user && req.session.user.usertype == 'student'){
-        userModel.userAccInfo({username:req.session.user.username}, function(err, data){
-            if (err == 'ok'){
-                var profileData = {
-                    //realname: data.realname,
-                };
+        areaModel.findAll(function (status, data) {
+            var areas=[];
+            if (status == 'ok'){
+                for(var i in data){
+                    areas.push(data[i].area);
+                }
                 res.render('profile_create', {
                     title:'Create Profile',
                     userdata: req.session.user,
-                    profileData: profileData,
-                    countries: countriesArray,
-                    programs: programsArray,
+                    areas: areas,
                 });
-            }else {
-                res.json(err);
+            }else{
+                res.json(status);
             }
         });
     }else {
@@ -71,6 +53,18 @@ router.get('/create_profile', function(req, res){
     }
 });
 
+//Testing by mahesh
+
+// router.post('/create_profile', function(req, res){
+//  var studentData = new profileModel();
+//     var studentEdu = new educationModel();
+//     studentData['addressLine1']=req.body.addressLine1;
+//     studentEdu['edProgramLevel']=req.body.edProgramLevel;
+//     console.log("successfull");
+//     res.redirect('/login');
+// });
+
+//
 router.post('/create_profile', function(req, res){
     if(req.session.user && req.session.user.usertype == 'student'){
         profileModel.listByOwner({owner: req.session.user.username}, function(err, data){
@@ -78,7 +72,7 @@ router.post('/create_profile', function(req, res){
                 res.redirect('/404');
             }else {
                 var profileData = req.body;
-                profileData['skills'] = req.body.skill.split(",");
+                //profileData['skills'] = req.body.skill.split(",");
                 profileModel.createProfile(profileData, function(status){
                     if (status == 'ok'){
                         res.json({status:status, flag:1});

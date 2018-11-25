@@ -10,32 +10,21 @@ var profileSchema = new Schema({
     },
 
     // Address Details
-    addressLine1: String,
-    addressLine2: String,
-    addressLine3: String,
+    address: String,
     country: String,
     province: String,
     city: String,
-    postalCode: String,
+    postal_code: String,
 
     // Skills
     skills: [{type: String}],
 
     // Intended Program of Study
-    psArea: String,
-    psLevel: String,
-    psSpeLevel: String,
-    psProgram:String,
-    psAdTerm: String,
-    needFS: String,
-
-    // Research Interests
+    area_of_study: String,
+    level_of_study: String,
+    need_financial_aid: String,
     research_interest: String,
-
-    intended_start_date:{
-        type:Date,
-        required:[true, 'please input intended start date'],
-    },
+    intended_start_date: Date,
 });
 
 var profileModel = mongoose.model('profile', profileSchema);

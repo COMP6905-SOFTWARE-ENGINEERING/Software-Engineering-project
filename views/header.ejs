@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title><%= title %></title>
+    <link href="/css/index.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="../javascripts/jquery.js"></script>
+    <script type="text/javascript" src="../javascripts/jquery_index.js"></script>
+</head>
+<body>
+<div class="header">
+    <div class="big_title">Graduate Recruitment System</div>
+    <div class="user_area">
+        <div class="username_area"><%= userdata.firstname %></div>
+        <input type="hidden" class="hidden_username" value="<%= userdata.firstname %>" disabled="disabled">
+        <input type="hidden" class="hidden_usertype" value="<%= userdata.usertype %>" disabled="disabled">
+        <div class="toggle_box" style="display:none;">
+            <div class="toggle_block chgpwd_area admin_need_hide">Notification Center</div>
+            <div class="toggle_block logout_area">logout</div>
+        </div>
+    </div>
+</div>
+<div class="nav_bar">
+    <div class="nav_bar_blank"></div>
+    <% if (userdata.usertype == 'student'){ %>
+        <div class="nav_bar_select redirect_profile_button">Manage Profile</div>
+        <div class="nav_bar_select redirect_match_button">Matching Result</div>
+        <div class="nav_bar_select redirect_monitor_button">Monitor Progress</div>
+    <% }else if (userdata.usertype == 'manager') { %>
+        <div class="nav_bar_select redirect_projectmgmt_button">Manage Projects</div>
+        <div class="nav_bar_select redirect_match_button">Matching Result</div>
+        <div class="nav_bar_select redirect_monitor_button">Monitor Progress</div>
+    <% }else { %>
+        <div class="nav_bar_select redirect_search_button">Search</div>
+    <% } %>
+</div>

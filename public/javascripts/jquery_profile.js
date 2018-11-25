@@ -1,5 +1,5 @@
 function edu() {
-    $("#educationFieldsWrapper .educationFields").append('<div class="blockDetails"><label for="level"><span>Level of Education:</span></label><select class="form-control form-control-sm educationSpacing" name="levelOfEd" id="edProgramLevel"><option value="">Select an option...</option><option value="bachelors">Bachelors</option><option value="masters">Masters</option><option value="phd">Phd</option></select><span class="error"></span> <label for="field"><span>Program Name:</span></label><select class="form-control form-control-sm educationSpacing" id="edProgram"><option value="">Select an option...</option></select><span class="error"></span><div class="clear"></div><label for="name">Institution Name:</label><input type="text" class="form-control educationSpacing" id="edInstitution" ><hr></div>');
+    $("#educationFieldsWrapper .educationFields").append('<div class="blockDetails"><label for="level"><span>Level of Education:</span></label><select class="form-control form-control-sm educationSpacing" name="levelOfEd" id="edProgramLevel"><option value="">Select an option...</option><option value="bachelors">Bachelors</option><option value="masters">Masters</option><option value="phd">Phd</option></select><span class="error"></span> <label for="field"><span>Program Name:</span></label><select class="form-control form-control-sm educationSpacing" id="edProgram"><option value="">Select an option...</option><option value="ece">Electronics and Communications</option><option value="EEE">Electrical</option><option value="cse">Computer Science</option><option value="me">Mechanical</option><option value="ce">Chemical</option><option value="cv">Civil</option></select><span class="error"></span><div class="clear"></div><label for="name">Institution Name:</label><input type="text" class="form-control educationSpacing" id="edInstitution" ><hr></div>');
 
 }
 function skil() {
@@ -22,103 +22,157 @@ function backToProfileList(){
 };
 
 function profileCreateSubmit(){
-    //testing code
-
-
-    //alert("hello");
-    var addressLine1=$("#addressLine1").val();
-    var isValid=true;
-
-    if(addressLine1=='') {
-        isValid = false;
-        $('#errormsg1').html('<div class="alert alert-danger">Please enter your address</div>');
-    }
-
-    else
-    {
-        $('#errormsg1').html('');
-    }
-
-    if(isValid==true)
-    {
-        var studentData={
-
-            address1:addressLine1
-        };
-
-    }
-    else
-    {
-        return false;
-    }
-
-
-    //end of testing
-
     $(".help_block_error").text(" ").attr("title", '');
     var postUrl;
-
-   // var addressLine1= $("#addressLine1").val();
+    var addressLine1=$("#addressLine1").val();
     var addressLine2 = $("#addressLine2").val();
     var addressLine3 = $("#addressLine3").val();
     var city = $("#city").val();
     var province = $("#province").val();
     var country = $("#country").val();
     var postalCode = $("#postalCode").val();
+    var needNfs = $("#needFS").val();
 
+
+    //Education details
     var edProgramLevel = $("#edProgramLevel").val();
+    var edLevelArray = new Array();
+    $("select[id=edProgramLevel]").each(function() {
+
+        edLevelArray.push($(this).val());
+    });
+
+
     var edProgram = $("#edProgram").val();
+    var edProgramArray = new Array();
+    $("select[id=edProgram]").each(function() {
+
+        edProgramArray.push($(this).val());
+    });
+
+
+
     var edInstitution = $("#edInstitution").val();
-    // var edCountry = $("#edCountry").val();
-    // var edProvince = $("#edProvince").val();
-    // var edStart = $("#edStart").val();
-    // var edEnd = $("#edEnd").val();
+    var edInstitutionArray = new Array();
+    $("input[id=edInstitution]").each(function() {
 
-    // var education = education_level + '.' + field_of_study + '.' +
-    //     institution_name+'.'+edCountry+'.'+edProvince+'.'+edStart+'.'+edEnd;
-    var education_level_array = [];
-    $(".edProgramLevel").each(function(){
-        education_level_array.push($(this).val());
-    });
-    var field_of_study_array = [];
-    $(".edProgram").each(function(){
-        field_of_study_array.push($(this).val());
-    });
-    var institution_name_array = [];
-    $(".edInstitution").each(function(){
-        institution_name_array.push($(this).val());
+        edInstitutionArray.push($(this).val());
     });
 
-    var weCompany = $("#weCompany").val();
-    var weTitle = $("#weTitle").val();
-    // var weCountry = $("#weCountry").val();
-    var weStartDate = $("#weStartDate").val();
-    var weEndDate = $("#weEndDate").val();
-    // var work_experience = company + '.' + position + '.' +weCountry+'.'+
-    //     start_date + '.' + end_date;
+    var edlevelFull = edLevelArray.join();
+    var edProgramFull = edProgramArray.join();
+    var edInstitutionFull = edInstitutionArray.join();
+    var education=[edlevelFull,edProgramFull,edInstitutionFull];
+    //alert(education);
 
-    var weCompanyArray = [];
-    $(".weCompany").each(function(){
-        weCompanyArray.push($(this).val());
+  //End of education details
+
+    var nfs=false;
+
+    if (needNfs=="Y")
+    {
+        nfs=true;
+    }
+    else
+    {
+        nfs=false;
+    }
+
+
+    //Skills
+    var skillsArray = new Array();
+    $("input[id=skills]").each(function() {
+
+        skillsArray.push($(this).val());
     });
-    var weTitleArray = [];
-    $(".weTitle").each(function(){
+   // alert(skillsArray);
+
+    //End of skills
+
+    //research
+    var researchArray = new Array();
+    $("input[id=researchId]").each(function() {
+
+        researchArray.push($(this).val());
+    });
+  //    alert(researchArray);
+    //End of research
+
+
+    //Exp details:
+    var compnNameArray = new Array();
+    $("input[id=weCompany]").each(function() {
+
+        compnNameArray.push($(this).val());
+    });
+    var weTitleArray = new Array();
+    $("input[id=weTitle]").each(function() {
+
         weTitleArray.push($(this).val());
     });
-    var weStartDateArray = [];
-    $(".weStartDate").each(function(){
-        weStartDate.push($(this).val());
+    var weStartDateArray = new Array();
+    $("input[id=weStartDate]").each(function() {
+
+        weStartDateArray.push($(this).val());
     });
-    var weEndDateArray = [];
-    $(".weEndDate").each(function(){
-        weCompanyArray.push($(this).val());
+    var weEndDateArray = new Array();
+    $("input[id=weEndDate]").each(function() {
+
+        weEndDateArray.push($(this).val());
     });
+    var cmpNameFull = compnNameArray.join();
+    var cmpTitleFull = weTitleArray.join();
+    var cmpstrtDateFull = weStartDateArray.join();
+    var cmpEndDateFull = weEndDateArray.join();
+    var expFull=[cmpNameFull,cmpTitleFull,cmpstrtDateFull,cmpEndDateFull];
+    // alert(expFull);
+//End of Exp
 
 
-    var skills = [];
-    $(".skills").each(function(){
-        skills.push($(this).val());
-    });
+
+
+//testing
+
+   //  var isValid=true;
+   //
+   //
+   //  if(addressLine1=='') {
+   //      isValid = false;
+   //      $('#errormsg1').html('<div class="alert alert-danger">Please enter your address</div>');
+   //  }
+   //
+   //  else
+   //  {
+   //      $('#errormsg1').html('');
+   //  }
+   //
+   //  if(isValid==true)
+   //  {
+   //      var studentData={
+   //
+   //          address1:addressLine1,
+   //          edProgramLevel:edProgramLevel
+   //      };
+   // $.ajax({
+   //     url:'/user/create_profile',
+   //      type:'POST',
+   //     data:studentData,
+   //      success: function (data) {
+   //         $('#addressLine1').val('');
+   //         $('#edProgramLevel').val('');
+   //
+   //      }
+   //
+   // });
+   //  }
+   //  else
+   //  {
+   //      return false;
+   //  }
+
+
+    //end of testing
+
 
     var psArea = $("#psArea").val();
     var psLevel = $("#psLevel").val();
@@ -127,35 +181,24 @@ function profileCreateSubmit(){
     // var psAdTerm = $("#psAdTerm").val();
     var projDate = $("#projDate").val();
 
+    var postData =
+        {
+            user_id:$(".hidden_userid").val(),
+            address: addressLine1+','+addressLine2+','+addressLine3,
+            country:country,
+            province:province,
+            city:city,
+            postal_code:postalCode,
+            educations:education,
+            work_experiences:expFull,
+            skills:skillsArray,
+            area_of_study:psArea,
+            level_of_study:psLevel,
+            need_financial_aid:nfs,
+            research_interest:researchArray,
+            intended_start_date:projDate
 
-    var postData = {
-        owner:$(".hidden_userid").val(),
-        addressLine1:addressLine1,
-        addressLine2:addressLine2,
-        addressLine3:addressLine3,
-        country:country,
-        province:province,
-        city:city,
-        postalCode:postalCode,
-        education_level_array:education_level_array.join(","),
-        field_of_study_array:field_of_study_array.join(","),
-        institution_name_array:education_level_array.join(","),
-
-        weCompanyArray:weCompanyArray.join(","),
-        weTitleArray:weTitleArray.join(","),
-        weStartDateArray:weStartDateArray.join(","),
-        weEndDateArray:weEndDateArray.join(","),
-
-        psArea:psArea,
-        psLevel:psLevel,
-        // psSpeLevel:psSpeLevel,
-        // psProgram:psProgram,
-        // psAdTerm:psAdTerm,
-        projDate:projDate,
-        research_interest:$("#researchId").val(),
-        skills:skills.join(","),
-        need_financial_support:$("input[name='gridRadios']:checked").val()
-    };
+        }
     postUrl = '/user/create_profile';
     // alert(JSON.stringify(postData));
     $.post(postUrl, postData, function(data, status){
