@@ -191,11 +191,11 @@ function profileCreateSubmit(){
             postal_code:postalCode,
             educations:education,
             work_experiences:expFull,
-            skills:skillsArray,
+            skills:skillsArray.join(),
             area_of_study:psArea,
             level_of_study:psLevel,
             need_financial_aid:nfs,
-            research_interest:researchArray,
+            research_interest:researchArray.join(),
             intended_start_date:projDate
 
         }
