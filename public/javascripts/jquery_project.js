@@ -4,6 +4,7 @@ function backToProjectList() {
     window.location.href = "/project/projectlist";
 }
 function skill() {
+
     $("#skillsFieldsWrapper .skillFields").append('<div><label for="skill">Skill Name :</label><input type="text" class="form-control skill" id="skills"></div>');
 
 
@@ -11,15 +12,22 @@ function skill() {
 function projectCreateSubmit() {
     $(".help_block_error").text(" ").attr("title", '');
     var postUrl;
+    var skillsArray = new Array();
+    $("input[id=skills]").each(function() {
+
+        skillsArray.push($(this).val());
+    });
     var postData = {
-        owner: $(".hidden_userid").val(),
+        user_id: $(".hidden_userid").val(),
         project_name: $("#project_name").val(),
         level_of_study: $("#level_of_study").val(),
+        required_program: $("#Req_field_study").val(),
         project_description: $("#project_description").val(),
         available_funding: $("#available_funding").val(),
-        required_skills: $(".select_skill").val(),
+        required_skills: skillsArray,
         start_date: $("#start_date").val(),
-        application_deadline: $("#application_deadline").val(),
+        matching_preference:$("#Match_Preference").val(),
+
     };
     postUrl = '/project/create_project';
     // if ($(".hidden_offerid").val()){
@@ -44,6 +52,4 @@ function projectCreateSubmit() {
             alert('post failed');
         }
     });
-
-
 };

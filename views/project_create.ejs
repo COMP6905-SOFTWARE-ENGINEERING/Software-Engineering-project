@@ -18,7 +18,7 @@
     <div class="jumbotron">
         <h1 class="display-3"></h1>
     </div>
-    <!------Form------->
+    <!--Form-->
     <div class="container">
         <div class="row" id="mainRow">
             <div class="col-md-6 col-md-offset-1">
@@ -52,6 +52,38 @@
                                 <option value="Bachelors">Bachelors</option>
                                 <option value="Masters">Masters</option>
                                 <option value="Phd">Phd</option>
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <!--Required field of study-->
+                    <fieldset>
+                        <label><span class="number"></span>Required Field of Study:</label>
+                        <hr>
+                        <div class="form-group">
+                            <div class="col-sm-4">
+                                <ul>
+                                    <select id="Req_field_study" name="Req_Position" class="form-control">
+                                </ul>
+                                <option value="Bachelors">Bachelors</option>
+                                <option value="Masters">Masters</option>
+                                <option value="Phd">Phd</option>
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <!--Matching Preference-->
+                    <fieldset>
+                        <label><span class="number"></span>Matching Preference:</label>
+                        <hr>
+                        <div class="form-group">
+                            <div class="col-sm-4">
+                                <ul>
+                                    <select id="Match_Preference" name="Match_Preference" class="form-control">
+                                </ul>
+                                <option value="Bachelors">100% similarity</option>
+                                <option value="Masters">80% similarity</option>
+                                <option value="Phd">60% similarity</option>
                                 </select>
                             </div>
                         </div>
@@ -113,14 +145,6 @@
                     <div class="form-group">
                         <div class="col-sm-7">
                             <ul><input type="date" class="form-control" id="start_date" required="required"></ul>
-                        </div>
-                    </div>
-                    <label for="projDate">Application Deadline:</label>
-                    <hr>
-                    <div class="form-group">
-                        <div class="col-sm-7">
-                            <ul><input type="date" class="form-control" id="application_deadline" required="required">
-                            </ul>
                         </div>
                     </div>
                     <!--Funding section-->
