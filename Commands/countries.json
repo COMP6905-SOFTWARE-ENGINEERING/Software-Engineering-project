@@ -1,195 +1,195 @@
- {Country:"Afghanistan", Nationality:"Afghan", Continent:"Asia", Region:"Southern Asia", Sub_Region:"Southern Asia"}
- {Country:"Albania", Nationality:"Albanian", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
- {Country:"Algeria", Nationality:"Algerian", Continent:"Africa", Region:"Northern Africa", Sub_Region:"Northern Africa"}
- {Country:"Angola", Nationality:"Angolan", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Middle Africa"}
- {Country:"Argentina", Nationality:"Argentinian", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
- {Country:"Armenia", Nationality:"Armenian", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
- {Country:"Aruba", Nationality:"Aruban", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
- {Country:"Australia", Nationality:"Australian", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
- {Country:"Austria", Nationality:"Austrian", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
- {Country:"Azerbaijan", Nationality:"Azerbaijani", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
- {Country:"Bahamas", Nationality:"Bahamian", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
- {Country:"Bahrain", Nationality:"Bahraini", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
- {Country:"Bangladesh", Nationality:"Bangladeshi", Continent:"Asia", Region:"Southern Asia", Sub_Region:"Southern Asia"}
- {Country:"Barbados", Nationality:"Barbadian", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
- {Country:"Belarus", Nationality:"Belarusian orBelarusan", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
- {Country:"Belgium", Nationality:"Belgian", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
- {Country:"Belize", Nationality:"Belizean", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
- {Country:"Benin", Nationality:"Beninese", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
- {Country:"Bhutan", Nationality:"Bhutanese", Continent:"Asia", Region:"Southern Asia", Sub_Region:"Southern Asia"}
- {Country:"Bolivia", Nationality:"Bolivian", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
- {Country:"Bosnia and Herzegovina", Nationality:"Bosnian", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
- {Country:"Botswana", Nationality:"Botswanan", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Southern Africa"}
- {Country:"Brazil", Nationality:"Brazilian", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
- {Country:"Brunei", Nationality:"Bruneian", Continent:"Asia", Region:"South Eastern Asia", Sub_Region:"South Eastern Asia"}
- {Country:"Bulgaria", Nationality:"Bulgarian", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
- {Country:"Burkina Faso", Nationality:"Burkinabé", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
- {Country:"Burundi", Nationality:"Burundian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
- {Country:"Cambodia", Nationality:"Cambodian", Continent:"Asia", Region:"South Eastern Asia", Sub_Region:"South Eastern Asia"}
- {Country:"Cameroon", Nationality:"Cameroonian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Middle Africa"}
- {Country:"Canada", Nationality:"Canadian", Continent:"America", Region:"North America", Sub_Region:"North America"}
- {Country:"Cape Verde", Nationality:"Cape Verdean", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
- {Country:"Central African Republic", Nationality:"Central African", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Middle Africa"}
- {Country:"Chad", Nationality:"Chadian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Middle Africa"}
- {Country:"Chile", Nationality:"Chilean", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
- {Country:"China", Nationality:"Chinese", Continent:"Asia", Region:"Eastern Asia", Sub_Region:"Eastern Asia"}
- {Country:"Colombia", Nationality:"Colombian", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
- {Country:"Congo", Nationality:"Congolese", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Middle Africa"}
- {Country:"Costa Rica", Nationality:"Costa Rican", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
- {Country:"Ivory Coast", Nationality:"Ivorian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
- {Country:"Croatia", Nationality:"Croat or Croatian", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
- {Country:"Cuba", Nationality:"Cuban", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
- {Country:"Cyprus", Nationality:"Cypriot", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
- {Country:"Czech Republic", Nationality:"Czech", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
- {Country:"North Korea", Nationality:"North Korean", Continent:"Asia", Region:"Eastern Asia", Sub_Region:"Eastern Asia"}
- {Country:"Congo", Nationality:"Congolese", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Middle Africa"}
- {Country:"Denmark", Nationality:"Danish", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
- {Country:"Djibouti", Nationality:"Djiboutian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
- {Country:"Dominican Republic", Nationality:"Dominican", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
- {Country:"Ecuador", Nationality:"Ecuadorean", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
- {Country:"Egypt", Nationality:"Egyptian", Continent:"Africa", Region:"Northern Africa", Sub_Region:"Northern Africa"}
- {Country:"El Salvador", Nationality:"Salvadorean", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
- {Country:"Equatorial Guinea", Nationality:"Equatorial Guinean", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Middle Africa"}
- {Country:"Eritrea", Nationality:"Eritrean", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
- {Country:"Estonia", Nationality:"Estonian", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
- {Country:"Ethiopia", Nationality:"Ethiopian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
- {Country:"Fiji", Nationality:"Fijian", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
- {Country:"Finland", Nationality:"Finnish", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
- {Country:"France", Nationality:"French", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
- {Country:"French Guiana", Nationality:"French Guianan", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
- {Country:"French Polynesia", Nationality:"French Polynesian", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
- {Country:"Gabon", Nationality:"Gabonese", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Middle Africa"}
- {Country:"Gambia", Nationality:"Gambian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
- {Country:"Georgia", Nationality:"Georgian", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
- {Country:"Germany", Nationality:"German", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
- {Country:"Ghana", Nationality:"Ghanaian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
- {Country:"Greece", Nationality:"Greek", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
- {Country:"Grenada", Nationality:"Grenadian", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
- {Country:"Guadeloupe", Nationality:"Guadeloupean", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
- {Country:"Guam", Nationality:"Guamanian", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
- {Country:"Guatemala", Nationality:"Guatemalan", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
- {Country:"Guinea", Nationality:"Guinean", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
- {Country:"Guinea Bissau", Nationality:"Bissau-Guinean", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
- {Country:"Guyana", Nationality:"Guyanese", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
- {Country:"Haiti", Nationality:"Haitian", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
- {Country:"Honduras", Nationality:"Honduran", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
- {Country:"Hungary", Nationality:"Hungarian", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
- {Country:"Iceland", Nationality:"Icelandic", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
- {Country:"India", Nationality:"Indian", Continent:"Asia", Region:"Southern Asia", Sub_Region:"Southern Asia"}
- {Country:"Indonesia", Nationality:"Indonesian", Continent:"Asia", Region:"South Eastern Asia", Sub_Region:"South Eastern Asia"}
- {Country:"Iran", Nationality:"Iranian", Continent:"Asia", Region:"Southern Asia", Sub_Region:"Southern Asia"}
- {Country:"Iraq", Nationality:"Iraqi", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
- {Country:"Ireland", Nationality:"Irish", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
- {Country:"Israel", Nationality:"Israeli", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
- {Country:"Italy", Nationality:"Italian", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
- {Country:"Jamaica", Nationality:"Jamaican", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
- {Country:"Japan", Nationality:"Japanese", Continent:"Asia", Region:"Eastern Asia", Sub_Region:"Eastern Asia"}
- {Country:"Jordan", Nationality:"Jordanian", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
- {Country:"Kazakhstan", Nationality:"Kazakh", Continent:"Asia", Region:"Central Asia", Sub_Region:"Central Asia"}
- {Country:"Kenya", Nationality:"Kenyan", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
- {Country:"Kuwait", Nationality:"Kuwaiti", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
- {Country:"Kyrgyzstan", Nationality:"Kyrgyzstani", Continent:"Asia", Region:"Central Asia", Sub_Region:"Central Asia"}
- {Country:"Laos", Nationality:"Laotian", Continent:"Asia", Region:"South Eastern Asia", Sub_Region:"South Eastern Asia"}
- {Country:"Latvia", Nationality:"Latvian", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
- {Country:"Lebanon", Nationality:"Lebanese", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
- {Country:"Lesotho", Nationality:"Mosotho", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Southern Africa"}
- {Country:"Liberia", Nationality:"Liberian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
- {Country:"Libya", Nationality:"Libyan", Continent:"Africa", Region:"Northern Africa", Sub_Region:"Northern Africa"}
- {Country:"Lithuania", Nationality:"Lithuanian", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
- {Country:"Luxembourg", Nationality:"Luxembourger", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
- {Country:"Macao", Nationality:"Macanese", Continent:"Asia", Region:"Eastern Asia", Sub_Region:"Eastern Asia"}
- {Country:"Madagascar", Nationality:"Malagasy orMadagascan", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
- {Country:"Malawi", Nationality:"Malawian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
- {Country:"Malaysia", Nationality:"Malaysian", Continent:"Asia", Region:"South Eastern Asia", Sub_Region:"South Eastern Asia"}
- {Country:"Maldives", Nationality:"Maldivian", Continent:"Asia", Region:"Southern Asia", Sub_Region:"Southern Asia"}
- {Country:"Mali", Nationality:"Malian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
- {Country:"Malta", Nationality:"Maltese", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
- {Country:"Martinique", Nationality:"Martinican", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
- {Country:"Mauritania", Nationality:"Mauritanian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
- {Country:"Mauritius", Nationality:"Mauritian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
- {Country:"Mayotte", Nationality:"Maorais", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
- {Country:"Mexico", Nationality:"Mexican", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"North America"}
- {Country:"Micronesia", Nationality:"Micronisian", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
- {Country:"Mongolia", Nationality:"Mongolian", Continent:"Asia", Region:"Eastern Asia", Sub_Region:"Eastern Asia"}
- {Country:"Montenegro", Nationality:"Montenegrin", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
- {Country:"Morocco", Nationality:"Moroccan", Continent:"Africa", Region:"Northern Africa", Sub_Region:"Northern Africa"}
- {Country:"Mozambique", Nationality:"Mozambican", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
- {Country:"Myanmar", Nationality:"Burmese / Myanma", Continent:"Asia", Region:"South Eastern Asia", Sub_Region:"South Eastern Asia"}
- {Country:"Namibia", Nationality:"Namibian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Southern Africa"}
- {Country:"Nepal", Nationality:"Nepalese", Continent:"Asia", Region:"Southern Asia", Sub_Region:"Southern Asia"}
- {Country:"Netherlands", Nationality:"Dutch", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
- {Country:"Netherlands Antilles", Nationality:"Netherlands Antillean", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
- {Country:"New Caledonia", Nationality:"New Caledonian", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
- {Country:"New Zealand", Nationality:"New Zelander", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
- {Country:"Nicaragua", Nationality:"Nicaraguan", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
- {Country:"Niger", Nationality:"Nigerien", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
- {Country:"Nigeria", Nationality:"Nigerian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
- {Country:"Norway", Nationality:"Norwegian", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
- {Country:"Palestine", Nationality:"Palestinian", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
- {Country:"Oman", Nationality:"Omani", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
- {Country:"Pakistan", Nationality:"Pakistani", Continent:"Asia", Region:"Southern Asia", Sub_Region:"Southern Asia"}
- {Country:"Panama", Nationality:"Panamanian", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
- {Country:"Papua New Guinea", Nationality:"Papua New Guinean or Guinean", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
- {Country:"Paraguay", Nationality:"Paraguayan", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
- {Country:"Peru", Nationality:"Peruvian", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
- {Country:"Philippines", Nationality:"Philipino", Continent:"Asia", Region:"South Eastern Asia", Sub_Region:"South Eastern Asia"}
- {Country:"Poland", Nationality:"Polish", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
- {Country:"Portugal", Nationality:"Portuguese", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
- {Country:"Puerto Rico", Nationality:"Puerto Rican", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
- {Country:"Qatar", Nationality:"Qatari", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
- {Country:"South Korea", Nationality:"South Korean", Continent:"Asia", Region:"Eastern Asia", Sub_Region:"Eastern Asia"}
- {Country:"Republic of Moldova", Nationality:"Modovian", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
- {Country:"Réunion", Nationality:"Réunionese", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
- {Country:"Romania", Nationality:"Romanian", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
- {Country:"Russia", Nationality:"Russian", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
- {Country:"Rwanda", Nationality:"Rwandan", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
- {Country:"Saint Lucia", Nationality:"Saint Lucian", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
- {Country:"Saint Vincent and the Grenadines", Nationality:"Vincentian", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
- {Country:"Samoa", Nationality:"Samoan", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
- {Country:"Sao Tome and Principe", Nationality:"São Toméan", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Middle Africa"}
- {Country:"Saudi Arabia", Nationality:"Saudi Arabian orSaudi", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
- {Country:"Senegal", Nationality:"Senegalese", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
- {Country:"Serbia", Nationality:"Serb or Serbian", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
- {Country:"Sierra Leone", Nationality:"Sierra Leonian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
- {Country:"Singapore", Nationality:"Singaporean", Continent:"Asia", Region:"South Eastern Asia", Sub_Region:"South Eastern Asia"}
- {Country:"Slovakia", Nationality:"Slovak", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
- {Country:"Slovenia", Nationality:"Slovene or Slovenian", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
- {Country:"Solomon Islands", Nationality:"Solomon", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
- {Country:"Somalia", Nationality:"Somali", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
- {Country:"South Africa", Nationality:"South African", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Southern Africa"}
- {Country:"Spain", Nationality:"Spanish", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
- {Country:"Sri Lanka", Nationality:"Sri Lankan", Continent:"Asia", Region:"Southern Asia", Sub_Region:"Southern Asia"}
- {Country:"Sudan", Nationality:"Sudanese", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
- {Country:"Suriname", Nationality:"Surinamese", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
- {Country:"Swaziland", Nationality:"Swazi", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Southern Africa"}
- {Country:"Sweden", Nationality:"Swedish", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
- {Country:"Switzerland", Nationality:"Swiss", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
- {Country:"Syria", Nationality:"Syrian", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
- {Country:"Tajikistan", Nationality:"Tajik or Tadjik", Continent:"Asia", Region:"Central Asia", Sub_Region:"Central Asia"}
- {Country:"Thailand", Nationality:"Thai", Continent:"Asia", Region:"South Eastern Asia", Sub_Region:"South Eastern Asia"}
- {Country:"Macedonia", Nationality:"Macedonian", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
- {Country:"Timor Leste", Nationality:"Timorese", Continent:"Asia", Region:"South Eastern Asia", Sub_Region:"South Eastern Asia"}
- {Country:"Togo", Nationality:"Togolese", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
- {Country:"Tonga", Nationality:"Tongalese", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
- {Country:"Trinidad and Tobago", Nationality:"Trinidadian", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
- {Country:"Tunisia", Nationality:"Tunisian", Continent:"Africa", Region:"Northern Africa", Sub_Region:"Northern Africa"}
- {Country:"Turkey", Nationality:"Turkish", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
- {Country:"Turkmenistan", Nationality:"Turkmen or Turkoman", Continent:"Asia", Region:"Central Asia", Sub_Region:"Central Asia"}
- {Country:"Uganda", Nationality:"Ugandan", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
- {Country:"Ukraine", Nationality:"Ukrainian", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
- {Country:"United Arab Emirates", Nationality:"Emirati", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
- {Country:"England", Nationality:"English", Continent:"Europe", Region:"Western Europe", Sub_Region:"United Kingdom"}
- {Country:"Scotland", Nationality:"Scottish", Continent:"Europe", Region:"Western Europe", Sub_Region:"United Kingdom"}
- {Country:"Northern Ireland", Nationality:"Irish", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
- {Country:"Ireland", Nationality:"Irish", Continent:"Europe", Region:"Western Europe", Sub_Region:"United Kingdom"}
- {Country:"Tanzania", Nationality:"Tanzanian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
- {Country:"United States of America", Nationality:"American", Continent:"America", Region:"North America", Sub_Region:"North America"}
- {Country:"United States Virgin Islands", Nationality:"American", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
- {Country:"Uruguay", Nationality:"Uruguayan", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
- {Country:"Uzbekistan", Nationality:"Uzbek", Continent:"Asia", Region:"Central Asia", Sub_Region:"Central Asia"}
- {Country:"Vanuatu", Nationality:"Vanuatuan", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
- {Country:"Venezuela", Nationality:"Venezuelan", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
- {Country:"Vietnam", Nationality:"Vietnamese", Continent:"Asia", Region:"South Eastern Asia", Sub_Region:"South Eastern Asia"}
- {Country:"Yemen", Nationality:"Yemeni", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
- {Country:"Zambia", Nationality:"Zambian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
- {Country:"Zimbabwe", Nationality:"Zimbabwean", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {country:"Afghanistan", Nationality:"Afghan", Continent:"Asia", Region:"Southern Asia", Sub_Region:"Southern Asia"}
+ {country:"Albania", Nationality:"Albanian", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {country:"Algeria", Nationality:"Algerian", Continent:"Africa", Region:"Northern Africa", Sub_Region:"Northern Africa"}
+ {country:"Angola", Nationality:"Angolan", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Middle Africa"}
+ {country:"Argentina", Nationality:"Argentinian", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
+ {country:"Armenia", Nationality:"Armenian", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {country:"Aruba", Nationality:"Aruban", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {country:"Australia", Nationality:"Australian", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
+ {country:"Austria", Nationality:"Austrian", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {country:"Azerbaijan", Nationality:"Azerbaijani", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {country:"Bahamas", Nationality:"Bahamian", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {country:"Bahrain", Nationality:"Bahraini", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {country:"Bangladesh", Nationality:"Bangladeshi", Continent:"Asia", Region:"Southern Asia", Sub_Region:"Southern Asia"}
+ {country:"Barbados", Nationality:"Barbadian", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {country:"Belarus", Nationality:"Belarusian orBelarusan", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {country:"Belgium", Nationality:"Belgian", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {country:"Belize", Nationality:"Belizean", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {country:"Benin", Nationality:"Beninese", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
+ {country:"Bhutan", Nationality:"Bhutanese", Continent:"Asia", Region:"Southern Asia", Sub_Region:"Southern Asia"}
+ {country:"Bolivia", Nationality:"Bolivian", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
+ {country:"Bosnia and Herzegovina", Nationality:"Bosnian", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {country:"Botswana", Nationality:"Botswanan", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Southern Africa"}
+ {country:"Brazil", Nationality:"Brazilian", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
+ {country:"Brunei", Nationality:"Bruneian", Continent:"Asia", Region:"South Eastern Asia", Sub_Region:"South Eastern Asia"}
+ {country:"Bulgaria", Nationality:"Bulgarian", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {country:"Burkina Faso", Nationality:"Burkinabé", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
+ {country:"Burundi", Nationality:"Burundian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {country:"Cambodia", Nationality:"Cambodian", Continent:"Asia", Region:"South Eastern Asia", Sub_Region:"South Eastern Asia"}
+ {country:"Cameroon", Nationality:"Cameroonian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Middle Africa"}
+ {country:"Canada", Nationality:"Canadian", Continent:"America", Region:"North America", Sub_Region:"North America"}
+ {country:"Cape Verde", Nationality:"Cape Verdean", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
+ {country:"Central African Republic", Nationality:"Central African", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Middle Africa"}
+ {country:"Chad", Nationality:"Chadian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Middle Africa"}
+ {country:"Chile", Nationality:"Chilean", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
+ {country:"China", Nationality:"Chinese", Continent:"Asia", Region:"Eastern Asia", Sub_Region:"Eastern Asia"}
+ {country:"Colombia", Nationality:"Colombian", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
+ {country:"Congo", Nationality:"Congolese", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Middle Africa"}
+ {country:"Costa Rica", Nationality:"Costa Rican", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {country:"Ivory Coast", Nationality:"Ivorian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
+ {country:"Croatia", Nationality:"Croat or Croatian", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {country:"Cuba", Nationality:"Cuban", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {country:"Cyprus", Nationality:"Cypriot", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {country:"Czech Republic", Nationality:"Czech", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {country:"North Korea", Nationality:"North Korean", Continent:"Asia", Region:"Eastern Asia", Sub_Region:"Eastern Asia"}
+ {country:"Congo", Nationality:"Congolese", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Middle Africa"}
+ {country:"Denmark", Nationality:"Danish", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {country:"Djibouti", Nationality:"Djiboutian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {country:"Dominican Republic", Nationality:"Dominican", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {country:"Ecuador", Nationality:"Ecuadorean", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
+ {country:"Egypt", Nationality:"Egyptian", Continent:"Africa", Region:"Northern Africa", Sub_Region:"Northern Africa"}
+ {country:"El Salvador", Nationality:"Salvadorean", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {country:"Equatorial Guinea", Nationality:"Equatorial Guinean", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Middle Africa"}
+ {country:"Eritrea", Nationality:"Eritrean", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {country:"Estonia", Nationality:"Estonian", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {country:"Ethiopia", Nationality:"Ethiopian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {country:"Fiji", Nationality:"Fijian", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
+ {country:"Finland", Nationality:"Finnish", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {country:"France", Nationality:"French", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {country:"French Guiana", Nationality:"French Guianan", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
+ {country:"French Polynesia", Nationality:"French Polynesian", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
+ {country:"Gabon", Nationality:"Gabonese", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Middle Africa"}
+ {country:"Gambia", Nationality:"Gambian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
+ {country:"Georgia", Nationality:"Georgian", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {country:"Germany", Nationality:"German", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {country:"Ghana", Nationality:"Ghanaian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
+ {country:"Greece", Nationality:"Greek", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {country:"Grenada", Nationality:"Grenadian", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {country:"Guadeloupe", Nationality:"Guadeloupean", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {country:"Guam", Nationality:"Guamanian", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
+ {country:"Guatemala", Nationality:"Guatemalan", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {country:"Guinea", Nationality:"Guinean", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
+ {country:"Guinea Bissau", Nationality:"Bissau-Guinean", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
+ {country:"Guyana", Nationality:"Guyanese", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
+ {country:"Haiti", Nationality:"Haitian", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {country:"Honduras", Nationality:"Honduran", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {country:"Hungary", Nationality:"Hungarian", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {country:"Iceland", Nationality:"Icelandic", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {country:"India", Nationality:"Indian", Continent:"Asia", Region:"Southern Asia", Sub_Region:"Southern Asia"}
+ {country:"Indonesia", Nationality:"Indonesian", Continent:"Asia", Region:"South Eastern Asia", Sub_Region:"South Eastern Asia"}
+ {country:"Iran", Nationality:"Iranian", Continent:"Asia", Region:"Southern Asia", Sub_Region:"Southern Asia"}
+ {country:"Iraq", Nationality:"Iraqi", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {country:"Ireland", Nationality:"Irish", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {country:"Israel", Nationality:"Israeli", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {country:"Italy", Nationality:"Italian", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {country:"Jamaica", Nationality:"Jamaican", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {country:"Japan", Nationality:"Japanese", Continent:"Asia", Region:"Eastern Asia", Sub_Region:"Eastern Asia"}
+ {country:"Jordan", Nationality:"Jordanian", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {country:"Kazakhstan", Nationality:"Kazakh", Continent:"Asia", Region:"Central Asia", Sub_Region:"Central Asia"}
+ {country:"Kenya", Nationality:"Kenyan", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {country:"Kuwait", Nationality:"Kuwaiti", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {country:"Kyrgyzstan", Nationality:"Kyrgyzstani", Continent:"Asia", Region:"Central Asia", Sub_Region:"Central Asia"}
+ {country:"Laos", Nationality:"Laotian", Continent:"Asia", Region:"South Eastern Asia", Sub_Region:"South Eastern Asia"}
+ {country:"Latvia", Nationality:"Latvian", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {country:"Lebanon", Nationality:"Lebanese", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {country:"Lesotho", Nationality:"Mosotho", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Southern Africa"}
+ {country:"Liberia", Nationality:"Liberian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
+ {country:"Libya", Nationality:"Libyan", Continent:"Africa", Region:"Northern Africa", Sub_Region:"Northern Africa"}
+ {country:"Lithuania", Nationality:"Lithuanian", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {country:"Luxembourg", Nationality:"Luxembourger", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {country:"Macao", Nationality:"Macanese", Continent:"Asia", Region:"Eastern Asia", Sub_Region:"Eastern Asia"}
+ {country:"Madagascar", Nationality:"Malagasy orMadagascan", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {country:"Malawi", Nationality:"Malawian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {country:"Malaysia", Nationality:"Malaysian", Continent:"Asia", Region:"South Eastern Asia", Sub_Region:"South Eastern Asia"}
+ {country:"Maldives", Nationality:"Maldivian", Continent:"Asia", Region:"Southern Asia", Sub_Region:"Southern Asia"}
+ {country:"Mali", Nationality:"Malian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
+ {country:"Malta", Nationality:"Maltese", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {country:"Martinique", Nationality:"Martinican", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {country:"Mauritania", Nationality:"Mauritanian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
+ {country:"Mauritius", Nationality:"Mauritian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {country:"Mayotte", Nationality:"Maorais", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {country:"Mexico", Nationality:"Mexican", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"North America"}
+ {country:"Micronesia", Nationality:"Micronisian", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
+ {country:"Mongolia", Nationality:"Mongolian", Continent:"Asia", Region:"Eastern Asia", Sub_Region:"Eastern Asia"}
+ {country:"Montenegro", Nationality:"Montenegrin", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {country:"Morocco", Nationality:"Moroccan", Continent:"Africa", Region:"Northern Africa", Sub_Region:"Northern Africa"}
+ {country:"Mozambique", Nationality:"Mozambican", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {country:"Myanmar", Nationality:"Burmese / Myanma", Continent:"Asia", Region:"South Eastern Asia", Sub_Region:"South Eastern Asia"}
+ {country:"Namibia", Nationality:"Namibian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Southern Africa"}
+ {country:"Nepal", Nationality:"Nepalese", Continent:"Asia", Region:"Southern Asia", Sub_Region:"Southern Asia"}
+ {country:"Netherlands", Nationality:"Dutch", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {country:"Netherlands Antilles", Nationality:"Netherlands Antillean", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {country:"New Caledonia", Nationality:"New Caledonian", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
+ {country:"New Zealand", Nationality:"New Zelander", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
+ {country:"Nicaragua", Nationality:"Nicaraguan", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {country:"Niger", Nationality:"Nigerien", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
+ {country:"Nigeria", Nationality:"Nigerian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
+ {country:"Norway", Nationality:"Norwegian", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {country:"Palestine", Nationality:"Palestinian", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {country:"Oman", Nationality:"Omani", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {country:"Pakistan", Nationality:"Pakistani", Continent:"Asia", Region:"Southern Asia", Sub_Region:"Southern Asia"}
+ {country:"Panama", Nationality:"Panamanian", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {country:"Papua New Guinea", Nationality:"Papua New Guinean or Guinean", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
+ {country:"Paraguay", Nationality:"Paraguayan", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
+ {country:"Peru", Nationality:"Peruvian", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
+ {country:"Philippines", Nationality:"Philipino", Continent:"Asia", Region:"South Eastern Asia", Sub_Region:"South Eastern Asia"}
+ {country:"Poland", Nationality:"Polish", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {country:"Portugal", Nationality:"Portuguese", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {country:"Puerto Rico", Nationality:"Puerto Rican", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {country:"Qatar", Nationality:"Qatari", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {country:"South Korea", Nationality:"South Korean", Continent:"Asia", Region:"Eastern Asia", Sub_Region:"Eastern Asia"}
+ {country:"Republic of Moldova", Nationality:"Modovian", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {country:"Réunion", Nationality:"Réunionese", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {country:"Romania", Nationality:"Romanian", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {country:"Russia", Nationality:"Russian", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {country:"Rwanda", Nationality:"Rwandan", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {country:"Saint Lucia", Nationality:"Saint Lucian", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {country:"Saint Vincent and the Grenadines", Nationality:"Vincentian", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {country:"Samoa", Nationality:"Samoan", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
+ {country:"Sao Tome and Principe", Nationality:"São Toméan", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Middle Africa"}
+ {country:"Saudi Arabia", Nationality:"Saudi Arabian orSaudi", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {country:"Senegal", Nationality:"Senegalese", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
+ {country:"Serbia", Nationality:"Serb or Serbian", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {country:"Sierra Leone", Nationality:"Sierra Leonian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
+ {country:"Singapore", Nationality:"Singaporean", Continent:"Asia", Region:"South Eastern Asia", Sub_Region:"South Eastern Asia"}
+ {country:"Slovakia", Nationality:"Slovak", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {country:"Slovenia", Nationality:"Slovene or Slovenian", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {country:"Solomon Islands", Nationality:"Solomon", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
+ {country:"Somalia", Nationality:"Somali", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {country:"South Africa", Nationality:"South African", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Southern Africa"}
+ {country:"Spain", Nationality:"Spanish", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {country:"Sri Lanka", Nationality:"Sri Lankan", Continent:"Asia", Region:"Southern Asia", Sub_Region:"Southern Asia"}
+ {country:"Sudan", Nationality:"Sudanese", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {country:"Suriname", Nationality:"Surinamese", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
+ {country:"Swaziland", Nationality:"Swazi", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Southern Africa"}
+ {country:"Sweden", Nationality:"Swedish", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {country:"Switzerland", Nationality:"Swiss", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {country:"Syria", Nationality:"Syrian", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {country:"Tajikistan", Nationality:"Tajik or Tadjik", Continent:"Asia", Region:"Central Asia", Sub_Region:"Central Asia"}
+ {country:"Thailand", Nationality:"Thai", Continent:"Asia", Region:"South Eastern Asia", Sub_Region:"South Eastern Asia"}
+ {country:"Macedonia", Nationality:"Macedonian", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {country:"Timor Leste", Nationality:"Timorese", Continent:"Asia", Region:"South Eastern Asia", Sub_Region:"South Eastern Asia"}
+ {country:"Togo", Nationality:"Togolese", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Western Africa"}
+ {country:"Tonga", Nationality:"Tongalese", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
+ {country:"Trinidad and Tobago", Nationality:"Trinidadian", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {country:"Tunisia", Nationality:"Tunisian", Continent:"Africa", Region:"Northern Africa", Sub_Region:"Northern Africa"}
+ {country:"Turkey", Nationality:"Turkish", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {country:"Turkmenistan", Nationality:"Turkmen or Turkoman", Continent:"Asia", Region:"Central Asia", Sub_Region:"Central Asia"}
+ {country:"Uganda", Nationality:"Ugandan", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {country:"Ukraine", Nationality:"Ukrainian", Continent:"Europe", Region:"Eastern Europe", Sub_Region:"Eastern Europe"}
+ {country:"United Arab Emirates", Nationality:"Emirati", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {country:"England", Nationality:"English", Continent:"Europe", Region:"Western Europe", Sub_Region:"United Kingdom"}
+ {country:"Scotland", Nationality:"Scottish", Continent:"Europe", Region:"Western Europe", Sub_Region:"United Kingdom"}
+ {country:"Northern Ireland", Nationality:"Irish", Continent:"Europe", Region:"Western Europe", Sub_Region:"Western Europe"}
+ {country:"Ireland", Nationality:"Irish", Continent:"Europe", Region:"Western Europe", Sub_Region:"United Kingdom"}
+ {country:"Tanzania", Nationality:"Tanzanian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {country:"United States of America", Nationality:"American", Continent:"America", Region:"North America", Sub_Region:"North America"}
+ {country:"United States Virgin Islands", Nationality:"American", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"Caribbean"}
+ {country:"Uruguay", Nationality:"Uruguayan", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
+ {country:"Uzbekistan", Nationality:"Uzbek", Continent:"Asia", Region:"Central Asia", Sub_Region:"Central Asia"}
+ {country:"Vanuatu", Nationality:"Vanuatuan", Continent:"Oceania", Region:"Oceania", Sub_Region:"Oceania"}
+ {country:"Venezuela", Nationality:"Venezuelan", Continent:"America", Region:"Latin America and the Caribbean", Sub_Region:"South America"}
+ {country:"Vietnam", Nationality:"Vietnamese", Continent:"Asia", Region:"South Eastern Asia", Sub_Region:"South Eastern Asia"}
+ {country:"Yemen", Nationality:"Yemeni", Continent:"Asia", Region:"Western Asia", Sub_Region:"Western Asia"}
+ {country:"Zambia", Nationality:"Zambian", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}
+ {country:"Zimbabwe", Nationality:"Zimbabwean", Continent:"Africa", Region:"Sub Saharan Africa", Sub_Region:"Eastern Africa"}

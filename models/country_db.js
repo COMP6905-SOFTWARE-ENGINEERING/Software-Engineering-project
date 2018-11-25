@@ -15,14 +15,12 @@ var countrySchema = new Schema({
 var countryModel = mongoose.model('countries', countrySchema);
 
 exports.findAll = function(callback){
-    countryModel.find({}, ['Country'], function(err, data){
+    countryModel.find({}, ['country', 'Nationality', 'Continent'], function(err, data){
         if(err){
             //console.log('countries nto loaded');
             callback(err, null);
         }else {
-            // var test = countryModel.find();
-            // console.log(test);
-            callback(null, data);
+            callback('ok', data);
         }
     });
 };
