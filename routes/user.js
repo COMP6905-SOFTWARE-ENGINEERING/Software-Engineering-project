@@ -36,12 +36,12 @@ router.get('/create_profile', function(req, res){
             if (err == 'ok'){
                 var countries = [];
                 countryModel.findAll(function (status, data) {
-                    if (status == 'ok') {
-                        countries = data
-                    } else {
-                        console.log('retrieve all documents in project collection failed')
-                    }
-                })
+                    countriesData = data;
+                    countries = countriesData.map(function (countriesData) {
+                       return countriesData['Country'];
+                    });
+                    console.log(countries);
+                });
                 var programs=[];
                 res.render('profile_create', {
                     title:'Create Profile',
@@ -77,7 +77,7 @@ router.post('/create_profile', function(req, res){
                 res.redirect('/404');
             }else {
                 var profileData = req.body;
-                profileData['skills'] = req.body.skill.split(",");
+                //profileData['skills'] = req.body.skill.split(",");
                 profileModel.createProfile(profileData, function(status){
                     if (status == 'ok'){
                         res.json({status:status, flag:1});
