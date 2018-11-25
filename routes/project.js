@@ -60,7 +60,7 @@ router.post('/create_project', function(req, res){
             owner: req.body.user_id,
             project_name: req.body.project_name,
             project_description: req.body.project_description,
-            available_funding: req.body.availabe_funding,
+            available_funding: req.body.available_funding,
             required_skills: req.body.required_skills.split(','),
             area_of_study: req.body.area_of_study,
             level_of_study: req.body.level_of_study,
