@@ -56,19 +56,26 @@ router.get('/profileview', function(req, res){
 
 router.get('/create_profile', function(req, res){
     if(req.session.user && req.session.user.usertype == 'student'){
-        areaModel.findAll(function (status, data) {
-            var areas=[];
-            if (status == 'ok'){
-                for(var i in data){
-                    areas.push(data[i].area);
-                }
+        userModel.userAccInfo({username:req.session.user.username}, function(err, data){
+            if (err){
+                var countries = [];
+                    countryModel.findAll(function (status, data) {
+                    countriesData = data;
+                    countries = countriesData.map(function (countriesData) {
+                        return countriesData['Country'];
+                    });
+                        console.log(countries);
+                });
+
+                var programs=[];
                 res.render('profile_create', {
                     title:'Create Profile',
                     userdata: req.session.user,
-                    areas: areas,
+                    countries: countries,
+                    programs: programs,
                 });
-            }else{
-                res.json(status);
+            }else {
+                res.json(err);
             }
         });
     }else {
