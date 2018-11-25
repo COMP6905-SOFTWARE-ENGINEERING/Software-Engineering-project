@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
+    <link rel="stylesheet" href="/css/studentProfileView.css">
+    <link rel="stylesheet" type="text/css" href="/css/studentForm.css">
+</head>
+
+<body class="profile-page">
+
+<div class="page-header header-filter" data-parallax="true"></div>
+<div class="main main-raised">
+    <div class="profile-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 ml-auto mr-auto">
+                    <div class="profile">
+                        <div class="avatar">
+                            <img src="https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTU0NjQzOTk4OTQ4OTkyMzQy/ansel-elgort-poses-for-a-portrait-during-the-baby-driver-premiere-2017-sxsw-conference-and-festivals-on-march-11-2017-in-austin-texas-photo-by-matt-winkelmeyer_getty-imagesfor-sxsw-square.jpg" alt="Circle Image" class="img-raised rounded-circle img-fluid">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="row" id="mainRow">
+            <div class="col-md-8 col-md-offset-1">
+                <form class="form-horizontal" role="form" >
+                    <fieldset>
+
+                        <!-- Form Name -->
+                        <legend>Personal Information Details :</legend>
+
+                        <!-- Text input-->
+                        <div class="blockDetails">
+                            <div class="form-group">
+                                <div class="col-sm-4">
+                                    <input type="text" name="fistName" placeholder="First Name" class="form-control">
+                                </div>
+                                <div class="col-sm-2">
+                                    <input type="text" name="middleName" placeholder="Middle Name" class="form-control">
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="text" name="lastName" placeholder="Last Name" class="form-control">
+                                </div>
+                            </div>
+
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <div class="col-sm-4">
+                                    <input type="date" placeholder="Date Of Birth" class="form-control">
+                                </div>
+                                <div class="col-sm-4">
+                                    <select type="gender" placeholder="Gender" class="form-control">
+                                        <option value="female">Male</option>
+                                        <option value="male">Female</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <input type="hidden" class="hidden_userid" value="<%= userdata._id %>" disabled="disabled">
+                        <!-- Address Section -->
+                        <!-- Form Name -->
+                        <legend>Address Details :</legend>
+                        <!-- Text input-->
+                        <div class="blockDetails">
+                            <div class="form-group">
+                                <div class="col-sm-10">
+                                    <span id="errormsg1"> </span>
+                                    <input type="text" id="addressLine1" placeholder="Address Line 1" class="form-control">
+                                </div>
+                            </div>
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <div class="col-sm-10">
+                                    <input type="text" id="addressLine2" placeholder="Address Line 2" class="form-control">
+                                </div>
+                            </div>
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <div class="col-sm-10">
+                                    <input type="text" id="addressLine3" placeholder="Address Line 3" class="form-control">
+                                </div>
+                            </div>
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <div class="col-sm-4">
+                                    <input type="text" id="city" placeholder="City" class="form-control">
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="text" id="province" placeholder="Province" class="form-control">
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-4">
+                                    <input type="text" id="country" placeholder="Country" class="form-control">
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="text" id="postalCode" placeholder="Zip/Postal Code" class="form-control">
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <!-- Education Section -->
+                        <legend>Education Details :</legend>
+                        <div id="educationFieldsWrapper">
+                            <div class="educationFields">
+                                <!-- <h4><STRONG>Education :</STRONG></h4> -->
+                                <div class="blockDetails">
+                                    <label for="level"><span>Level of Education:</span></label>
+                                    <select class="form-control form-control-sm educationSpacing" name="levelOfEd" id="edProgramLevel">
+                                        <option value="">Select an option...</option>
+                                        <option value="bachelors">Bachelors</option>
+                                        <option value="masters">Masters</option>
+                                        <option value="phd">Phd</option>
+                                    </select>
+                                    <span class="error"></span>
+
+                                    <label for="field"><span>Program Name:</span></label>
+                                    <select class="form-control form-control-sm educationSpacing" name="edProg" id="edProgram">
+                                        <option value="">Select an option...</option>
+                                        <option value="ece">Electronics and Communications</option>
+                                        <option value="EEE">Electrical</option>
+                                        <option value="cse">Computer Science</option>
+                                        <option value="me">Mechanical</option>
+                                        <option value="ce">Chemical</option>
+                                        <option value="cv">Civil</option>
+                                    </select>
+                                    <span class="error"></span>
+
+                                    <div class="clear"></div>
+                                    <label for="name">Institution Name:</label>
+                                    <input type="text" class="form-control educationSpacing" name="edInst" id="edInstitution" >
+
+                                    <!--<div class="form-group">-->
+                                    <!--<div class="col-sm-4">-->
+                                    <!--<label for="startDate">Start Date :</label>-->
+                                    <!--<input type="date" class="form-control educationSpacing" id="edStart">-->
+                                    <!--</div>-->
+
+                                    <!--<div class="col-sm-4">-->
+                                    <!--<label for="endDate">End Date :</label>-->
+                                    <!--<input type="date" class="form-control educationSpacing" id="edEnd">-->
+                                    <!--</div>-->
+                                    <!--</div>-->
+
+
+                                    <hr>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary allButtons eduButton" onclick="edu()" >Add Education</button>
+
+                        <!-- Skills Section -->
+
+                        <legend>Skills :</legend>
+                        <div id="skillsFieldsWrapper">
+                            <div class="skillFields skillBlock">
+
+                                <label for="skill">Skill Name :</label>
+                                <input type="text" class="form-control skill" id="skills">
+
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary allButtons addButton" onclick="skil()" >Add Skills</button>
+                        <!-- Research Section -->
+
+                        <legend>Research Interest :</legend>
+                        <div id="researchFieldsWrapper">
+                            <div class="researchFields skillBlock">
+                                <label for="research">Interest Name :</label>
+                                <input type="text" class="form-control resrch" id="researchId">
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary allButtons researchButton" onclick="research()" >Add Interest</button>
+                        <!-- Experience Section -->
+
+                        <legend>Work Experience :</legend>
+                        <div id="expFieldsWrapper">
+                            <div class="expFields">
+                                <div class="blockDetails">
+                                    <label for="comp">Company Name :</label>
+                                    <input type="text" class="form-control exp" id="weCompany">
+                                    <label for="title">Title :</label>
+                                    <input type="text" class="form-control exp" id="weTitle">
+
+                                    <label for="startDate">Start Date :</label>
+                                    <input type="date" class="form-control exp" id="weStartDate">
+                                    <label for="endDate">End Date :</label>
+                                    <input type="date" class="form-control exp" id="weEndDate">
+                                    <hr>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary allButtons expButton" onclick="exp()">Add Experience</button>
+
+                        <legend>Intended Program of Study :</legend>
+                        <div class="blockDetails">
+                            <label for="area"><span>Area :</span></label>
+                            <select class="form-control form-control-sm oth" id="psArea">
+                                <option value="">Select an option...</option>
+                                <option value="hmnK">Human Kinetics and Recreation</option>
+                                <option value="hmsc">Humanities and Social Sciences</option>
+                                <option value="med">Medicine</option>
+                                <option value="pys">Psychology</option>
+                                <option value="intr">Interdiciplinary</option>
+                                <option value="engSc">Engineering and Applied Science</option>
+                                <option value="educa">Education</option>
+                                <option value="phy">Physics</option>
+                                <option value="scin">Sciences</option>
+                                <option value="ba">Business Administration</option>
+                                <option value="mus">Music</option>
+                                <option value="marine">Marine Studies</option>
+                                <option value="management">Management</option>
+                                <option value="es">Earth Sciences</option>
+                                <option value="nrs">Nursing</option>
+                                <option value="profProg">Professional Programs</option>
+                            </select>
+                            <label for="level"><span>Level of Education:</span></label>
+                            <select class="form-control form-control-sm oth" id="psLevel">
+                                <option value="">Select an option...</option>
+                                <option value="bachelors">Bachelors</option>
+                                <option value="masters">Masters</option>
+                                <option value="phd">Phd</option>
+
+                            </select>
+                            <!--<label for="specificlevel"><span>Specific Level:</span></label>-->
+                            <!--<select class="form-control form-control-sm oth" id="psSpeLevel">-->
+                            <!--<option value="">Select an option...</option>-->
+
+                            <!--</select>-->
+                            <!--<label for="program"><span>Program:</span></label>-->
+                            <!--<select class="form-control form-control-sm oth" id="psProgram">-->
+                            <!--<option value="">Select an option...</option>-->
+
+                            <!--</select>-->
+                            <!--<label for="term"><span>Term:</span></label>-->
+                            <!--<select class="form-control form-control-sm oth" id="psAdTerm">-->
+                            <!--<option value="">Select an option...</option>-->
+
+                            <!--</select>-->
+
+                            <label for="projDate">Intended Start Date:</label>
+                            <input type="date" class="form-control oth" id="projDate">
+                            <label for="fund">Require Financial Aid? :</label>
+                            <input class="form-check-input oth" id="needFS" type="radio" name="gridRadios"  value="Y" checked>
+                            <label class="form-check-label" for="gridRadios1">
+                                Yes
+                            </label>
+                            <input class="form-check-input oth" id="needFS" type="radio" name="gridRadios" value="N">
+                            <label class="form-check-label" for="gridRadios2">
+                                No
+                            </label>
+                        </div>
+                    </fieldset>
+                </form>
+                <button type="submit" class="btn btn-primary allButtons profileSubmit" onclick="profileCreateSubmit()">Submit</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

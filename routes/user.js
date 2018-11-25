@@ -35,6 +35,8 @@ router.get('/profileview', function(req, res){
 //method: get
 
 
+//
+
 router.get('/create_profile', function(req, res){
     if(req.session.user && req.session.user.usertype == 'student'){
         areaModel.findAll(function (status, data) {
