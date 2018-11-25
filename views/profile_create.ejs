@@ -30,7 +30,7 @@
         </div>
         <div class="row" id="mainRow">
             <div class="col-md-8 col-md-offset-1">
-                <form class="form-horizontal" role="form">
+                <form class="form-horizontal" role="form" method="POST" action="/create_profile">
                     <fieldset>
 
                         <!-- Form Name -->
@@ -129,7 +129,7 @@
                                     <span class="error"></span>
 
                                     <label for="field"><span>Program Name:</span></label>
-                                    <select class="form-control form-control-sm educationSpacing" id="edProgram">
+                                    <select class="form-control form-control-sm educationSpacing" name="edProg" id="edProgram">
                                         <option value="">Select an option...</option>
                                         <option value="ece">Electronics and Communications</option>
                                         <option value="EEE">Electrical</option>
@@ -142,7 +142,7 @@
 
                                     <div class="clear"></div>
                                     <label for="name">Institution Name:</label>
-                                    <input type="text" class="form-control educationSpacing" id="edInstitution" >
+                                    <input type="text" class="form-control educationSpacing" name="edInst" id="edInstitution" >
 
                                     <!--<div class="form-group">-->
                                     <!--<div class="col-sm-4">-->
@@ -237,11 +237,11 @@
                             <label for="projDate">Intended Start Date:</label>
                             <input type="date" class="form-control oth" id="projDate">
                             <label for="fund">Require Financial Aid? :</label>
-                            <input class="form-check-input oth" id="needFS" type="radio" name="gridRadios"  value="option1" checked>
+                            <input class="form-check-input oth" id="needFS" type="radio" name="gridRadios"  value="Y" checked>
                             <label class="form-check-label" for="gridRadios1">
                                 Yes
                             </label>
-                            <input class="form-check-input oth" id="needFS" type="radio" name="gridRadios" value="option2">
+                            <input class="form-check-input oth" id="needFS" type="radio" name="gridRadios" value="N">
                             <label class="form-check-label" for="gridRadios2">
                                 No
                             </label>
