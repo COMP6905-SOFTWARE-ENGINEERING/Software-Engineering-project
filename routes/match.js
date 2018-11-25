@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 
-router.get('/result', function(req, res, next) {
+router.get('/result', function(req, res) {
     if (req.session.user){
         res.render('project_match', {userdata: req.session.user});
     }else{

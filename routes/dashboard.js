@@ -20,3 +20,5 @@ router.get('/profile_student_view', function(req, res){
         res.redirect('/login');
     }
 });
+
+module.exports = router;
