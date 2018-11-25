@@ -34,12 +34,16 @@ router.get('/profileview', function(req, res){
     if(req.session.user && req.session.user.usertype == 'student'){
         profileModel.listByOwner({owner: req.session.user.username}, function(err, data){
             if (err){
+                var studentData = data;
+                console.log(studentData);
+
                 res.json(err);
             }else {
                 res.render('profile_view', {
                     title: 'Manage profile',
                     userdata: req.session.user,
                     maxpage: parseInt((data.length-1)/10)+1,
+                    studentData:studentData
                 });
             }
         });
