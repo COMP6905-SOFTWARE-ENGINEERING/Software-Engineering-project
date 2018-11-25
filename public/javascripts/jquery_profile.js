@@ -173,77 +173,6 @@ function profileCreateSubmit(){
 
     //end of testing
 
-    // $(".help_block_error").text(" ").attr("title", '');
-    // var postUrl;
-
-    // var addressLine1= $("#addressLine1").val();
-    // var addressLine2 = $("#addressLine2").val();
-    // var addressLine3 = $("#addressLine3").val();
-    // var city = $("#city").val();
-    // var province = $("#province").val();
-    // var country = $("#country").val();
-    // var postalCode = $("#postalCode").val();
-
-    //var edProgramLevel = $("#edProgramLevel").val();
-    // var edProgram = $("#edProgram").val();
-    // var edInstitution = $("#edInstitution").val();
-    // var edCountry = $("#edCountry").val();
-    // var edProvince = $("#edProvince").val();
-    // var edStart = $("#edStart").val();
-    // var edEnd = $("#edEnd").val();
-
-    // var education = education_level + '.' + field_of_study + '.' +
-    //     institution_name+'.'+edCountry+'.'+edProvince+'.'+edStart+'.'+edEnd;
-    //testing
-    // var taskArray = new Array();
-    // $("select[name=levelOfEd]").each(function() {
-    //     taskArray.push($(this).val());
-    // });
-    // alert(taskArray);
-    //
-    // var education_level_array = [];
-    // $(".edProgramLevel").each(function(){
-    //     education_level_array.push($(this).val());
-    // });
-    // var field_of_study_array = [];
-    // $(".edProgram").each(function(){
-    //     field_of_study_array.push($(this).val());
-    // });
-    // var institution_name_array = [];
-    // $(".edInstitution").each(function(){
-    //     institution_name_array.push($(this).val());
-    // });
-
-    // var weCompany = $("#weCompany").val();
-    // var weTitle = $("#weTitle").val();
-    // // var weCountry = $("#weCountry").val();
-    // var weStartDate = $("#weStartDate").val();
-    // var weEndDate = $("#weEndDate").val();
-    // // var work_experience = company + '.' + position + '.' +weCountry+'.'+
-    // //     start_date + '.' + end_date;
-    //
-    // var weCompanyArray = [];
-    // $(".weCompany").each(function(){
-    //     weCompanyArray.push($(this).val());
-    // });
-    // var weTitleArray = [];
-    // $(".weTitle").each(function(){
-    //     weTitleArray.push($(this).val());
-    // });
-    // var weStartDateArray = [];
-    // $(".weStartDate").each(function(){
-    //     weStartDate.push($(this).val());
-    // });
-    // var weEndDateArray = [];
-    // $(".weEndDate").each(function(){
-    //     weCompanyArray.push($(this).val());
-    // });
-
-
-    // var skills = [];
-    // $(".skills").each(function(){
-    //     skills.push($(this).val());
-    // });
 
     var psArea = $("#psArea").val();
     var psLevel = $("#psLevel").val();
@@ -252,32 +181,6 @@ function profileCreateSubmit(){
     // var psAdTerm = $("#psAdTerm").val();
     var projDate = $("#projDate").val();
 
-    // var postData = {
-    //     owner:$(".hidden_userid").val(),
-    //     addressLine1:addressLine1,
-    //     addressLine2:addressLine2,
-    //     addressLine3:addressLine3,
-    //     country:country,
-    //     province:province,
-    //     city:city,
-    //     postalCode:postalCode,
-    //     education_level_array:edLevelArray,
-    //     field_of_study_array:edProgramArray,
-    //     institution_name_array:edInstitutionArray,
-    //
-    //     skills:skillsArray,
-    //     research_interest:researchArray,
-    //
-    //     weCompanyArray:compnNameArray,
-    //     weTitleArray:weTitleArray,
-    //     weStartDateArray:weStartDateArray,
-    //     weEndDateArray:weEndDateArray,
-    //
-    //     psArea:psArea,
-    //     psLevel:psLevel,
-    //     projDate:projDate,
-    //     need_financial_support:$("input[name='gridRadios']:checked").val()
-    // };
     var postData =
         {
             user_id:$(".hidden_userid").val(),
