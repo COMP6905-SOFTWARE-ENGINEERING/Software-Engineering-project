@@ -27,6 +27,7 @@ function projectCreateSubmit() {
         required_skills: skillsArray.join(),
         start_date: $("#start_date").val(),
         matching_preference:$("#Match_Preference").val(),
+        area_of_study:$("#Req_area_study").val(),
 
     };
     postUrl = '/project/create_project';

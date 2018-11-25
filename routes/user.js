@@ -13,6 +13,23 @@ var assert = require('assert');
 var dbURL = require('../config/default');
 
 
+router.get('/dashboard', function(req, res){
+    if(req.session.user && req.session.user.usertype == 'student'){
+        profileModel.listByOwner({owner: req.session.user.username}, function(err, data){
+            if (err){
+                res.json(err);
+            }else {
+                res.render('dashboard', {
+                    title: 'Dashboard',
+                    userdata: req.session.user,
+                });
+            }
+        });
+    }else {
+        res.redirect('/login');
+    }
+});
+
 router.get('/profileview', function(req, res){
     if(req.session.user && req.session.user.usertype == 'student'){
         profileModel.listByOwner({owner: req.session.user.username}, function(err, data){

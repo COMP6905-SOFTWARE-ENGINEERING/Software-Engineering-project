@@ -26,17 +26,13 @@ var projectSchema = new Schema({
     // },
     available_funding: String,
     // required_skills: [{type:Schema.Types.ObjectId, ref: 'skill'}],
-    field_of_study: String,
+    area_of_study: String,
     level_of_study: String,
     required_skills: [{type:String}],
     start_date:{
         type:Date,
         required:[true,'start date cannot be empty']
     },
-    application_deadline:{
-        type:Date,
-        required:[true,'application deadline cannot be empty']
-    }
 });
 
 var projectModel = mongoose.model('project', projectSchema);

@@ -56,7 +56,16 @@ router.get('/create_project', function(req, res){
 
 router.post('/create_project', function(req, res){
     if(req.session.user && req.session.user.usertype == 'manager'){
-        var projectData = req.body;
+        var projectData = {
+            owner: req.body.user_id,
+            project_name: req.body.project_name,
+            project_description: req.body.project_description,
+            available_funding: req.body.available_funding,
+            required_skills: req.body.required_skills.split(','),
+            area_of_study: req.body.area_of_study,
+            level_of_study: req.body.level_of_study,
+            start_date: req.body.start_date,
+        };
         projectModel.createProject(projectData, function(status){
             if (status == 'ok'){
                 res.json({status:status, flag:1});
@@ -65,21 +74,21 @@ router.post('/create_project', function(req, res){
             }
         });
         // trigger match process
-        var projects = projectModel.findAll(function (status) {
-            if (status == 'ok'){
-                console.log('retrieve all documents in project collection successful')
-            }else {
-                console.log('retrieve all documents in project collection failed')
-            }
-        })
-        var profiles = profileModel.findAll(function (status) {
-            if (status == 'ok'){
-                console.log('retrieve all documents in profile collection successful')
-            }else {
-                console.log('retrieve all documents in profile collection failed')
-            }
-        })
-        matching(projects, profiles, 0.6)
+        // var projects = projectModel.findAll(function (status) {
+        //     if (status == 'ok'){
+        //         console.log('retrieve all documents in project collection successful')
+        //     }else {
+        //         console.log('retrieve all documents in project collection failed')
+        //     }
+        // })
+        // var profiles = profileModel.findAll(function (status) {
+        //     if (status == 'ok'){
+        //         console.log('retrieve all documents in profile collection successful')
+        //     }else {
+        //         console.log('retrieve all documents in profile collection failed')
+        //     }
+        // })
+        // matching(projects, profiles, 0.6)
     }else {
         res.json({status:"Not log in yet", flag:0});
     }
