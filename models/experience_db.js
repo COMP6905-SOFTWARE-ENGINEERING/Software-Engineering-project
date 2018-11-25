@@ -9,12 +9,11 @@ var experienceSchema = new Schema({
         ref: 'users'
     },
     // Experience
-    weTitle: String,
-    weCompany: String,
-    weCountry: String,
-    weStartDate: Date,
-    weEndDate: Date,
-    weDescription: String,
+    title: String,
+    company: String,
+    startDate: Date,
+    endDate: Date,
+    description: String,
 });
 
 var experienceModel = mongoose.model('experience', experienceSchema);
