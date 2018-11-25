@@ -71,7 +71,20 @@ router.post('/create_profile', function(req, res){
             if (err){
                 res.redirect('/404');
             }else {
-                var profileData = req.body;
+                var profileData = {
+                    owner: req.body.user_id,
+                    address: req.body.address,
+                    country: req.body.country,
+                    province: req.body.province,
+                    city: req.body.city,
+                    postal_code: req.body.postal_code,
+                    skills: req.body.skills.split(','),
+                    area_of_study: req.body.area_of_study,
+                    level_of_study: req.body.level_of_study,
+                    need_financial_aid: req.body.need_financial_aid,
+                    research_interest: req.body.research_interest,
+                    intended_start_date: req.body.intended_start_date,
+                };
                 //profileData['skills'] = req.body.skill.split(",");
                 profileModel.createProfile(profileData, function(status){
                     if (status == 'ok'){
@@ -80,38 +93,38 @@ router.post('/create_profile', function(req, res){
                         res.json({status:status, flag:0});
                     }
                 });
-                var educationData = req.body;
-                educationModel.createEducation(educationData,function (status) {
-                    if (status == 'ok'){
-                        res.json({status:status, flag:1});
-                    }else {
-                        res.json({status:status, flag:0});
-                    }
-                });
-                var experienceData = req.body;
-                experienceModel.createExperience(experienceData,function (status) {
-                    if (status == 'ok'){
-                        res.json({status:status, flag:1});
-                    }else {
-                        res.json({status:status, flag:0});
-                    }
-                });
+                // var educationData = req.body;
+                // educationModel.createEducation(educationData,function (status) {
+                //     if (status == 'ok'){
+                //         res.json({status:status, flag:1});
+                //     }else {
+                //         res.json({status:status, flag:0});
+                //     }
+                // });
+                // var experienceData = req.body;
+                // experienceModel.createExperience(experienceData,function (status) {
+                //     if (status == 'ok'){
+                //         res.json({status:status, flag:1});
+                //     }else {
+                //         res.json({status:status, flag:0});
+                //     }
+                // });
                 // trigger match process
-                var projects = projectModel.findAll(function (status) {
-                    if (status == 'ok'){
-                        console.log('retrieve all documents in project collection successful')
-                    }else {
-                        console.log('retrieve all documents in project collection failed')
-                    }
-                })
-                var profiles = profileModel.findAll(function (status) {
-                    if (status == 'ok'){
-                        console.log('retrieve all documents in profile collection successful')
-                    }else {
-                        console.log('retrieve all documents in profile collection failed')
-                    }
-                })
-                matching(projects, profiles, 0.6)
+                // var projects = projectModel.findAll(function (status) {
+                //     if (status == 'ok'){
+                //         console.log('retrieve all documents in project collection successful')
+                //     }else {
+                //         console.log('retrieve all documents in project collection failed')
+                //     }
+                // })
+                // var profiles = profileModel.findAll(function (status) {
+                //     if (status == 'ok'){
+                //         console.log('retrieve all documents in profile collection successful')
+                //     }else {
+                //         console.log('retrieve all documents in profile collection failed')
+                //     }
+                // })
+                // matching(projects, profiles, 0.6)
             }
         });
     }else {
