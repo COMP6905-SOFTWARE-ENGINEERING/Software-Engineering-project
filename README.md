@@ -32,11 +32,11 @@ Once the student receives the offer, he can accept or decline it on the system. 
 
  **4 Install Catalogs**
 
->   mongoimport --db GradRecDB --collection universities --file /Commands/universities.json
+>   mongoimport --db GradRecDB --collection universities --file commands/universities.json
 
->   mongoimport --db GradRecDB --collection countries --file /Commands/countries.json
+>   mongoimport --db GradRecDB --collection countries --file commands/countries.json
 
->   mongoimport --db GradRecDB --collection programs --file /Commands/programs.json
+>   mongoimport --db GradRecDB --collection programs --file commands/programs.json
 
  **5 Run app**
 

@@ -1,46 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Cache-Control" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <title><%= title %></title>
-    <link href="/css/index.css" type="text/css" rel="stylesheet">
-    <script type="text/javascript" src="../javascripts/jquery.js"></script>
-    <script type="text/javascript" src="../javascripts/jquery_index.js"></script>
-</head>
-<body>
-<div class="header">
-    <div class="big_title"><%= title %></div>
-    <div class="user_area">
-        <div class="username_area"><%= userdata.firstname %></div>
-        <input type="hidden" class="hidden_username" value="<%= userdata.firstname %>" disabled="disabled">
-        <input type="hidden" class="hidden_usertype" value="<%= userdata.usertype %>" disabled="disabled">
-        <div class="toggle_box" style="display:none;">
-            <% if(userdata.usertype != 'admin'){ %>
-                <div class="toggle_block modinfo_area admin_need_hide">change info</div>
-                <div class="toggle_block chgpwd_area admin_need_hide">change password</div>
-            <% } %>
-            <div class="toggle_block logout_area">logout</div>
-        </div>
-    </div>
-</div>
-<div class="nav_bar">
-    <div class="nav_bar_blank"></div>
-    <% if (userdata.usertype == 'student'){ %>
-        <div class="nav_bar_select redirect_profile_button">Manage Profile</div>
-        <div class="nav_bar_select redirect_match_button">Matching Result</div>
-    <% }else if (userdata.usertype == 'manager') { %>
-        <div class="nav_bar_select redirect_projectmgmt_button">Manage Projects</div>
-        <div class="nav_bar_select redirect_match_button">Matching Result</div>
-    <% }else { %>
-        <div class="nav_bar_select redirect_search_button">Search</div>
-    <% } %>
-</div>
+<%- include('header') %>
+
 <div class="body">
     <div class="body_msg"><%= userdata.firstname %>，Welcome to GradRec!</div>
 </div>
-<div class="footer">developed by Group Four&nbsp;&nbsp;&nbsp;&nbsp;</div>
-</body>
-</html>
+
+<%- include('footer') %>
