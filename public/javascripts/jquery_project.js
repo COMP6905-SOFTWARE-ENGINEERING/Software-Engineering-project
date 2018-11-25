@@ -24,7 +24,7 @@ function projectCreateSubmit() {
         required_program: $("#Req_field_study").val(),
         project_description: $("#project_description").val(),
         available_funding: $("#available_funding").val(),
-        required_skills: skillsArray,
+        required_skills: skillsArray.join(),
         start_date: $("#start_date").val(),
         matching_preference:$("#Match_Preference").val(),
 
