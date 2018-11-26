@@ -67,10 +67,12 @@ router.post('/create_project', function(req, res){
             required_program: req.body.required_program,
             start_date: req.body.start_date,
         };
-        var result = {status:'failed', flag:0};
+        //var result = {status:'failed', flag:0};
         projectModel.createProject(projectData, function(status){
             if (status == 'ok'){
-                result = {status: status, flag: 1};
+                res.json({status:status, flag:1});
+            }else {
+                res.json({status:status, flag:0});
             }
         });
         // // trigger match process
@@ -89,7 +91,6 @@ router.post('/create_project', function(req, res){
         //     }
         // })
         // matching(projects, profiles, 0.6);
-        res.json(result);
     }else {
         res.json({status:"Not log in yet", flag:0});
     }
