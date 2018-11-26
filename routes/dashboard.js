@@ -4,7 +4,6 @@ var profileModel = require('../models/profile_db.js');
 var userModel = require('../models/user_mgmt_db.js');
 
 
-<<<<<<< HEAD
 
 // router.get('/profile_student_view', function(req, res){
 //     if(req.session.user && req.session.user.usertype == 'student'){
@@ -22,13 +21,11 @@ var userModel = require('../models/user_mgmt_db.js');
 //         res.redirect('/login');
 //     }
 // });
-=======
->>>>>>> c0e9ac5e59da3e3517845175b59ce7891e14ef6b
 router.get('/profile_student_view', function(req, res){
     if(req.session.user && req.session.user.usertype == 'student'){
         userModel.userAccInfo({username:req.session.user.username}, function(err, data){
             if (err){
-                profileModel.userAccInfo({username:req.session.user.username}, function(err, data){
+                profileModel.findOne(function (err,data) {
                     console.log("No error");
                     var studentData = data;
                     console.log(data);
