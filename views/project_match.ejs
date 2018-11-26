@@ -23,7 +23,7 @@
                 <a class="navbar-brand"></a>
                 <div style="text-align: center; width: 100%"><h2 style="color:white;">Matchging Projects </h2></div>
             </nav>
-        </div><br>
+        </div>
     <div class="row">
         <!--card1-->
         <% for (var i = 0; i < data.length; i++) { %><!--for starts-->
@@ -35,7 +35,7 @@
                             <div class="card bg-light mb-3">
 
                                 <p><img class="card-img" src="../maxresdefault.jpg" alt="Card image cap"></p>
-                                <h4 class="card-title"><%= data[i].project_name %></h4>
+                                <div style="text-align: center; width: 100%"><h4 class="card-title"><%= data[i].project_name %></h4></div>
                                 <p class="card-text"><%= data[i].project_description %></p>
 
                             </div>
