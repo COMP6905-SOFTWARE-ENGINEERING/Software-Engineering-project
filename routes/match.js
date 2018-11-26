@@ -9,12 +9,11 @@ router.get('/result', function(req, res) {
             if (err){
                 res.json(err);
             }else {
-                var projects = data;
                 res.render('project_match', {
                     title: 'match result',
                     userdata: req.session.user,
                     status: 'ok',
-                    data: projects,
+                    data: data,
                 });
             }
         });

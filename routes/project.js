@@ -66,29 +66,29 @@ router.post('/create_project', function(req, res){
             level_of_study: req.body.level_of_study,
             start_date: req.body.start_date,
         };
+        var result = {status:'failed', flag:0};
         projectModel.createProject(projectData, function(status){
             if (status == 'ok'){
-                res.json({status:status, flag:1});
-            }else {
-                res.json({status:status, flag:0});
+                result = {status: status, flag: 1};
             }
         });
         // trigger match process
-        // var projects = projectModel.findAll(function (status) {
-        //     if (status == 'ok'){
-        //         console.log('retrieve all documents in project collection successful')
-        //     }else {
-        //         console.log('retrieve all documents in project collection failed')
-        //     }
-        // })
-        // var profiles = profileModel.findAll(function (status) {
-        //     if (status == 'ok'){
-        //         console.log('retrieve all documents in profile collection successful')
-        //     }else {
-        //         console.log('retrieve all documents in profile collection failed')
-        //     }
-        // })
-        // matching(projects, profiles, 0.6)
+        var projects = projectModel.findAll(function (status) {
+            if (status == 'ok'){
+                console.log('retrieve all documents in project collection successful')
+            }else {
+                console.log('retrieve all documents in project collection failed')
+            }
+        })
+        var profiles = profileModel.findAll(function (status) {
+            if (status == 'ok'){
+                console.log('retrieve all documents in profile collection successful')
+            }else {
+                console.log('retrieve all documents in profile collection failed')
+            }
+        })
+        matching(projects, profiles, 0.6);
+        res.json(result);
     }else {
         res.json({status:"Not log in yet", flag:0});
     }
