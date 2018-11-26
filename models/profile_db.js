@@ -164,8 +164,8 @@ exports.search = function(reqData, callback){
     );
 };
 
-exports.findAll = function(callback){
-    profileModel.find({}, function(err, data){
+exports.userAccInfo = function(reqData, callback){
+    profileModel.findOne({username:reqData.username}, function(err, data){
         if(err){
             callback(err, null);
         }else {
