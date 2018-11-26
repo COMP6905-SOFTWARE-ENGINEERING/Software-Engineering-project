@@ -28,6 +28,7 @@ var projectSchema = new Schema({
     // required_skills: [{type:Schema.Types.ObjectId, ref: 'skill'}],
     area_of_study: String,
     level_of_study: String,
+    required_program: String,
     required_skills: [{type:String}],
     start_date:{
         type:Date,

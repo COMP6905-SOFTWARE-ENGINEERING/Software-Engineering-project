@@ -18,245 +18,57 @@
 <body>
 <section id="MatchedProjects" class="pb-5">
     <div class="container">
-        <div style="text-align: center;"><h1>Projects Matching Your Profile</h1></div>
-        <div class="jumbotron">
+        <div class="navbar">
+            <nav class="navbar header-top fixed-top navbar-expand-lg  navbar-dark bg-dark">
+                <a class="navbar-brand"></a>
+                <div style="text-align: center; width: 100%"><h2 style="color:white;">Matched Projects </h2></div>
+            </nav>
         </div>
-        <div class="row">
-            <!--card1-->
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                    <div class="mainflip">
-                        <div class="frontside">
+    <div class="row">
+        <!--card1-->
+        <% for (var i = 0; i < data.length; i++) { %><!--for starts-->
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                <div class="mainflip">
+                    <div class="frontside">
+                        <div class="card bg-light mb-3">
                             <div class="card bg-light mb-3">
-                                <div class="card bg-light mb-3">
-                                    <div>
-                                    <p><img class="card-img" src="softwaredesign.jpg" alt="Card image cap"></p>
-                                    <h4 class="card-title" id="project_title" value=""></h4>
-                                    <p class="card-text" id="project_description" value=""></p>
+
+                                <p><img class="card-img" src="../maxresdefault.jpg" alt="Card image cap"></p>
+                                <div style="text-align: center; width: 100%"><h4 class="card-title"><%= data[i].project_name %></h4></div>
+                                <div style="text-align: center; width: 100%"><p class="card-text"><%= data[i].project_description %></p></div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="backside">
+                        <div class="card text-white bg-secondary mb-3">
+                            <div class="card-body text-center mt-4">
+                                <h4 class="card-title">Project Details</h4>
+                                <ul class="list-inline">
+
+                                    <li>Level of study:<%= data[i].level_of_study %></li>
+                                    <li>Required Program:<%= data[i].level_of_study %></li>
+                                    <li>Available Funding:<%= data[i].available_funding %></li>
+                                    <li>Start Date:<%= data[i].start_date.toLocaleString(); %></li>
+
+                                    <div class="button-wrapper">
+                                        <br>
+                                        <button type="button" class="btn btn-primary" onclick="apply()">Apply
+                                        </button>
+                                        <button type="button" class="btn btn-primary" onclick="communication()">
+                                            Message
+                                        </button>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="backside">
-                            <div class="card text-white bg-secondary mb-3">
-                                <div class="card-body text-center mt-4">
-                                    <h4 class="card-title">Project Details</h4>
-                                    <ul class="list-inline">
-
-                                        <li id="start_date" value=""></li>
-                                        <li id="funding_available" value=""></li>
-                                        <li id="qualifications" value=""></li>
-                                        <li id="matching_percent" value=""></li>
-                                        <div class="button-wrapper">
-                                            <button type="button" class="btn btn-primary" onclick="apply()">Apply
-                                            </button>
-                                            <button type="button" class="btn btn-primary" onclick="communicate()">
-                                                Message
-                                            </button>
-                                        </div>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- card2 -->
-
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                    <div class="mainflip">
-                        <div class="frontside">
-                            <div class="card bg-light mb-3">
-                                <div class="card bg-light mb-3">
-                                    <p><img class="card-img" src="softwaredesign.jpg" alt="Card image cap"></p>
-                                    <h4 class="card-title">Ethical Hacking</h4>
-                                    <p class="card-text">The software development life cycle (SDLC) is a framework
-                                        defining tasks performed at each step in the software development process. SDLC
-                                        is a structure followed by a development team within the software organization.
-                                        It consists of a detailed plan describing how to develop, maintain and replace
-                                        specific software.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="backside">
-                            <div class="card text-white bg-secondary mb-3">
-                                <div class="card-body text-center mt-4">
-                                    <h4 class="card-title">Ethical Hacking</h4>
-                                    <p class="card-text">The software development life cycle (SDLC) is a framework
-                                        defining tasks performed at each step in the software development process. SDLC
-                                        is a structure followed by a development team within the software organization.
-                                        It consists of a detailed plan describing how to develop, maintain and replace
-                                        specific software.</p>
-                                    <ul class="list-inline">
-                                        <div class="button-wrapper">
-                                            <button type="button" class="btn btn-primary" onclick="apply()">Apply
-                                            </button>
-                                        </div>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- card3 -->
-
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                    <div class="mainflip">
-                        <div class="frontside">
-                            <div class="card bg-light mb-3">
-                                <div class="card bg-light mb-3">
-                                    <p><img class="card-img" src="softwaredesign.jpg" alt="Card image cap"></p>
-                                    <h4 class="card-title">Cloud Computing</h4>
-                                    <p class="card-text">The software development life cycle (SDLC) is a framework
-                                        defining tasks performed at each step in the software development process. SDLC
-                                        is a structure followed by a development team within the software organization.
-                                        It consists of a detailed plan describing how to develop, maintain and replace
-                                        specific software.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="backside">
-                            <div class="card text-white bg-secondary mb-3">
-                                <div class="card-body text-center mt-4">
-                                    <h4 class="card-title" color="#862633">Cloud Computing</h4>
-                                    <p class="card-text">The software development life cycle (SDLC) is a framework
-                                        defining tasks performed at each step in the software development process. SDLC
-                                        is a structure followed by a development team within the software organization.
-                                        It consists of a detailed plan describing how to develop, maintain and replace
-                                        specific software.</p>
-                                    <ul class="list-inline">
-                                        <div class="button-wrapper">
-                                            <button type="button" class="btn btn-primary" onclick="apply()">Apply
-                                            </button>
-                                        </div>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--card4-->
-
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                    <div class="mainflip">
-                        <div class="frontside">
-                            <div class="card bg-light mb-3">
-                                <div class="card bg-light mb-3">
-                                    <p><img class="card-img" src="softwaredesign.jpg" alt="Card image cap"></p>
-                                    <h4 class="card-title">Artificial Intelligence</h4>
-                                    <p class="card-text">The software development life cycle (SDLC) is a framework
-                                        defining tasks performed at each step in the software development process. SDLC
-                                        is a structure followed by a development team within the software organization.
-                                        It consists of a detailed plan describing how to develop, maintain and replace
-                                        specific software.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="backside">
-                            <div class="card text-white bg-secondary mb-3">
-                                <div class="card-body text-center mt-4">
-                                    <h4 class="card-title" color="#862633">Artificial Intelligence</h4>
-                                    <p class="card-text">The software development life cycle (SDLC) is a framework
-                                        defining tasks performed at each step in the software development process. SDLC
-                                        is a structure followed by a development team within the software organization.
-                                        It consists of a detailed plan describing how to develop, maintain and replace
-                                        specific software.</p>
-                                    <ul class="list-inline">
-                                        <div class="button-wrapper">
-                                            <button type="button" class="btn btn-primary" onclick="apply()">Apply
-                                            </button>
-                                        </div>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- card5 -->
-
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                    <div class="mainflip">
-                        <div class="frontside">
-                            <div class="card bg-light mb-3">
-                                <div class="card bg-light mb-3">
-                                    <p><img class="card-img" src="softwaredesign.jpg" alt="Card image cap"></p>
-                                    <h4 class="card-title">SoftwareDesign</h4>
-                                    <p class="card-text">The software development life cycle (SDLC) is a framework
-                                        defining tasks performed at each step in the software development process. SDLC
-                                        is a structure followed by a development team within the software organization.
-                                        It consists of a detailed plan describing how to develop, maintain and replace
-                                        specific software.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="backside">
-                            <div class="card text-white bg-secondary mb-3">
-                                <div class="card-body text-center mt-4">
-                                    <h4 class="card-title" color="#862633">SoftwareDesign</h4>
-                                    <p class="card-text">The software development life cycle (SDLC) is a framework
-                                        defining tasks performed at each step in the software development process. SDLC
-                                        is a structure followed by a development team within the software organization.
-                                        It consists of a detailed plan describing how to develop, maintain and replace
-                                        specific software.</p>
-                                    <ul class="list-inline">
-                                        <div class="button-wrapper">
-                                            <button type="button" class="btn btn-primary" onclick="apply()">Apply
-                                            </button>
-                                        </div>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!--card6-->
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                    <div class="mainflip">
-                        <div class="frontside">
-                            <div class="card bg-light mb-3">
-                                <div class="card bg-light mb-3">
-                                    <p><img class="card-img" src="softwaredesign.jpg" alt="Card image cap"></p>
-                                    <h4 class="card-title">SoftwareDesign</h4>
-                                    <p class="card-text">The software development life cycle (SDLC) is a framework
-                                        defining tasks performed at each step in the software development process. SDLC
-                                        is a structure followed by a development team within the software organization.
-                                        It consists of a detailed plan describing how to develop, maintain and replace
-                                        specific software.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="backside">
-                            <div class="card text-white bg-secondary mb-3">
-                                <div class="card-body text-center mt-4">
-                                    <h4 class="card-title" color="#862633">SoftwareDesign</h4>
-                                    <p class="card-text">The software development life cycle (SDLC) is a framework
-                                        defining tasks performed at each step in the software development process. SDLC
-                                        is a structure followed by a development team within the software organization.
-                                        It consists of a detailed plan describing how to develop, maintain and replace
-                                        specific software.</p>
-                                    <ul class="list-inline">
-                                        <div class="button-wrapper">
-                                            <button type="button" class="btn btn-primary" onclick="apply()">Apply
-                                            </button>
-                                        </div>
-                                    </ul>
-                                </div>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <% } %><!--for loop ends-->
+    </div>
     </div>
 </section>
 </body>

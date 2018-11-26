@@ -1,6 +1,6 @@
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 body {
-    background-color: #f0f0f5;
+    background-color: #FFFFFF;
 }
 #team {
     background:#d0d0e1;
@@ -28,6 +28,7 @@ section {
 section .section-title {
     text-align: center;
     color: #862633;
+    margin-left: 20px;
     margin-bottom: 50px;
     text-transform: uppercase;
 }
@@ -135,4 +136,8 @@ section .section-title {
     margin-bottom: 5px;
     color: inherit;
     background-color: #862633;
+}
+.navbar  {
+    background-color: #862633;
+    overflow: hidden;
 }
