@@ -4,6 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="../javascripts/jquery_matchproject.js"></script>
         <link rel="stylesheet" type="text/css"
               href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"
@@ -28,13 +29,11 @@
                         <div class="frontside">
                             <div class="card bg-light mb-3">
                                 <div class="card bg-light mb-3">
+                                    <div>
                                     <p><img class="card-img" src="softwaredesign.jpg" alt="Card image cap"></p>
-                                    <h4 class="card-title">Software Design</h4>
-                                    <p class="card-text">The software development life cycle (SDLC) is a framework
-                                        defining tasks performed at each step in the software development process. SDLC
-                                        is a structure followed by a development team within the software organization.
-                                        It consists of a detailed plan describing how to develop, maintain and replace
-                                        specific software.</p>
+                                    <h4 class="card-title" id="project_title" value=""></h4>
+                                    <p class="card-text" id="project_description" value=""></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -44,11 +43,11 @@
                                     <h4 class="card-title">Project Details</h4>
                                     <ul class="list-inline">
 
-                                        <li>Application Deadline:10/12/2018</li>
-                                        <li>Available Funding:1000cad$</li>
-                                        <li>Qualifications:Bachelors</li>
-                                        <li>Matching Percentage:80%</li>
-                                       <br><div class="button-wrapper">
+                                        <li id="start_date" value=""></li>
+                                        <li id="funding_available" value=""></li>
+                                        <li id="qualifications" value=""></li>
+                                        <li id="matching_percent" value=""></li>
+                                        <div class="button-wrapper">
                                             <button type="button" class="btn btn-primary" onclick="apply()">Apply
                                             </button>
                                             <button type="button" class="btn btn-primary" onclick="communicate()">

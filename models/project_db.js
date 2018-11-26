@@ -69,7 +69,8 @@ exports.findById = function(reqData, callback){
 };
 
 exports.findAll = function(callback){
-    projectModel.find({}, function(err, data){
+    projectModel.find({}, ['_id','project_name','level_of_study','required_program',
+        'project_description','available_funding','start_date'], function(err, data){
         if(err){
             callback(err, null);
         }else {
