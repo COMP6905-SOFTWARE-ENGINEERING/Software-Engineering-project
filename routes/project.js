@@ -64,6 +64,7 @@ router.post('/create_project', function(req, res){
             required_skills: req.body.required_skills.split(','),
             area_of_study: req.body.area_of_study,
             level_of_study: req.body.level_of_study,
+            required_program: req.body.required_program,
             start_date: req.body.start_date,
         };
         var result = {status:'failed', flag:0};
@@ -72,22 +73,22 @@ router.post('/create_project', function(req, res){
                 result = {status: status, flag: 1};
             }
         });
-        // trigger match process
-        var projects = projectModel.findAll(function (status) {
-            if (status == 'ok'){
-                console.log('retrieve all documents in project collection successful')
-            }else {
-                console.log('retrieve all documents in project collection failed')
-            }
-        })
-        var profiles = profileModel.findAll(function (status) {
-            if (status == 'ok'){
-                console.log('retrieve all documents in profile collection successful')
-            }else {
-                console.log('retrieve all documents in profile collection failed')
-            }
-        })
-        matching(projects, profiles, 0.6);
+        // // trigger match process
+        // var projects = projectModel.findAll(function (status) {
+        //     if (status == 'ok'){
+        //         console.log('retrieve all documents in project collection successful')
+        //     }else {
+        //         console.log('retrieve all documents in project collection failed')
+        //     }
+        // })
+        // var profiles = profileModel.findAll(function (status) {
+        //     if (status == 'ok'){
+        //         console.log('retrieve all documents in profile collection successful')
+        //     }else {
+        //         console.log('retrieve all documents in profile collection failed')
+        //     }
+        // })
+        // matching(projects, profiles, 0.6);
         res.json(result);
     }else {
         res.json({status:"Not log in yet", flag:0});
