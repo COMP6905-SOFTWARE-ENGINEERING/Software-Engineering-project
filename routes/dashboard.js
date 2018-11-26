@@ -25,7 +25,7 @@ router.get('/profile_student_view', function(req, res){
     if(req.session.user && req.session.user.usertype == 'student'){
         userModel.userAccInfo({username:req.session.user.username}, function(err, data){
             if (err){
-                profileModel.findOne(function (err,data) {
+                profileModel.userAccInfo({username:req.session.user.username}, function(err, data){
                     console.log("No error");
                     var studentData = data;
                     console.log(data);
