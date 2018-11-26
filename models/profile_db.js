@@ -29,7 +29,6 @@ var profileSchema = new Schema({
 
 var profileModel = mongoose.model('profile', profileSchema);
 
-
 exports.listByOwner = function(reqData, callback){
     profileModel.find(reqData, ['_id'], {sort:{_id: 1}}, function(err, data){
         if (err){
@@ -82,8 +81,8 @@ exports.adminPrivatize = function(reqData, callback){
     profileModel.update({
         _id:Data._id,
     }, {$set:{
-        isPublic:false,
-    }}, function(err, data){
+            isPublic:false,
+        }}, function(err, data){
         if(err){
             callback(err);
         }else {
@@ -197,6 +196,17 @@ exports.findByCondition = function(reqData, callback){
             callback(err, null);
         }else {
             callback(null, data);
+        }
+    });
+};
+
+exports.createProfileFull = function(reqData, callback){
+    var Data = reqData;
+    profileModel.create(Data, function(err, data){
+        if (err){
+            callback(err);
+        }else {
+            callback('ok');
         }
     });
 };

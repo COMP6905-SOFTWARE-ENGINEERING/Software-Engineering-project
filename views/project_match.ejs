@@ -21,7 +21,7 @@
         <div class="navbar">
             <nav class="navbar header-top fixed-top navbar-expand-lg  navbar-dark bg-dark">
                 <a class="navbar-brand"></a>
-                <div style="text-align: center; width: 100%"><h2 style="color:white;">Matchging Projects </h2></div>
+                <div style="text-align: center; width: 100%"><h2 style="color:white;">Matched Projects </h2></div>
             </nav>
         </div>
     <div class="row">
@@ -36,7 +36,7 @@
 
                                 <p><img class="card-img" src="../maxresdefault.jpg" alt="Card image cap"></p>
                                 <div style="text-align: center; width: 100%"><h4 class="card-title"><%= data[i].project_name %></h4></div>
-                                <p class="card-text"><%= data[i].project_description %></p>
+                                <div style="text-align: center; width: 100%"><p class="card-text"><%= data[i].project_description %></p></div>
 
                             </div>
                         </div>
@@ -48,7 +48,7 @@
                                 <ul class="list-inline">
 
                                     <li>Level of study:<%= data[i].level_of_study %></li>
-                                    <li>Required Program:<%= data[i].required_program %></li>
+                                    <li>Required Program:<%= data[i].level_of_study %></li>
                                     <li>Available Funding:<%= data[i].available_funding %></li>
                                     <li>Start Date:<%= data[i].start_date.toLocaleString(); %></li>
 

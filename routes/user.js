@@ -63,12 +63,12 @@ router.get('/create_profile', function(req, res){
         userModel.userAccInfo({username:req.session.user.username}, function(err, data){
             if (err){
                 var countries = [];
-                    countryModel.findAll(function (status, data) {
+                countryModel.findAll(function (status, data) {
                     countriesData = data;
                     countries = countriesData.map(function (countriesData) {
                         return countriesData['Country'];
                     });
-                        console.log(countries);
+                    console.log(countries);
                 });
 
                 var programs=[];
@@ -101,30 +101,50 @@ router.get('/create_profile', function(req, res){
 //
 router.post('/create_profile', function(req, res){
     if(req.session.user && req.session.user.usertype == 'student'){
+        var owner = req.body.user_id;
+        var address = req.body.address;
+        var country = req.body.country;
+        var province = req.body.province;
+        var city =req.body.city;
+        var postal_code = req.body.postal_code;
+        var skills = req.body.skills.split(',');
+        var area_of_study = req.body.area_of_study;
+        var level_of_study = req.body.level_of_study;
+        var need_financial_aid = req.body.need_financial_aid;
+        var research_interest = req.body.research_interest;
+        var intended_start_date = req.body.intended_start_date;
+
+        //EducationModel Data
+        let institution = req.body.educations;
+        var program = req.body.educations;
+        var program_level = req.body.educations;
+
         profileModel.listByOwner({owner: req.session.user.username}, function(err, data){
+            // ProfileModel Data
+
             if (err){
                 res.redirect('/404');
             }else {
                 var profileData = {
-                    owner: req.body.user_id,
-                    address: req.body.address,
-                    country: req.body.country,
-                    province: req.body.province,
-                    city: req.body.city,
-                    postal_code: req.body.postal_code,
-                    skills: req.body.skills.split(','),
-                    area_of_study: req.body.area_of_study,
-                    level_of_study: req.body.level_of_study,
-                    need_financial_aid: req.body.need_financial_aid,
-                    research_interest: req.body.research_interest,
-                    intended_start_date: req.body.intended_start_date,
+                    owner: owner,
+                    address: address,
+                    country: country,
+                    province: province,
+                    city: city,
+                    postal_code: postal_code,
+                    skills: skills,
+                    area_of_study: area_of_study,
+                    level_of_study: level_of_study,
+                    need_financial_aid: need_financial_aid,
+                    research_interest: research_interest,
+                    intended_start_date: intended_start_date,
                 };
                 //profileData['skills'] = req.body.skill.split(",");
                 profileModel.createProfile(profileData, function(status){
                     if (status == 'ok'){
-                        res.json({status:status, flag:1});
+                        //res.json({status:status, flag:1});
                     }else {
-                        res.json({status:status, flag:0});
+                        //res.json({status:status, flag:0});
                     }
                 });
                 // var educationData = req.body;
@@ -161,6 +181,27 @@ router.post('/create_profile', function(req, res){
                 // matching(projects, profiles, 0.6)
             }
         });
+        educationModel.listByOwner({owner: req.session.user.username}, function(err, data) {
+            if (err){
+                res.redirect('/404');
+            }else{
+                var educationData = {
+                    owner: owner,
+                    institution: institution,
+                    program: program,
+                    program_level: program_level,
+                };
+                educationModel.createEducation(educationData, function(status){
+                    if (status == 'ok'){
+                        res.json({status:status, flag:1});
+                    }else {
+                        res.json({status:status, flag:0});
+                    }
+                });
+            }
+        });
+
+
     }else {
         res.json({status:"not login", flag:0});
     }
