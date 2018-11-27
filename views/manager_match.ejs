@@ -51,15 +51,17 @@
             <th scope="col">Monitor</th>
             <th scope="col">Message</th>
         </tr>
+        <% for (var i = 0; i <match_data.length; i++) { %>
         <tbody>
         <tr>
             <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
+            <td> <%= match_data[i].project_name %></td>
+            <td> <%= match_data[i].address %></td>
             <td><button type="button" class="btn btn-primary" id="student_monitor">Monitor</button></td>
             <td><button type="button" class="btn btn-primary" id="student_monitor">Chat</button></td>
         </tr>
         </tbody>
+        <% } %>
         </thead>
     </table>>
 </div>
