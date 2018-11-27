@@ -27,6 +27,13 @@ router.get('/profile_student_view', function(req, res){
     if(req.session.user && req.session.user.usertype == 'student'){
         userModel.userAccInfo({username:req.session.user.username}, function(err, data){
             if (err){
+                var personalData = {};
+                userModel.userAccInfo({username:req.session.user.user_id}, function(err, data){
+                    console.log("No error");
+                    personalData = data;
+                    console.log(data);
+                });
+
                 var studentData = {};
                 profileModel.userAccInfo({username:req.session.user.username}, function(err, data){
                     console.log("No error");
@@ -34,14 +41,14 @@ router.get('/profile_student_view', function(req, res){
                     console.log(data);
                 });
 
-                var educationData;
+                var educationData={};
                  educationModel.listByOwner({user_id:req.session.user.user_id}, function(err, data){
                     console.log("EducationData");
                     educationData = data;
                     console.log(educationData);
 
                 });
-                var experienceData;
+                var experienceData={};
                     experienceModel.listByOwner({user_id:req.session.user.user_id}, function(err, data){
                     experienceData = data;
                    console.log(experienceData);
@@ -50,6 +57,7 @@ router.get('/profile_student_view', function(req, res){
                         title: 'View Student Profile',
                         userdata: req.session.user,
                         //maxpage: parseInt((data.length-1)/10)+1,
+                        personalData:personalData,
                         studentData:studentData,
                         educationData:educationData,
                         experienceData:experienceData

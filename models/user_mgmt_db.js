@@ -8,6 +8,7 @@ var userSchema = new Schema({
 		select:true,
 		required:[true, 'firstname cannot be empty'],
 	},
+	middlename:String,
     lastname:{
         type:String,
         required:[true,'lastname cannot be empty'],
@@ -25,11 +26,7 @@ var userSchema = new Schema({
 		trim:true,
 		match:[/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(.[a-zA-Z0-9_-]+)+$/, 'please enter a valid email']
 	},
-	sex:{
-		type:String,
-		default: 'secret',
-		enum:['male', 'female', 'secret'],
-	},
+	sex:String,
 	date_of_birth:Date,
     usertype:{
 		type:String,
@@ -60,7 +57,9 @@ exports.userLogin = function(reqData, callback){
 exports.userRegister = function(reqData, callback){
 	userModel.create({
 		firstname:reqData.firstname,
+		middlename:reqData.middlename,
         lastname: reqData.lastname,
+		sex:reqData.sex,
 		password:reqData.password,
 		email: reqData.email,
         date_of_birth: reqData.dob,
@@ -119,5 +118,17 @@ exports.userAccInfo = function(reqData, callback){
 			callback('ok', data);
 		}
 	});
+};
+
+exports.userAccInfo = function(reqData, callback){
+    userModel.findOne({username:reqData.username}, function(err, data){
+        if (err){
+            // err.err = 'err';
+            callback(err, null);
+        }else {
+            // data.err = 'ok';
+            callback('ok', data);
+        }
+    });
 };
 
