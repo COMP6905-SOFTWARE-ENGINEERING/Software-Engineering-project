@@ -184,6 +184,7 @@ exports.findDefaultOne = function(reqData, callback){
         }else {
             callback(null, data);
         }
+
     });
 };
 
@@ -207,6 +208,17 @@ exports.createProfileFull = function(reqData, callback){
             callback(err);
         }else {
             callback('ok');
+        }
+    });
+};
+
+exports.findAll = function(callback){
+    profileModel.find({}, ['_id','level_of_study','area_of_study',
+        'skills','need_financial_aid'], function(err, data){
+        if(err){
+            callback(err, null);
+        }else {
+            callback('ok', data);
         }
     });
 };

@@ -70,12 +70,13 @@ exports.findById = function(reqData, callback){
 };
 
 exports.findAll = function(callback){
-    projectModel.find({}, ['_id','project_name','level_of_study','required_program',
-        'project_description','available_funding','start_date'], function(err, data){
+    projectModel.find({}, ['_id','project_name', 'area_of_study', 'level_of_study',
+        'required_program', 'required_skills', 'project_description',
+        'available_funding','start_date'], function(err, data){
         if(err){
             callback(err, null);
         }else {
-            callback(null, data);
+            callback('ok', data);
         }
     });
 };
