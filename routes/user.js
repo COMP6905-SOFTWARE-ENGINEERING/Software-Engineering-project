@@ -85,19 +85,6 @@ router.get('/create_profile', function(req, res){
         res.redirect('/login');
     }
 });
-
-//Testing by mahesh
-
-// router.post('/create_profile', function(req, res){
-//  var studentData = new profileModel();
-//     var studentEdu = new educationModel();
-//     studentData['addressLine1']=req.body.addressLine1;
-//     studentEdu['edProgramLevel']=req.body.edProgramLevel;
-//     console.log("successfull");
-//     res.redirect('/login');
-// });
-
-//
 router.post('/create_profile', function(req, res){
     if(req.session.user && req.session.user.usertype == 'student'){
         var owner = req.body.user_id;

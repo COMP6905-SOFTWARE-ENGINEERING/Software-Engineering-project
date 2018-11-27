@@ -34,14 +34,14 @@ router.get('/profile_student_view', function(req, res){
                     console.log(data);
                 });
 
-                var educationData;
+                var educationData={};
                  educationModel.listByOwner({user_id:req.session.user.user_id}, function(err, data){
                     console.log("EducationData");
                     educationData = data;
                     console.log(educationData);
 
                 });
-                var experienceData;
+                var experienceData={};
                     experienceModel.listByOwner({user_id:req.session.user.user_id}, function(err, data){
                     experienceData = data;
                    console.log(experienceData);

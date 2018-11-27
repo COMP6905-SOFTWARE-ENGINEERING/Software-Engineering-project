@@ -12,7 +12,9 @@ router.post('/',function(req, res){
 	var password = md5.update(req.body.password).digest('hex');
     var registerData = {
         firstname: req.body.firstname,
+        middlename:req.body.middlename,
         lastname: req.body.lastname,
+        sex:req.body.sex,
         password: password,
         email: req.body.email,
         dob: req.body.dob
