@@ -29,7 +29,8 @@ exports.listByOwner = function(reqData, callback){
 };
 
 exports.createEducation = function(reqData, callback){
-    educationModel.findById(reqData._id, function(err, data){
+    var Data = reqData;
+    educationModel.insertMany(Data, function(err, data){
         if (err){
             callback(err);
         }else {

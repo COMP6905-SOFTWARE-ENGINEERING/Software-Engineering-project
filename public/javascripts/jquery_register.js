@@ -31,11 +31,13 @@ $(document).ready(function(){
 			$(".error_firstname").text('Please enter a valid name');
 			return;
 		}
+        var middlename = document.getElementById('middlename').value;
         var lastname = document.getElementById('lastname').value;
         if (lastname.replace(/(^\s*)|(\s*$)/g, "").length == 0){
             $(".error_lastname").text('Last Name is a required field');
             return;
         }
+        var sex = document.getElementsByName('sex').value;
 		var password = document.getElementById('password').value;
 		if (password.length == 0){
 			$(".error_password").text('Password is a required field');
@@ -67,7 +69,9 @@ $(document).ready(function(){
         var dob = document.getElementById('dob').value;
         var postData = {
             firstname: firstname,
+			middlename:middlename,
             lastname: lastname,
+			sex:sex,
             password: password,
             email: email,
             dob: dob,
