@@ -22,4 +22,12 @@ router.get('/result', function(req, res) {
     }
 });
 
+router.get('/communication', function(req, res) {
+    if (req.session.user){
+        res.render('communication');
+    }else {
+        res.redirect('/login');
+    }
+});
+
 module.exports = router;

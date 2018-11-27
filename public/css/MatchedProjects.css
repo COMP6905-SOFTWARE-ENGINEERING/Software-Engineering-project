@@ -130,14 +130,15 @@ section .section-title {
     height: 120px;
     border-radius: 50%;
 }
-.jumbotron {
-    padding-top: 15px;
-    padding-bottom: 30px;
-    margin-bottom: 5px;
-    color: inherit;
-    background-color: #862633;
+.navbar
+{
+    background-color:#34000d;
+
 }
-.navbar  {
-    background-color: #862633;
-    overflow: hidden;
+.navbar-brand {
+    color: white;
+}
+
+.nav-link{
+    color: white;
 }
