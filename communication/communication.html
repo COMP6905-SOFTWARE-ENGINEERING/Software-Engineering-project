@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/communication.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Message Service</title>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="jumbotron">
+         <h1 class="display-3"></h1>
+      </div>
+   <div class="row">
+     <div class="col-md-12 text-center">
+       <h2>GradRec Message Center</h2>
+       <div class="input-group col-6 mx-auto enter-name">
+         <input type="text" id="name-input" class="form-control" placeholder="Enter Your Name Start Communication">
+         <span class="input-group-addon submit-name"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+       </div>
+     </div>
+     <div class="col-md-12">
+       <div class="chat-window">
+         <div id="messages"></div>
+       </div>
+     </div>
+     <div class="col-md-12">
+       <div class="input-group enter-chat-message">
+         <input type="text" id="chat-input" class="form-control" placeholder="Chat Message...">
+         <span class="input-group-addon submit-chat-message"><span class="glyphicon glyphicon-send" aria-hidden="true"></span></span>
+       </div>
+     </div>
+   </div><br>
+
+   <!-- Footer -->
+  <footer class="page-footer font-small blue">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2018 Copyright:GROUP-4
+      <li>
+        <div class="footer-copyright text-center py-3">Powered by:
+      <a href="https://mdbootstrap.com/education/bootstrap/">GradRec</a>
+    </div>
+      </li>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
+ </div>
+
+
+       <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+       <script src="/socket.io/socket.io.js"></script>
+       <script src="/javascript/communication.js"></script>
+  </body>
+</html>
