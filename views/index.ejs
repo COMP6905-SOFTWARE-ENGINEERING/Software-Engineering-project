@@ -22,10 +22,7 @@
 </head>
 
 <body>
-<% if (studentData.address == ''){ %>
-    var flag='Yes';
-    <h6></h6>
-<% } %>
+
 <div class="wrapper">
     <div class="sidebar side" data-color="black"  data-image="">
 
@@ -58,15 +55,18 @@
                     <li>
                         <a href="">
                             <i class="pe-7s-note2"></i>
-                            <p>Progress</p>
+                            <p>Progress :<%= studentData.address %> </p>
                         </a>
                     </li>
-                    <li>
-                        <a href="/user/create_profile">
-                            <i class="pe-7s-note2"></i>
-                            <p>Create Profile</p>
-                        </a>
-                    </li>
+                    <% if (studentData.address == null){ %>
+                        <li>
+                            <a href="/user/create_profile">
+                                <i class="pe-7s-note2"></i>
+                                <p>Create Profile</p>
+                            </a>
+                        </li>
+                    <% } %>
+
                 <% }else if (userdata.usertype == 'manager') { %>
                     <li>
                         <a href="/project/create_project">
