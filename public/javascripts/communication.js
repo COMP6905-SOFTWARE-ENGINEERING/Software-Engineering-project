@@ -59,3 +59,4 @@ $(function () {
         $('.chat-window').scrollTop($('#messages').height());
     });
 });
+

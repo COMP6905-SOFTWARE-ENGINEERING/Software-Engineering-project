@@ -1,0 +1,48 @@
+
+body
+{
+    background-color: #E9E9E9;
+}
+
+.navbar .navbar-inverse .transparent
+{
+    background-color:#862633;
+
+}
+.navbar-inverse {
+    background-color: #34000d;
+}
+.btn-primary
+{
+    background-color: #34000d;
+    /*border-color: black;*/
+}
+
+legend  {
+    border-bottom:1px solid #000000;
+    color: #862633
+}
+
+hr
+{
+    border-top: 0.2px;
+}
+.allButtons
+{
+
+
+    background-color: #862633;
+    border: none;
+
+}
+.progressSubmit
+{
+    margin-top: 30px;
+    margin-left: 50%;
+    margin-bottom: 50px;
+    padding: 5px 40px;
+    font-size: 15px;
+
+}
+
+
