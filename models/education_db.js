@@ -19,18 +19,17 @@ var educationModel = mongoose.model('education', educationSchema);
 
 
 exports.listByOwner = function(reqData, callback){
-    educationModel.find(reqData, ['_id'], {sort:{_id: 1}}, function(err, data){
+    educationModel.find(reqData, {}, function(err, data){
         if (err){
             callback(err, null);
         }else {
             callback(null, data);
         }
-        });
+    });
 };
 
 exports.createEducation = function(reqData, callback){
-    var Data = reqData;
-    educationModel.insertMany(Data, function(err, data){
+    educationModel.findById(reqData._id, function(err, data){
         if (err){
             callback(err);
         }else {

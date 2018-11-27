@@ -75,7 +75,7 @@ router.get('/create_profile', function(req, res){
                     title:'Create Profile',
                     userdata: req.session.user,
                     countries: countries,
-                    programs: programs,
+                    programs: programs
                 });
             }else {
                 res.json(err);
