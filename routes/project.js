@@ -4,6 +4,7 @@ var url = require('url');
 var router = express.Router();
 var projectModel = require('../models/project_db.js');
 var profileModel = require('../models/profile_db.js');
+var matchModel = require('../models/match_db.js');
 var userModel = require('../models/user_mgmt_db.js');
 var matching = require('../algorithms/match.js');
 
@@ -67,25 +68,48 @@ router.post('/create_project', function(req, res){
             required_program: req.body.required_program,
             start_date: req.body.start_date,
         };
-        //var result = {status:'failed', flag:0};
+        // step 1. create the project
         projectModel.createProject(projectData, function(status){
             if (status == 'ok'){
+                // step 2. fetch all projects
+                projectModel.findAll(function(status, projects) {
+                    if (status == 'ok'){
+                        // step 3. fetch all profiles
+                        profileModel.findAll(function(status, profiles) {
+                            if (status == 'ok'){
+                                // step 4. call the matching algorithm
+                                matching(projects, profiles, 0.1)
+                            }else{
+                                console.log(status)
+                            }
+                        })
+
+                    }else{
+                        console.log(status)
+                    }
+                })
+
                 res.json({status:status, flag:1});
             }else {
+
                 res.json({status:status, flag:0});
             }
         });
+
+
         // // trigger match process
-        // var projects = projectModel.findAll(function (status) {
+        // var projects;
+        // projectModel.findAll(function (status, data) {
         //     if (status == 'ok'){
-        //         console.log('retrieve all documents in project collection successful')
+        //         projects = data;
         //     }else {
         //         console.log('retrieve all documents in project collection failed')
         //     }
         // })
-        // var profiles = profileModel.findAll(function (status) {
+        // var profiles;
+        // profileModel.findAll(function (status, data) {
         //     if (status == 'ok'){
-        //         console.log('retrieve all documents in profile collection successful')
+        //         profiles = data;
         //     }else {
         //         console.log('retrieve all documents in profile collection failed')
         //     }

@@ -6,7 +6,7 @@
 
 body {
   height: 1200px;
-  background-image: url("reg_background.jpg");
+  background-image: url("./reg_background.jpg");
 }
 
 .container {

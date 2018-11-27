@@ -1,101 +1,100 @@
 <!DOCTYPE html>
 <html>
-    <head>
-       
-        <meta charset="windows-1252">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <!-- Font Awesome -->
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-          <!-- Bootstrap core CSS -->
-          <link href="css/bootstrap.min.css" rel="stylesheet">
-          <!-- Material Design Bootstrap -->
-          <link href="css/mdb.min.css" rel="stylesheet">
-          <!-- Your custom styles (optional) -->
-          <link href="css/style.css" rel="stylesheet">
-                 <link href='styles.css' rel='stylesheet'/>
-          <script type="text/javascript" src="javascripts/jquery.js"></script>
-          <script type="text/javascript" src="javascripts/jquery_register.js"></script>
-        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    </head>
+<head>
 
-    <body>
-    <nav class="navbar navbar-expand-lg" style="border:15px;">
-        <a class="navbar-brand" href="#">Graduate Recruitment system</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Login Here</a>
-                </li>
-            </ul>
-            </div>
-    </nav>
-        <div style="text-align: center;">
-            <img src="munCOA.png" alt="MUN COA" height="150">
-        </div>
+    <meta charset="windows-1252">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="javascripts/jquery.js"></script>
+    <script type="text/javascript" src="javascripts/jquery_register.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
 
+<body>
+<nav class="navbar navbar-expand-lg" style="border:15px;">
+    <a class="navbar-brand"><img src="Logo.png" class="logo"></a>
+    <a class="navbar-brand" href="#">Graduate Recruitment System</a>
 
-        <div class="LoginForm" width="200" align="center">
-            <table style="width:30%" >
-              <tr> 
-                <td>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Login Here</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="LoginForm" width="200" align="right">
+    <table style="width:30%">
+        <tr>
+            <td>
                 <!-- Default form login -->
                 <div class="LoginForm">
-                <form class="text-center border border-light p-5" style="background-color: white; border-radius: 30px;">
+                    <form class="text-center border border-light p-5"
+                          style="background-color: white; border-radius: 30px;">
 
-                    <p class="h4 mb-4">Sign Up</p>
+                        <p class="h4 mb-4"><strong>Sign Up</strong></p>
 
-                    <!-- First Name -->
-                    <input type="text" id="firstname" class="form-control mb-4" placeholder="First Name">
+                        <!-- First Name -->
+                        <input type="text" id="firstname" class="form-control mb-4" placeholder="First Name">
 
-                    <!-- Middle Name -->
-                    <input type="text" id="middlename" class="form-control mb-4" placeholder="Middle Name">
+                        <!-- Middle Name -->
+                        <input type="text" id="middlename" class="form-control mb-4" placeholder="Middle Name">
 
-                    <!-- Last Name -->
-                    <input type="text" id="lastname" class="form-control mb-4" placeholder="Last Name">
+                        <!-- Last Name -->
+                        <input type="text" id="lastname" class="form-control mb-4" placeholder="Last Name">
 
-                    <!-- Sex -->
-                    <select name="sex" id ="sex"  class="form-control">
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                    </select>
+                        <!-- Sex -->
+                        <select name="sex" id="sex" class="form-control">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select><br>
 
-                    <!-- Date of Birth -->
-                    <input type="date" id="dob" class="form-control mb-4" placeholder="Date of Birth">
+                        <!-- Date of Birth -->
+                        <input type="date" id="dob" class="form-control mb-4" placeholder="Date of Birth">
 
-                    <!-- Email -->
-                    <input type="email" id="email" class="form-control mb-4" placeholder="E-mail">
+                        <!-- Email -->
+                        <input type="email" id="email" class="form-control mb-4" placeholder="E-mail">
 
-                    <!-- Password -->
-                    <input type="password" id="password" class="form-control mb-4" placeholder="Password">
+                        <!-- Password -->
+                        <input type="password" id="password" class="form-control mb-4" placeholder="Password">
 
-                    <!-- Password Confirm -->
-                    <input type="password" id="password_confirm" class="form-control mb-4" placeholder="Confirm Password">
+                        <!-- Password Confirm -->
+                        <input type="password" id="password_confirm" class="form-control mb-4"
+                               placeholder="Confirm Password">
 
-                    <div class="d-flex justify-content-around">
-                        <div>
-                            <!-- Remember me -->
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
-                                <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
+                        <div class="d-flex justify-content-around">
+                            <div>
+                                <!-- Remember me -->
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                                    <label class="custom-control-label" for="defaultLoginFormRemember"
+                                           style="font-size:14px">Remember me</label>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Sign in button  type="submit" -->
-                    <button type="button" class="btn btn-info btn-block my-4 register_button">Submit</button>
+                        <!-- Sign in button  type="submit" -->
+                        <button type="button" class="btn btn-info btn-block my-4 register_button"style="background-color:#34000d">Submit</button>
 
-                </form>
+                    </form>
                 </div>
                 <!-- Default form login -->
-                </td>
-                  </tr>
-            </table>
-        </div>
-    </div>
-                <script src="ProjectDetailsScipt.js"></script>
-    </body>
+            </td>
+        </tr>
+    </table>
+</div>
+</div>
+<script src="ProjectDetailsScipt.js"></script>
+</body>
 </html>
