@@ -1,0 +1,29 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+body {
+    background-color: #FFFFFF;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #862633;
+    border-color: #862633;
+    box-shadow: none;
+    outline: none;
+}
+.btn-primary{
+    background-color:#34000d;
+    border-color: #34000d;
+    box-shadow: none;
+    outline: none;
+}
+.navbar
+{
+    background-color:#34000d;
+
+}
+.navbar-brand {
+    color: white;
+}
+
+.nav-link{
+    color: white;
+}
