@@ -15,13 +15,27 @@
                  <link href='styles.css' rel='stylesheet'/>
           <script type="text/javascript" src="javascripts/jquery.js"></script>
           <script type="text/javascript" src="javascripts/jquery_register.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     </head>
 
     <body>
-        <center>
+    <nav class="navbar navbar-expand-lg" style="border:15px;">
+        <a class="navbar-brand" href="#">Graduate Recruitment system</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Login Here</a>
+                </li>
+            </ul>
+            </div>
+    </nav>
+        <div style="text-align: center;">
             <img src="munCOA.png" alt="MUN COA" height="150">
-            <h1 style="color:white">Graduate Recruitment system</h1>
-        </center>
+        </div>
 
 
         <div class="LoginForm" width="200" align="center">
@@ -29,8 +43,8 @@
               <tr> 
                 <td>
                 <!-- Default form login -->
-                <div class="LoginForm" width="200">
-                <form class="text-center border border-light p-5" style="background-color: white;">
+                <div class="LoginForm">
+                <form class="text-center border border-light p-5" style="background-color: white; border-radius: 30px;">
 
                     <p class="h4 mb-4">Sign Up</p>
 
@@ -59,7 +73,7 @@
                     <input type="password" id="password" class="form-control mb-4" placeholder="Password">
 
                     <!-- Password Confirm -->
-                    <input type="password" id="password_confirm" class="form-control mb-4" placeholder="Password">
+                    <input type="password" id="password_confirm" class="form-control mb-4" placeholder="Confirm Password">
 
                     <div class="d-flex justify-content-around">
                         <div>

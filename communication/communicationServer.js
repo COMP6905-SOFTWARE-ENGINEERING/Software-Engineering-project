@@ -8,7 +8,7 @@ const port=process.env.PORT || 3000;
 app.use(express.static(path.join(__dirname,'public')));
 app.set('view engine','ejs');
 app.get('/',function(req,res){
-  res.sendFile(__dirname + '/communication.html');
+  res.sendFile(__dirname + '/communication.ejs');
 });
 server.listen(port,function(){
   console.log('listening on port' + port);

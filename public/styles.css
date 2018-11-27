@@ -6,7 +6,7 @@
 
 body {
   height: 1200px;
-  background-image: url("img.jpg");
+  background-image: url("reg_background.jpg");
 }
 
 .container {
@@ -19,13 +19,6 @@ table#table {
 	margin:20%;
 	
   }
-th {
-    background-color: #fffdd0;
-    color: black;
-}
-td {
-   background-color: #fffdd0;
-}
 input[type=text] {
     background-color: #fffdd0;
     color: black;
@@ -34,6 +27,6 @@ input[type=number] {
     background-color: #fffdd0;
     color: black;
 }
-.button {
-    background-color: black;
+.navbar-brand {
+    color: white;
 }
