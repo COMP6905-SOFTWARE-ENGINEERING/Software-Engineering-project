@@ -19,7 +19,7 @@ var courseSchema = new Schema({
 var courseModel = mongoose.model('course', courseSchema);
 
 exports.listByOwner = function(reqData, callback){
-    courseModel.find(reqData, ['_id'], {sort:{_id: 1}}, function(err, data){
+    courseModel.find(reqData, {}, function(err, data){
         if (err){
             callback(err, null);
         }else {

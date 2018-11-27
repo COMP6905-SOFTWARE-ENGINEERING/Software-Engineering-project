@@ -14,7 +14,7 @@ var milestoneSchema = new Schema({
 var milestoneModel = mongoose.model('milestone', milestoneSchema);
 
 exports.listByOwner = function(reqData, callback){
-    milestoneModel.find(reqData, ['_id'], {sort:{_id: 1}}, function(err, data){
+    milestoneModel.find(reqData, {}, function(err, data){
         if (err){
             callback(err, null);
         }else {
@@ -29,6 +29,16 @@ exports.createMilestone = function(reqData, callback){
             callback(err);
         }else {
             callback('ok');
+        }
+    });
+};
+
+exports.findById = function(reqData, callback){
+    milestoneModel.findById(reqData._id,{}, function(err, data){
+        if(err){
+            callback(err, null);
+        }else {
+            callback(null, data);
         }
     });
 };
