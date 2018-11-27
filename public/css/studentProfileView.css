@@ -1,7 +1,14 @@
 html *{
     -webkit-font-smoothing: antialiased;
 }
+.navbar .navbar-inverse .transparent
+{
+    background-color:#862633;
 
+}
+.navbar-inverse {
+    background-color: #34000d;
+}
 .profile-page .page-header {
     height: 380px;
     background-position:center;
@@ -20,7 +27,7 @@ html *{
     display: block;
     left: 0;
     top: 0;
-    content: "";
+    /*content: "";*/
 }
 
 .header-filter::before {
