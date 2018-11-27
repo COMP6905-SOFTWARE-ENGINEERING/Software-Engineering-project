@@ -7,3 +7,7 @@ function viewMatches() {
     window.location.href = "/match/result";
 }
 
+function chatBox()
+{
+    window.location.href = "match/communication";
+}
