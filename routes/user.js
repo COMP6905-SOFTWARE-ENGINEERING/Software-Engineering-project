@@ -11,6 +11,8 @@ var dbURL = require('../config/default');
 var milestoneModel = require('../models/milestone_db');
 var userModel = require('../models/user_mgmt_db.js');
 var programModel = require('../models/area_db');
+var projectModel = require('../models/project_db');
+var matching = require('../algorithms/match');
 
 
 router.get('/dashboard', function(req, res){
@@ -19,9 +21,16 @@ router.get('/dashboard', function(req, res){
             if (err){
                 res.json(err);
             }else {
+                var studentData = {};
+                profileModel.userAccInfo({username:req.session.user.username}, function(err, data) {
+                    console.log("No error");
+                    studentData = data;
+                    console.log(data);
+                });
                 res.render('dashboard', {
                     title: 'Dashboard',
                     userdata: req.session.user,
+                    studentData:studentData
                 });
             }
         });
@@ -165,14 +174,34 @@ router.post('/create_profile', function(req, res){
                     research_interest: research_interest,
                     intended_start_date: intended_start_date,
                 };
-                //profileData['skills'] = req.body.skill.split(",");
+
                 profileModel.createProfile(profileData, function(status){
                     if (status == 'ok'){
+                        //Step 2. Fetch all the profiles
+                        profileModel.findAll(function (status, profiles) {
+                            if(status =='ok'){
+                                //Step 3. Fetch all the profiles
+                                projectModel.findAll(function (status, projects) {
+                                    if(status=='ok'){
+                                        //Step 4. Call the maatching algorithm using profile and projects as inputs
+                                        matching(projects,profiles,0.1)
+                                    }else {
+                                        console.log(status)
+                                    }
+                                })
+
+                            }else{
+                                console.log(status)
+                            }
+                        })
+
                         //res.json({status:status, flag:1});
                     }else {
                         //res.json({status:status, flag:0});
                     }
                 });
+                //Step 1. Create the profile
+
                 // trigger match process
                 // var projects = projectModel.findAll(function (status) {
                 //     if (status == 'ok'){
@@ -239,9 +268,34 @@ router.post('/create_profile', function(req, res){
                 });
             }
         });
-
+        // profileModel.createProfile(profileData, function(status){
+        //     if (status == 'ok'){
+        //         //Step 2. Fetch all the profiles
+        //         profileModel.findAll(function (status, profiles) {
+        //             if(status =='ok'){
+        //                 //Step 3. Fetch all the profiles
+        //                 projectModel.findAll(function (status, projects) {
+        //                     if(status=='ok'){
+        //                         //Step 4. Call the maatching algorithm using profile and projects as inputs
+        //                         matching(projects,profiles,0.1)
+        //                     }else {
+        //                         console.log(status)
+        //                     }
+        //                 })
+        //
+        //             }else{
+        //                 console.log(status)
+        //             }
+        //         })
+        //
+        //         res.json({status:status, flag:1});
+        //     }else {
+        //         res.json({status:status, flag:0});
+        //     }
+        // });
 
     }else {
+        res.json({status:"Not log in yet", flag:0});
     }
 });
 

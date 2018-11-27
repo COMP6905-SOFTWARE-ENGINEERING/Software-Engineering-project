@@ -19,26 +19,27 @@ router.get('/monitor', function(req, res){
                     personalData = data;
                     console.log(data);
                 });
-                var milestoneData = {};
+                var milestoneData={};
                 milestoneModel.listByOwner({user_id:req.session.user.user_id}, function(err, data){
-                    console.log("No error");
+                    console.log("MilestoneData");
                     milestoneData = data;
                     console.log(milestoneData);
+
                 });
 
                 var offerData = {};
-                offerModel.findById({user_id:req.session.user.user_id}, function(err, data){
-                    console.log("No error");
+                offerModel.findById({owner:req.user_id}, function(err, data){
+                    console.log("OfferData");
                     offerData = data;
                     console.log(offerData);
                 });
 
-                // var courseData = {};
-                // courseData.findById({user_id:req.session.user.user_id}, function(err, data){
-                //     console.log("No error");
-                //     courseData = data;
-                //     console.log(courseData);
-                // });
+                var courseData = {};
+                courseModel.listByOwner({user_id:req.session.user.user_id}, function(err, data){
+                    console.log("CourseData");
+                    courseData = data;
+                    console.log(courseData);
+                });
 
                     res.render('monitor', {
                     title: 'Monitor Progress',
