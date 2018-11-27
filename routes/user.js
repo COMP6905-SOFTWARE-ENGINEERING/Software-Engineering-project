@@ -64,12 +64,12 @@ router.get('/create_profile', function(req, res){
         userModel.userAccInfo({username:req.session.user.username}, function(err, data){
             if (err){
                 var countries = [];
-                    countryModel.findAll(function (status, data) {
+                countryModel.findAll(function (status, data) {
                     countriesData = data;
                     countries = countriesData.map(function (countriesData) {
                         return countriesData['Country'];
                     });
-                        console.log(countries);
+                    console.log(countries);
                 });
 
                 var programs=[];
@@ -102,32 +102,84 @@ router.get('/create_profile', function(req, res){
 //
 router.post('/create_profile', function(req, res){
     if(req.session.user && req.session.user.usertype == 'student'){
+        var owner = req.body.user_id;
+        var address = req.body.address;
+        var country = req.body.country;
+        var province = req.body.province;
+        var city =req.body.city;
+        var postal_code = req.body.postal_code;
+        var skills = req.body.skills.split(',');
+        var area_of_study = req.body.area_of_study;
+        var level_of_study = req.body.level_of_study;
+        var need_financial_aid = req.body.need_financial_aid;
+        var research_interest = req.body.research_interest;
+        var intended_start_date = req.body.intended_start_date;
+
+        //EducationModel Data
+        let institution = req.body.educationInstitution.split(',');
+        var program = req.body.educationProgram.split(',');
+        var program_level = req.body.educationLevel.split(',');
+
+        var education = [institution.length];
+        var i = 0;
+        for (i=0; i<institution.length;i++){
+            var arrayEducation = {
+                owner: owner,
+                institution: institution[i],
+                program: program[i],
+                program_level: program[i],
+            };
+            education[i] = arrayEducation;
+        }
+
+        //Work Experience Data
+        var weCompany = req.body.weCompany.split(',');
+        var weTitle = req.body.weTitle.split(',');
+        var weStartDate = req.body.weStartDate.split(',');
+        var weEndDate = req.body.weEndDate.split(',');
+
+        var experience = [weCompany.length];
+        var i = 0;
+        for (i=0; i<weCompany.length;i++){
+            var arrayExperience = {
+                owner: owner,
+                title: weCompany[i],
+                company: weTitle[i],
+                startDate: weStartDate[i],
+                endDate:weEndDate[i]
+            };
+            experience[i] = arrayExperience;
+        }
+
         profileModel.listByOwner({owner: req.session.user.username}, function(err, data){
+            // ProfileModel Data
+
             if (err){
                 res.redirect('/404');
             }else {
                 var profileData = {
-                    owner: req.body.user_id,
-                    address: req.body.address,
-                    country: req.body.country,
-                    province: req.body.province,
-                    city: req.body.city,
-                    postal_code: req.body.postal_code,
-                    skills: req.body.skills.split(','),
-                    area_of_study: req.body.area_of_study,
-                    level_of_study: req.body.level_of_study,
-                    need_financial_aid: req.body.need_financial_aid,
-                    research_interest: req.body.research_interest,
-                    intended_start_date: req.body.intended_start_date,
+                    owner: owner,
+                    address: address,
+                    country: country,
+                    province: province,
+                    city: city,
+                    postal_code: postal_code,
+                    skills: skills,
+                    area_of_study: area_of_study,
+                    level_of_study: level_of_study,
+                    need_financial_aid: need_financial_aid,
+                    research_interest: research_interest,
+                    intended_start_date: intended_start_date,
                 };
                 //profileData['skills'] = req.body.skill.split(",");
                 profileModel.createProfile(profileData, function(status){
                     if (status == 'ok'){
-                        res.json({status:status, flag:1});
+                        //res.json({status:status, flag:1});
                     }else {
-                        res.json({status:status, flag:0});
+                        //res.json({status:status, flag:0});
                     }
                 });
+
                 // var educationData = req.body;
                 // educationModel.createEducation(educationData,function (status) {
                 //     if (status == 'ok'){
@@ -162,8 +214,37 @@ router.post('/create_profile', function(req, res){
                 // matching(projects, profiles, 0.6)
             }
         });
+        educationModel.listByOwner({owner: req.session.user.username}, function(err, data) {
+            if (err){
+                res.redirect('/404');
+            }else{
+                educationModel.createEducation(education, function(status){
+                    if (status == 'ok'){
+                        console.log(education);
+                        //res.json({status:status, flag:1});
+                    }else {
+                        //res.json({status:status, flag:0});
+                    }
+                });
+            }
+        });
+        experienceModel.listByOwner({owner: req.session.user.username}, function(err, data) {
+            if (err){
+                res.redirect('/404');
+            }else{
+                experienceModel.createExperience(experience, function(status){
+                    if (status == 'ok'){
+                        console.log(experience);
+                        res.json({status:status, flag:1});
+                    }else {
+                        res.json({status:status, flag:0});
+                    }
+                });
+            }
+        });
+
+
     }else {
-        res.json({status:"not login", flag:0});
     }
 });
 

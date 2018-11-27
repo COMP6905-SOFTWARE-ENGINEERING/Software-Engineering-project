@@ -25,12 +25,12 @@ exports.listByOwner = function(reqData, callback){
         }else {
             callback(null, data);
         }
-    });
+        });
 };
 
 exports.createEducation = function(reqData, callback){
     var Data = reqData;
-    educationModel.create(Data, function(err, data){
+    educationModel.insertMany(Data, function(err, data){
         if (err){
             callback(err);
         }else {

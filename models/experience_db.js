@@ -12,8 +12,7 @@ var experienceSchema = new Schema({
     title: String,
     company: String,
     startDate: Date,
-    endDate: Date,
-    description: String,
+    endDate: Date
 });
 
 var experienceModel = mongoose.model('experience', experienceSchema);
@@ -31,7 +30,7 @@ exports.listByOwner = function(reqData, callback){
 
 exports.createExperience = function(reqData, callback){
     var Data = reqData;
-    experienceModel.create(Data, function(err, data){
+    experienceModel.insertMany(Data, function(err, data){
         if (err){
             callback(err);
         }else {
