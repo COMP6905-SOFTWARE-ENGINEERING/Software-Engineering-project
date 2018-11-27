@@ -109,6 +109,7 @@
                             <!-- Text input-->
                             <div class="form-group">
                                 <div class="col-sm-10">
+
                                     <input type="text" id="addressLine2" placeholder="Address Line 2" class="form-control">
                                 </div>
                             </div>
@@ -121,9 +122,11 @@
                             <!-- Text input-->
                             <div class="form-group">
                                 <div class="col-sm-4">
+                                    <span id="errormsg2"> </span>
                                     <input type="text" id="city" placeholder="City" class="form-control">
                                 </div>
                                 <div class="col-sm-4">
+                                    <span id="errormsg3"> </span>
                                     <input type="text" id="province" placeholder="Province" class="form-control">
                                 </div>
 
@@ -131,9 +134,11 @@
 
                             <div class="form-group">
                                 <div class="col-sm-4">
+                                    <span id="errormsg4"> </span>
                                     <input type="text" id="country" placeholder="Country" class="form-control">
                                 </div>
                                 <div class="col-sm-4">
+                                    <span id="errormsg5"> </span>
                                     <input type="text" id="postalCode" placeholder="Zip/Postal Code" class="form-control">
                                 </div>
                             </div>
@@ -147,7 +152,9 @@
                             <div class="educationFields">
                                 <!-- <h4><STRONG>Education :</STRONG></h4> -->
                                 <div class="blockDetails">
+                                    <span id="errormsg61"> </span>
                                     <label for="level"><span>Level of Education:</span></label>
+
                                     <select class="form-control form-control-sm educationSpacing" name="levelOfEd" id="edProgramLevel">
                                         <option value="">Select an option...</option>
                                         <option value="Bachelors">Bachelors</option>
@@ -155,8 +162,9 @@
                                         <option value="Phd">Phd</option>
                                     </select>
                                     <span class="error"></span>
-
+                                    <span id="errormsg62"> </span>
                                     <label for="field"><span>Program Name:</span></label>
+
                                     <select class="form-control form-control-sm educationSpacing" name="edProg" id="edProgram">
                                         <option value="">Select an option...</option>
                                         <option value="Electronics and Communications">Electronics and Communications</option>
@@ -169,6 +177,7 @@
                                     <span class="error"></span>
 
                                     <div class="clear"></div>
+                                    <span id="errormsg63"> </span>
                                     <label for="name">Institution Name:</label>
                                     <input type="text" class="form-control educationSpacing" name="edInst" id="edInstitution" >
 
@@ -196,7 +205,7 @@
                         <legend>Skills :</legend>
                         <div id="skillsFieldsWrapper">
                             <div class="skillFields skillBlock">
-
+                                <span id="errormsg7"> </span>
                                 <label for="skill">Skill Name :</label>
                                 <input type="text" class="form-control skill" id="skills">
 
@@ -208,6 +217,7 @@
                         <legend>Research Interest :</legend>
                         <div id="researchFieldsWrapper">
                             <div class="researchFields skillBlock">
+                                <span id="errormsg8"> </span>
                                 <label for="research">Interest Name :</label>
                                 <input type="text" class="form-control resrch" id="researchId">
                             </div>
@@ -219,13 +229,16 @@
                         <div id="expFieldsWrapper">
                             <div class="expFields">
                                 <div class="blockDetails">
+                                    <span id="errormsg9"> </span>
                                     <label for="comp">Company Name :</label>
                                     <input type="text" class="form-control exp" id="weCompany">
+                                    <span id="errormsg10"> </span>
                                     <label for="title">Title :</label>
                                     <input type="text" class="form-control exp" id="weTitle">
-
+                                    <span id="errormsg11"> </span>
                                     <label for="startDate">Start Date :</label>
                                     <input type="date" class="form-control exp" id="weStartDate">
+                                    <span id="errormsg12"> </span>
                                     <label for="endDate">End Date :</label>
                                     <input type="date" class="form-control exp" id="weEndDate">
                                     <hr>
@@ -236,6 +249,7 @@
 
                         <legend>Intended Program of Study :</legend>
                         <div class="blockDetails">
+                            <span id="errormsg13"> </span>
                             <label for="area"><span>Area :</span></label>
                             <select class="form-control form-control-sm oth" id="psArea">
                                 <option value="">Select an option...</option>
@@ -256,6 +270,7 @@
                                 <option value="Nursing">Nursing</option>
                                 <option value="Professional Programs">Professional Programs</option>
                             </select>
+                            <span id="errormsg14"> </span>
                             <label for="level"><span>Level of Education:</span></label>
                             <select class="form-control form-control-sm oth" id="psLevel">
                                 <option value="">Select an option...</option>
@@ -279,7 +294,7 @@
                             <!--<option value="">Select an option...</option>-->
 
                             <!--</select>-->
-
+                            <span id="errormsg15"> </span>
                             <label for="projDate">Intended Start Date:</label>
                             <input type="date" class="form-control oth" id="projDate">
                             <label for="fund">Require Financial Aid? :</label>
@@ -294,6 +309,24 @@
                         </div>
                     </fieldset>
                 </form>
+                <dialog id="favDialog" style="width:20%;border-radius:30px;background-color:#862633;">
+                    <form method="dialog">
+                        <p style="color: white;margin-left: 30px;">Please fill all mandatory details</p>
+                        <menu>
+                            <button style="margin-left:50px;border-radius: 35px;">Ok</button>
+
+                        </menu>
+                    </form>
+                </dialog>
+                <dialog id="favDialogSuccess" style="width:20%;border-radius:30px;background-color:#862633;">
+                    <form method="dialog">
+                        <p style="color: white;margin-left: 30px;">Profile created successfully</p>
+                        <menu>
+                            <button style="margin-left:50px;border-radius: 35px;" onclick="successSubmission()">Ok</button>
+
+                        </menu>
+                    </form>
+                </dialog>
                 <button type="submit" class="btn btn-primary allButtons profileSubmit" onclick="profileCreateSubmit()">Submit</button>
             </div>
 

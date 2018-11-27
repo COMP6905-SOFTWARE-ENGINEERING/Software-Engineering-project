@@ -3,9 +3,13 @@ function viewProfile() {
 }
 
 
-function viewMatches() {
-    window.location.href = "/match/result";
+function viewMatchesStudent() {
+    window.location.href = "match/result_for_student";
 }
+function viewMatchesProf() {
+    window.location.href = "match/result_for_manager";
+}
+
 
 function chatBox()
 {

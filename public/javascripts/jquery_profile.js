@@ -17,8 +17,8 @@ function exp() {
 
 
 }
-function backToProfileList(){
-    window.location.href = "/user/profileview";
+function successSubmission(){
+    window.location.href = "/index";
 };
 
 function profileCreateSubmit(){
@@ -129,51 +129,6 @@ function profileCreateSubmit(){
 //End of Exp
 
 
-
-
-//testing
-
-   //  var isValid=true;
-   //
-   //
-   //  if(addressLine1=='') {
-   //      isValid = false;
-   //      $('#errormsg1').html('<div class="alert alert-danger">Please enter your address</div>');
-   //  }
-   //
-   //  else
-   //  {
-   //      $('#errormsg1').html('');
-   //  }
-   //
-   //  if(isValid==true)
-   //  {
-   //      var studentData={
-   //
-   //          address1:addressLine1,
-   //          edProgramLevel:edProgramLevel
-   //      };
-   // $.ajax({
-   //     url:'/user/create_profile',
-   //      type:'POST',
-   //     data:studentData,
-   //      success: function (data) {
-   //         $('#addressLine1').val('');
-   //         $('#edProgramLevel').val('');
-   //
-   //      }
-   //
-   // });
-   //  }
-   //  else
-   //  {
-   //      return false;
-   //  }
-
-
-    //end of testing
-
-
     var psArea = $("#psArea").val();
     var psLevel = $("#psLevel").val();
     // var psSpeLevel = $("#psSpeLevel").val();
@@ -181,44 +136,233 @@ function profileCreateSubmit(){
     // var psAdTerm = $("#psAdTerm").val();
     var projDate = $("#projDate").val();
 
-    var postData =
-        {
-            user_id:$(".hidden_userid").val(),
-            address: addressLine1+','+addressLine2+','+addressLine3,
-            country:country,
-            province:province,
-            city:city,
-            postal_code:postalCode,
-            educationLevel:edlevelFull,
-            educationProgram:edProgramFull,
-            educationInstitution:edInstitutionFull,
-            weCompany:cmpNameFull,
-            weTitle:cmpTitleFull,
-            weStartDate:cmpstrtDateFull,
-            weEndDate:cmpEndDateFull,
-            skills:skillsArray.join(),
-            area_of_study:psArea,
-            level_of_study:psLevel,
-            need_financial_aid:nfs,
-            research_interest:researchArray.join(),
-            intended_start_date:projDate
 
-        }
-    postUrl = '/user/create_profile';
-    // alert(JSON.stringify(postData));
-    $.post(postUrl, postData, function(data, status){
-        if(status == 'success'){
-            if (data.flag == 0){
-                //for (var errPath in data.status.errors){
-                //    $(".error_"+errPath).text('×').attr("title", data.status.errors[errPath].message);
-                //}
-                alert(JSON.stringify(data.status));
-            }else {
-                alert('create successful');
-                window.location.href = "/index";
+//testing
+
+    var isValid=true;
+
+
+    if(addressLine1=='') {
+        isValid = false;
+        $('#errormsg1').html('<div class="alert alert-danger">Please enter your address</div>');
+    }
+
+    else
+    {
+        $('#errormsg1').html('');
+    }
+    if(city=='') {
+        isValid = false;
+        $('#errormsg2').html('<div class="alert alert-danger">Please enter city</div>');
+    }
+
+    else
+    {
+        $('#errormsg2').html('');
+    }
+    if(province=='') {
+        isValid = false;
+        $('#errormsg3').html('<div class="alert alert-danger">Please enter Province</div>');
+    }
+
+    else
+    {
+        $('#errormsg3').html('');
+    }
+    if(country=='') {
+        isValid = false;
+        $('#errormsg4').html('<div class="alert alert-danger">Please enter Country</div>');
+    }
+
+    else
+    {
+        $('#errormsg4').html('');
+    }
+    if(postalCode=='') {
+        isValid = false;
+        $('#errormsg5').html('<div class="alert alert-danger">Please enter Postal Code</div>');
+    }
+
+    else
+    {
+        $('#errormsg5').html('');
+    }
+    if(edProgramLevel=='') {
+        isValid = false;
+        $('#errormsg61').html('<div class="alert alert-danger">Please enter education details</div>');
+    }
+
+    else
+    {
+        $('#errormsg61').html('');
+    }
+    if(edProgram=='') {
+        isValid = false;
+        $('#errormsg62').html('<div class="alert alert-danger">Please enter education details</div>');
+    }
+
+    else
+    {
+        $('#errormsg62').html('');
+    }
+    if(edInstitution=='') {
+        isValid = false;
+        $('#errormsg63').html('<div class="alert alert-danger">Please enter education details</div>');
+    }
+
+    else
+    {
+        $('#errormsg63').html('');
+    }
+    if( $("#skills").val()=='') {
+        isValid = false;
+        $('#errormsg7').html('<div class="alert alert-danger">Please enter skills</div>');
+    }
+
+    else
+    {
+        $('#errormsg7').html('');
+    }
+    if( $("#researchId").val()=='') {
+        isValid = false;
+        $('#errormsg8').html('<div class="alert alert-danger">Please enter research</div>');
+    }
+
+    else
+    {
+        $('#errormsg8').html('');
+    }
+    if( $("#weCompany").val()=='') {
+        isValid = false;
+        $('#errormsg9').html('<div class="alert alert-danger">Please enter Company Name</div>');
+    }
+
+    else
+    {
+        $('#errormsg9').html('');
+    }
+    if( $("#weTitle").val()=='') {
+        isValid = false;
+        $('#errormsg10').html('<div class="alert alert-danger">Please enter Job title</div>');
+    }
+
+    else
+    {
+        $('#errormsg10').html('');
+    }
+    if( $("#weStartDate").val()=='') {
+        isValid = false;
+        $('#errormsg11').html('<div class="alert alert-danger">Please enter Start Date</div>');
+    }
+
+    else
+    {
+        $('#errormsg11').html('');
+    }
+    if( $("#weEndDate").val()=='') {
+        isValid = false;
+        $('#errormsg12').html('<div class="alert alert-danger">Please enter End Date</div>');
+    }
+
+    else
+    {
+        $('#errormsg12').html('');
+    }
+    if( $("#psArea").val()=='') {
+        isValid = false;
+        $('#errormsg13').html('<div class="alert alert-danger">Please enter Area of Study</div>');
+    }
+
+    else
+    {
+        $('#errormsg13').html('');
+    }
+    if( $("#psLevel").val()=='') {
+        isValid = false;
+        $('#errormsg14').html('<div class="alert alert-danger">Please enter Level of Study</div>');
+    }
+
+    else
+    {
+        $('#errormsg14').html('');
+    }
+    if( $("#projDate").val()=='') {
+        isValid = false;
+        $('#errormsg15').html('<div class="alert alert-danger">Please enter start date</div>');
+    }
+
+    else
+    {
+        $('#errormsg15').html('');
+    }
+
+
+
+
+
+
+    if(isValid==true)
+    {
+
+        var postData =
+            {
+                user_id:$(".hidden_userid").val(),
+                address: addressLine1+','+addressLine2+','+addressLine3,
+                country:country,
+                province:province,
+                city:city,
+                postal_code:postalCode,
+                educationLevel:edlevelFull,
+                educationProgram:edProgramFull,
+                educationInstitution:edInstitutionFull,
+                weCompany:cmpNameFull,
+                weTitle:cmpTitleFull,
+                weStartDate:cmpstrtDateFull,
+                weEndDate:cmpEndDateFull,
+                skills:skillsArray.join(),
+                area_of_study:psArea,
+                level_of_study:psLevel,
+                need_financial_aid:nfs,
+                research_interest:researchArray.join(),
+                intended_start_date:projDate
+
             }
-        }else {
-            alert('post failed');
-        }
-    });
+        postUrl = '/user/create_profile';
+        // alert(JSON.stringify(postData));
+        $.post(postUrl, postData, function(data, status){
+            if(status == 'success'){
+                if (data.flag == 0){
+                    //for (var errPath in data.status.errors){
+                    //    $(".error_"+errPath).text('×').attr("title", data.status.errors[errPath].message);
+                    //}
+                    alert(JSON.stringify(data.status));
+                }else {
+                    var favDialog = document.getElementById('favDialogSuccess');
+
+
+                    favDialog.showModal();
+                   // alert('create successful');
+                   //  window.location.href = "/index";
+                }
+            }else {
+                alert('post failed');
+            }
+        });
+    }
+    else
+    {
+        var favDialog = document.getElementById('favDialog');
+
+
+        favDialog.showModal();
+        // alert("Please fill all details");
+    }
+
+
+    //end of testing
+
+
+
+
+
 };
