@@ -101,8 +101,6 @@
 
                         <input type="hidden" class="hidden_userid" value="<%= userdata._id %>" disabled="disabled">
                         <% var sData=studentData;
-                        var eData=experienceData;
-                        var title=eData.title;
                         var full_address=sData.address;
                           var  cntry=sData.country;
                           var prv=sData.province;
@@ -123,8 +121,11 @@
                            {
                                needfinance='No';
                            }
+                           var expData=experienceData;
+                           var eData=educationData;
+                           // var expLength=expData.length;
                         %>
-                        <p>exp:<%= title %></p>
+
                         <!-- Address Section -->
                         <!-- Form Name -->
                         <legend>Address Details :</legend>
@@ -172,12 +173,21 @@
 
                         <!-- Education Section -->
                         <legend>Education Details :</legend>
-
                         <div class="blockDetails">
+                            <% for(var i=0; i<eData.length; i++) { %>
+
+                                <label for="level"><span>program Level:</span></label>
+                                <pre><%= eData[i].program_level%></pre>
+                                <label for="level"><span>Program Name:</span></label>
+                                <pre><%= eData[i].program%></pre>
+                                <label for="level"><span>Institution:</span></label>
+                                <pre><%= eData[i].institution%></pre>
 
 
-
+                                <hr>
+                            <% } %>
                         </div>
+
 
                         <!-- Skills Section -->
 
@@ -198,9 +208,11 @@
                         <legend>Research Interest :</legend>
                         <div class="blockDetails">
                             <div class="form-group">
-                                <% for(var i = 0; i < skills.length; ++i) {%>
+                                <div class="col-sm-10">
+                                <% for(var i = 0; i < researchInterest.length; ++i) {%>
                                     <pre><%= researchInterest[i]%></pre>
                                 <% } %>
+                                </div>
                             </div>
 
                         </div>
@@ -210,7 +222,28 @@
                         <legend>Work Experience :</legend>
 
 
+                                <div class="blockDetails">
+                                    <% for(var i=0; i<expData.length; i++) { %>
+                                        <label for="level"><span>Title:</span></label>
+                                        <pre><%= expData[i].title%></pre>
+                                        <label for="level"><span>Company:</span></label>
+                                        <pre><%= expData[i].company%></pre>
+                                        <label for="level"><span>Start Date:</span></label>
+                                        <pre><%= expData[i].startDate%></pre>
+                                        <label for="level"><span>End Date:</span></label>
+                                        <pre><%= expData[i].endDate%></pre>
+                                    <hr>
+                                        <% } %>
+                                </div>
+
+
+
+
+
+
+
                         <legend>Intended Program of Study :</legend>
+                        <div class="blockDetails">
                         <label for="level"><span>Area of Study:</span></label>
                         <pre><%= areaOfStudy%></pre>
                         <label for="level"><span>Level of Study:</span></label>
@@ -219,6 +252,7 @@
                         <pre><%= intStartDate%></pre>
                         <label for="level"><span>Need Financial Support:</span></label>
                         <pre><%= needfinance%></pre>
+                        </div>
 
                     </fieldset>
                 </form>
