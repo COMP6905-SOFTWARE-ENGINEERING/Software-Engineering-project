@@ -30,6 +30,7 @@ router.get('/dashboard', function(req, res){
     }
 });
 
+
 router.get('/profileview', function(req, res){
     if(req.session.user && req.session.user.usertype == 'student'){
         profileModel.listByOwner({owner: req.session.user.username}, function(err, data){

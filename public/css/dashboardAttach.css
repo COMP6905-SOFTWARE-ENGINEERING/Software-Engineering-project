@@ -82,8 +82,8 @@ section.cms-boxes .cms-boxes-items:hover {
 .radChange
 {
     border-radius: 35%;
-margin-bottom: 50px;
-    margin-left: 100px;
+    margin-bottom: 20%;
+    margin-left: 20%;
     border-color: white;
 
 
@@ -104,9 +104,8 @@ section.cms-boxes .cms-features
     background-color:#800000;
     border-bottom: 1px solid #862633;
 }
-#profile
-{
-    /*background-image: url("https://images.theconversation.com/files/222785/original/file-20180612-112602-1n6vzvh.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip");*/
+#profile {
+    /*background-image: url("");*/
 }
 #match{
 
@@ -129,11 +128,12 @@ section.cms-boxes .cms-features
     background: #ff0000;
 }
 .sidebar:after, body  .navbar-collapse:after {
-    background: linear-gradient(to bottom, #787878 0%, #f50e0e 100%);
+   // background: linear-gradient(to bottom, #787878 0%, #f50e0e 100%);
 }
 
+
 .navbar {
-    border-radius: 100px;
+    border-radius: 5px;
 }
 body {
     color: white;

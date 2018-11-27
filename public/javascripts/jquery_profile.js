@@ -210,7 +210,7 @@ function profileCreateSubmit(){
                 alert(JSON.stringify(data.status));
             }else {
                 alert('create successful');
-                window.location.href = "/user/dashboard";
+                window.location.href = "/index";
             }
         }else {
             alert('post failed');
