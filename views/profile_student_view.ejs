@@ -102,7 +102,7 @@
                         <input type="hidden" class="hidden_userid" value="<%= userdata._id %>" disabled="disabled">
                         <% var sData=studentData;
                         var eData=experienceData;
-                        var title=experienceData.title;
+                        var title=eData.title;
                         var full_address=sData.address.split();
                           var  cntry=sData.country;
                           var prv=sData.province;
@@ -124,7 +124,7 @@
                                needfinance='No';
                            }
                         %>
-                        <p><%= title %></p>
+                        <p>exp:<%= title %></p>
                         <!-- Address Section -->
                         <!-- Form Name -->
                         <legend>Address Details :</legend>
