@@ -112,7 +112,7 @@ router.post('/create_profile', function(req, res){
                 owner: owner,
                 institution: institution[i],
                 program: program[i],
-                program_level: program[i],
+                program_level: program_level[i],
             };
             education[i] = arrayEducation;
         }

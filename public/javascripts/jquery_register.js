@@ -37,7 +37,8 @@ $(document).ready(function(){
             $(".error_lastname").text('Last Name is a required field');
             return;
         }
-        var sex = document.getElementsByName('sex').value;
+        var ddSex = document.getElementById("sex");
+        var sex = ddSex.options[ddSex.selectedIndex].value;
 		var password = document.getElementById('password').value;
 		if (password.length == 0){
 			$(".error_password").text('Password is a required field');
