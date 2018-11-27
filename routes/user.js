@@ -115,9 +115,40 @@ router.post('/create_profile', function(req, res){
         var intended_start_date = req.body.intended_start_date;
 
         //EducationModel Data
-        let institution = req.body.educations;
-        var program = req.body.educations;
-        var program_level = req.body.educations;
+        let institution = req.body.educationInstitution.split(',');
+        var program = req.body.educationProgram.split(',');
+        var program_level = req.body.educationLevel.split(',');
+
+        var education = [institution.length];
+        var i = 0;
+        for (i=0; i<institution.length;i++){
+            var arrayEducation = {
+                owner: owner,
+                institution: institution[i],
+                program: program[i],
+                program_level: program[i],
+            };
+            education[i] = arrayEducation;
+        }
+
+        //Work Experience Data
+        var weCompany = req.body.weCompany.split(',');
+        var weTitle = req.body.weTitle.split(',');
+        var weStartDate = req.body.weStartDate.split(',');
+        var weEndDate = req.body.weEndDate.split(',');
+
+        var experience = [weCompany.length];
+        var i = 0;
+        for (i=0; i<weCompany.length;i++){
+            var arrayExperience = {
+                owner: owner,
+                title: weCompany[i],
+                company: weTitle[i],
+                startDate: weStartDate[i],
+                endDate:weEndDate[i]
+            };
+            experience[i] = arrayExperience;
+        }
 
         profileModel.listByOwner({owner: req.session.user.username}, function(err, data){
             // ProfileModel Data
@@ -147,6 +178,7 @@ router.post('/create_profile', function(req, res){
                         //res.json({status:status, flag:0});
                     }
                 });
+
                 // var educationData = req.body;
                 // educationModel.createEducation(educationData,function (status) {
                 //     if (status == 'ok'){
@@ -185,14 +217,23 @@ router.post('/create_profile', function(req, res){
             if (err){
                 res.redirect('/404');
             }else{
-                var educationData = {
-                    owner: owner,
-                    institution: institution,
-                    program: program,
-                    program_level: program_level,
-                };
-                educationModel.createEducation(educationData, function(status){
+                educationModel.createEducation(education, function(status){
                     if (status == 'ok'){
+                        console.log(education);
+                        //res.json({status:status, flag:1});
+                    }else {
+                        //res.json({status:status, flag:0});
+                    }
+                });
+            }
+        });
+        experienceModel.listByOwner({owner: req.session.user.username}, function(err, data) {
+            if (err){
+                res.redirect('/404');
+            }else{
+                experienceModel.createExperience(experience, function(status){
+                    if (status == 'ok'){
+                        console.log(experience);
                         res.json({status:status, flag:1});
                     }else {
                         res.json({status:status, flag:0});
@@ -203,7 +244,6 @@ router.post('/create_profile', function(req, res){
 
 
     }else {
-        res.json({status:"not login", flag:0});
     }
 });
 
