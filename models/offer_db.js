@@ -4,10 +4,14 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var offerSchema = new Schema({
     decision: Boolean,
-    match:{
+    owner:{
         type:Schema.Types.ObjectId,
-        ref: 'match'
+        ref: 'users'
     },
+    project:{
+        type:Schema.Types.ObjectId,
+        ref: 'project'
+    }
 });
 
 var offerModel = mongoose.model('offer', offerSchema);

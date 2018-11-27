@@ -7,10 +7,8 @@ var educationModel = require('../models/education_db');
 var experienceModel = require('../models/experience_db');
 var userModel = require('../models/user_mgmt_db.js');
 var countryModel = require('../models/country_db.js');
-var areaModel = require('../models/area_db.js');
-var mongo = require('mongodb');
-var assert = require('assert');
 var dbURL = require('../config/default');
+var milestoneModel = require('../models/milestone_db');
 
 
 router.get('/dashboard', function(req, res){
@@ -77,7 +75,7 @@ router.get('/create_profile', function(req, res){
                     title:'Create Profile',
                     userdata: req.session.user,
                     countries: countries,
-                    programs: programs,
+                    programs: programs
                 });
             }else {
                 res.json(err);
@@ -179,23 +177,6 @@ router.post('/create_profile', function(req, res){
                         //res.json({status:status, flag:0});
                     }
                 });
-
-                // var educationData = req.body;
-                // educationModel.createEducation(educationData,function (status) {
-                //     if (status == 'ok'){
-                //         res.json({status:status, flag:1});
-                //     }else {
-                //         res.json({status:status, flag:0});
-                //     }
-                // });
-                // var experienceData = req.body;
-                // experienceModel.createExperience(experienceData,function (status) {
-                //     if (status == 'ok'){
-                //         res.json({status:status, flag:1});
-                //     }else {
-                //         res.json({status:status, flag:0});
-                //     }
-                // });
                 // trigger match process
                 // var projects = projectModel.findAll(function (status) {
                 //     if (status == 'ok'){
@@ -233,6 +214,26 @@ router.post('/create_profile', function(req, res){
                 res.redirect('/404');
             }else{
                 experienceModel.createExperience(experience, function(status){
+                    if (status == 'ok'){
+                        console.log(experience);
+                        //res.json({status:status, flag:1});
+                    }else {
+                        //res.json({status:status, flag:0});
+                    }
+                });
+            }
+        });
+        experienceModel.listByOwner({owner: req.session.user.username}, function(err, data) {
+            if (err){
+                res.redirect('/404');
+            }else {
+                var today = new Date();
+                var milestone = {
+                    owner: owner,
+                    event: "Application Profile created",
+                    date: today
+            }
+                milestoneModel.createMilestone(milestone, function(status){
                     if (status == 'ok'){
                         console.log(experience);
                         res.json({status:status, flag:1});
