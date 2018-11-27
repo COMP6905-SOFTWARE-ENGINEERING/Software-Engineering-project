@@ -9,6 +9,8 @@ var userModel = require('../models/user_mgmt_db.js');
 var countryModel = require('../models/country_db.js');
 var dbURL = require('../config/default');
 var milestoneModel = require('../models/milestone_db');
+var userModel = require('../models/user_mgmt_db.js');
+var programModel = require('../models/area_db');
 
 
 router.get('/dashboard', function(req, res){
@@ -51,11 +53,6 @@ router.get('/profileview', function(req, res){
     }
 });
 
-//Testing by :Mahesh
-//method: get
-
-
-//
 
 router.get('/create_profile', function(req, res){
     if(req.session.user && req.session.user.usertype == 'student'){
@@ -70,12 +67,24 @@ router.get('/create_profile', function(req, res){
                     console.log(countries);
                 });
 
-                var programs=[];
+                var personalData = {};
+                userModel.userAccInfo({username:req.session.user.user_id}, function(err, data){
+                    personalData = data;
+                    console.log(data);
+                });
+
+                var programs = [];
+                programModel.findAll(function (err, data) {
+                    programs = data;
+                    console.log(programs);
+                });
+
                 res.render('profile_create', {
                     title:'Create Profile',
                     userdata: req.session.user,
                     countries: countries,
-                    programs: programs
+                    programs: programs,
+                    personalData:personalData,
                 });
             }else {
                 res.json(err);

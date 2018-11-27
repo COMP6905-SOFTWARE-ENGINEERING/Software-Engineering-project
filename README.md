@@ -40,14 +40,8 @@ Once the student receives the offer, he can accept or decline it on the system. 
 
  **5 Run app**
 
-
-We already change our start service command from
 ```
- $ node server.js &
- ```
- to
- ```
- $ nodemon bin/www
+ $ node app.js
  ```
 
 
