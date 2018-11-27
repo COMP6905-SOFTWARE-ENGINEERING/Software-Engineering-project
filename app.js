@@ -67,7 +67,7 @@ app.use('/project', projectRouter);
 app.use('/starting', startingRouter);
 app.use('/match', matchRouter);
 app.use('/dashboard', dashboardRouter);
-app.use('/monitorRouter', monitorRouter);
+app.use('/monitor', monitorRouter);
 app.get('/', function(req, res) {
     res.redirect('/index');
  });
