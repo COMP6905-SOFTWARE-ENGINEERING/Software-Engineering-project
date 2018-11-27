@@ -11,3 +11,9 @@ function chatBox()
 {
     window.location.href = "match/communication";
 }
+
+function monitoring()
+{
+    window.location.href = "/dashboard/monitor";
+}
+
