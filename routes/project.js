@@ -68,12 +68,16 @@ router.post('/create_project', function(req, res){
             required_program: req.body.required_program,
             start_date: req.body.start_date,
         };
+        // step 1. create the project
         projectModel.createProject(projectData, function(status){
             if (status == 'ok'){
+                // step 2. fetch all projects
                 projectModel.findAll(function(status, projects) {
                     if (status == 'ok'){
+                        // step 3. fetch all profiles
                         profileModel.findAll(function(status, profiles) {
                             if (status == 'ok'){
+                                // step 4. call the matching algorithm
                                 matching(projects, profiles, 0.1)
                             }else{
                                 console.log(status)
