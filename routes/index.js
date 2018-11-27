@@ -2,15 +2,23 @@ var express = require('express');
 var router = express.Router();
 var url = require('url');
 var staticModel = require('../models/static_db.js');
+var profileModel = require('../models/profile_db');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
     if (req.session.user){
+        console.log(req.session);
+
+        var studentData = {};
+        profileModel.userAccInfo({username:req.session.user.username}, function(err, data){
+            console.log("No error");
+            studentData = data;
+            console.log(data);
+        });
         res.render('index', {
             title: 'Graduate Recruitment System',
             userdata: req.session.user,
-            // username: req.session.user.username,
-            // usertype: req.session.user.usertype
+            studentData:studentData
         });
     }else{
         res.redirect('/starting');

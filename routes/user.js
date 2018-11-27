@@ -69,23 +69,21 @@ router.get('/create_profile', function(req, res){
 
                 var personalData = {};
                 userModel.userAccInfo({username:req.session.user.user_id}, function(err, data){
-                    console.log("No error");
                     personalData = data;
                     console.log(data);
                 });
 
-                var programData=[];
-                programModel.findAll({}, function(err, data){
-                    console.log("No error");
-                    programData = data;
-                    console.log(data);
+                var programs = [];
+                programModel.findAll(function (err, data) {
+                    programs = data;
+                    console.log(programs);
                 });
 
                 res.render('profile_create', {
                     title:'Create Profile',
                     userdata: req.session.user,
                     countries: countries,
-                    programData: programData,
+                    programs: programs,
                     personalData:personalData,
                 });
             }else {
