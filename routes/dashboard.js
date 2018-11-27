@@ -39,7 +39,7 @@ router.get('/profile_student_monitor', function(req, res){
                     console.log(courseData);
                 });
 
-                res.render('profile_student_monitor', {
+                    res.render('profile_student_monitor', {
                     title: 'Monitor Progress',
                     userdata: req.session.user,
                     //maxpage: parseInt((data.length-1)/10)+1,
