@@ -9,6 +9,7 @@ function match(projects, students, threshold){
     //         console.log('set status disabled failed')
     //     }
     // })
+    // actual matching procedure
     for(var i = 0; i < projects.length; i++){
         for(var j = 0; j < students.length; j++){
             score = 0;
