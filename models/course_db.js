@@ -27,3 +27,13 @@ exports.listByOwner = function(reqData, callback){
         }
     });
 };
+
+exports.findById = function(reqData, callback){
+    courseModel.findById(reqData._id, function(err, data){
+        if(err){
+            callback(err, null);
+        }else {
+            callback(null, data);
+        }
+    });
+};

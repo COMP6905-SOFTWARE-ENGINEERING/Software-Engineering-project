@@ -8,13 +8,6 @@ var milestoneModel = require('../models/milestone_db');
 var offerModel = require('../models/offer_db');
 var courseModel = require('../models/course_db');
 
-router.get('dashboard', function (req, res) {
-    console.log('Dashboard');
-    res.render('profile_student_view', {
-        title: "Dashboard",
-
-    });
-});
 
 router.get('/monitor', function(req, res){
     if(req.session.user && req.session.user.usertype == 'student'){
@@ -40,21 +33,21 @@ router.get('/monitor', function(req, res){
                     console.log(offerData);
                 });
 
-                var courseData = {};
-                courseData.findById({user_id:req.session.user.user_id}, function(err, data){
-                    console.log("No error");
-                    courseData = data;
-                    console.log(courseData);
-                });
+                // var courseData = {};
+                // courseData.findById({user_id:req.session.user.user_id}, function(err, data){
+                //     console.log("No error");
+                //     courseData = data;
+                //     console.log(courseData);
+                // });
 
-                    res.render('profile_student_monitor', {
+                    res.render('monitor', {
                     title: 'Monitor Progress',
                     userdata: req.session.user,
                     //maxpage: parseInt((data.length-1)/10)+1,
                     personalData:personalData,
                     milestoneData:milestoneData,
                     offerData:offerData,
-                    courseData:courseData
+                    //courseData:courseData
                 });
 
             }else{
