@@ -66,41 +66,14 @@
                 <form class="form-horizontal" role="form" >
                     <fieldset>
 
-                        <!-- Form Name -->
-                        <legend>Personal Information Details :</legend>
 
-                        <!-- Text input-->
-                        <div class="blockDetails">
-                            <div class="form-group">
-                                <div class="col-sm-4">
-                                    <input type="text" name="fistName" placeholder="First Name" class="form-control">
-                                </div>
-                                <div class="col-sm-2">
-                                    <input type="text" name="middleName" placeholder="Middle Name" class="form-control">
-                                </div>
-                                <div class="col-sm-4">
-                                    <input type="text" name="lastName" placeholder="Last Name" class="form-control">
-                                </div>
-                            </div>
-
-                            <!-- Text input-->
-                            <div class="form-group">
-                                <div class="col-sm-4">
-                                    <input type="date" placeholder="Date Of Birth" class="form-control">
-                                </div>
-                                <div class="col-sm-4">
-                                    <select type="gender" placeholder="Gender" class="form-control">
-                                        <option value="female">Male</option>
-                                        <option value="male">Female</option>
-                                    </select>
-                                </div>
-                            </div>
-
-
-                        </div>
 
                         <input type="hidden" class="hidden_userid" value="<%= userdata._id %>" disabled="disabled">
-                        <% var sData=studentData;
+                        <%var perData=personalData;
+                         var firName=perData.firstname;
+                         var lasName=perData.lastname;
+                         var mail=perData.email;
+                        var sData=studentData;
                         var full_address=sData.address;
                           var  cntry=sData.country;
                           var prv=sData.province;
@@ -125,6 +98,35 @@
                            var eData=educationData;
                            // var expLength=expData.length;
                         %>
+
+                        <!-- Form Name -->
+                        <legend>Personal Information Details :</legend>
+
+                        <!-- Text input-->
+                        <div class="blockDetails">
+                            <div class="form-group">
+                                <div class="col-sm-4">
+                                    <label for="level"><span>First Name:</span></label>
+                                    <pre><%= firName %> </pre>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <label for="level"><span>Last Name:</span></label>
+                                    <pre><%= lasName %> </pre>
+                                </div>
+                            </div>
+
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <div class="col-sm-8">
+                                    <label for="level"><span>Email:</span></label>
+                                    <pre><%= mail %> </pre>
+                                </div>
+
+                            </div>
+
+
+                        </div>
 
                         <!-- Address Section -->
                         <!-- Form Name -->
