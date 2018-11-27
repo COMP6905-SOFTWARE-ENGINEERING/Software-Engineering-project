@@ -33,36 +33,68 @@
 
             <ul class="nav">
                 <li class="active">
-                    <a href="dashboard.ejs">
+                    <a href="index.ejs">
                         <i class="pe-7s-graph"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li>
-                    <a href="/dashboard/profile_student_view"  >
-                        <i class="pe-7s-user" onclick="viewProfile()"></i>
-                        <p>View Profile</p>
-                    </a>
-                </li>
+                <% if (userdata.usertype == 'student'){ %>
+                    <li>
+                        <a href="/dashboard/profile_student_view"  >
+                            <i class="pe-7s-user" onclick="viewProfile()"></i>
+                            <p>View Profile</p>
+                        </a>
+                    </li>
 
-                <li>
-                    <a href="/match/result">
-                        <i class="pe-7s-note2"></i>
-                        <p>Matched Projects</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <i class="pe-7s-note2"></i>
-                        <p>Progress</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="/user/create_profile">
-                        <i class="pe-7s-note2"></i>
-                        <p>Create Profile</p>
-                    </a>
-                </li>
+                    <li>
+                        <a href="/match/result">
+                            <i class="pe-7s-note2"></i>
+                            <p>Matched Projects</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="pe-7s-note2"></i>
+                            <p>Progress</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/user/create_profile">
+                            <i class="pe-7s-note2"></i>
+                            <p>Create Profile</p>
+                        </a>
+                    </li>
+                <% }else if (userdata.usertype == 'manager') { %>
+                    <li>
+                        <a href="/project/create_project">
+                            <i class="pe-7s-note2"></i>
+                            <p>Create Project</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/dashboard/profile_student_view"  >
+                            <i class="pe-7s-user" onclick="viewProfile()"></i>
+                            <p>List of Projects</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/match/result">
+                            <i class="pe-7s-note2"></i>
+                            <p>Matched Projects</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="pe-7s-note2"></i>
+                            <p>Student Progress</p>
+                        </a>
+                    </li>
+
+                <% }else { %>
+
+                <% } %>
+
 
 
 
@@ -116,7 +148,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                             <a href="#">
-                                <span>Mahesh</span>
+                                <span><%= userdata.firstname %></span>
 
                             </a>
 
@@ -132,71 +164,142 @@
                 </div>
             </div>
         </nav>
-
-        <div class="content">
-            <div class="container">
-                <section class="cms-boxes">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-4 cms-boxes-outer " >
-                                <div class="cms-boxes-items cms-features radChange" id="profile" onclick="viewProfile()" >
-                                    <div class="boxes-align">
-                                        <div class="small-box">
-                                            <i class="fa fa-4x fa-user" onclick="viewProfile()">&nbsp;</i>
-                                            <h3>Profile</h3>
-                                            <p>Checkout your profile here</p>
+        <% if (userdata.usertype == 'student'){ %>
+            <div class="content">
+                <div class="container">
+                    <section class="cms-boxes">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-4 cms-boxes-outer " >
+                                    <div class="cms-boxes-items cms-features radChange" id="profile" onclick="viewProfile()" >
+                                        <div class="boxes-align">
+                                            <div class="small-box">
+                                                <i class="fa fa-4x fa-user" onclick="viewProfile()">&nbsp;</i>
+                                                <h3>Profile</h3>
+                                                <p>Checkout your profile here</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-1 cms-boxes-outer ">
-                            </div>
-                            <div class="col-md-4 cms-boxes-outer ">
-                                <div class="cms-boxes-items cms-features radChange" id="match" onclick="viewMatches()">
-                                    <div class="boxes-align">
-                                        <div class="small-box">
-                                            <i class="fa fa-4x fa-thumbs-up" onclick="viewMatches()">&nbsp;</i>
+                                <div class="col-md-1 cms-boxes-outer ">
+                                </div>
+                                <div class="col-md-4 cms-boxes-outer ">
+                                    <div class="cms-boxes-items cms-features radChange" id="match" onclick="viewMatches()">
+                                        <div class="boxes-align">
+                                            <div class="small-box">
+                                                <i class="fa fa-4x fa-thumbs-up" onclick="viewMatches()">&nbsp;</i>
 
 
-                                            <h3>Matched Projects</h3>
-                                            <p>You got new match</p>
+                                                <h3>Matched Projects</h3>
+                                                <p>You got new match</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="col-md-4 cms-boxes-outer ">
-                                <div class="cms-boxes-items cms-features radChange" id="chat">
-                                    <div class="boxes-align">
-                                        <div class="small-box">
-                                            <i class="fa fa-4x fa-envelope">&nbsp;</i>
-                                            <h3>Messenger</h3>
-                                            <p>You got a new message</p>
+                                <div class="col-md-4 cms-boxes-outer ">
+                                    <div class="cms-boxes-items cms-features radChange" id="chat">
+                                        <div class="boxes-align">
+                                            <div class="small-box">
+                                                <i class="fa fa-4x fa-envelope">&nbsp;</i>
+                                                <h3>Messenger</h3>
+                                                <p>You got a new message</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-1 cms-boxes-outer ">
-                            </div>
-                            <div class="col-md-4 cms-boxes-outer ">
-                                <div class="cms-boxes-items cms-features radChange" id="grades">
-                                    <div class="boxes-align">
-                                        <div class="small-box">
-                                            <i class="fa fa-4x fa-book">&nbsp;</i>
-                                            <h3>Grades</h3>
-                                            <p>Check out your performance here</p>
+                                <div class="col-md-1 cms-boxes-outer ">
+                                </div>
+                                <div class="col-md-4 cms-boxes-outer ">
+                                    <div class="cms-boxes-items cms-features radChange" id="grades">
+                                        <div class="boxes-align">
+                                            <div class="small-box">
+                                                <i class="fa fa-4x fa-book">&nbsp;</i>
+                                                <h3>Grades</h3>
+                                                <p>Check out your performance here</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+
+
                             </div>
+                        </div>
 
 
-                        </div></div>
-
+                    </section>
+                </div>
             </div>
-            </section>
-        </div>
-    </div>
+        <% }else if (userdata.usertype == 'manager') { %>
+            <div class="content">
+                <div class="container">
+                    <section class="cms-boxes">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-4 cms-boxes-outer " >
+                                    <div class="cms-boxes-items cms-features radChange" id="profile" onclick="viewProfile()" >
+                                        <div class="boxes-align">
+                                            <div class="small-box">
+                                                <i class="fa fa-4x fa-user" onclick="viewProfile()">&nbsp;</i>
+                                                <h3>My Projects</h3>
+                                                <p>Checkout all projects here</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-1 cms-boxes-outer ">
+                                </div>
+                                <div class="col-md-4 cms-boxes-outer ">
+                                    <div class="cms-boxes-items cms-features radChange" id="match" onclick="viewMatches()">
+                                        <div class="boxes-align">
+                                            <div class="small-box">
+                                                <i class="fa fa-4x fa-thumbs-up" onclick="viewMatches()">&nbsp;</i>
+
+
+                                                <h3>Matched Projects</h3>
+                                                <p>You got new match</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 cms-boxes-outer ">
+                                    <div class="cms-boxes-items cms-features radChange" id="chat">
+                                        <div class="boxes-align">
+                                            <div class="small-box">
+                                                <i class="fa fa-4x fa-envelope">&nbsp;</i>
+                                                <h3>Messenger</h3>
+                                                <p>You got a new message</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-1 cms-boxes-outer ">
+                                </div>
+                                <div class="col-md-4 cms-boxes-outer ">
+                                    <div class="cms-boxes-items cms-features radChange" id="grades">
+                                        <div class="boxes-align">
+                                            <div class="small-box">
+                                                <i class="fa fa-4x fa-book">&nbsp;</i>
+                                                <h3>Students Progress</h3>
+                                                <p>Check out your students performance here</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+                    </section>
+                </div>
+            </div>
+        <% }else { %>
+
+        <% } %>
+
 </div>
 </div>
 
