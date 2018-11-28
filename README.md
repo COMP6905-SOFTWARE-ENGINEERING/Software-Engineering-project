@@ -110,6 +110,13 @@ Once the student receives the offer, he can accept or decline it on the system. 
    
    >   View students progress
    
+   **Things which are yet to be implemented for future versions **
+    
+     > Student Progress
+     
+     > View and apply for matched projects 
+     
+   
 #  Contribution 
 
  **Mahesh Pochamreddy :**
