@@ -20,4 +20,8 @@ function monitoring()
 {
     window.location.href = "/dashboard/monitor";
 }
+function viewProfileManager()
+{
+    window.location.href = "/match/result_for_student";
 
+    }
