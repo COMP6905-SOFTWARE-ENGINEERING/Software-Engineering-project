@@ -156,7 +156,7 @@ router.post('/create_profile', function(req, res){
             experience[i] = arrayExperience;
         }
 
-        profileModel.listByOwner({owner: req.session.user.username}, function(err, data){
+        profileModel.find({owner: req.session.user._id}, function(err, data){
             // ProfileModel Data
 
             if (err){
@@ -222,7 +222,7 @@ router.post('/create_profile', function(req, res){
                 // matching(projects, profiles, 0.6)
             }
         });
-        educationModel.listByOwner({owner: req.session.user.username}, function(err, data) {
+        educationModel.find({owner: req.session.user._id}, function(err, data) {
             if (err){
                 res.redirect('/404');
             }else{
@@ -236,7 +236,7 @@ router.post('/create_profile', function(req, res){
                 });
             }
         });
-        experienceModel.listByOwner({owner: req.session.user.username}, function(err, data) {
+        experienceModel.find({owner: req.session.user._id}, function(err, data) {
             if (err){
                 res.redirect('/404');
             }else{
@@ -250,7 +250,7 @@ router.post('/create_profile', function(req, res){
                 });
             }
         });
-        experienceModel.listByOwner({owner: req.session.user.username}, function(err, data) {
+        experienceModel.find({owner: req.session.user._id}, function(err, data) {
             if (err){
                 res.redirect('/404');
             }else {

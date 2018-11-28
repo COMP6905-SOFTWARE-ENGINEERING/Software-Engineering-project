@@ -11,16 +11,21 @@ router.get('/', function(req, res, next) {
 
         var studentData = {};
         var studentdata2=[];
+        var profileExists = 1;
         profileModel.find({owner : req.session.user._id}, function(err, data){
             console.log("No error");
             studentData = data;
+            if(studentData.length==0)
+            {
+                profileExists = 0;
+            }
             studentData2=studentData[0];
-            console.log(studentData2);
+            console.log(profileExists);
         });
         res.render('index', {
             title: 'Graduate Recruitment System',
             userdata: req.session.user,
-            studentData:studentdata2
+            profileExists:profileExists
         });
     }else{
         res.redirect('/starting');
