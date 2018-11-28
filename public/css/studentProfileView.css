@@ -17,7 +17,7 @@ html *{
 
 .page-header .header-filter
 {
-    background-image: url("/home5.jpg");
+    background-image: url("../images/home5.jpg");
 }
 .header-filter:after, .header-filter:before {
     position: absolute;
