@@ -62,6 +62,7 @@ exports.userRegister = function(reqData, callback){
 		sex:reqData.sex,
 		password:reqData.password,
 		email: reqData.email,
+        usertype: reqData.usertype,
         date_of_birth: reqData.dob,
 	}, function(err, data){
 		if(err){

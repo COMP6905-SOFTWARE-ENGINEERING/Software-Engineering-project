@@ -10,12 +10,17 @@ router.get('/', function(req, res, next) {
 router.post('/',function(req, res){
 	var md5 = crypto.createHash('md5');
 	var password = md5.update(req.body.password).digest('hex');
+	var usertype = "student";
+	if (req.body.email.startsWith("pm")) {
+	    usertype = "manager";
+    }
     var registerData = {
         firstname: req.body.firstname,
         middlename:req.body.middlename,
         lastname: req.body.lastname,
         sex:req.body.sex,
         password: password,
+        usertype: usertype,
         email: req.body.email,
         dob: req.body.dob
     };
