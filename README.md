@@ -109,6 +109,7 @@ Once the student receives the offer, he can accept or decline it on the system. 
      
  **Sai Tarun Dasyam :**
  
+   * **Manager Login Frontend :**
      * Signup 
      * Dashboard 
      * Project Creation 
