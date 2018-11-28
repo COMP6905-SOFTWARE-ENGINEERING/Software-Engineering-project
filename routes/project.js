@@ -4,7 +4,6 @@ var url = require('url');
 var router = express.Router();
 var projectModel = require('../models/project_db.js');
 var profileModel = require('../models/profile_db.js');
-var matchModel = require('../models/match_db.js');
 var userModel = require('../models/user_mgmt_db.js');
 var matching = require('../algorithms/match.js');
 
@@ -78,7 +77,7 @@ router.post('/create_project', function(req, res){
                         profileModel.findAll(function(status, profiles) {
                             if (status == 'ok'){
                                 // step 4. call the matching algorithm
-                                matching(projects, profiles, 0.5)
+                                matching(projects, profiles, 0.2)
                             }else{
                                 console.log(status)
                             }

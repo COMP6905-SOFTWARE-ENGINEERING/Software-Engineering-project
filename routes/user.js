@@ -184,7 +184,7 @@ router.post('/create_profile', function(req, res){
                                 projectModel.findAll(function (status, projects) {
                                     if(status=='ok'){
                                         //Step 4. Call the maatching algorithm using profile and projects as inputs
-                                        matching(projects,profiles,0.1)
+                                        matching(projects,profiles,0.2)
                                     }else {
                                         console.log(status)
                                     }

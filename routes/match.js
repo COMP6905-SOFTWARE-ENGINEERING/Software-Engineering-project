@@ -12,7 +12,8 @@ router.get('/result_for_student', function(req, res) {
                 if(err){
                     console.log(err);
                 }else{
-                    res.render('match_student_view', {
+                    console.log(match_data);
+                    res.render('project_match', {
                         title: 'match result',
                         userdata: req.session.user,
                         status: 'ok',
