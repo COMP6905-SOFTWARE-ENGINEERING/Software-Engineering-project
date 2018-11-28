@@ -9,6 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
     <link rel="stylesheet" type="text/css" href="/css/manager_match.css">
+    <script type="text/javascript" src="../javascripts/manager_match.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-inverse ">
@@ -57,7 +58,7 @@
             <th scope="row">1</th>
             <td> <%= match_data[i].project.project_name %></td>
             <td> <%= match_data[i].student.address %></td>
-            <td><button type="button" class="btn btn-primary" id="student_monitor" on>Accept</button></td>
+            <td><button type="button" class="btn btn-primary" id="student_monitor" onclick="getData(match_data[i].project.project_name,match_data[i].student.address)">Accept</button></td>
             <td><button type="button" class="btn btn-primary" id="student_monitor">Chat</button></td>
         </tr>
         </tbody>
