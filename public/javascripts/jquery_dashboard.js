@@ -1,6 +1,9 @@
 function viewProfile() {
     window.location.href = "/dashboard/profile_student_view";
 }
+function createProfile() {
+    window.location.href = "/user/create_profile";
+}
 
 
 function viewMatchesStudent() {

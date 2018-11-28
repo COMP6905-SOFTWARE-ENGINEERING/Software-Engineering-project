@@ -41,6 +41,7 @@
                     </a>
                 </li>
                 <% if (userdata.usertype == 'student'){ %>
+                    <% if (profileExists==1){ %>
                     <li>
                         <a href="/dashboard/profile_student_view"  >
                             <i class="pe-7s-user" onclick="viewProfile()"></i>
@@ -60,12 +61,14 @@
                             <p>Progress</p>
                         </a>
                     </li>
+                        <% }else { %>
                     <li>
                         <a href="/user/create_profile">
                             <i class="pe-7s-note2"></i>
                             <p>Create Profile</p>
                         </a>
                     </li>
+                        <% } %>
                 <% }else if (userdata.usertype == 'manager') { %>
                     <li>
                         <a href="/project/create_project">
@@ -120,6 +123,7 @@
                 <div class="collapse navbar-collapse">
                     <% if (userdata.usertype == 'student'){ %>
                     <ul class="nav navbar-nav navbar-left">
+                        <% if (profileExists==1){ %>
                         <li>
                             <a href="/dashboard/profile_student_view">
                                 <i class="fa fa-4x fa-user" >&nbsp;</i>
@@ -140,6 +144,13 @@
                                 <i class="fa fa-4x fa-book">&nbsp;</i>
                             </a>
                         </li>
+                            <% }else { %>
+                                <li>
+                                    <a href="/user/create_profile">
+                                        <i class="fa fa-4x fa-user" >&nbsp;</i>
+                                    </a>
+                                </li>
+                            <% } %>
 
 
                     </ul>
@@ -193,6 +204,8 @@
                     <section class="cms-boxes">
                         <div class="container-fluid">
                             <div class="row">
+
+                                <% if (profileExists==1){ %>
                                 <div class="col-md-4 cms-boxes-outer " >
                                     <div class="cms-boxes-items cms-features radChange" id="profile" onclick="viewProfile()" >
                                         <div class="boxes-align">
@@ -214,7 +227,7 @@
 
 
                                                 <h3>Matched Projects</h3>
-                                                <p>Checkout your matched projects here</p>
+                                                <p>Checkout your matched projects here </p>
                                             </div>
                                         </div>
                                     </div>
@@ -225,7 +238,7 @@
                                         <div class="boxes-align">
                                             <div class="small-box">
                                                 <i class="fa fa-4x fa-envelope">&nbsp;</i>
-                                                <h3><%= profileExists %>Messenger</h3>
+                                                <h3>Messenger</h3>
                                                 <p>You can check your messages here</p>
                                             </div>
                                         </div>
@@ -244,7 +257,19 @@
                                         </div>
                                     </div>
                                 </div>
-
+                                    <% }else { %>
+                                        <div class="col-md-4 cms-boxes-outer " >
+                                            <div class="cms-boxes-items cms-features radChange" id="profile" onclick="createProfile()" >
+                                                <div class="boxes-align">
+                                                    <div class="small-box">
+                                                        <i class="fa fa-4x fa-user" onclick="createProfile()">&nbsp;</i>
+                                                        <h3>Profile</h3>
+                                                        <p>Create your profile here </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <% } %>
 
                             </div>
                         </div>
