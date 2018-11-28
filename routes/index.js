@@ -10,15 +10,17 @@ router.get('/', function(req, res, next) {
         //console.log(req.session);
 
         var studentData = {};
-        profileModel.userAccInfo({username:req.session.user.username}, function(err, data){
-            //console.log("No error");
+        var studentdata2=[];
+        profileModel.find({owner : req.session.user._id}, function(err, data){
+            console.log("No error");
             studentData = data;
-            //console.log(data);
+            studentData2=studentData[0];
+            console.log(studentData2);
         });
         res.render('index', {
             title: 'Graduate Recruitment System',
             userdata: req.session.user,
-            studentData:studentData
+            studentData:studentdata2
         });
     }else{
         res.redirect('/starting');
