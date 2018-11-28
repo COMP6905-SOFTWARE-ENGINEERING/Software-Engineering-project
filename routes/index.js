@@ -32,6 +32,7 @@ router.get('/cleanSession', function(req, res, next) {
         }else{
             res.clearCookie('mycookie');
             res.json({ret_code: 0, ret_msg: 'logout successfully'});
+            req.render('starting');
         }
     });
 });
