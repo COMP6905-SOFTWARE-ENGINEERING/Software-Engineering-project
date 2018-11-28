@@ -55,12 +55,16 @@
         <tbody>
         <tr>
             <th scope="row">1</th>
-            <td > <%=match_data[i].student.owner.firstname %></td>
+            <td> <%= match_data[i].student.owner.firstname %></td>
             <td> <%= match_data[i].student.address %></td>
+<<<<<<< HEAD
+            <td><button type="button" class="btn btn-primary" id="student_monitor" on>Accept</button></td>
+=======
 
 
             <td><button type="button" class="btn btn-primary" id="student_monitor" onclick="acceptOffer()">Accept</button></td>
 
+>>>>>>> 58d969b13930e24e8a71d1f8199a87cc814bc750
             <td><button type="button" class="btn btn-primary" id="student_monitor">Chat</button></td>
         </tr>
         </tbody>
@@ -68,6 +72,5 @@
         </thead>
     </table>
 </div>
-<script src="../javascripts/jquery_manager_match.js" type="text/javascript"></script>
 </body>
 </html>
