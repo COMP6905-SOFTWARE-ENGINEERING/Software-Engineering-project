@@ -112,7 +112,7 @@ Once the student receives the offer, he can accept or decline it on the system. 
    
 #  Contribution 
 
- **Mahesh Pochamreddy :**
+ **Mahesh Pochamreddy (10) :**
  
    * **Student Login Frontend :**
      * Landing page
@@ -124,7 +124,7 @@ Once the student receives the offer, he can accept or decline it on the system. 
      * Messenger
      * Monitor progress
      
- **Sai Tarun Dasyam :**
+ **Sai Tarun Dasyam (10):**
  
    * **Manager Login Frontend :**
      * Signup 
@@ -136,7 +136,7 @@ Once the student receives the offer, he can accept or decline it on the system. 
      * Accepted students page
      * Monitor progress
 
- **Yuhao Liao :**
+ **Yuhao Liao (10):**
  
    * **Build the Skeleton of the Project :**
      * Choose major packages for backend 
@@ -146,3 +146,12 @@ Once the student receives the offer, he can accept or decline it on the system. 
      * Integrate communication module
      * Joint debugging with frontend
      * Share technical doc
+
+** Oscar Lozano-Perez (10):**
+   * **Backend focus on the prospectiveStudent Actor:**
+     * Support for Front End integration
+     * Catalog design and creation
+     * Data Model creation
+     * WorkFlow Testing
+     * Bug Fixes
+
