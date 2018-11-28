@@ -55,7 +55,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
     secret: 'mycookie',
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
+    store: new MongoStore({ url: config.mongodb })
 }));
 
 app.use('/index', indexRouter);
