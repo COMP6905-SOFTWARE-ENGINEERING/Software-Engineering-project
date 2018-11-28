@@ -13,7 +13,7 @@ router.get('/result_for_student', function(req, res) {
                     console.log(err);
                 }else{
                     console.log(match_data)
-                    res.render('project_match', {
+                    res.render('match_student_view', {
                         title: 'match result',
                         userdata: req.session.user,
                         status: 'ok',
@@ -36,7 +36,7 @@ router.get('/result_for_manager', function(req, res) {
                     console.log(err);
                 }else{
                     console.log(match_data)
-                    res.render('manager_result', {
+                    res.render('manager_match', {
                         title: 'match result',
                         userdata: req.session.user,
                         status: 'ok',
