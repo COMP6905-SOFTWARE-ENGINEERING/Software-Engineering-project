@@ -22,6 +22,6 @@ function monitoring()
 }
 function viewProfileManager()
 {
-    window.location.href = "/match/result_for_student";
+    window.location.href = "/project/projectlist_manager";
 
     }
