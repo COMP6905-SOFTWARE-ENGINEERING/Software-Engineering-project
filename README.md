@@ -115,6 +115,6 @@ Once the student receives the offer, he can accept or decline it on the system. 
      * Project Creation 
      * Communication module 
      * List of all projects page
-     * Matched Projects page(Both student and manager)
+     * Matched Projects page
      * Accepted students page
      * Monitor progress
