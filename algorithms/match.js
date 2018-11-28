@@ -34,12 +34,12 @@ function match(projects, students, threshold){
                     student_id: students[j]._id,
                     created_at: Date.now(),
                     status: 'enabled'
-                }
-                matchModel.createMatch(matchData, function(status){
-                    if (status == 'ok'){
-                        console.log('insert match data successful')
-                    }else {
+                };
+                matchModel.create(matchData, function(err){
+                    if(err){
                         console.log('insert match data failed')
+                    }else{
+                        console.log('insert match data successful')
                     }
                 });
             }

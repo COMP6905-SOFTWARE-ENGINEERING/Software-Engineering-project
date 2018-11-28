@@ -15,4 +15,3 @@ log/
 config/*
 !config/default.js
 
-public/css/manager_match.js
