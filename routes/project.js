@@ -78,7 +78,7 @@ router.post('/create_project', function(req, res){
                         profileModel.findAll(function(status, profiles) {
                             if (status == 'ok'){
                                 // step 4. call the matching algorithm
-                                matching(projects, profiles, 0.1)
+                                matching(projects, profiles, 0.5)
                             }else{
                                 console.log(status)
                             }
