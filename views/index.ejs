@@ -55,18 +55,15 @@
                     <li>
                         <a href="">
                             <i class="pe-7s-note2"></i>
-                            <p>Progress :<%= studentData.address %> </p>
+                            <p>Progress</p>
                         </a>
                     </li>
-                    <% if (studentData.address == null){ %>
-                        <li>
-                            <a href="/user/create_profile">
-                                <i class="pe-7s-note2"></i>
-                                <p>Create Profile</p>
-                            </a>
-                        </li>
-                    <% } %>
-
+                    <li>
+                        <a href="/user/create_profile">
+                            <i class="pe-7s-note2"></i>
+                            <p>Create Profile</p>
+                        </a>
+                    </li>
                 <% }else if (userdata.usertype == 'manager') { %>
                     <li>
                         <a href="/project/create_project">
