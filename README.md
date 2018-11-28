@@ -98,6 +98,5 @@ Once the student receives the offer, he can accept or decline it on the system. 
    >  Signin page : Frontend
    
    >  Create profile  :Frontend
-   
    >> asasas
    
