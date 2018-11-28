@@ -28,12 +28,13 @@ router.get('/result_for_student', function(req, res) {
 router.get('/result_for_manager', function(req, res) {
     if (req.session.user){
         matchModel.find().
-            populate('project', 'project_name').
-            populate('student', 'address').
+            populate({path: 'project', select: 'project_name'}).
+            populate({path:'student', select: 'address', populate: { path: 'owner' }}).
             exec(function (err, match_data) {
                 if(err){
                     console.log(err);
                 }else{
+                    console.log(match_data);
                     res.render('manager_match', {
                         title: 'match result',
                         userdata: req.session.user,
