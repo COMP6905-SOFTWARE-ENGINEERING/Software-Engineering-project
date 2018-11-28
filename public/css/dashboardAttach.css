@@ -97,11 +97,11 @@ section.cms-boxes .cms-boxes-items:hover {
 }
 section.cms-boxes .cms-features
 {
-    background-color: #800000;
+    background-color: #34000d;
     /*background-image: url("https://images.theconversation.com/files/222785/original/file-20180612-112602-1n6vzvh.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip");*/
 }
 .navbar-default {
-    background-color:#800000;
+    background-color:#34000d;
     border-bottom: 1px solid #862633;
 }
 #profile
