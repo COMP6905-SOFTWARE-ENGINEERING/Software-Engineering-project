@@ -1,26 +1,36 @@
 var express = require('express');
 var router = express.Router();
-var projectModel = require('../models/project_db.js');
+var profileModel = require('../models/profile_db.js');
 var matchModel = require('../models/match_db.js');
 
 
 router.get('/result_for_student', function(req, res) {
     if (req.session.user){
-        matchModel.find({student: req.session.user._id})
-            .populate('project')
-            .exec(function(err, match_data) {
-                if(err){
-                    console.log(err);
-                }else{
-                    console.log(match_data);
-                    res.render('project_match', {
-                        title: 'match result',
-                        userdata: req.session.user,
-                        status: 'ok',
-                        data: match_data,
-                    });
-                }
-            })
+        profileModel.find({owner: req.session.user._id}, function(err, data){
+            if(err){
+                console.log(err)
+            }else{
+                matchModel.find({student: data[0]._id}).
+                populate({path: 'project', select: 'project_name project_description level_of_study required_program start_date available_funding'}).
+                exec(function(err, match_data) {
+                        if(err){
+                            console.log(err);
+                        }else{
+                            console.log(match_data);
+                            var project_data = [];
+                            for(var i = 0; i < match_data.length; i++){
+                                project_data.push(match_data[i].project);
+                            }
+                            res.render('project_match', {
+                                title: 'match result',
+                                userdata: req.session.user,
+                                status: 'ok',
+                                data: project_data,
+                            });
+                        }
+                    })
+            }
+        })
     }else {
         res.redirect('/login');
     }
