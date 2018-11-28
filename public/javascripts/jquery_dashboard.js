@@ -31,5 +31,9 @@ function logOut()
     window.location.href = "/starting";
 
 }
+function studentsProgress() {
+    window.location.href = "/dashboard/student_progress";
+
+}
 
 
