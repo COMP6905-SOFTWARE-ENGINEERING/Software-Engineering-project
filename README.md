@@ -94,7 +94,10 @@ Once the student receives the offer, he can accept or decline it on the system. 
  ** Mahesh Pochamreddy : **
  
    >  Landing page : Frontend
+   
    >  Signin page : Frontend
+   
    >  Create profile  :Frontend
+   
    >> asasas
    
