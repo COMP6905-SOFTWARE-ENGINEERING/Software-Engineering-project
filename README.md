@@ -56,7 +56,7 @@ Once the student receives the offer, he can accept or decline it on the system. 
 
   >  Click on "Get Started" page which will redirects to login page. 
   
-  >  If you dont have credentials you can regisetr as a new user . Fill the new register form and submit the details.you will redirect      to dash board.
+  >  If you dont have credentials you can register as a new user . Fill the new register form and submit the details.you will redirect      to dash board.
   
   >  On dashboard you can create profile by clicking on "create profile option available on sidebar". Note: Please donot try any other      buttons which will through error because we havent handled those due to time constarint.
   
