@@ -112,9 +112,9 @@ Once the student receives the offer, he can accept or decline it on the system. 
    
    **Things which are yet to be implemented for future versions **
     
-     > Student Progress
+     * Student Progress
      
-     > View and apply for matched projects 
+     * View and apply for matched projects 
      
    
 #  Contribution 
