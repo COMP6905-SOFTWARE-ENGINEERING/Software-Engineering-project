@@ -25,3 +25,11 @@ function viewProfileManager()
     window.location.href = "/project/projectlist_manager";
 
     }
+
+function logOut()
+{
+    window.location.href = "/starting";
+
+}
+
+
