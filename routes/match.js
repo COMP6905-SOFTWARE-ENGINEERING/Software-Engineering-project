@@ -40,7 +40,7 @@ router.get('/result_for_manager', function(req, res) {
     if (req.session.user){
         matchModel.find().
             populate({path: 'project', select: 'project_name'}).
-            populate({path:'student', select: 'address', populate: { path: 'owner' }}).
+            populate({path:'student', select: 'owner', populate: { path: 'owner' }}).
             exec(function (err, match_data) {
                 if(err){
                     console.log(err);

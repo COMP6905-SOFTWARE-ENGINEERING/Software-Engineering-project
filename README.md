@@ -139,7 +139,7 @@ Once the student receives the offer, he can accept or decline it on the system. 
  **Yuhao Liao :**
  
    * **Build the Skeleton of the Project :**
-     * Choice major packages for backend 
+     * Choose major packages for backend 
      * Deploy the node server and mongodb server
      * Design the workflow of the system
      * Implement matching algorithm

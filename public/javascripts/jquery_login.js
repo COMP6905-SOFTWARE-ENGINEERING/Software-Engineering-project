@@ -41,6 +41,8 @@ $(document).ready(function(){
 		}
 		// alert(JSON.stringify(postData));
 		$.post(postUrl, postData, function(data, status){
+			console.log(data);
+            console.log(status);
 			if (status == 'success'){
 				// alert(JSON.stringify(data));
 				if (data.flag == 0){
