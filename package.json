@@ -3,6 +3,7 @@
   "main": "server.js",
   "dependencies": {
     "config-lite": "^2.1.0",
+    "connect-mongo": "^2.0.2",
     "cookie-parser": "^1.4.3",
     "debug": "^4.1.0",
     "ejs": "^2.6.1",

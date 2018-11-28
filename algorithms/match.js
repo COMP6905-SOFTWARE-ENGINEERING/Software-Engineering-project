@@ -30,8 +30,8 @@ function match(projects, students, threshold){
             var similarity = score / total;
             if(similarity >= threshold) {
                 matchData = {
-                    project_id: projects[i]._id,
-                    student_id: students[j]._id,
+                    project: projects[i]._id,
+                    student: students[j]._id,
                     created_at: Date.now(),
                     status: 'enabled'
                 };

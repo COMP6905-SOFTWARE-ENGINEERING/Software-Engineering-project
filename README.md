@@ -135,3 +135,14 @@ Once the student receives the offer, he can accept or decline it on the system. 
      * Matched Projects page
      * Accepted students page
      * Monitor progress
+
+ **Yuhao Liao :**
+ 
+   * **Build the Skeleton of the Project :**
+     * Choose major packages for backend 
+     * Deploy the node server and mongodb server
+     * Design the workflow of the system
+     * Implement matching algorithm
+     * Integrate communication module
+     * Joint debugging with frontend
+     * Share technical doc
