@@ -50,8 +50,18 @@ exports.createProfile = function(reqData, callback){
     });
 };
 
+exports.find = function(reqData, callback){
+    profileModel.find({owner : reqData.owner}, function(err, data){
+        if(err){
+            callback(err, null);
+        }else {
+            callback(null, data);
+        }
+    });
+};
+
 exports.findById = function(reqData, callback){
-    profileModel.findById(reqData._id, function(err, data){
+    profileModel.findById({_id:reqData._id}, function(err, data){
         if(err){
             callback(err, null);
         }else {

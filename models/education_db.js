@@ -19,7 +19,7 @@ var educationModel = mongoose.model('education', educationSchema);
 
 
 exports.listByOwner = function(reqData, callback){
-    educationModel.find(reqData, {}, function(err, data){
+    educationModel.find({username:reqData.username}, function(err, data){
         if (err){
             callback(err, null);
         }else {
@@ -186,6 +186,16 @@ exports.findByCondition = function(reqData, callback){
     educationModel.find(Data, {
         deliverer:0,
     }, function(err, data){
+        if(err){
+            callback(err, null);
+        }else {
+            callback(null, data);
+        }
+    });
+};
+
+exports.find = function(reqData, callback){
+    educationModel.find({owner:reqData.owner}, function(err, data){
         if(err){
             callback(err, null);
         }else {
