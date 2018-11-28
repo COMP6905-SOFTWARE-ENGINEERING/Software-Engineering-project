@@ -62,5 +62,31 @@ Once the student receives the offer, he can accept or decline it on the system. 
  **Manager Login :**
   > Upon login, you will be navigated to dashboard.
   
-  > Dashboard has features to create projects, view all projects created till now, mactched projects with the students, messenger to commuincate with students and View progress to monitor students progress
+  > Dashboard has features to create projects, view all projects created till now, mactched projects with the students, messenger to       commuincate with students and View progress to monitor students progress.
   
+ #  Features 
+  
+    **Student Login :**
+    
+   >  Create profile 
+   
+   >  View profile
+   
+   >  Instant messenger
+   
+   >  View and apply for matched projects
+   
+   >   View progress
+   
+     **Manager Login :**
+      
+   >  Create Projects 
+   
+   >  View all projects created till now
+   
+   >  Instant messenger
+   
+   >  View and offer matched projects to the students
+   
+   >   View students progress
+   
