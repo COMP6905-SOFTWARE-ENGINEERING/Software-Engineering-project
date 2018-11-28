@@ -33,6 +33,25 @@ router.get('/projectlist', function(req, res){
     }
 });
 
+router.get('/projectlist_manager', function(req, res){
+    if(req.session.user && req.session.user.usertype == 'manager'){
+        projectModel.findAll( function(status, data){
+            if(status == 'ok') {
+                console.log(data);
+                res.render('project_list_manager', {
+                    title: 'project list',
+                    userdata: req.session.user,
+                    data: data,
+                });
+            }else{
+                res.json(status);
+            }
+        });
+    }else {
+        res.redirect('/login');
+    }
+});
+
 router.get('/create_project', function(req, res){
     if(req.session.user && req.session.user.usertype == 'manager'){
         userModel.userAccInfo({username:req.session.user.username}, function(err, data){
