@@ -52,8 +52,11 @@ Once the student receives the offer, he can accept or decline it on the system. 
  **Student Login :**
 
   >  Register as a new student on signup page and submit the form.
+  
   >  You will be navigated to dashboard which has a feature to create profile.
+  
   >  Fill all mandatory details and submit which will route to dashboard.
+  
   >  On dashboard, you can view your profile,  matched projects ,  progress and messenger for communication.
 
 
