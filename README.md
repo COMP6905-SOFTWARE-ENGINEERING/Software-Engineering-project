@@ -26,6 +26,7 @@ Once the student receives the offer, he can accept or decline it on the system. 
  >  `npm install`
 
 
+
 **3 Run Mongo server**
 
  >   mongod
@@ -45,6 +46,8 @@ Once the student receives the offer, he can accept or decline it on the system. 
  ```
 
 
-### hint: you may want to select eclipse or [WebStorm](https://www.jetbrains.com/webstorm/) to boost your developing efficiency.
+### hint: you can use eclipse or [WebStorm](https://www.jetbrains.com/webstorm/) to boost your developing efficiency.
+
+
 
 
