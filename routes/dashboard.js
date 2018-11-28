@@ -115,4 +115,15 @@ router.get('/profile_student_view', function(req, res){
     }
 });
 
+router.get('/student_progress', function(req, res){
+    if(req.session.user && req.session.user.usertype == 'manager'){
+            res.render('student_progress', {
+                title: 'Monitor progress',
+                userdata: req.session.user,
+            });
+    }else {
+        res.redirect('/login');
+    }
+});
+
 module.exports = router;
