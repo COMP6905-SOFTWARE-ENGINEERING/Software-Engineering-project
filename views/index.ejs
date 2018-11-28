@@ -87,7 +87,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="/dashboard/student_progress">
                             <i class="pe-7s-note2"></i>
                             <p>Students Progress</p>
                         </a>
@@ -118,6 +118,7 @@
 
                 </div>
                 <div class="collapse navbar-collapse">
+                    <% if (userdata.usertype == 'student'){ %>
                     <ul class="nav navbar-nav navbar-left">
                         <li>
                             <a href="/dashboard/profile_student_view">
@@ -139,14 +140,35 @@
                                 <i class="fa fa-4x fa-book">&nbsp;</i>
                             </a>
                         </li>
-                        <li>
-                            <a href="">
-                                <i class="fa fa-4x fa-bell">&nbsp;</i>
-                            </a>
-                        </li>
+
 
                     </ul>
+                        <% }else if (userdata.usertype == 'manager') { %>
+                            <ul class="nav navbar-nav navbar-left">
+                                <li>
+                                    <a href="/project/create_project">
+                                        <i class="fa fa-4x fa-user" >&nbsp;</i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/match/communication">
+                                        <i class="fa fa-envelope"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/match/result_for_manager">
+                                        <i class="fa fa-4x fa-thumbs-up">&nbsp;</i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/project/projectlist_manager">
+                                        <i class="fa fa-4x fa-book">&nbsp;</i>
+                                    </a>
+                                </li>
 
+
+                            </ul>
+                        <% } %>
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                             <a href="#">
@@ -192,7 +214,7 @@
 
 
                                                 <h3>Matched Projects</h3>
-                                                <p>You got new match</p>
+                                                <p>Checkout your matched projects here</p>
                                             </div>
                                         </div>
                                     </div>
@@ -204,7 +226,7 @@
                                             <div class="small-box">
                                                 <i class="fa fa-4x fa-envelope">&nbsp;</i>
                                                 <h3>Messenger</h3>
-                                                <p>You got a new message</p>
+                                                <p>you can check chat here</p>
                                             </div>
                                         </div>
                                     </div>
@@ -258,7 +280,7 @@
 
 
                                                 <h3>Matched Projects</h3>
-                                                <p>You got new match</p>
+                                                <p>Checkout all matched projects</p>
                                             </div>
                                         </div>
                                     </div>
@@ -270,7 +292,7 @@
                                             <div class="small-box">
                                                 <i class="fa fa-4x fa-envelope">&nbsp;</i>
                                                 <h3>Messenger</h3>
-                                                <p>You got a new message</p>
+                                                <p>you can chat here</p>
                                             </div>
                                         </div>
                                     </div>
