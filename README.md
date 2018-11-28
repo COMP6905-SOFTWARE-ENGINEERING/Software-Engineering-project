@@ -106,4 +106,13 @@ Once the student receives the offer, he can accept or decline it on the system. 
      * Matched Projects
      * Messenger
      * Monitor progress
- 
+     
+ **Sai Tarun Dasyam :**
+     * Signup 
+     * Dashboard 
+     * Project Creation 
+     * Communication module 
+     * List of all projects page
+     * Matched Projects page(Both student and manager)
+     * Accepted students page
+     * Monitor progress
