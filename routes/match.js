@@ -12,7 +12,6 @@ router.get('/result_for_student', function(req, res) {
                 if(err){
                     console.log(err);
                 }else{
-                    console.log(match_data)
                     res.render('match_student_view', {
                         title: 'match result',
                         userdata: req.session.user,
@@ -35,7 +34,6 @@ router.get('/result_for_manager', function(req, res) {
                 if(err){
                     console.log(err);
                 }else{
-                    console.log(match_data)
                     res.render('manager_match', {
                         title: 'match result',
                         userdata: req.session.user,
