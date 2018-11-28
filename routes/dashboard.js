@@ -41,7 +41,7 @@ router.get('/monitor', function(req, res){
                     console.log(courseData);
                 });
 
-                    res.render('monitor', {
+                res.render('monitor', {
                     title: 'Monitor Progress',
                     userdata: req.session.user,
                     //maxpage: parseInt((data.length-1)/10)+1,
@@ -65,37 +65,42 @@ router.get('/profile_student_view', function(req, res){
         userModel.userAccInfo({username:req.session.user.username}, function(err, data){
             if (err){
                 var personalData = {};
-                userModel.userAccInfo({username:req.session.user.user_id}, function(err, data){
+                console.log(req.session);
+                userModel.findById({_id:req.session.user._id}, function(err, data){
                     console.log("No error");
                     personalData = data;
                     console.log(data);
                 });
 
                 var studentData = {};
-                profileModel.userAccInfo({username:req.session.user.username}, function(err, data){
+                var studentdata2=[];
+                profileModel.find({owner : req.session.user._id}, function(err, data){
                     console.log("No error");
                     studentData = data;
+                    studentData2=studentData[0];
                     console.log(data);
                 });
 
+                //console.log(studentData2);
+
                 var educationData={};
-                 educationModel.listByOwner({user_id:req.session.user.user_id}, function(err, data){
+                educationModel.find({owner:req.session.user._id}, function(err, data){
                     console.log("EducationData");
                     educationData = data;
                     console.log(educationData);
 
                 });
                 var experienceData={};
-                    experienceModel.listByOwner({user_id:req.session.user.user_id}, function(err, data){
+                experienceModel.find({owner:req.session.user._id}, function(err, data){
                     experienceData = data;
-                   console.log(experienceData);
+                    console.log(experienceData);
 
                     res.render('profile_student_view', {
                         title: 'View Student Profile',
                         userdata: req.session.user,
                         //maxpage: parseInt((data.length-1)/10)+1,
                         personalData:personalData,
-                        studentData:studentData,
+                        studentData:studentData2,
                         educationData:educationData,
                         experienceData:experienceData
                     });

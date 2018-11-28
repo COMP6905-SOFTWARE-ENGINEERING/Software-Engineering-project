@@ -132,3 +132,13 @@ exports.userAccInfo = function(reqData, callback){
     });
 };
 
+exports.findById = function(reqData, callback){
+    userModel.findById({_id: reqData._id}, function(err, data){
+        if(err){
+            callback(err, null);
+        }else {
+            callback(null, data);
+        }
+    });
+};
+

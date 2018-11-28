@@ -19,7 +19,7 @@ var experienceModel = mongoose.model('experience', experienceSchema);
 
 
 exports.listByOwner = function(reqData, callback){
-    experienceModel.find(reqData,{}, function(err, data){
+    experienceModel.find({owner:reqData.user_id}, function(err, data){
         if (err){
             callback(err, null);
         }else {
@@ -187,6 +187,16 @@ exports.findByCondition = function(reqData, callback){
         deliverer:0,
     }, function(err, data){
         if(err){
+            callback(err, null);
+        }else {
+            callback(null, data);
+        }
+    });
+};
+
+exports.find = function(reqData, callback){
+    experienceModel.find({owner:reqData.owner}, function(err, data){
+        if (err){
             callback(err, null);
         }else {
             callback(null, data);
