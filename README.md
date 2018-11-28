@@ -54,18 +54,35 @@ Once the student receives the offer, he can accept or decline it on the system. 
 
  **Student Login :**
 
-  >  Register as a new student on signup page and submit the form.
+  >  Click on "Get Started" page which will redirects to login page. 
   
-  >  You will be navigated to dashboard which has a feature to create profile.
+  >  If you dont have credentials you can register as a new user . Fill the new register form and submit the details.you will redirect      to dash board.
   
-  >  Fill all mandatory details and submit which will route to dashboard.
+  >  On dashboard you can create profile by clicking on "create profile option available on sidebar". Note: Please donot try any other      buttons which will through error because we havent handled those due to time constarint.
   
-  >  On dashboard, you can view your profile,  matched projects ,  progress and messenger for communication.
+  >  Upon creating profile you will be redirected to dashboard. 
+  
+  >  You can chek your profile on clicking view profile and matched projects block to check projects which matched to the student.
+   
+  >  Messenger is available to the student to chat with professor.
+  
+  >  Progress monitoring is to check perspective student progress.
 
  **Manager Login :**
-  > Upon login, you will be navigated to dashboard.
+ 
+  >  Click on "Get Started" page which will redirects to login page. 
   
-  > Dashboard has features to create projects, view all projects created till now, mactched projects with the students, messenger to       commuincate with students and View progress to monitor students progress.
+  >  If you dont have credentials you can regisetr as a new user . Fill the new register form and submit the details.you will redirect      to dash board. Note : please login with user name starts with 'pm' .example: pm01@mun.ca.
+  
+  >  On dashboard you can create projects by clicking on "create projects option available on sidebar". 
+  
+  >  Upon creating project you will be redirected to dashboard. 
+  
+  >  You can chek your projects on clicking view all projects and matched projects block to check projects which matched to the        student.
+   
+  >  Messenger is available to the professor to chat with student.
+  
+  >  Progress monitoring is to check perspective student progress.
   
  #  Features 
   
@@ -115,7 +132,7 @@ Once the student receives the offer, he can accept or decline it on the system. 
      * Project Creation 
      * Communication module 
      * List of all projects page
-     * Matched Projects page(Both student and manager)
+     * Matched Projects page
      * Accepted students page
      * Monitor progress
 
