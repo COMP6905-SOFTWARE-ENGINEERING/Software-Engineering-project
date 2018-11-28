@@ -55,9 +55,9 @@
         <tbody>
         <tr>
             <th scope="row">1</th>
-            <td> <%= match_data[i].project.project_name %></td>
+            <td > <%=match_data[i].student.owner.firstname %></td>
             <td> <%= match_data[i].student.address %></td>
-            <td><button type="button" class="btn btn-primary" id="student_monitor" on>Accept</button></td>
+            <td><button type="button" class="btn btn-primary" id="student_monitor" onclick="acceptOffer()">Accept</button></td>
             <td><button type="button" class="btn btn-primary" id="student_monitor">Chat</button></td>
         </tr>
         </tbody>
@@ -65,5 +65,6 @@
         </thead>
     </table>
 </div>
+<script src="../javascripts/jquery_manager_match.js" type="text/javascript"></script>
 </body>
 </html>
