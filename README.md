@@ -26,6 +26,7 @@ Once the student receives the offer, he can accept or decline it on the system. 
  >  `npm install`
 
 
+
 **3 Run Mongo server**
 
  >   mongod
@@ -45,7 +46,9 @@ Once the student receives the offer, he can accept or decline it on the system. 
  ```
 
 
-### hint: you may want to select eclipse or [WebStorm](https://www.jetbrains.com/webstorm/) to boost your developing efficiency.
+### hint: you can use eclipse or [WebStorm](https://www.jetbrains.com/webstorm/) to boost your developing efficiency.
+
+
 
 #  Workflow 
 
@@ -90,13 +93,28 @@ Once the student receives the offer, he can accept or decline it on the system. 
    
    >   View students progress
    
- #  Contribution 
- ** Mahesh Pochamreddy : **
+#  Contribution 
+
+ **Mahesh Pochamreddy :**
  
-   >  Landing page : Frontend
-   
-   >  Signin page : Frontend
-   
-   >  Create profile  :Frontend
-   >> asasas
-   
+   * **Student Login Frontend :**
+     * Landing page
+     * Signin page
+     * Dashboard
+     * Create profile
+     * View Profile
+     * Matched Projects
+     * Messenger
+     * Monitor progress
+     
+ **Sai Tarun Dasyam :**
+ 
+   * **Manager Login Frontend :**
+     * Signup 
+     * Dashboard 
+     * Project Creation 
+     * Communication module 
+     * List of all projects page
+     * Matched Projects page(Both student and manager)
+     * Accepted students page
+     * Monitor progress
