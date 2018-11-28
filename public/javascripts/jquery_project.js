@@ -47,7 +47,7 @@ function projectCreateSubmit() {
                 // alert(JSON.stringify(data.status));
             } else {
                 alert('create successful');
-                window.location.href = "/project/offerlist";
+                window.location.href = "/project/projectlist_manager";
             }
         } else {
             alert('post failed');
