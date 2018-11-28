@@ -90,11 +90,11 @@ Once the student receives the offer, he can accept or decline it on the system. 
    
    >   View students progress
    
-#  Workflow 
+#  Contribution 
 
- **Student Login :**
+ **Mahesh Pochamreddy :**
  
-   * Student Login Frontend :
+   * **Student Login Frontend :**
      * Landing page
      * Signin page
      * Dashboard
