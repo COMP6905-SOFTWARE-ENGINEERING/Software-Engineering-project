@@ -14,6 +14,7 @@ $(document).ready(function(){
 			}
 		});
 	});
+
 	$(".modinfo_area").click(function(){
 		window.location.href = "/modinfo";
 	});
