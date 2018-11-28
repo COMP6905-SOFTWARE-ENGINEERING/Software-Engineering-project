@@ -66,7 +66,7 @@ Once the student receives the offer, he can accept or decline it on the system. 
   
  #  Features 
   
-    **Student Login :**
+  ** Student Login :**
     
    >  Create profile 
    
@@ -78,7 +78,7 @@ Once the student receives the offer, he can accept or decline it on the system. 
    
    >   View progress
    
-     **Manager Login :**
+   **Manager Login :**
       
    >  Create Projects 
    
