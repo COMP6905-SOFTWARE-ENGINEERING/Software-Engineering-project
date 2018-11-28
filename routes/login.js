@@ -28,6 +28,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/',function(req,res){
+    console.log(req.body);
     var md5 = crypto.createHash('md5');
     var password = md5.update(req.body.password).digest('hex');
     var loginData = {
@@ -35,13 +36,16 @@ router.post('/',function(req,res){
         password: password,
         usertype: req.body.usertype
     };
+    console.log(loginData);
     // var usertype = req.body.usertype;
     accMgmtModel.login(loginData, function(status, data){
         if (status == 'ok'){
             // console.log('1');
             req.session.user = data;
+            console.log({status:status, flag:1});
             res.json({status:status, flag:1});
         }else{
+            console.log({status:status, flag:0});
             res.json({status:status, flag:0});
         }
     });

@@ -65,17 +65,17 @@ router.get('/profile_student_view', function(req, res){
         userModel.userAccInfo({username:req.session.user.username}, function(err, data){
             if (err){
                 var personalData = {};
-                console.log(req.session);
+                //console.log(req.session);
                 userModel.findById({_id:req.session.user._id}, function(err, data){
-                    console.log("No error");
+                    //console.log("No error");
                     personalData = data;
-                    console.log(data);
+                    //console.log(data);
                 });
 
                 var studentData = {};
                 var studentdata2=[];
                 profileModel.find({owner : req.session.user._id}, function(err, data){
-                    console.log("No error");
+                    //console.log("No error");
                     studentData = data;
                     studentData2=studentData[0];
                     console.log(data);

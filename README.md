@@ -50,4 +50,60 @@ Once the student receives the offer, he can accept or decline it on the system. 
 
 
 
+#  Workflow 
 
+ **Student Login :**
+
+  >  Register as a new student on signup page and submit the form.
+  
+  >  You will be navigated to dashboard which has a feature to create profile.
+  
+  >  Fill all mandatory details and submit which will route to dashboard.
+  
+  >  On dashboard, you can view your profile,  matched projects ,  progress and messenger for communication.
+
+ **Manager Login :**
+  > Upon login, you will be navigated to dashboard.
+  
+  > Dashboard has features to create projects, view all projects created till now, mactched projects with the students, messenger to       commuincate with students and View progress to monitor students progress.
+  
+ #  Features 
+  
+  ** Student Login :**
+    
+   >  Create profile 
+   
+   >  View profile
+   
+   >  Instant messenger
+   
+   >  View and apply for matched projects
+   
+   >   View progress
+   
+   **Manager Login :**
+      
+   >  Create Projects 
+   
+   >  View all projects created till now
+   
+   >  Instant messenger
+   
+   >  View and offer matched projects to the students
+   
+   >   View students progress
+   
+#  Contribution 
+
+ **Mahesh Pochamreddy :**
+ 
+   * **Student Login Frontend :**
+     * Landing page
+     * Signin page
+     * Dashboard
+     * Create profile
+     * View Profile
+     * Matched Projects
+     * Messenger
+     * Monitor progress
+ 
