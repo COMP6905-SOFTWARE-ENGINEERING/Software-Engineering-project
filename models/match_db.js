@@ -21,6 +21,8 @@ var matchSchema = new Schema({
 
 var matchModel = mongoose.model('match', matchSchema);
 
+module.exports = matchModel;
+
 exports.changeStatus = function(callback){
     matchModel.update({
         status: 'enabled'
@@ -48,6 +50,18 @@ exports.createMatch = function(reqData, callback){
             callback(err);
         }else{
             callback('ok');
+        }
+    });
+};
+
+exports.findAll = function(callback){
+    projectModel.find({}, ['_id','project_name', 'area_of_study', 'level_of_study',
+        'required_program', 'required_skills', 'project_description',
+        'available_funding','start_date'], function(err, data){
+        if(err){
+            callback(err, null);
+        }else {
+            callback('ok', data);
         }
     });
 };
