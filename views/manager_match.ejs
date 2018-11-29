@@ -52,7 +52,9 @@
             <th scope="col">Monitor</th>
             <th scope="col">Message</th>
         </tr>
+        </thead>
         <% for (var i = 0; i <match_data.length; i++) { %>
+            <% if (typeof  match_data[i].student.owner!="undefined"){ %>
         <tbody>
         <tr>
             <th scope="row">1</th>
@@ -63,8 +65,9 @@
             <td><button type="button" class="btn btn-primary" id="student_monitor">Chat</button></td>
         </tr>
         </tbody>
+                <% } %>
         <%}%>
-        </thead>
+
     </table>
 </div>
 </body>
