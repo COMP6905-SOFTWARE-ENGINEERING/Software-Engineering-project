@@ -37,7 +37,12 @@ var accessLogStream = rfs('access.log', {
 app.use(logger('combined', { stream: accessLogStream }));
 
 var url = config.mongodb; //mongodb address
-mongoose.connect(url, { useNewUrlParser: true });
+var options = {
+    useNewUrlParser: true,
+    keepAlive: 1,
+    connectTimeoutMS: 30000
+};
+mongoose.connect(url, options);
 mongoose.set('useCreateIndex', true);
 
 // view engine setup
