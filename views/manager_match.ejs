@@ -54,7 +54,7 @@
         </tr>
         </thead>
         <% for (var i = 0; i <match_data.length; i++) { %>
-            <% if (typeof  match_data[i].student.owner!="undefined"){ %>
+            <% if (match_data[i].student.owner!=null){ %>
         <tbody>
         <tr>
             <th scope="row">1</th>
@@ -62,7 +62,7 @@
             <td> <%= match_data[i].project.project_name %></td>
 
             <td><button type="button" class="btn btn-primary" id="student_monitor" on>Accept</button></td>
-            <td><button type="button" class="btn btn-primary" id="student_monitor">Chat</button></td>
+            <td><button type="button" class="btn btn-primary" id="student_monitor" onclick="location.href='../match/communication'" >Chat</button></td>
         </tr>
         </tbody>
                 <% } %>
